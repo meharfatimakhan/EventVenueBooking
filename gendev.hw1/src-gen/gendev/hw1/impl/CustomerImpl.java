@@ -6,6 +6,7 @@ import gendev.hw1.Customer;
 import gendev.hw1.Hw1Package;
 import gendev.hw1.Review;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -251,6 +252,39 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void submitReview() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void createBooking() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void cancelBooking() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -373,6 +407,27 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 			return submits != null && !submits.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case Hw1Package.CUSTOMER___SUBMIT_REVIEW:
+			submitReview();
+			return null;
+		case Hw1Package.CUSTOMER___CREATE_BOOKING:
+			createBooking();
+			return null;
+		case Hw1Package.CUSTOMER___CANCEL_BOOKING:
+			cancelBooking();
+			return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

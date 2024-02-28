@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link gendev.hw1.impl.ReviewImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link gendev.hw1.impl.ReviewImpl#getReviewBookingID <em>Review Booking ID</em>}</li>
  *   <li>{@link gendev.hw1.impl.ReviewImpl#getSubmittedBy <em>Submitted By</em>}</li>
+ *   <li>{@link gendev.hw1.impl.ReviewImpl#getReviewID <em>Review ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -101,6 +102,26 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 	 * @ordered
 	 */
 	protected Customer submittedBy;
+
+	/**
+	 * The default value of the '{@link #getReviewID() <em>Review ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReviewID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int REVIEW_ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getReviewID() <em>Review ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReviewID()
+	 * @generated
+	 * @ordered
+	 */
+	protected int reviewID = REVIEW_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,6 +279,27 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getReviewID() {
+		return reviewID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReviewID(int newReviewID) {
+		int oldReviewID = reviewID;
+		reviewID = newReviewID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.REVIEW__REVIEW_ID, oldReviewID, reviewID));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -302,6 +344,8 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 			if (resolve)
 				return getSubmittedBy();
 			return basicGetSubmittedBy();
+		case Hw1Package.REVIEW__REVIEW_ID:
+			return getReviewID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -325,6 +369,9 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 			return;
 		case Hw1Package.REVIEW__SUBMITTED_BY:
 			setSubmittedBy((Customer) newValue);
+			return;
+		case Hw1Package.REVIEW__REVIEW_ID:
+			setReviewID((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -350,6 +397,9 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 		case Hw1Package.REVIEW__SUBMITTED_BY:
 			setSubmittedBy((Customer) null);
 			return;
+		case Hw1Package.REVIEW__REVIEW_ID:
+			setReviewID(REVIEW_ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -370,6 +420,8 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 			return reviewBookingID != REVIEW_BOOKING_ID_EDEFAULT;
 		case Hw1Package.REVIEW__SUBMITTED_BY:
 			return submittedBy != null;
+		case Hw1Package.REVIEW__REVIEW_ID:
+			return reviewID != REVIEW_ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -391,6 +443,8 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 		result.append(comment);
 		result.append(", ReviewBookingID: ");
 		result.append(reviewBookingID);
+		result.append(", ReviewID: ");
+		result.append(reviewID);
 		result.append(')');
 		return result.toString();
 	}

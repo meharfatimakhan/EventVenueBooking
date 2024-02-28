@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link gendev.hw1.Review#getComment <em>Comment</em>}</li>
  *   <li>{@link gendev.hw1.Review#getReviewBookingID <em>Review Booking ID</em>}</li>
  *   <li>{@link gendev.hw1.Review#getSubmittedBy <em>Submitted By</em>}</li>
+ *   <li>{@link gendev.hw1.Review#getReviewID <em>Review ID</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getReview()
@@ -113,5 +114,27 @@ public interface Review extends EObject {
 	 * @generated
 	 */
 	void setSubmittedBy(Customer value);
+
+	/**
+	 * Returns the value of the '<em><b>Review ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Review ID</em>' attribute.
+	 * @see #setReviewID(int)
+	 * @see gendev.hw1.Hw1Package#getReview_ReviewID()
+	 * @model
+	 * @generated
+	 */
+	int getReviewID();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.Review#getReviewID <em>Review ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Review ID</em>' attribute.
+	 * @see #getReviewID()
+	 * @generated
+	 */
+	void setReviewID(int value);
 
 } // Review

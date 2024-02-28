@@ -2,13 +2,15 @@
  */
 package gendev.hw1.impl;
 
-import gendev.hw1.Booking;
 import gendev.hw1.BookingAgent;
+import gendev.hw1.EventBooking;
 import gendev.hw1.Hw1Package;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -57,7 +59,7 @@ public class BookingAgentImpl extends SystemAdminImpl implements BookingAgent {
 	 * @generated
 	 * @ordered
 	 */
-	protected Booking approvedBy;
+	protected EventBooking approvedBy;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,10 +107,10 @@ public class BookingAgentImpl extends SystemAdminImpl implements BookingAgent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Booking getApprovedBy() {
+	public EventBooking getApprovedBy() {
 		if (approvedBy != null && approvedBy.eIsProxy()) {
 			InternalEObject oldApprovedBy = (InternalEObject) approvedBy;
-			approvedBy = (Booking) eResolveProxy(oldApprovedBy);
+			approvedBy = (EventBooking) eResolveProxy(oldApprovedBy);
 			if (approvedBy != oldApprovedBy) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Hw1Package.BOOKING_AGENT__APPROVED_BY,
@@ -123,7 +125,7 @@ public class BookingAgentImpl extends SystemAdminImpl implements BookingAgent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Booking basicGetApprovedBy() {
+	public EventBooking basicGetApprovedBy() {
 		return approvedBy;
 	}
 
@@ -132,8 +134,8 @@ public class BookingAgentImpl extends SystemAdminImpl implements BookingAgent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetApprovedBy(Booking newApprovedBy, NotificationChain msgs) {
-		Booking oldApprovedBy = approvedBy;
+	public NotificationChain basicSetApprovedBy(EventBooking newApprovedBy, NotificationChain msgs) {
+		EventBooking oldApprovedBy = approvedBy;
 		approvedBy = newApprovedBy;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -151,15 +153,15 @@ public class BookingAgentImpl extends SystemAdminImpl implements BookingAgent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setApprovedBy(Booking newApprovedBy) {
+	public void setApprovedBy(EventBooking newApprovedBy) {
 		if (newApprovedBy != approvedBy) {
 			NotificationChain msgs = null;
 			if (approvedBy != null)
-				msgs = ((InternalEObject) approvedBy).eInverseRemove(this, Hw1Package.BOOKING__APPROVED_BOOKINGS,
-						Booking.class, msgs);
+				msgs = ((InternalEObject) approvedBy).eInverseRemove(this, Hw1Package.EVENT_BOOKING__APPROVED_BOOKINGS,
+						EventBooking.class, msgs);
 			if (newApprovedBy != null)
-				msgs = ((InternalEObject) newApprovedBy).eInverseAdd(this, Hw1Package.BOOKING__APPROVED_BOOKINGS,
-						Booking.class, msgs);
+				msgs = ((InternalEObject) newApprovedBy).eInverseAdd(this, Hw1Package.EVENT_BOOKING__APPROVED_BOOKINGS,
+						EventBooking.class, msgs);
 			msgs = basicSetApprovedBy(newApprovedBy, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -173,14 +175,25 @@ public class BookingAgentImpl extends SystemAdminImpl implements BookingAgent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void approveBookings() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Hw1Package.BOOKING_AGENT__APPROVED_BY:
 			if (approvedBy != null)
-				msgs = ((InternalEObject) approvedBy).eInverseRemove(this, Hw1Package.BOOKING__APPROVED_BOOKINGS,
-						Booking.class, msgs);
-			return basicSetApprovedBy((Booking) otherEnd, msgs);
+				msgs = ((InternalEObject) approvedBy).eInverseRemove(this, Hw1Package.EVENT_BOOKING__APPROVED_BOOKINGS,
+						EventBooking.class, msgs);
+			return basicSetApprovedBy((EventBooking) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -229,7 +242,7 @@ public class BookingAgentImpl extends SystemAdminImpl implements BookingAgent {
 			setAgentID((Integer) newValue);
 			return;
 		case Hw1Package.BOOKING_AGENT__APPROVED_BY:
-			setApprovedBy((Booking) newValue);
+			setApprovedBy((EventBooking) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -247,7 +260,7 @@ public class BookingAgentImpl extends SystemAdminImpl implements BookingAgent {
 			setAgentID(AGENT_ID_EDEFAULT);
 			return;
 		case Hw1Package.BOOKING_AGENT__APPROVED_BY:
-			setApprovedBy((Booking) null);
+			setApprovedBy((EventBooking) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -267,6 +280,21 @@ public class BookingAgentImpl extends SystemAdminImpl implements BookingAgent {
 			return approvedBy != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case Hw1Package.BOOKING_AGENT___APPROVE_BOOKINGS:
+			approveBookings();
+			return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

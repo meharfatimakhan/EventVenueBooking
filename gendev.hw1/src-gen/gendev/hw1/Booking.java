@@ -20,10 +20,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link gendev.hw1.Booking#getBookingID <em>Booking ID</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getBookingDate <em>Booking Date</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getBookingStatus <em>Booking Status</em>}</li>
- *   <li>{@link gendev.hw1.Booking#getMadeBy <em>Made By</em>}</li>
- *   <li>{@link gendev.hw1.Booking#getApprovedBookings <em>Approved Bookings</em>}</li>
- *   <li>{@link gendev.hw1.Booking#getHosted_at <em>Hosted at</em>}</li>
- *   <li>{@link gendev.hw1.Booking#getCanHave <em>Can Have</em>}</li>
+ *   <li>{@link gendev.hw1.Booking#getBookingBy <em>Booking By</em>}</li>
+ *   <li>{@link gendev.hw1.Booking#getHasReviews <em>Has Reviews</em>}</li>
+ *   <li>{@link gendev.hw1.Booking#getBookingType <em>Booking Type</em>}</li>
+ *   <li>{@link gendev.hw1.Booking#getHostedAt <em>Hosted At</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getBooking()
@@ -120,73 +120,91 @@ public interface Booking extends EObject {
 	void setBookingStatus(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Made By</b></em>' reference.
+	 * Returns the value of the '<em><b>Booking By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Made By</em>' reference.
-	 * @see #setMadeBy(Customer)
-	 * @see gendev.hw1.Hw1Package#getBooking_MadeBy()
+	 * @return the value of the '<em>Booking By</em>' reference.
+	 * @see #setBookingBy(Customer)
+	 * @see gendev.hw1.Hw1Package#getBooking_BookingBy()
 	 * @model required="true"
 	 * @generated
 	 */
-	Customer getMadeBy();
+	Customer getBookingBy();
 
 	/**
-	 * Sets the value of the '{@link gendev.hw1.Booking#getMadeBy <em>Made By</em>}' reference.
+	 * Sets the value of the '{@link gendev.hw1.Booking#getBookingBy <em>Booking By</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Made By</em>' reference.
-	 * @see #getMadeBy()
+	 * @param value the new value of the '<em>Booking By</em>' reference.
+	 * @see #getBookingBy()
 	 * @generated
 	 */
-	void setMadeBy(Customer value);
+	void setBookingBy(Customer value);
 
 	/**
-	 * Returns the value of the '<em><b>Approved Bookings</b></em>' reference list.
-	 * The list contents are of type {@link gendev.hw1.BookingAgent}.
-	 * It is bidirectional and its opposite is '{@link gendev.hw1.BookingAgent#getApprovedBy <em>Approved By</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Approved Bookings</em>' reference list.
-	 * @see gendev.hw1.Hw1Package#getBooking_ApprovedBookings()
-	 * @see gendev.hw1.BookingAgent#getApprovedBy
-	 * @model opposite="approvedBy"
-	 * @generated
-	 */
-	EList<BookingAgent> getApprovedBookings();
-
-	/**
-	 * Returns the value of the '<em><b>Hosted at</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Hosted at</em>' reference.
-	 * @see #setHosted_at(Venue)
-	 * @see gendev.hw1.Hw1Package#getBooking_Hosted_at()
-	 * @model required="true"
-	 * @generated
-	 */
-	Venue getHosted_at();
-
-	/**
-	 * Sets the value of the '{@link gendev.hw1.Booking#getHosted_at <em>Hosted at</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Hosted at</em>' reference.
-	 * @see #getHosted_at()
-	 * @generated
-	 */
-	void setHosted_at(Venue value);
-
-	/**
-	 * Returns the value of the '<em><b>Can Have</b></em>' reference list.
+	 * Returns the value of the '<em><b>Has Reviews</b></em>' reference list.
 	 * The list contents are of type {@link gendev.hw1.Review}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Can Have</em>' reference list.
-	 * @see gendev.hw1.Hw1Package#getBooking_CanHave()
+	 * @return the value of the '<em>Has Reviews</em>' reference list.
+	 * @see gendev.hw1.Hw1Package#getBooking_HasReviews()
 	 * @model
 	 * @generated
 	 */
-	EList<Review> getCanHave();
+	EList<Review> getHasReviews();
+
+	/**
+	 * Returns the value of the '<em><b>Booking Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Booking Type</em>' attribute.
+	 * @see #setBookingType(String)
+	 * @see gendev.hw1.Hw1Package#getBooking_BookingType()
+	 * @model
+	 * @generated
+	 */
+	String getBookingType();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.Booking#getBookingType <em>Booking Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Booking Type</em>' attribute.
+	 * @see #getBookingType()
+	 * @generated
+	 */
+	void setBookingType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Hosted At</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link gendev.hw1.Venue#getBookings <em>Bookings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hosted At</em>' reference.
+	 * @see #setHostedAt(Venue)
+	 * @see gendev.hw1.Hw1Package#getBooking_HostedAt()
+	 * @see gendev.hw1.Venue#getBookings
+	 * @model opposite="bookings" required="true"
+	 * @generated
+	 */
+	Venue getHostedAt();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.Booking#getHostedAt <em>Hosted At</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hosted At</em>' reference.
+	 * @see #getHostedAt()
+	 * @generated
+	 */
+	void setHostedAt(Venue value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void viewBookingInfo();
 
 } // Booking

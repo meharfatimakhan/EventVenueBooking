@@ -58,13 +58,13 @@ public interface Hw1Factory extends EFactory {
 	SystemAdmin createSystemAdmin();
 
 	/**
-	 * Returns a new object of class '<em>Booking Agent</em>'.
+	 * Returns a new object of class '<em>Booking Admin</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Booking Agent</em>'.
+	 * @return a new object of class '<em>Booking Admin</em>'.
 	 * @generated
 	 */
-	BookingAgent createBookingAgent();
+	BookingAdmin createBookingAdmin();
 
 	/**
 	 * Returns a new object of class '<em>Payment</em>'.

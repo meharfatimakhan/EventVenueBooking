@@ -43,4 +43,12 @@ public interface MenuTastingBooking extends Booking {
 	 */
 	void setMenuOptions(EList<?> value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void selectMenuOptions();
+
 } // MenuTastingBooking

@@ -66,8 +66,8 @@ public class Hw1FactoryImpl extends EFactoryImpl implements Hw1Factory {
 			return createVenue();
 		case Hw1Package.SYSTEM_ADMIN:
 			return createSystemAdmin();
-		case Hw1Package.BOOKING_AGENT:
-			return createBookingAgent();
+		case Hw1Package.BOOKING_ADMIN:
+			return createBookingAdmin();
 		case Hw1Package.PAYMENT:
 			return createPayment();
 		case Hw1Package.VENUE_VISIT_BOOKING:
@@ -156,9 +156,9 @@ public class Hw1FactoryImpl extends EFactoryImpl implements Hw1Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BookingAgent createBookingAgent() {
-		BookingAgentImpl bookingAgent = new BookingAgentImpl();
-		return bookingAgent;
+	public BookingAdmin createBookingAdmin() {
+		BookingAdminImpl bookingAdmin = new BookingAdminImpl();
+		return bookingAdmin;
 	}
 
 	/**

@@ -6,6 +6,7 @@ import gendev.hw1.Hw1Package;
 import gendev.hw1.SystemAdmin;
 import gendev.hw1.Venue;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -30,7 +31,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link gendev.hw1.impl.SystemAdminImpl#getPhone <em>Phone</em>}</li>
  *   <li>{@link gendev.hw1.impl.SystemAdminImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link gendev.hw1.impl.SystemAdminImpl#getName <em>Name</em>}</li>
- *   <li>{@link gendev.hw1.impl.SystemAdminImpl#getManagedBy <em>Managed By</em>}</li>
+ *   <li>{@link gendev.hw1.impl.SystemAdminImpl#getVenuesManaged <em>Venues Managed</em>}</li>
+ *   <li>{@link gendev.hw1.impl.SystemAdminImpl#getAdminID <em>Admin ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,14 +99,34 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getManagedBy() <em>Managed By</em>}' reference list.
+	 * The cached value of the '{@link #getVenuesManaged() <em>Venues Managed</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getManagedBy()
+	 * @see #getVenuesManaged()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Venue> managedBy;
+	protected EList<Venue> venuesManaged;
+
+	/**
+	 * The default value of the '{@link #getAdminID() <em>Admin ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAdminID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ADMIN_ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getAdminID() <em>Admin ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAdminID()
+	 * @generated
+	 * @ordered
+	 */
+	protected int adminID = ADMIN_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,11 +215,45 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Venue> getManagedBy() {
-		if (managedBy == null) {
-			managedBy = new EObjectResolvingEList<Venue>(Venue.class, this, Hw1Package.SYSTEM_ADMIN__MANAGED_BY);
+	public EList<Venue> getVenuesManaged() {
+		if (venuesManaged == null) {
+			venuesManaged = new EObjectResolvingEList<Venue>(Venue.class, this,
+					Hw1Package.SYSTEM_ADMIN__VENUES_MANAGED);
 		}
-		return managedBy;
+		return venuesManaged;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getAdminID() {
+		return adminID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAdminID(int newAdminID) {
+		int oldAdminID = adminID;
+		adminID = newAdminID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.SYSTEM_ADMIN__ADMIN_ID, oldAdminID,
+					adminID));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void manageVenues() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -214,8 +270,10 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 			return getEmail();
 		case Hw1Package.SYSTEM_ADMIN__NAME:
 			return getName();
-		case Hw1Package.SYSTEM_ADMIN__MANAGED_BY:
-			return getManagedBy();
+		case Hw1Package.SYSTEM_ADMIN__VENUES_MANAGED:
+			return getVenuesManaged();
+		case Hw1Package.SYSTEM_ADMIN__ADMIN_ID:
+			return getAdminID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -238,9 +296,12 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 		case Hw1Package.SYSTEM_ADMIN__NAME:
 			setName((String) newValue);
 			return;
-		case Hw1Package.SYSTEM_ADMIN__MANAGED_BY:
-			getManagedBy().clear();
-			getManagedBy().addAll((Collection<? extends Venue>) newValue);
+		case Hw1Package.SYSTEM_ADMIN__VENUES_MANAGED:
+			getVenuesManaged().clear();
+			getVenuesManaged().addAll((Collection<? extends Venue>) newValue);
+			return;
+		case Hw1Package.SYSTEM_ADMIN__ADMIN_ID:
+			setAdminID((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -263,8 +324,11 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 		case Hw1Package.SYSTEM_ADMIN__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case Hw1Package.SYSTEM_ADMIN__MANAGED_BY:
-			getManagedBy().clear();
+		case Hw1Package.SYSTEM_ADMIN__VENUES_MANAGED:
+			getVenuesManaged().clear();
+			return;
+		case Hw1Package.SYSTEM_ADMIN__ADMIN_ID:
+			setAdminID(ADMIN_ID_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -284,10 +348,27 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 			return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
 		case Hw1Package.SYSTEM_ADMIN__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case Hw1Package.SYSTEM_ADMIN__MANAGED_BY:
-			return managedBy != null && !managedBy.isEmpty();
+		case Hw1Package.SYSTEM_ADMIN__VENUES_MANAGED:
+			return venuesManaged != null && !venuesManaged.isEmpty();
+		case Hw1Package.SYSTEM_ADMIN__ADMIN_ID:
+			return adminID != ADMIN_ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case Hw1Package.SYSTEM_ADMIN___MANAGE_VENUES:
+			manageVenues();
+			return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -307,6 +388,8 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 		result.append(email);
 		result.append(", Name: ");
 		result.append(name);
+		result.append(", AdminID: ");
+		result.append(adminID);
 		result.append(')');
 		return result.toString();
 	}

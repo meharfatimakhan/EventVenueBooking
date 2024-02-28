@@ -2,10 +2,15 @@
  */
 package gendev.hw1.impl;
 
+import gendev.hw1.BookingAdmin;
 import gendev.hw1.EventBooking;
 import gendev.hw1.Hw1Package;
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -17,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link gendev.hw1.impl.EventBookingImpl#getEstimatedPriceQuote <em>Estimated Price Quote</em>}</li>
+ *   <li>{@link gendev.hw1.impl.EventBookingImpl#getApprovedBy <em>Approved By</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,6 +47,16 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 	 * @ordered
 	 */
 	protected int estimatedPriceQuote = ESTIMATED_PRICE_QUOTE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getApprovedBy() <em>Approved By</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApprovedBy()
+	 * @generated
+	 * @ordered
+	 */
+	protected BookingAdmin approvedBy;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -88,11 +104,125 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public BookingAdmin getApprovedBy() {
+		if (approvedBy != null && approvedBy.eIsProxy()) {
+			InternalEObject oldApprovedBy = (InternalEObject) approvedBy;
+			approvedBy = (BookingAdmin) eResolveProxy(oldApprovedBy);
+			if (approvedBy != oldApprovedBy) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Hw1Package.EVENT_BOOKING__APPROVED_BY,
+							oldApprovedBy, approvedBy));
+			}
+		}
+		return approvedBy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BookingAdmin basicGetApprovedBy() {
+		return approvedBy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetApprovedBy(BookingAdmin newApprovedBy, NotificationChain msgs) {
+		BookingAdmin oldApprovedBy = approvedBy;
+		approvedBy = newApprovedBy;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					Hw1Package.EVENT_BOOKING__APPROVED_BY, oldApprovedBy, newApprovedBy);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setApprovedBy(BookingAdmin newApprovedBy) {
+		if (newApprovedBy != approvedBy) {
+			NotificationChain msgs = null;
+			if (approvedBy != null)
+				msgs = ((InternalEObject) approvedBy).eInverseRemove(this, Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS,
+						BookingAdmin.class, msgs);
+			if (newApprovedBy != null)
+				msgs = ((InternalEObject) newApprovedBy).eInverseAdd(this, Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS,
+						BookingAdmin.class, msgs);
+			msgs = basicSetApprovedBy(newApprovedBy, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.EVENT_BOOKING__APPROVED_BY, newApprovedBy,
+					newApprovedBy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void calculateFinalPrice() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
+			if (approvedBy != null)
+				msgs = ((InternalEObject) approvedBy).eInverseRemove(this, Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS,
+						BookingAdmin.class, msgs);
+			return basicSetApprovedBy((BookingAdmin) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
+			return basicSetApprovedBy(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case Hw1Package.EVENT_BOOKING__ESTIMATED_PRICE_QUOTE:
 			return getEstimatedPriceQuote();
+		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
+			if (resolve)
+				return getApprovedBy();
+			return basicGetApprovedBy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -107,6 +237,9 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 		switch (featureID) {
 		case Hw1Package.EVENT_BOOKING__ESTIMATED_PRICE_QUOTE:
 			setEstimatedPriceQuote((Integer) newValue);
+			return;
+		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
+			setApprovedBy((BookingAdmin) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,6 +256,9 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 		case Hw1Package.EVENT_BOOKING__ESTIMATED_PRICE_QUOTE:
 			setEstimatedPriceQuote(ESTIMATED_PRICE_QUOTE_EDEFAULT);
 			return;
+		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
+			setApprovedBy((BookingAdmin) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -137,8 +273,25 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 		switch (featureID) {
 		case Hw1Package.EVENT_BOOKING__ESTIMATED_PRICE_QUOTE:
 			return estimatedPriceQuote != ESTIMATED_PRICE_QUOTE_EDEFAULT;
+		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
+			return approvedBy != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case Hw1Package.EVENT_BOOKING___CALCULATE_FINAL_PRICE:
+			calculateFinalPrice();
+			return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

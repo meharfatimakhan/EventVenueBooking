@@ -1,0 +1,77 @@
+/**
+ */
+package gendev.hw1;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Event Booking</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link gendev.hw1.EventBooking#getEstimatedPriceQuote <em>Estimated Price Quote</em>}</li>
+ *   <li>{@link gendev.hw1.EventBooking#getApprovedBookings <em>Approved Bookings</em>}</li>
+ * </ul>
+ *
+ * @see gendev.hw1.Hw1Package#getEventBooking()
+ * @model
+ * @generated
+ */
+public interface EventBooking extends Booking {
+	/**
+	 * Returns the value of the '<em><b>Estimated Price Quote</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Estimated Price Quote</em>' attribute.
+	 * @see #setEstimatedPriceQuote(int)
+	 * @see gendev.hw1.Hw1Package#getEventBooking_EstimatedPriceQuote()
+	 * @model
+	 * @generated
+	 */
+	int getEstimatedPriceQuote();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.EventBooking#getEstimatedPriceQuote <em>Estimated Price Quote</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Estimated Price Quote</em>' attribute.
+	 * @see #getEstimatedPriceQuote()
+	 * @generated
+	 */
+	void setEstimatedPriceQuote(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Approved Bookings</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link gendev.hw1.BookingAgent#getApprovedBy <em>Approved By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Approved Bookings</em>' reference.
+	 * @see #setApprovedBookings(BookingAgent)
+	 * @see gendev.hw1.Hw1Package#getEventBooking_ApprovedBookings()
+	 * @see gendev.hw1.BookingAgent#getApprovedBy
+	 * @model opposite="approvedBy"
+	 * @generated
+	 */
+	BookingAgent getApprovedBookings();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.EventBooking#getApprovedBookings <em>Approved Bookings</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Approved Bookings</em>' reference.
+	 * @see #getApprovedBookings()
+	 * @generated
+	 */
+	void setApprovedBookings(BookingAgent value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void calculateFinalPrice();
+
+} // EventBooking

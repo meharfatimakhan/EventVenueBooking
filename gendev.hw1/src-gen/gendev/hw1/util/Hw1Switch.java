@@ -94,11 +94,11 @@ public class Hw1Switch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Hw1Package.BOOKING_AGENT: {
-			BookingAgent bookingAgent = (BookingAgent) theEObject;
-			T result = caseBookingAgent(bookingAgent);
+		case Hw1Package.BOOKING_ADMIN: {
+			BookingAdmin bookingAdmin = (BookingAdmin) theEObject;
+			T result = caseBookingAdmin(bookingAdmin);
 			if (result == null)
-				result = caseSystemAdmin(bookingAgent);
+				result = caseSystemAdmin(bookingAdmin);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -210,17 +210,17 @@ public class Hw1Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Booking Agent</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Booking Admin</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Booking Agent</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Booking Admin</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBookingAgent(BookingAgent object) {
+	public T caseBookingAdmin(BookingAdmin object) {
 		return null;
 	}
 

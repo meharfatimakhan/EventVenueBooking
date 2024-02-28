@@ -6,8 +6,10 @@ import gendev.hw1.EventBooking;
 import gendev.hw1.Hw1Package;
 import gendev.hw1.Payment;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
@@ -26,6 +28,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link gendev.hw1.impl.PaymentImpl#getPaymentMethod <em>Payment Method</em>}</li>
  *   <li>{@link gendev.hw1.impl.PaymentImpl#getPaymentStatus <em>Payment Status</em>}</li>
  *   <li>{@link gendev.hw1.impl.PaymentImpl#getPaidFor <em>Paid For</em>}</li>
+ *   <li>{@link gendev.hw1.impl.PaymentImpl#getPaymentID <em>Payment ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,6 +103,26 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	 * @ordered
 	 */
 	protected EventBooking paidFor;
+
+	/**
+	 * The default value of the '{@link #getPaymentID() <em>Payment ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PAYMENT_ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getPaymentID() <em>Payment ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentID()
+	 * @generated
+	 * @ordered
+	 */
+	protected int paymentID = PAYMENT_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,6 +253,61 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getPaymentID() {
+		return paymentID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPaymentID(int newPaymentID) {
+		int oldPaymentID = paymentID;
+		paymentID = newPaymentID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.PAYMENT__PAYMENT_ID, oldPaymentID,
+					paymentID));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void processPayment() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void refundPayment() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void sendPaymenyReceiptEmail() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -243,6 +321,8 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 			if (resolve)
 				return getPaidFor();
 			return basicGetPaidFor();
+		case Hw1Package.PAYMENT__PAYMENT_ID:
+			return getPaymentID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -266,6 +346,9 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 			return;
 		case Hw1Package.PAYMENT__PAID_FOR:
 			setPaidFor((EventBooking) newValue);
+			return;
+		case Hw1Package.PAYMENT__PAYMENT_ID:
+			setPaymentID((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -291,6 +374,9 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 		case Hw1Package.PAYMENT__PAID_FOR:
 			setPaidFor((EventBooking) null);
 			return;
+		case Hw1Package.PAYMENT__PAYMENT_ID:
+			setPaymentID(PAYMENT_ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -313,8 +399,31 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 					: !PAYMENT_STATUS_EDEFAULT.equals(paymentStatus);
 		case Hw1Package.PAYMENT__PAID_FOR:
 			return paidFor != null;
+		case Hw1Package.PAYMENT__PAYMENT_ID:
+			return paymentID != PAYMENT_ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case Hw1Package.PAYMENT___PROCESS_PAYMENT:
+			processPayment();
+			return null;
+		case Hw1Package.PAYMENT___REFUND_PAYMENT:
+			refundPayment();
+			return null;
+		case Hw1Package.PAYMENT___SEND_PAYMENY_RECEIPT_EMAIL:
+			sendPaymenyReceiptEmail();
+			return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -334,6 +443,8 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 		result.append(paymentMethod);
 		result.append(", PaymentStatus: ");
 		result.append(paymentStatus);
+		result.append(", PaymentID: ");
+		result.append(paymentID);
 		result.append(')');
 		return result.toString();
 	}

@@ -18,7 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link gendev.hw1.SystemAdmin#getPhone <em>Phone</em>}</li>
  *   <li>{@link gendev.hw1.SystemAdmin#getEmail <em>Email</em>}</li>
  *   <li>{@link gendev.hw1.SystemAdmin#getName <em>Name</em>}</li>
- *   <li>{@link gendev.hw1.SystemAdmin#getManagedBy <em>Managed By</em>}</li>
+ *   <li>{@link gendev.hw1.SystemAdmin#getVenuesManaged <em>Venues Managed</em>}</li>
+ *   <li>{@link gendev.hw1.SystemAdmin#getAdminID <em>Admin ID</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getSystemAdmin()
@@ -93,15 +94,45 @@ public interface SystemAdmin extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Managed By</b></em>' reference list.
+	 * Returns the value of the '<em><b>Venues Managed</b></em>' reference list.
 	 * The list contents are of type {@link gendev.hw1.Venue}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Managed By</em>' reference list.
-	 * @see gendev.hw1.Hw1Package#getSystemAdmin_ManagedBy()
+	 * @return the value of the '<em>Venues Managed</em>' reference list.
+	 * @see gendev.hw1.Hw1Package#getSystemAdmin_VenuesManaged()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Venue> getManagedBy();
+	EList<Venue> getVenuesManaged();
+
+	/**
+	 * Returns the value of the '<em><b>Admin ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Admin ID</em>' attribute.
+	 * @see #setAdminID(int)
+	 * @see gendev.hw1.Hw1Package#getSystemAdmin_AdminID()
+	 * @model
+	 * @generated
+	 */
+	int getAdminID();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.SystemAdmin#getAdminID <em>Admin ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Admin ID</em>' attribute.
+	 * @see #getAdminID()
+	 * @generated
+	 */
+	void setAdminID(int value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void manageVenues();
 
 } // SystemAdmin

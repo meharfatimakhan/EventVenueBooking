@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link gendev.hw1.Payment#getPaymentMethod <em>Payment Method</em>}</li>
  *   <li>{@link gendev.hw1.Payment#getPaymentStatus <em>Payment Status</em>}</li>
  *   <li>{@link gendev.hw1.Payment#getPaidFor <em>Paid For</em>}</li>
+ *   <li>{@link gendev.hw1.Payment#getPaymentID <em>Payment ID</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getPayment()
@@ -111,5 +112,51 @@ public interface Payment extends EObject {
 	 * @generated
 	 */
 	void setPaidFor(EventBooking value);
+
+	/**
+	 * Returns the value of the '<em><b>Payment ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Payment ID</em>' attribute.
+	 * @see #setPaymentID(int)
+	 * @see gendev.hw1.Hw1Package#getPayment_PaymentID()
+	 * @model
+	 * @generated
+	 */
+	int getPaymentID();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.Payment#getPaymentID <em>Payment ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Payment ID</em>' attribute.
+	 * @see #getPaymentID()
+	 * @generated
+	 */
+	void setPaymentID(int value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void processPayment();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void refundPayment();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void sendPaymenyReceiptEmail();
 
 } // Payment

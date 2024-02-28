@@ -44,17 +44,17 @@ public interface BookingAgent extends SystemAdmin {
 
 	/**
 	 * Returns the value of the '<em><b>Approved By</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link gendev.hw1.Booking#getApprovedBookings <em>Approved Bookings</em>}'.
+	 * It is bidirectional and its opposite is '{@link gendev.hw1.EventBooking#getApprovedBookings <em>Approved Bookings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Approved By</em>' reference.
-	 * @see #setApprovedBy(Booking)
+	 * @see #setApprovedBy(EventBooking)
 	 * @see gendev.hw1.Hw1Package#getBookingAgent_ApprovedBy()
-	 * @see gendev.hw1.Booking#getApprovedBookings
+	 * @see gendev.hw1.EventBooking#getApprovedBookings
 	 * @model opposite="approvedBookings"
 	 * @generated
 	 */
-	Booking getApprovedBy();
+	EventBooking getApprovedBy();
 
 	/**
 	 * Sets the value of the '{@link gendev.hw1.BookingAgent#getApprovedBy <em>Approved By</em>}' reference.
@@ -64,6 +64,14 @@ public interface BookingAgent extends SystemAdmin {
 	 * @see #getApprovedBy()
 	 * @generated
 	 */
-	void setApprovedBy(Booking value);
+	void setApprovedBy(EventBooking value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void approveBookings();
 
 } // BookingAgent

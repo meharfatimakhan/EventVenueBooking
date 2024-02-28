@@ -1,0 +1,371 @@
+/**
+ */
+package gendev.hw1.impl;
+
+import gendev.hw1.Booking;
+import gendev.hw1.Hw1Package;
+import gendev.hw1.Venue;
+
+import java.lang.reflect.InvocationTargetException;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Venue</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link gendev.hw1.impl.VenueImpl#getLocation <em>Location</em>}</li>
+ *   <li>{@link gendev.hw1.impl.VenueImpl#getCapacity <em>Capacity</em>}</li>
+ *   <li>{@link gendev.hw1.impl.VenueImpl#getHostedAt <em>Hosted At</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
+	/**
+	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LOCATION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLocation() <em>Location</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocation()
+	 * @generated
+	 * @ordered
+	 */
+	protected String location = LOCATION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCapacity() <em>Capacity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCapacity()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int CAPACITY_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getCapacity() <em>Capacity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCapacity()
+	 * @generated
+	 * @ordered
+	 */
+	protected int capacity = CAPACITY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getHostedAt() <em>Hosted At</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHostedAt()
+	 * @generated
+	 * @ordered
+	 */
+	protected Booking hostedAt;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VenueImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return Hw1Package.Literals.VENUE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLocation() {
+		return location;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLocation(String newLocation) {
+		String oldLocation = location;
+		location = newLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.VENUE__LOCATION, oldLocation, location));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getCapacity() {
+		return capacity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCapacity(int newCapacity) {
+		int oldCapacity = capacity;
+		capacity = newCapacity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.VENUE__CAPACITY, oldCapacity, capacity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Booking getHostedAt() {
+		if (hostedAt != null && hostedAt.eIsProxy()) {
+			InternalEObject oldHostedAt = (InternalEObject) hostedAt;
+			hostedAt = (Booking) eResolveProxy(oldHostedAt);
+			if (hostedAt != oldHostedAt) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Hw1Package.VENUE__HOSTED_AT, oldHostedAt,
+							hostedAt));
+			}
+		}
+		return hostedAt;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Booking basicGetHostedAt() {
+		return hostedAt;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHostedAt(Booking newHostedAt, NotificationChain msgs) {
+		Booking oldHostedAt = hostedAt;
+		hostedAt = newHostedAt;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Hw1Package.VENUE__HOSTED_AT,
+					oldHostedAt, newHostedAt);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHostedAt(Booking newHostedAt) {
+		if (newHostedAt != hostedAt) {
+			NotificationChain msgs = null;
+			if (hostedAt != null)
+				msgs = ((InternalEObject) hostedAt).eInverseRemove(this, Hw1Package.BOOKING__HAS_BOOKINGS,
+						Booking.class, msgs);
+			if (newHostedAt != null)
+				msgs = ((InternalEObject) newHostedAt).eInverseAdd(this, Hw1Package.BOOKING__HAS_BOOKINGS,
+						Booking.class, msgs);
+			msgs = basicSetHostedAt(newHostedAt, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.VENUE__HOSTED_AT, newHostedAt,
+					newHostedAt));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void checkAvailibility() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Hw1Package.VENUE__HOSTED_AT:
+			if (hostedAt != null)
+				msgs = ((InternalEObject) hostedAt).eInverseRemove(this, Hw1Package.BOOKING__HAS_BOOKINGS,
+						Booking.class, msgs);
+			return basicSetHostedAt((Booking) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Hw1Package.VENUE__HOSTED_AT:
+			return basicSetHostedAt(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case Hw1Package.VENUE__LOCATION:
+			return getLocation();
+		case Hw1Package.VENUE__CAPACITY:
+			return getCapacity();
+		case Hw1Package.VENUE__HOSTED_AT:
+			if (resolve)
+				return getHostedAt();
+			return basicGetHostedAt();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+		case Hw1Package.VENUE__LOCATION:
+			setLocation((String) newValue);
+			return;
+		case Hw1Package.VENUE__CAPACITY:
+			setCapacity((Integer) newValue);
+			return;
+		case Hw1Package.VENUE__HOSTED_AT:
+			setHostedAt((Booking) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+		case Hw1Package.VENUE__LOCATION:
+			setLocation(LOCATION_EDEFAULT);
+			return;
+		case Hw1Package.VENUE__CAPACITY:
+			setCapacity(CAPACITY_EDEFAULT);
+			return;
+		case Hw1Package.VENUE__HOSTED_AT:
+			setHostedAt((Booking) null);
+			return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+		case Hw1Package.VENUE__LOCATION:
+			return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
+		case Hw1Package.VENUE__CAPACITY:
+			return capacity != CAPACITY_EDEFAULT;
+		case Hw1Package.VENUE__HOSTED_AT:
+			return hostedAt != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case Hw1Package.VENUE___CHECK_AVAILIBILITY:
+			checkAvailibility();
+			return null;
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (Location: ");
+		result.append(location);
+		result.append(", Capacity: ");
+		result.append(capacity);
+		result.append(')');
+		return result.toString();
+	}
+
+} //VenueImpl

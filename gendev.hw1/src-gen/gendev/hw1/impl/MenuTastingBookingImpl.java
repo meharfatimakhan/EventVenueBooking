@@ -5,6 +5,7 @@ package gendev.hw1.impl;
 import gendev.hw1.Hw1Package;
 import gendev.hw1.MenuTastingBooking;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -83,6 +84,17 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void selectMenuOptions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -134,6 +146,21 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 			return menuOptions != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case Hw1Package.MENU_TASTING_BOOKING___SELECT_MENU_OPTIONS:
+			selectMenuOptions();
+			return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

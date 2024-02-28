@@ -87,8 +87,8 @@ public class Hw1AdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseBookingAgent(BookingAgent object) {
-			return createBookingAgentAdapter();
+		public Adapter caseBookingAdmin(BookingAdmin object) {
+			return createBookingAdminAdapter();
 		}
 
 		@Override
@@ -192,16 +192,16 @@ public class Hw1AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link gendev.hw1.BookingAgent <em>Booking Agent</em>}'.
+	 * Creates a new adapter for an object of class '{@link gendev.hw1.BookingAdmin <em>Booking Admin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see gendev.hw1.BookingAgent
+	 * @see gendev.hw1.BookingAdmin
 	 * @generated
 	 */
-	public Adapter createBookingAgentAdapter() {
+	public Adapter createBookingAdminAdapter() {
 		return null;
 	}
 

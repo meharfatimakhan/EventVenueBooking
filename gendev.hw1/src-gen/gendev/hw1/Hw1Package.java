@@ -5,6 +5,7 @@ package gendev.hw1;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -122,13 +123,40 @@ public interface Hw1Package extends EPackage {
 	int CUSTOMER_FEATURE_COUNT = 5;
 
 	/**
+	 * The operation id for the '<em>Submit Review</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER___SUBMIT_REVIEW = 0;
+
+	/**
+	 * The operation id for the '<em>Create Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER___CREATE_BOOKING = 1;
+
+	/**
+	 * The operation id for the '<em>Cancel Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER___CANCEL_BOOKING = 2;
+
+	/**
 	 * The number of operations of the '<em>Customer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER_OPERATION_COUNT = 0;
+	int CUSTOMER_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link gendev.hw1.impl.ReviewImpl <em>Review</em>}' class.
@@ -177,13 +205,22 @@ public interface Hw1Package extends EPackage {
 	int REVIEW__SUBMITTED_BY = 3;
 
 	/**
+	 * The feature id for the '<em><b>Review ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW__REVIEW_ID = 4;
+
+	/**
 	 * The number of structural features of the '<em>Review</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REVIEW_FEATURE_COUNT = 4;
+	int REVIEW_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Review</em>' class.
@@ -223,13 +260,40 @@ public interface Hw1Package extends EPackage {
 	int VENUE__CAPACITY = 1;
 
 	/**
+	 * The feature id for the '<em><b>Bookings</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VENUE__BOOKINGS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Venue ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VENUE__VENUE_ID = 3;
+
+	/**
 	 * The number of structural features of the '<em>Venue</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VENUE_FEATURE_COUNT = 2;
+	int VENUE_FEATURE_COUNT = 4;
+
+	/**
+	 * The operation id for the '<em>Check Availibility</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VENUE___CHECK_AVAILIBILITY = 0;
 
 	/**
 	 * The number of operations of the '<em>Venue</em>' class.
@@ -238,7 +302,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VENUE_OPERATION_COUNT = 0;
+	int VENUE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link gendev.hw1.impl.SystemAdminImpl <em>System Admin</em>}' class.
@@ -278,13 +342,22 @@ public interface Hw1Package extends EPackage {
 	int SYSTEM_ADMIN__NAME = 2;
 
 	/**
-	 * The feature id for the '<em><b>Managed By</b></em>' reference list.
+	 * The feature id for the '<em><b>Venues Managed</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_ADMIN__MANAGED_BY = 3;
+	int SYSTEM_ADMIN__VENUES_MANAGED = 3;
+
+	/**
+	 * The feature id for the '<em><b>Admin ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM_ADMIN__ADMIN_ID = 4;
 
 	/**
 	 * The number of structural features of the '<em>System Admin</em>' class.
@@ -293,7 +366,16 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_ADMIN_FEATURE_COUNT = 4;
+	int SYSTEM_ADMIN_FEATURE_COUNT = 5;
+
+	/**
+	 * The operation id for the '<em>Manage Venues</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM_ADMIN___MANAGE_VENUES = 0;
 
 	/**
 	 * The number of operations of the '<em>System Admin</em>' class.
@@ -302,17 +384,17 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_ADMIN_OPERATION_COUNT = 0;
+	int SYSTEM_ADMIN_OPERATION_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link gendev.hw1.impl.BookingAgentImpl <em>Booking Agent</em>}' class.
+	 * The meta object id for the '{@link gendev.hw1.impl.BookingAdminImpl <em>Booking Admin</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see gendev.hw1.impl.BookingAgentImpl
-	 * @see gendev.hw1.impl.Hw1PackageImpl#getBookingAgent()
+	 * @see gendev.hw1.impl.BookingAdminImpl
+	 * @see gendev.hw1.impl.Hw1PackageImpl#getBookingAdmin()
 	 * @generated
 	 */
-	int BOOKING_AGENT = 4;
+	int BOOKING_ADMIN = 4;
 
 	/**
 	 * The feature id for the '<em><b>Phone</b></em>' attribute.
@@ -321,7 +403,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_AGENT__PHONE = SYSTEM_ADMIN__PHONE;
+	int BOOKING_ADMIN__PHONE = SYSTEM_ADMIN__PHONE;
 
 	/**
 	 * The feature id for the '<em><b>Email</b></em>' attribute.
@@ -330,7 +412,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_AGENT__EMAIL = SYSTEM_ADMIN__EMAIL;
+	int BOOKING_ADMIN__EMAIL = SYSTEM_ADMIN__EMAIL;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -339,52 +421,70 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_AGENT__NAME = SYSTEM_ADMIN__NAME;
+	int BOOKING_ADMIN__NAME = SYSTEM_ADMIN__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Managed By</b></em>' reference list.
+	 * The feature id for the '<em><b>Venues Managed</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_AGENT__MANAGED_BY = SYSTEM_ADMIN__MANAGED_BY;
+	int BOOKING_ADMIN__VENUES_MANAGED = SYSTEM_ADMIN__VENUES_MANAGED;
 
 	/**
-	 * The feature id for the '<em><b>Agent ID</b></em>' attribute.
+	 * The feature id for the '<em><b>Admin ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_AGENT__AGENT_ID = SYSTEM_ADMIN_FEATURE_COUNT + 0;
+	int BOOKING_ADMIN__ADMIN_ID = SYSTEM_ADMIN__ADMIN_ID;
 
 	/**
-	 * The feature id for the '<em><b>Approved By</b></em>' reference.
+	 * The feature id for the '<em><b>Approved Bookings</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_AGENT__APPROVED_BY = SYSTEM_ADMIN_FEATURE_COUNT + 1;
+	int BOOKING_ADMIN__APPROVED_BOOKINGS = SYSTEM_ADMIN_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Booking Agent</em>' class.
+	 * The number of structural features of the '<em>Booking Admin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_AGENT_FEATURE_COUNT = SYSTEM_ADMIN_FEATURE_COUNT + 2;
+	int BOOKING_ADMIN_FEATURE_COUNT = SYSTEM_ADMIN_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Booking Agent</em>' class.
+	 * The operation id for the '<em>Manage Venues</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_AGENT_OPERATION_COUNT = SYSTEM_ADMIN_OPERATION_COUNT + 0;
+	int BOOKING_ADMIN___MANAGE_VENUES = SYSTEM_ADMIN___MANAGE_VENUES;
+
+	/**
+	 * The operation id for the '<em>Approve Bookings</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_ADMIN___APPROVE_BOOKINGS = SYSTEM_ADMIN_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Booking Admin</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_ADMIN_OPERATION_COUNT = SYSTEM_ADMIN_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link gendev.hw1.impl.BookingImpl <em>Booking</em>}' class.
@@ -433,40 +533,40 @@ public interface Hw1Package extends EPackage {
 	int BOOKING__BOOKING_STATUS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Made By</b></em>' reference.
+	 * The feature id for the '<em><b>Booking By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__MADE_BY = 4;
+	int BOOKING__BOOKING_BY = 4;
 
 	/**
-	 * The feature id for the '<em><b>Approved Bookings</b></em>' reference list.
+	 * The feature id for the '<em><b>Has Reviews</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__APPROVED_BOOKINGS = 5;
+	int BOOKING__HAS_REVIEWS = 5;
 
 	/**
-	 * The feature id for the '<em><b>Hosted at</b></em>' reference.
+	 * The feature id for the '<em><b>Booking Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__HOSTED_AT = 6;
+	int BOOKING__BOOKING_TYPE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Can Have</b></em>' reference list.
+	 * The feature id for the '<em><b>Hosted At</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__CAN_HAVE = 7;
+	int BOOKING__HOSTED_AT = 7;
 
 	/**
 	 * The number of structural features of the '<em>Booking</em>' class.
@@ -478,13 +578,22 @@ public interface Hw1Package extends EPackage {
 	int BOOKING_FEATURE_COUNT = 8;
 
 	/**
+	 * The operation id for the '<em>View Booking Info</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING___VIEW_BOOKING_INFO = 0;
+
+	/**
 	 * The number of operations of the '<em>Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_OPERATION_COUNT = 0;
+	int BOOKING_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link gendev.hw1.impl.PaymentImpl <em>Payment</em>}' class.
@@ -533,13 +642,49 @@ public interface Hw1Package extends EPackage {
 	int PAYMENT__PAID_FOR = 3;
 
 	/**
+	 * The feature id for the '<em><b>Payment ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__PAYMENT_ID = 4;
+
+	/**
 	 * The number of structural features of the '<em>Payment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_FEATURE_COUNT = 4;
+	int PAYMENT_FEATURE_COUNT = 5;
+
+	/**
+	 * The operation id for the '<em>Process Payment</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___PROCESS_PAYMENT = 0;
+
+	/**
+	 * The operation id for the '<em>Refund Payment</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___REFUND_PAYMENT = 1;
+
+	/**
+	 * The operation id for the '<em>Send Paymeny Receipt Email</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___SEND_PAYMENY_RECEIPT_EMAIL = 2;
 
 	/**
 	 * The number of operations of the '<em>Payment</em>' class.
@@ -548,7 +693,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_OPERATION_COUNT = 0;
+	int PAYMENT_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link gendev.hw1.impl.VenueVisitBookingImpl <em>Venue Visit Booking</em>}' class.
@@ -597,40 +742,40 @@ public interface Hw1Package extends EPackage {
 	int VENUE_VISIT_BOOKING__BOOKING_STATUS = BOOKING__BOOKING_STATUS;
 
 	/**
-	 * The feature id for the '<em><b>Made By</b></em>' reference.
+	 * The feature id for the '<em><b>Booking By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VENUE_VISIT_BOOKING__MADE_BY = BOOKING__MADE_BY;
+	int VENUE_VISIT_BOOKING__BOOKING_BY = BOOKING__BOOKING_BY;
 
 	/**
-	 * The feature id for the '<em><b>Approved Bookings</b></em>' reference list.
+	 * The feature id for the '<em><b>Has Reviews</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VENUE_VISIT_BOOKING__APPROVED_BOOKINGS = BOOKING__APPROVED_BOOKINGS;
+	int VENUE_VISIT_BOOKING__HAS_REVIEWS = BOOKING__HAS_REVIEWS;
 
 	/**
-	 * The feature id for the '<em><b>Hosted at</b></em>' reference.
+	 * The feature id for the '<em><b>Booking Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VENUE_VISIT_BOOKING__BOOKING_TYPE = BOOKING__BOOKING_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hosted At</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int VENUE_VISIT_BOOKING__HOSTED_AT = BOOKING__HOSTED_AT;
-
-	/**
-	 * The feature id for the '<em><b>Can Have</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VENUE_VISIT_BOOKING__CAN_HAVE = BOOKING__CAN_HAVE;
 
 	/**
 	 * The feature id for the '<em><b>Visit Purpose</b></em>' attribute.
@@ -649,6 +794,15 @@ public interface Hw1Package extends EPackage {
 	 * @ordered
 	 */
 	int VENUE_VISIT_BOOKING_FEATURE_COUNT = BOOKING_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>View Booking Info</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VENUE_VISIT_BOOKING___VIEW_BOOKING_INFO = BOOKING___VIEW_BOOKING_INFO;
 
 	/**
 	 * The number of operations of the '<em>Venue Visit Booking</em>' class.
@@ -706,40 +860,40 @@ public interface Hw1Package extends EPackage {
 	int EVENT_BOOKING__BOOKING_STATUS = BOOKING__BOOKING_STATUS;
 
 	/**
-	 * The feature id for the '<em><b>Made By</b></em>' reference.
+	 * The feature id for the '<em><b>Booking By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_BOOKING__MADE_BY = BOOKING__MADE_BY;
+	int EVENT_BOOKING__BOOKING_BY = BOOKING__BOOKING_BY;
 
 	/**
-	 * The feature id for the '<em><b>Approved Bookings</b></em>' reference list.
+	 * The feature id for the '<em><b>Has Reviews</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_BOOKING__APPROVED_BOOKINGS = BOOKING__APPROVED_BOOKINGS;
+	int EVENT_BOOKING__HAS_REVIEWS = BOOKING__HAS_REVIEWS;
 
 	/**
-	 * The feature id for the '<em><b>Hosted at</b></em>' reference.
+	 * The feature id for the '<em><b>Booking Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_BOOKING__BOOKING_TYPE = BOOKING__BOOKING_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hosted At</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int EVENT_BOOKING__HOSTED_AT = BOOKING__HOSTED_AT;
-
-	/**
-	 * The feature id for the '<em><b>Can Have</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_BOOKING__CAN_HAVE = BOOKING__CAN_HAVE;
 
 	/**
 	 * The feature id for the '<em><b>Estimated Price Quote</b></em>' attribute.
@@ -751,13 +905,40 @@ public interface Hw1Package extends EPackage {
 	int EVENT_BOOKING__ESTIMATED_PRICE_QUOTE = BOOKING_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Approved By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_BOOKING__APPROVED_BY = BOOKING_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Event Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_BOOKING_FEATURE_COUNT = BOOKING_FEATURE_COUNT + 1;
+	int EVENT_BOOKING_FEATURE_COUNT = BOOKING_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>View Booking Info</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_BOOKING___VIEW_BOOKING_INFO = BOOKING___VIEW_BOOKING_INFO;
+
+	/**
+	 * The operation id for the '<em>Calculate Final Price</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_BOOKING___CALCULATE_FINAL_PRICE = BOOKING_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Event Booking</em>' class.
@@ -766,7 +947,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_BOOKING_OPERATION_COUNT = BOOKING_OPERATION_COUNT + 0;
+	int EVENT_BOOKING_OPERATION_COUNT = BOOKING_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link gendev.hw1.impl.MenuTastingBookingImpl <em>Menu Tasting Booking</em>}' class.
@@ -815,40 +996,40 @@ public interface Hw1Package extends EPackage {
 	int MENU_TASTING_BOOKING__BOOKING_STATUS = BOOKING__BOOKING_STATUS;
 
 	/**
-	 * The feature id for the '<em><b>Made By</b></em>' reference.
+	 * The feature id for the '<em><b>Booking By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_TASTING_BOOKING__MADE_BY = BOOKING__MADE_BY;
+	int MENU_TASTING_BOOKING__BOOKING_BY = BOOKING__BOOKING_BY;
 
 	/**
-	 * The feature id for the '<em><b>Approved Bookings</b></em>' reference list.
+	 * The feature id for the '<em><b>Has Reviews</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_TASTING_BOOKING__APPROVED_BOOKINGS = BOOKING__APPROVED_BOOKINGS;
+	int MENU_TASTING_BOOKING__HAS_REVIEWS = BOOKING__HAS_REVIEWS;
 
 	/**
-	 * The feature id for the '<em><b>Hosted at</b></em>' reference.
+	 * The feature id for the '<em><b>Booking Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_TASTING_BOOKING__BOOKING_TYPE = BOOKING__BOOKING_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hosted At</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int MENU_TASTING_BOOKING__HOSTED_AT = BOOKING__HOSTED_AT;
-
-	/**
-	 * The feature id for the '<em><b>Can Have</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MENU_TASTING_BOOKING__CAN_HAVE = BOOKING__CAN_HAVE;
 
 	/**
 	 * The feature id for the '<em><b>Menu Options</b></em>' attribute.
@@ -869,13 +1050,31 @@ public interface Hw1Package extends EPackage {
 	int MENU_TASTING_BOOKING_FEATURE_COUNT = BOOKING_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>View Booking Info</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_TASTING_BOOKING___VIEW_BOOKING_INFO = BOOKING___VIEW_BOOKING_INFO;
+
+	/**
+	 * The operation id for the '<em>Select Menu Options</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_TASTING_BOOKING___SELECT_MENU_OPTIONS = BOOKING_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Menu Tasting Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_TASTING_BOOKING_OPERATION_COUNT = BOOKING_OPERATION_COUNT + 0;
+	int MENU_TASTING_BOOKING_OPERATION_COUNT = BOOKING_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '<em>Calendar</em>' data type.
@@ -953,6 +1152,36 @@ public interface Hw1Package extends EPackage {
 	EReference getCustomer_Submits();
 
 	/**
+	 * Returns the meta object for the '{@link gendev.hw1.Customer#submitReview() <em>Submit Review</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Submit Review</em>' operation.
+	 * @see gendev.hw1.Customer#submitReview()
+	 * @generated
+	 */
+	EOperation getCustomer__SubmitReview();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.Customer#createBooking() <em>Create Booking</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Booking</em>' operation.
+	 * @see gendev.hw1.Customer#createBooking()
+	 * @generated
+	 */
+	EOperation getCustomer__CreateBooking();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.Customer#cancelBooking() <em>Cancel Booking</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Cancel Booking</em>' operation.
+	 * @see gendev.hw1.Customer#cancelBooking()
+	 * @generated
+	 */
+	EOperation getCustomer__CancelBooking();
+
+	/**
 	 * Returns the meta object for class '{@link gendev.hw1.Review <em>Review</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1007,6 +1236,17 @@ public interface Hw1Package extends EPackage {
 	EReference getReview_SubmittedBy();
 
 	/**
+	 * Returns the meta object for the attribute '{@link gendev.hw1.Review#getReviewID <em>Review ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Review ID</em>'.
+	 * @see gendev.hw1.Review#getReviewID()
+	 * @see #getReview()
+	 * @generated
+	 */
+	EAttribute getReview_ReviewID();
+
+	/**
 	 * Returns the meta object for class '{@link gendev.hw1.Venue <em>Venue</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1037,6 +1277,38 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getVenue_Capacity();
+
+	/**
+	 * Returns the meta object for the reference list '{@link gendev.hw1.Venue#getBookings <em>Bookings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Bookings</em>'.
+	 * @see gendev.hw1.Venue#getBookings()
+	 * @see #getVenue()
+	 * @generated
+	 */
+	EReference getVenue_Bookings();
+
+	/**
+	 * Returns the meta object for the attribute '{@link gendev.hw1.Venue#getVenueID <em>Venue ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Venue ID</em>'.
+	 * @see gendev.hw1.Venue#getVenueID()
+	 * @see #getVenue()
+	 * @generated
+	 */
+	EAttribute getVenue_VenueID();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.Venue#checkAvailibility() <em>Check Availibility</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check Availibility</em>' operation.
+	 * @see gendev.hw1.Venue#checkAvailibility()
+	 * @generated
+	 */
+	EOperation getVenue__CheckAvailibility();
 
 	/**
 	 * Returns the meta object for class '{@link gendev.hw1.SystemAdmin <em>System Admin</em>}'.
@@ -1082,47 +1354,67 @@ public interface Hw1Package extends EPackage {
 	EAttribute getSystemAdmin_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link gendev.hw1.SystemAdmin#getManagedBy <em>Managed By</em>}'.
+	 * Returns the meta object for the reference list '{@link gendev.hw1.SystemAdmin#getVenuesManaged <em>Venues Managed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Managed By</em>'.
-	 * @see gendev.hw1.SystemAdmin#getManagedBy()
+	 * @return the meta object for the reference list '<em>Venues Managed</em>'.
+	 * @see gendev.hw1.SystemAdmin#getVenuesManaged()
 	 * @see #getSystemAdmin()
 	 * @generated
 	 */
-	EReference getSystemAdmin_ManagedBy();
+	EReference getSystemAdmin_VenuesManaged();
 
 	/**
-	 * Returns the meta object for class '{@link gendev.hw1.BookingAgent <em>Booking Agent</em>}'.
+	 * Returns the meta object for the attribute '{@link gendev.hw1.SystemAdmin#getAdminID <em>Admin ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Booking Agent</em>'.
-	 * @see gendev.hw1.BookingAgent
+	 * @return the meta object for the attribute '<em>Admin ID</em>'.
+	 * @see gendev.hw1.SystemAdmin#getAdminID()
+	 * @see #getSystemAdmin()
 	 * @generated
 	 */
-	EClass getBookingAgent();
+	EAttribute getSystemAdmin_AdminID();
 
 	/**
-	 * Returns the meta object for the attribute '{@link gendev.hw1.BookingAgent#getAgentID <em>Agent ID</em>}'.
+	 * Returns the meta object for the '{@link gendev.hw1.SystemAdmin#manageVenues() <em>Manage Venues</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Agent ID</em>'.
-	 * @see gendev.hw1.BookingAgent#getAgentID()
-	 * @see #getBookingAgent()
+	 * @return the meta object for the '<em>Manage Venues</em>' operation.
+	 * @see gendev.hw1.SystemAdmin#manageVenues()
 	 * @generated
 	 */
-	EAttribute getBookingAgent_AgentID();
+	EOperation getSystemAdmin__ManageVenues();
 
 	/**
-	 * Returns the meta object for the reference '{@link gendev.hw1.BookingAgent#getApprovedBy <em>Approved By</em>}'.
+	 * Returns the meta object for class '{@link gendev.hw1.BookingAdmin <em>Booking Admin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Approved By</em>'.
-	 * @see gendev.hw1.BookingAgent#getApprovedBy()
-	 * @see #getBookingAgent()
+	 * @return the meta object for class '<em>Booking Admin</em>'.
+	 * @see gendev.hw1.BookingAdmin
 	 * @generated
 	 */
-	EReference getBookingAgent_ApprovedBy();
+	EClass getBookingAdmin();
+
+	/**
+	 * Returns the meta object for the reference '{@link gendev.hw1.BookingAdmin#getApprovedBookings <em>Approved Bookings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Approved Bookings</em>'.
+	 * @see gendev.hw1.BookingAdmin#getApprovedBookings()
+	 * @see #getBookingAdmin()
+	 * @generated
+	 */
+	EReference getBookingAdmin_ApprovedBookings();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.BookingAdmin#approveBookings() <em>Approve Bookings</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Approve Bookings</em>' operation.
+	 * @see gendev.hw1.BookingAdmin#approveBookings()
+	 * @generated
+	 */
+	EOperation getBookingAdmin__ApproveBookings();
 
 	/**
 	 * Returns the meta object for class '{@link gendev.hw1.Booking <em>Booking</em>}'.
@@ -1179,48 +1471,58 @@ public interface Hw1Package extends EPackage {
 	EAttribute getBooking_BookingStatus();
 
 	/**
-	 * Returns the meta object for the reference '{@link gendev.hw1.Booking#getMadeBy <em>Made By</em>}'.
+	 * Returns the meta object for the reference '{@link gendev.hw1.Booking#getBookingBy <em>Booking By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Made By</em>'.
-	 * @see gendev.hw1.Booking#getMadeBy()
+	 * @return the meta object for the reference '<em>Booking By</em>'.
+	 * @see gendev.hw1.Booking#getBookingBy()
 	 * @see #getBooking()
 	 * @generated
 	 */
-	EReference getBooking_MadeBy();
+	EReference getBooking_BookingBy();
 
 	/**
-	 * Returns the meta object for the reference list '{@link gendev.hw1.Booking#getApprovedBookings <em>Approved Bookings</em>}'.
+	 * Returns the meta object for the reference list '{@link gendev.hw1.Booking#getHasReviews <em>Has Reviews</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Approved Bookings</em>'.
-	 * @see gendev.hw1.Booking#getApprovedBookings()
+	 * @return the meta object for the reference list '<em>Has Reviews</em>'.
+	 * @see gendev.hw1.Booking#getHasReviews()
 	 * @see #getBooking()
 	 * @generated
 	 */
-	EReference getBooking_ApprovedBookings();
+	EReference getBooking_HasReviews();
 
 	/**
-	 * Returns the meta object for the reference '{@link gendev.hw1.Booking#getHosted_at <em>Hosted at</em>}'.
+	 * Returns the meta object for the attribute '{@link gendev.hw1.Booking#getBookingType <em>Booking Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Hosted at</em>'.
-	 * @see gendev.hw1.Booking#getHosted_at()
+	 * @return the meta object for the attribute '<em>Booking Type</em>'.
+	 * @see gendev.hw1.Booking#getBookingType()
 	 * @see #getBooking()
 	 * @generated
 	 */
-	EReference getBooking_Hosted_at();
+	EAttribute getBooking_BookingType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link gendev.hw1.Booking#getCanHave <em>Can Have</em>}'.
+	 * Returns the meta object for the reference '{@link gendev.hw1.Booking#getHostedAt <em>Hosted At</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Can Have</em>'.
-	 * @see gendev.hw1.Booking#getCanHave()
+	 * @return the meta object for the reference '<em>Hosted At</em>'.
+	 * @see gendev.hw1.Booking#getHostedAt()
 	 * @see #getBooking()
 	 * @generated
 	 */
-	EReference getBooking_CanHave();
+	EReference getBooking_HostedAt();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.Booking#viewBookingInfo() <em>View Booking Info</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>View Booking Info</em>' operation.
+	 * @see gendev.hw1.Booking#viewBookingInfo()
+	 * @generated
+	 */
+	EOperation getBooking__ViewBookingInfo();
 
 	/**
 	 * Returns the meta object for class '{@link gendev.hw1.Payment <em>Payment</em>}'.
@@ -1277,6 +1579,47 @@ public interface Hw1Package extends EPackage {
 	EReference getPayment_PaidFor();
 
 	/**
+	 * Returns the meta object for the attribute '{@link gendev.hw1.Payment#getPaymentID <em>Payment ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Payment ID</em>'.
+	 * @see gendev.hw1.Payment#getPaymentID()
+	 * @see #getPayment()
+	 * @generated
+	 */
+	EAttribute getPayment_PaymentID();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.Payment#processPayment() <em>Process Payment</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Process Payment</em>' operation.
+	 * @see gendev.hw1.Payment#processPayment()
+	 * @generated
+	 */
+	EOperation getPayment__ProcessPayment();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.Payment#refundPayment() <em>Refund Payment</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Refund Payment</em>' operation.
+	 * @see gendev.hw1.Payment#refundPayment()
+	 * @generated
+	 */
+	EOperation getPayment__RefundPayment();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.Payment#sendPaymenyReceiptEmail() <em>Send Paymeny Receipt Email</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Send Paymeny Receipt Email</em>' operation.
+	 * @see gendev.hw1.Payment#sendPaymenyReceiptEmail()
+	 * @generated
+	 */
+	EOperation getPayment__SendPaymenyReceiptEmail();
+
+	/**
 	 * Returns the meta object for class '{@link gendev.hw1.VenueVisitBooking <em>Venue Visit Booking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1319,6 +1662,27 @@ public interface Hw1Package extends EPackage {
 	EAttribute getEventBooking_EstimatedPriceQuote();
 
 	/**
+	 * Returns the meta object for the reference '{@link gendev.hw1.EventBooking#getApprovedBy <em>Approved By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Approved By</em>'.
+	 * @see gendev.hw1.EventBooking#getApprovedBy()
+	 * @see #getEventBooking()
+	 * @generated
+	 */
+	EReference getEventBooking_ApprovedBy();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.EventBooking#calculateFinalPrice() <em>Calculate Final Price</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Calculate Final Price</em>' operation.
+	 * @see gendev.hw1.EventBooking#calculateFinalPrice()
+	 * @generated
+	 */
+	EOperation getEventBooking__CalculateFinalPrice();
+
+	/**
 	 * Returns the meta object for class '{@link gendev.hw1.MenuTastingBooking <em>Menu Tasting Booking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1338,6 +1702,16 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMenuTastingBooking_MenuOptions();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.MenuTastingBooking#selectMenuOptions() <em>Select Menu Options</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Select Menu Options</em>' operation.
+	 * @see gendev.hw1.MenuTastingBooking#selectMenuOptions()
+	 * @generated
+	 */
+	EOperation getMenuTastingBooking__SelectMenuOptions();
 
 	/**
 	 * Returns the meta object for data type '{@link java.util.Calendar <em>Calendar</em>}'.
@@ -1424,6 +1798,30 @@ public interface Hw1Package extends EPackage {
 		EReference CUSTOMER__SUBMITS = eINSTANCE.getCustomer_Submits();
 
 		/**
+		 * The meta object literal for the '<em><b>Submit Review</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOMER___SUBMIT_REVIEW = eINSTANCE.getCustomer__SubmitReview();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Booking</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOMER___CREATE_BOOKING = eINSTANCE.getCustomer__CreateBooking();
+
+		/**
+		 * The meta object literal for the '<em><b>Cancel Booking</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOMER___CANCEL_BOOKING = eINSTANCE.getCustomer__CancelBooking();
+
+		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.ReviewImpl <em>Review</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1466,6 +1864,14 @@ public interface Hw1Package extends EPackage {
 		EReference REVIEW__SUBMITTED_BY = eINSTANCE.getReview_SubmittedBy();
 
 		/**
+		 * The meta object literal for the '<em><b>Review ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REVIEW__REVIEW_ID = eINSTANCE.getReview_ReviewID();
+
+		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.VenueImpl <em>Venue</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1490,6 +1896,30 @@ public interface Hw1Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute VENUE__CAPACITY = eINSTANCE.getVenue_Capacity();
+
+		/**
+		 * The meta object literal for the '<em><b>Bookings</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VENUE__BOOKINGS = eINSTANCE.getVenue_Bookings();
+
+		/**
+		 * The meta object literal for the '<em><b>Venue ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VENUE__VENUE_ID = eINSTANCE.getVenue_VenueID();
+
+		/**
+		 * The meta object literal for the '<em><b>Check Availibility</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation VENUE___CHECK_AVAILIBILITY = eINSTANCE.getVenue__CheckAvailibility();
 
 		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.SystemAdminImpl <em>System Admin</em>}' class.
@@ -1526,38 +1956,54 @@ public interface Hw1Package extends EPackage {
 		EAttribute SYSTEM_ADMIN__NAME = eINSTANCE.getSystemAdmin_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Managed By</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Venues Managed</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SYSTEM_ADMIN__MANAGED_BY = eINSTANCE.getSystemAdmin_ManagedBy();
+		EReference SYSTEM_ADMIN__VENUES_MANAGED = eINSTANCE.getSystemAdmin_VenuesManaged();
 
 		/**
-		 * The meta object literal for the '{@link gendev.hw1.impl.BookingAgentImpl <em>Booking Agent</em>}' class.
+		 * The meta object literal for the '<em><b>Admin ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see gendev.hw1.impl.BookingAgentImpl
-		 * @see gendev.hw1.impl.Hw1PackageImpl#getBookingAgent()
 		 * @generated
 		 */
-		EClass BOOKING_AGENT = eINSTANCE.getBookingAgent();
+		EAttribute SYSTEM_ADMIN__ADMIN_ID = eINSTANCE.getSystemAdmin_AdminID();
 
 		/**
-		 * The meta object literal for the '<em><b>Agent ID</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Manage Venues</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BOOKING_AGENT__AGENT_ID = eINSTANCE.getBookingAgent_AgentID();
+		EOperation SYSTEM_ADMIN___MANAGE_VENUES = eINSTANCE.getSystemAdmin__ManageVenues();
 
 		/**
-		 * The meta object literal for the '<em><b>Approved By</b></em>' reference feature.
+		 * The meta object literal for the '{@link gendev.hw1.impl.BookingAdminImpl <em>Booking Admin</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see gendev.hw1.impl.BookingAdminImpl
+		 * @see gendev.hw1.impl.Hw1PackageImpl#getBookingAdmin()
+		 * @generated
+		 */
+		EClass BOOKING_ADMIN = eINSTANCE.getBookingAdmin();
+
+		/**
+		 * The meta object literal for the '<em><b>Approved Bookings</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BOOKING_AGENT__APPROVED_BY = eINSTANCE.getBookingAgent_ApprovedBy();
+		EReference BOOKING_ADMIN__APPROVED_BOOKINGS = eINSTANCE.getBookingAdmin_ApprovedBookings();
+
+		/**
+		 * The meta object literal for the '<em><b>Approve Bookings</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_ADMIN___APPROVE_BOOKINGS = eINSTANCE.getBookingAdmin__ApproveBookings();
 
 		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.BookingImpl <em>Booking</em>}' class.
@@ -1602,36 +2048,44 @@ public interface Hw1Package extends EPackage {
 		EAttribute BOOKING__BOOKING_STATUS = eINSTANCE.getBooking_BookingStatus();
 
 		/**
-		 * The meta object literal for the '<em><b>Made By</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Booking By</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BOOKING__MADE_BY = eINSTANCE.getBooking_MadeBy();
+		EReference BOOKING__BOOKING_BY = eINSTANCE.getBooking_BookingBy();
 
 		/**
-		 * The meta object literal for the '<em><b>Approved Bookings</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Has Reviews</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BOOKING__APPROVED_BOOKINGS = eINSTANCE.getBooking_ApprovedBookings();
+		EReference BOOKING__HAS_REVIEWS = eINSTANCE.getBooking_HasReviews();
 
 		/**
-		 * The meta object literal for the '<em><b>Hosted at</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Booking Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BOOKING__HOSTED_AT = eINSTANCE.getBooking_Hosted_at();
+		EAttribute BOOKING__BOOKING_TYPE = eINSTANCE.getBooking_BookingType();
 
 		/**
-		 * The meta object literal for the '<em><b>Can Have</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Hosted At</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BOOKING__CAN_HAVE = eINSTANCE.getBooking_CanHave();
+		EReference BOOKING__HOSTED_AT = eINSTANCE.getBooking_HostedAt();
+
+		/**
+		 * The meta object literal for the '<em><b>View Booking Info</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING___VIEW_BOOKING_INFO = eINSTANCE.getBooking__ViewBookingInfo();
 
 		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.PaymentImpl <em>Payment</em>}' class.
@@ -1676,6 +2130,38 @@ public interface Hw1Package extends EPackage {
 		EReference PAYMENT__PAID_FOR = eINSTANCE.getPayment_PaidFor();
 
 		/**
+		 * The meta object literal for the '<em><b>Payment ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PAYMENT__PAYMENT_ID = eINSTANCE.getPayment_PaymentID();
+
+		/**
+		 * The meta object literal for the '<em><b>Process Payment</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT___PROCESS_PAYMENT = eINSTANCE.getPayment__ProcessPayment();
+
+		/**
+		 * The meta object literal for the '<em><b>Refund Payment</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT___REFUND_PAYMENT = eINSTANCE.getPayment__RefundPayment();
+
+		/**
+		 * The meta object literal for the '<em><b>Send Paymeny Receipt Email</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT___SEND_PAYMENY_RECEIPT_EMAIL = eINSTANCE.getPayment__SendPaymenyReceiptEmail();
+
+		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.VenueVisitBookingImpl <em>Venue Visit Booking</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1712,6 +2198,22 @@ public interface Hw1Package extends EPackage {
 		EAttribute EVENT_BOOKING__ESTIMATED_PRICE_QUOTE = eINSTANCE.getEventBooking_EstimatedPriceQuote();
 
 		/**
+		 * The meta object literal for the '<em><b>Approved By</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EVENT_BOOKING__APPROVED_BY = eINSTANCE.getEventBooking_ApprovedBy();
+
+		/**
+		 * The meta object literal for the '<em><b>Calculate Final Price</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EVENT_BOOKING___CALCULATE_FINAL_PRICE = eINSTANCE.getEventBooking__CalculateFinalPrice();
+
+		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.MenuTastingBookingImpl <em>Menu Tasting Booking</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1728,6 +2230,14 @@ public interface Hw1Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute MENU_TASTING_BOOKING__MENU_OPTIONS = eINSTANCE.getMenuTastingBooking_MenuOptions();
+
+		/**
+		 * The meta object literal for the '<em><b>Select Menu Options</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MENU_TASTING_BOOKING___SELECT_MENU_OPTIONS = eINSTANCE.getMenuTastingBooking__SelectMenuOptions();
 
 		/**
 		 * The meta object literal for the '<em>Calendar</em>' data type.

@@ -1,0 +1,249 @@
+/**
+ */
+package gendev.hw1.impl;
+
+import gendev.hw1.BookingAdmin;
+import gendev.hw1.EventBooking;
+import gendev.hw1.Hw1Package;
+
+import java.lang.reflect.InvocationTargetException;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Booking Admin</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link gendev.hw1.impl.BookingAdminImpl#getApprovedBookings <em>Approved Bookings</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
+	/**
+	 * The cached value of the '{@link #getApprovedBookings() <em>Approved Bookings</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApprovedBookings()
+	 * @generated
+	 * @ordered
+	 */
+	protected EventBooking approvedBookings;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BookingAdminImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return Hw1Package.Literals.BOOKING_ADMIN;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventBooking getApprovedBookings() {
+		if (approvedBookings != null && approvedBookings.eIsProxy()) {
+			InternalEObject oldApprovedBookings = (InternalEObject) approvedBookings;
+			approvedBookings = (EventBooking) eResolveProxy(oldApprovedBookings);
+			if (approvedBookings != oldApprovedBookings) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS, oldApprovedBookings, approvedBookings));
+			}
+		}
+		return approvedBookings;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventBooking basicGetApprovedBookings() {
+		return approvedBookings;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetApprovedBookings(EventBooking newApprovedBookings, NotificationChain msgs) {
+		EventBooking oldApprovedBookings = approvedBookings;
+		approvedBookings = newApprovedBookings;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS, oldApprovedBookings, newApprovedBookings);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setApprovedBookings(EventBooking newApprovedBookings) {
+		if (newApprovedBookings != approvedBookings) {
+			NotificationChain msgs = null;
+			if (approvedBookings != null)
+				msgs = ((InternalEObject) approvedBookings).eInverseRemove(this, Hw1Package.EVENT_BOOKING__APPROVED_BY,
+						EventBooking.class, msgs);
+			if (newApprovedBookings != null)
+				msgs = ((InternalEObject) newApprovedBookings).eInverseAdd(this, Hw1Package.EVENT_BOOKING__APPROVED_BY,
+						EventBooking.class, msgs);
+			msgs = basicSetApprovedBookings(newApprovedBookings, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS,
+					newApprovedBookings, newApprovedBookings));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void approveBookings() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
+			if (approvedBookings != null)
+				msgs = ((InternalEObject) approvedBookings).eInverseRemove(this, Hw1Package.EVENT_BOOKING__APPROVED_BY,
+						EventBooking.class, msgs);
+			return basicSetApprovedBookings((EventBooking) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
+			return basicSetApprovedBookings(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
+			if (resolve)
+				return getApprovedBookings();
+			return basicGetApprovedBookings();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
+			setApprovedBookings((EventBooking) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
+			setApprovedBookings((EventBooking) null);
+			return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
+			return approvedBookings != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case Hw1Package.BOOKING_ADMIN___APPROVE_BOOKINGS:
+			approveBookings();
+			return null;
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+} //BookingAdminImpl
