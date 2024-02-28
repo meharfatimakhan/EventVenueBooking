@@ -43,7 +43,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Booking" abstract="true">
     <eOperations name="viewBookingInfo"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="EventDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BookingID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BookingDate" eType="#//Calendar"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BookingStatus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -54,6 +53,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BookingType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hostedAt" lowerBound="1"
         eType="#//Venue" eOpposite="#//Venue/bookings"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MenuOptions" transient="true">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Payment">
     <eOperations name="processPayment"/>
@@ -75,14 +79,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EstimatedPriceQuote" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="approvedBy" eType="#//BookingAdmin"
         eOpposite="#//BookingAdmin/approvedBookings"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumberOfGuests" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="EventDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MenuTastingBooking" eSuperTypes="#//Booking">
-    <eOperations name="selectMenuOptions"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MenuOptions" transient="true">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
-        <eTypeArguments/>
-      </eGenericType>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="MenuTastingVisitID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Calendar" instanceClassName="java.util.Calendar"/>
