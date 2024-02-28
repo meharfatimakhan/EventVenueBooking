@@ -15,11 +15,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Customer/Name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Customer/Email"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Customer/Phone"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Customer/makes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Customer/submits"/>
     </genClasses>
     <genClasses ecoreClass="hw1.ecore#//Review">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Review/Rating"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Review/Comment"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Review/made_by"/>
     </genClasses>
     <genClasses ecoreClass="hw1.ecore#//Venue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Venue/Location"/>
@@ -29,32 +30,29 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//SystemAdmin/Phone"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//SystemAdmin/Email"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//SystemAdmin/Name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//SystemAdmin/managed_by"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//SystemAdmin/manages"/>
     </genClasses>
     <genClasses ecoreClass="hw1.ecore#//BookingAgent">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//BookingAgent/AgentID"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//BookingAgent/approved_by"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//BookingAgent/approves"/>
     </genClasses>
     <genClasses image="false" ecoreClass="hw1.ecore#//Booking">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Booking/EventDescription"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Booking/BookingID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Booking/BookingDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Booking/BookingStatus"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Booking/made_by"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Booking/approvedBookings"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Booking/hosted_at"/>
     </genClasses>
     <genClasses ecoreClass="hw1.ecore#//Payment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Payment/AmountPaid"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Payment/PaymentMethod"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Payment/PaymentStatus"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Payment/paid_for"/>
     </genClasses>
     <genClasses ecoreClass="hw1.ecore#//VenueVisitBooking">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//VenueVisitBooking/VisitPurpose"/>
     </genClasses>
     <genClasses ecoreClass="hw1.ecore#//EventBooking">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//EventBooking/EstimatedPriceQuote"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hw1.ecore#//EventBooking/made_for"/>
     </genClasses>
     <genClasses ecoreClass="hw1.ecore#//MenuTastingBooking">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//MenuTastingBooking/MenuOptions"/>

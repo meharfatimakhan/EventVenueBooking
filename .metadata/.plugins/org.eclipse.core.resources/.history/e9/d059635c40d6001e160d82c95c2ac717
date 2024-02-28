@@ -19,8 +19,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Phone" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Email" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="managed_by" lowerBound="1"
-        upperBound="-1" eType="#//Venue"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BookingAgent" eSuperTypes="#//SystemAdmin">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="AgentID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -36,21 +34,19 @@
         eType="#//Customer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="approvedBookings" upperBound="-1"
         eType="#//BookingAgent" eOpposite="#//BookingAgent/approved_by"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hosted_at" lowerBound="1"
-        eType="#//Venue"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Payment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="AmountPaid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="PaymentMethod" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="PaymentStatus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="paid_for" lowerBound="1"
-        eType="#//EventBooking"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VenueVisitBooking" eSuperTypes="#//Booking">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="VisitPurpose" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EventBooking" eSuperTypes="#//Booking">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EstimatedPriceQuote" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="made_for" lowerBound="1"
+        eType="#//Payment" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MenuTastingBooking" eSuperTypes="#//Booking">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="MenuOptions" transient="true">
