@@ -2,9 +2,6 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hw1" nsURI="http://www.example.org/hw1" nsPrefix="hw1">
   <eClassifiers xsi:type="ecore:EClass" name="Customer">
-    <eOperations name="submitReview"/>
-    <eOperations name="createBooking"/>
-    <eOperations name="cancelBooking"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Email" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Phone" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -25,7 +22,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Capacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SystemAdmin">
-    <eOperations name="manageVenues"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Phone" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Email" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -39,7 +35,9 @@
         eOpposite="#//EventBooking/approvedBookings"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Booking" abstract="true">
-    <eOperations name="viewBookingInfo"/>
+    <eOperations name="modifyBooking"/>
+    <eOperations name="cancelBooking"/>
+    <eOperations name="createBooking"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EventDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BookingID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BookingDate" eType="#//Calendar"/>
@@ -53,9 +51,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BookingType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Payment">
-    <eOperations name="processPayment"/>
-    <eOperations name="refundPayment"/>
-    <eOperations name="sendPaymenyReceiptEmail"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="AmountPaid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="PaymentMethod" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="PaymentStatus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -72,7 +67,6 @@
         eOpposite="#//BookingAgent/approvedBy"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MenuTastingBooking" eSuperTypes="#//Booking">
-    <eOperations name="selectMenuOptions"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="MenuOptions" transient="true">
       <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
         <eTypeArguments/>

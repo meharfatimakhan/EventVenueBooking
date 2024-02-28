@@ -60,9 +60,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Payment/PaymentMethod"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Payment/PaymentStatus"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Payment/paidFor"/>
-      <genOperations ecoreOperation="hw1.ecore#//Payment/processPayment"/>
-      <genOperations ecoreOperation="hw1.ecore#//Payment/refundPayment"/>
-      <genOperations ecoreOperation="hw1.ecore#//Payment/sendPaymenyReceiptEmail"/>
     </genClasses>
     <genClasses ecoreClass="hw1.ecore#//VenueVisitBooking">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//VenueVisitBooking/VisitPurpose"/>

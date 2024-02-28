@@ -5,7 +5,7 @@
     <semanticResources>hw1.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_tm5FUMXVEe6jEMP-Hke9Iw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tnEEcMXVEe6jEMP-Hke9Iw" name="hw1" repPath="#_tnAaEMXVEe6jEMP-Hke9Iw" changeId="1709153136936">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tnEEcMXVEe6jEMP-Hke9Iw" name="hw1" repPath="#_tnAaEMXVEe6jEMP-Hke9Iw" changeId="1709152902324">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="hw1.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -183,23 +183,11 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_OskGYdXUEe64IrUTaxnBSA" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_OskGYtXUEe64IrUTaxnBSA"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_3VypcNZxEe64IrUTaxnBSA" type="3010" element="_3Vu_ENZxEe64IrUTaxnBSA">
-              <styles xmi:type="notation:FontStyle" xmi:id="_3VypcdZxEe64IrUTaxnBSA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_3VypctZxEe64IrUTaxnBSA"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_5iiN0NZxEe64IrUTaxnBSA" type="3010" element="_5ifKgNZxEe64IrUTaxnBSA">
-              <styles xmi:type="notation:FontStyle" xmi:id="_5iiN0dZxEe64IrUTaxnBSA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_5iiN0tZxEe64IrUTaxnBSA"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_7R8V8NZxEe64IrUTaxnBSA" type="3010" element="_7R5SoNZxEe64IrUTaxnBSA">
-              <styles xmi:type="notation:FontStyle" xmi:id="_7R8V8dZxEe64IrUTaxnBSA" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_7R8V8tZxEe64IrUTaxnBSA"/>
-            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_2WtLQdXSEe64IrUTaxnBSA"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_2WtLQtXSEe64IrUTaxnBSA"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_2Wr9IdXSEe64IrUTaxnBSA" fontName="Segoe UI" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2Wr9ItXSEe64IrUTaxnBSA" x="384" y="468" width="243" height="147"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2Wr9ItXSEe64IrUTaxnBSA" x="384" y="468" width="243" height="100"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_WGMb0NXTEe64IrUTaxnBSA" type="2003" element="_WGEgANXTEe64IrUTaxnBSA">
           <children xmi:type="notation:Node" xmi:id="_WGMb09XTEe64IrUTaxnBSA" type="5007"/>
@@ -727,7 +715,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_4HZFjdZxEe64IrUTaxnBSA" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_Ps8lXdXUEe64IrUTaxnBSA" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -754,30 +742,6 @@
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
-      </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_3Vu_ENZxEe64IrUTaxnBSA" name="processPayment()" tooltipText="processPayment()">
-        <target xmi:type="ecore:EOperation" href="hw1.ecore#//Payment/processPayment"/>
-        <semanticElements xmi:type="ecore:EOperation" href="hw1.ecore#//Payment/processPayment"/>
-        <ownedStyle xmi:type="diagram:BundledImage" uid="_3Vu_EdZxEe64IrUTaxnBSA" labelAlignment="LEFT">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
-      </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_5ifKgNZxEe64IrUTaxnBSA" name="refundPayment()" tooltipText="refundPayment()">
-        <target xmi:type="ecore:EOperation" href="hw1.ecore#//Payment/refundPayment"/>
-        <semanticElements xmi:type="ecore:EOperation" href="hw1.ecore#//Payment/refundPayment"/>
-        <ownedStyle xmi:type="diagram:BundledImage" uid="_5ifKgdZxEe64IrUTaxnBSA" labelAlignment="LEFT">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
-      </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_7R5SoNZxEe64IrUTaxnBSA" name="sendPaymenyReceiptEmail()" tooltipText="sendPaymenyReceiptEmail()">
-        <target xmi:type="ecore:EOperation" href="hw1.ecore#//Payment/sendPaymenyReceiptEmail"/>
-        <semanticElements xmi:type="ecore:EOperation" href="hw1.ecore#//Payment/sendPaymenyReceiptEmail"/>
-        <ownedStyle xmi:type="diagram:BundledImage" uid="_7R5SodZxEe64IrUTaxnBSA" labelAlignment="LEFT">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
       </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WGEgANXTEe64IrUTaxnBSA" name="VenueVisitBooking" tooltipText="" outgoingEdges="_SvWmYNXUEe64IrUTaxnBSA" width="12" height="10">

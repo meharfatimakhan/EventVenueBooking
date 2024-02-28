@@ -53,9 +53,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BookingType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Payment">
-    <eOperations name="processPayment"/>
-    <eOperations name="refundPayment"/>
-    <eOperations name="sendPaymenyReceiptEmail"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="AmountPaid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="PaymentMethod" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="PaymentStatus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
