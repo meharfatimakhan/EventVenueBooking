@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link gendev.hw1.impl.SystemAdminImpl#getPhone <em>Phone</em>}</li>
  *   <li>{@link gendev.hw1.impl.SystemAdminImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link gendev.hw1.impl.SystemAdminImpl#getName <em>Name</em>}</li>
- *   <li>{@link gendev.hw1.impl.SystemAdminImpl#getManages <em>Manages</em>}</li>
+ *   <li>{@link gendev.hw1.impl.SystemAdminImpl#getManagedBy <em>Managed By</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,14 +97,14 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getManages() <em>Manages</em>}' reference list.
+	 * The cached value of the '{@link #getManagedBy() <em>Managed By</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getManages()
+	 * @see #getManagedBy()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Venue> manages;
+	protected EList<Venue> managedBy;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,11 +193,11 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Venue> getManages() {
-		if (manages == null) {
-			manages = new EObjectResolvingEList<Venue>(Venue.class, this, Hw1Package.SYSTEM_ADMIN__MANAGES);
+	public EList<Venue> getManagedBy() {
+		if (managedBy == null) {
+			managedBy = new EObjectResolvingEList<Venue>(Venue.class, this, Hw1Package.SYSTEM_ADMIN__MANAGED_BY);
 		}
-		return manages;
+		return managedBy;
 	}
 
 	/**
@@ -214,8 +214,8 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 			return getEmail();
 		case Hw1Package.SYSTEM_ADMIN__NAME:
 			return getName();
-		case Hw1Package.SYSTEM_ADMIN__MANAGES:
-			return getManages();
+		case Hw1Package.SYSTEM_ADMIN__MANAGED_BY:
+			return getManagedBy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -238,9 +238,9 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 		case Hw1Package.SYSTEM_ADMIN__NAME:
 			setName((String) newValue);
 			return;
-		case Hw1Package.SYSTEM_ADMIN__MANAGES:
-			getManages().clear();
-			getManages().addAll((Collection<? extends Venue>) newValue);
+		case Hw1Package.SYSTEM_ADMIN__MANAGED_BY:
+			getManagedBy().clear();
+			getManagedBy().addAll((Collection<? extends Venue>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -263,8 +263,8 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 		case Hw1Package.SYSTEM_ADMIN__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case Hw1Package.SYSTEM_ADMIN__MANAGES:
-			getManages().clear();
+		case Hw1Package.SYSTEM_ADMIN__MANAGED_BY:
+			getManagedBy().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -284,8 +284,8 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 			return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
 		case Hw1Package.SYSTEM_ADMIN__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case Hw1Package.SYSTEM_ADMIN__MANAGES:
-			return manages != null && !manages.isEmpty();
+		case Hw1Package.SYSTEM_ADMIN__MANAGED_BY:
+			return managedBy != null && !managedBy.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

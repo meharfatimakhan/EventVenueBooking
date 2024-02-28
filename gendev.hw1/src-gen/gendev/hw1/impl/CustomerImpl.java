@@ -2,7 +2,6 @@
  */
 package gendev.hw1.impl;
 
-import gendev.hw1.Booking;
 import gendev.hw1.Customer;
 import gendev.hw1.Hw1Package;
 import gendev.hw1.Review;
@@ -11,14 +10,16 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +32,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link gendev.hw1.impl.CustomerImpl#getName <em>Name</em>}</li>
  *   <li>{@link gendev.hw1.impl.CustomerImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link gendev.hw1.impl.CustomerImpl#getPhone <em>Phone</em>}</li>
- *   <li>{@link gendev.hw1.impl.CustomerImpl#getMakes <em>Makes</em>}</li>
+ *   <li>{@link gendev.hw1.impl.CustomerImpl#getCustomerBookingID <em>Customer Booking ID</em>}</li>
  *   <li>{@link gendev.hw1.impl.CustomerImpl#getSubmits <em>Submits</em>}</li>
  * </ul>
  *
@@ -99,14 +100,24 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	protected int phone = PHONE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getMakes() <em>Makes</em>}' reference list.
+	 * The default value of the '{@link #getCustomerBookingID() <em>Customer Booking ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMakes()
+	 * @see #getCustomerBookingID()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Booking> makes;
+	protected static final int CUSTOMER_BOOKING_ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getCustomerBookingID() <em>Customer Booking ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustomerBookingID()
+	 * @generated
+	 * @ordered
+	 */
+	protected int customerBookingID = CUSTOMER_BOOKING_ID_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSubmits() <em>Submits</em>}' reference list.
@@ -205,11 +216,21 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Booking> getMakes() {
-		if (makes == null) {
-			makes = new EObjectResolvingEList<Booking>(Booking.class, this, Hw1Package.CUSTOMER__MAKES);
-		}
-		return makes;
+	public int getCustomerBookingID() {
+		return customerBookingID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCustomerBookingID(int newCustomerBookingID) {
+		int oldCustomerBookingID = customerBookingID;
+		customerBookingID = newCustomerBookingID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.CUSTOMER__CUSTOMER_BOOKING_ID,
+					oldCustomerBookingID, customerBookingID));
 	}
 
 	/**
@@ -219,9 +240,39 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 */
 	public EList<Review> getSubmits() {
 		if (submits == null) {
-			submits = new EObjectResolvingEList<Review>(Review.class, this, Hw1Package.CUSTOMER__SUBMITS);
+			submits = new EObjectWithInverseResolvingEList<Review>(Review.class, this, Hw1Package.CUSTOMER__SUBMITS,
+					Hw1Package.REVIEW__SUBMITTED_BY);
 		}
 		return submits;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Hw1Package.CUSTOMER__SUBMITS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSubmits()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Hw1Package.CUSTOMER__SUBMITS:
+			return ((InternalEList<?>) getSubmits()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -238,8 +289,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 			return getEmail();
 		case Hw1Package.CUSTOMER__PHONE:
 			return getPhone();
-		case Hw1Package.CUSTOMER__MAKES:
-			return getMakes();
+		case Hw1Package.CUSTOMER__CUSTOMER_BOOKING_ID:
+			return getCustomerBookingID();
 		case Hw1Package.CUSTOMER__SUBMITS:
 			return getSubmits();
 		}
@@ -264,9 +315,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 		case Hw1Package.CUSTOMER__PHONE:
 			setPhone((Integer) newValue);
 			return;
-		case Hw1Package.CUSTOMER__MAKES:
-			getMakes().clear();
-			getMakes().addAll((Collection<? extends Booking>) newValue);
+		case Hw1Package.CUSTOMER__CUSTOMER_BOOKING_ID:
+			setCustomerBookingID((Integer) newValue);
 			return;
 		case Hw1Package.CUSTOMER__SUBMITS:
 			getSubmits().clear();
@@ -293,8 +343,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 		case Hw1Package.CUSTOMER__PHONE:
 			setPhone(PHONE_EDEFAULT);
 			return;
-		case Hw1Package.CUSTOMER__MAKES:
-			getMakes().clear();
+		case Hw1Package.CUSTOMER__CUSTOMER_BOOKING_ID:
+			setCustomerBookingID(CUSTOMER_BOOKING_ID_EDEFAULT);
 			return;
 		case Hw1Package.CUSTOMER__SUBMITS:
 			getSubmits().clear();
@@ -317,8 +367,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 			return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
 		case Hw1Package.CUSTOMER__PHONE:
 			return phone != PHONE_EDEFAULT;
-		case Hw1Package.CUSTOMER__MAKES:
-			return makes != null && !makes.isEmpty();
+		case Hw1Package.CUSTOMER__CUSTOMER_BOOKING_ID:
+			return customerBookingID != CUSTOMER_BOOKING_ID_EDEFAULT;
 		case Hw1Package.CUSTOMER__SUBMITS:
 			return submits != null && !submits.isEmpty();
 		}
@@ -342,6 +392,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 		result.append(email);
 		result.append(", Phone: ");
 		result.append(phone);
+		result.append(", CustomerBookingID: ");
+		result.append(customerBookingID);
 		result.append(')');
 		return result.toString();
 	}

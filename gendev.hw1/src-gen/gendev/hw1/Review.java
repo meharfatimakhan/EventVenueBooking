@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link gendev.hw1.Review#getRating <em>Rating</em>}</li>
  *   <li>{@link gendev.hw1.Review#getComment <em>Comment</em>}</li>
+ *   <li>{@link gendev.hw1.Review#getReviewBookingID <em>Review Booking ID</em>}</li>
+ *   <li>{@link gendev.hw1.Review#getSubmittedBy <em>Submitted By</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getReview()
@@ -65,5 +67,51 @@ public interface Review extends EObject {
 	 * @generated
 	 */
 	void setComment(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Review Booking ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Review Booking ID</em>' attribute.
+	 * @see #setReviewBookingID(int)
+	 * @see gendev.hw1.Hw1Package#getReview_ReviewBookingID()
+	 * @model
+	 * @generated
+	 */
+	int getReviewBookingID();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.Review#getReviewBookingID <em>Review Booking ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Review Booking ID</em>' attribute.
+	 * @see #getReviewBookingID()
+	 * @generated
+	 */
+	void setReviewBookingID(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Submitted By</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link gendev.hw1.Customer#getSubmits <em>Submits</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Submitted By</em>' reference.
+	 * @see #setSubmittedBy(Customer)
+	 * @see gendev.hw1.Hw1Package#getReview_SubmittedBy()
+	 * @see gendev.hw1.Customer#getSubmits
+	 * @model opposite="submits" required="true"
+	 * @generated
+	 */
+	Customer getSubmittedBy();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.Review#getSubmittedBy <em>Submitted By</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Submitted By</em>' reference.
+	 * @see #getSubmittedBy()
+	 * @generated
+	 */
+	void setSubmittedBy(Customer value);
 
 } // Review

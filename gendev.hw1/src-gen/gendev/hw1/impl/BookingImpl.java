@@ -3,16 +3,27 @@
 package gendev.hw1.impl;
 
 import gendev.hw1.Booking;
+import gendev.hw1.BookingAgent;
+import gendev.hw1.Customer;
 import gendev.hw1.Hw1Package;
 
+import gendev.hw1.Review;
+import gendev.hw1.Venue;
 import java.util.Calendar;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +37,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingID <em>Booking ID</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingDate <em>Booking Date</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingStatus <em>Booking Status</em>}</li>
+ *   <li>{@link gendev.hw1.impl.BookingImpl#getMadeBy <em>Made By</em>}</li>
+ *   <li>{@link gendev.hw1.impl.BookingImpl#getApprovedBookings <em>Approved Bookings</em>}</li>
+ *   <li>{@link gendev.hw1.impl.BookingImpl#getHosted_at <em>Hosted at</em>}</li>
+ *   <li>{@link gendev.hw1.impl.BookingImpl#getCanHave <em>Can Have</em>}</li>
  * </ul>
  *
  * @generated
@@ -110,6 +125,46 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected String bookingStatus = BOOKING_STATUS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMadeBy() <em>Made By</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMadeBy()
+	 * @generated
+	 * @ordered
+	 */
+	protected Customer madeBy;
+
+	/**
+	 * The cached value of the '{@link #getApprovedBookings() <em>Approved Bookings</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApprovedBookings()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<BookingAgent> approvedBookings;
+
+	/**
+	 * The cached value of the '{@link #getHosted_at() <em>Hosted at</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHosted_at()
+	 * @generated
+	 * @ordered
+	 */
+	protected Venue hosted_at;
+
+	/**
+	 * The cached value of the '{@link #getCanHave() <em>Can Have</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCanHave()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Review> canHave;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,6 +278,139 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Customer getMadeBy() {
+		if (madeBy != null && madeBy.eIsProxy()) {
+			InternalEObject oldMadeBy = (InternalEObject) madeBy;
+			madeBy = (Customer) eResolveProxy(oldMadeBy);
+			if (madeBy != oldMadeBy) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Hw1Package.BOOKING__MADE_BY, oldMadeBy,
+							madeBy));
+			}
+		}
+		return madeBy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Customer basicGetMadeBy() {
+		return madeBy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMadeBy(Customer newMadeBy) {
+		Customer oldMadeBy = madeBy;
+		madeBy = newMadeBy;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING__MADE_BY, oldMadeBy, madeBy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<BookingAgent> getApprovedBookings() {
+		if (approvedBookings == null) {
+			approvedBookings = new EObjectWithInverseResolvingEList<BookingAgent>(BookingAgent.class, this,
+					Hw1Package.BOOKING__APPROVED_BOOKINGS, Hw1Package.BOOKING_AGENT__APPROVED_BY);
+		}
+		return approvedBookings;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Venue getHosted_at() {
+		if (hosted_at != null && hosted_at.eIsProxy()) {
+			InternalEObject oldHosted_at = (InternalEObject) hosted_at;
+			hosted_at = (Venue) eResolveProxy(oldHosted_at);
+			if (hosted_at != oldHosted_at) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Hw1Package.BOOKING__HOSTED_AT,
+							oldHosted_at, hosted_at));
+			}
+		}
+		return hosted_at;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Venue basicGetHosted_at() {
+		return hosted_at;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHosted_at(Venue newHosted_at) {
+		Venue oldHosted_at = hosted_at;
+		hosted_at = newHosted_at;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING__HOSTED_AT, oldHosted_at,
+					hosted_at));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Review> getCanHave() {
+		if (canHave == null) {
+			canHave = new EObjectResolvingEList<Review>(Review.class, this, Hw1Package.BOOKING__CAN_HAVE);
+		}
+		return canHave;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Hw1Package.BOOKING__APPROVED_BOOKINGS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getApprovedBookings()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Hw1Package.BOOKING__APPROVED_BOOKINGS:
+			return ((InternalEList<?>) getApprovedBookings()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -234,6 +422,18 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 			return getBookingDate();
 		case Hw1Package.BOOKING__BOOKING_STATUS:
 			return getBookingStatus();
+		case Hw1Package.BOOKING__MADE_BY:
+			if (resolve)
+				return getMadeBy();
+			return basicGetMadeBy();
+		case Hw1Package.BOOKING__APPROVED_BOOKINGS:
+			return getApprovedBookings();
+		case Hw1Package.BOOKING__HOSTED_AT:
+			if (resolve)
+				return getHosted_at();
+			return basicGetHosted_at();
+		case Hw1Package.BOOKING__CAN_HAVE:
+			return getCanHave();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -243,6 +443,7 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -257,6 +458,20 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 			return;
 		case Hw1Package.BOOKING__BOOKING_STATUS:
 			setBookingStatus((String) newValue);
+			return;
+		case Hw1Package.BOOKING__MADE_BY:
+			setMadeBy((Customer) newValue);
+			return;
+		case Hw1Package.BOOKING__APPROVED_BOOKINGS:
+			getApprovedBookings().clear();
+			getApprovedBookings().addAll((Collection<? extends BookingAgent>) newValue);
+			return;
+		case Hw1Package.BOOKING__HOSTED_AT:
+			setHosted_at((Venue) newValue);
+			return;
+		case Hw1Package.BOOKING__CAN_HAVE:
+			getCanHave().clear();
+			getCanHave().addAll((Collection<? extends Review>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -282,6 +497,18 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		case Hw1Package.BOOKING__BOOKING_STATUS:
 			setBookingStatus(BOOKING_STATUS_EDEFAULT);
 			return;
+		case Hw1Package.BOOKING__MADE_BY:
+			setMadeBy((Customer) null);
+			return;
+		case Hw1Package.BOOKING__APPROVED_BOOKINGS:
+			getApprovedBookings().clear();
+			return;
+		case Hw1Package.BOOKING__HOSTED_AT:
+			setHosted_at((Venue) null);
+			return;
+		case Hw1Package.BOOKING__CAN_HAVE:
+			getCanHave().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -304,6 +531,14 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		case Hw1Package.BOOKING__BOOKING_STATUS:
 			return BOOKING_STATUS_EDEFAULT == null ? bookingStatus != null
 					: !BOOKING_STATUS_EDEFAULT.equals(bookingStatus);
+		case Hw1Package.BOOKING__MADE_BY:
+			return madeBy != null;
+		case Hw1Package.BOOKING__APPROVED_BOOKINGS:
+			return approvedBookings != null && !approvedBookings.isEmpty();
+		case Hw1Package.BOOKING__HOSTED_AT:
+			return hosted_at != null;
+		case Hw1Package.BOOKING__CAN_HAVE:
+			return canHave != null && !canHave.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

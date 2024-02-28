@@ -2,6 +2,7 @@
  */
 package gendev.hw1.impl;
 
+import gendev.hw1.EventBooking;
 import gendev.hw1.Hw1Package;
 import gendev.hw1.Payment;
 
@@ -9,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -23,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link gendev.hw1.impl.PaymentImpl#getAmountPaid <em>Amount Paid</em>}</li>
  *   <li>{@link gendev.hw1.impl.PaymentImpl#getPaymentMethod <em>Payment Method</em>}</li>
  *   <li>{@link gendev.hw1.impl.PaymentImpl#getPaymentStatus <em>Payment Status</em>}</li>
+ *   <li>{@link gendev.hw1.impl.PaymentImpl#getPaidFor <em>Paid For</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,6 +90,16 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	 * @ordered
 	 */
 	protected String paymentStatus = PAYMENT_STATUS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPaidFor() <em>Paid For</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaidFor()
+	 * @generated
+	 * @ordered
+	 */
+	protected EventBooking paidFor;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,6 +191,45 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EventBooking getPaidFor() {
+		if (paidFor != null && paidFor.eIsProxy()) {
+			InternalEObject oldPaidFor = (InternalEObject) paidFor;
+			paidFor = (EventBooking) eResolveProxy(oldPaidFor);
+			if (paidFor != oldPaidFor) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Hw1Package.PAYMENT__PAID_FOR, oldPaidFor,
+							paidFor));
+			}
+		}
+		return paidFor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventBooking basicGetPaidFor() {
+		return paidFor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPaidFor(EventBooking newPaidFor) {
+		EventBooking oldPaidFor = paidFor;
+		paidFor = newPaidFor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.PAYMENT__PAID_FOR, oldPaidFor, paidFor));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -187,6 +239,10 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 			return getPaymentMethod();
 		case Hw1Package.PAYMENT__PAYMENT_STATUS:
 			return getPaymentStatus();
+		case Hw1Package.PAYMENT__PAID_FOR:
+			if (resolve)
+				return getPaidFor();
+			return basicGetPaidFor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -207,6 +263,9 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 			return;
 		case Hw1Package.PAYMENT__PAYMENT_STATUS:
 			setPaymentStatus((String) newValue);
+			return;
+		case Hw1Package.PAYMENT__PAID_FOR:
+			setPaidFor((EventBooking) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -229,6 +288,9 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 		case Hw1Package.PAYMENT__PAYMENT_STATUS:
 			setPaymentStatus(PAYMENT_STATUS_EDEFAULT);
 			return;
+		case Hw1Package.PAYMENT__PAID_FOR:
+			setPaidFor((EventBooking) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -249,6 +311,8 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 		case Hw1Package.PAYMENT__PAYMENT_STATUS:
 			return PAYMENT_STATUS_EDEFAULT == null ? paymentStatus != null
 					: !PAYMENT_STATUS_EDEFAULT.equals(paymentStatus);
+		case Hw1Package.PAYMENT__PAID_FOR:
+			return paidFor != null;
 		}
 		return super.eIsSet(featureID);
 	}

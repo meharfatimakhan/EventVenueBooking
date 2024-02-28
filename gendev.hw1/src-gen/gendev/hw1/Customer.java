@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link gendev.hw1.Customer#getName <em>Name</em>}</li>
  *   <li>{@link gendev.hw1.Customer#getEmail <em>Email</em>}</li>
  *   <li>{@link gendev.hw1.Customer#getPhone <em>Phone</em>}</li>
- *   <li>{@link gendev.hw1.Customer#getMakes <em>Makes</em>}</li>
+ *   <li>{@link gendev.hw1.Customer#getCustomerBookingID <em>Customer Booking ID</em>}</li>
  *   <li>{@link gendev.hw1.Customer#getSubmits <em>Submits</em>}</li>
  * </ul>
  *
@@ -94,25 +94,37 @@ public interface Customer extends EObject {
 	void setPhone(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Makes</b></em>' reference list.
-	 * The list contents are of type {@link gendev.hw1.Booking}.
+	 * Returns the value of the '<em><b>Customer Booking ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Makes</em>' reference list.
-	 * @see gendev.hw1.Hw1Package#getCustomer_Makes()
-	 * @model required="true"
+	 * @return the value of the '<em>Customer Booking ID</em>' attribute.
+	 * @see #setCustomerBookingID(int)
+	 * @see gendev.hw1.Hw1Package#getCustomer_CustomerBookingID()
+	 * @model
 	 * @generated
 	 */
-	EList<Booking> getMakes();
+	int getCustomerBookingID();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.Customer#getCustomerBookingID <em>Customer Booking ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Customer Booking ID</em>' attribute.
+	 * @see #getCustomerBookingID()
+	 * @generated
+	 */
+	void setCustomerBookingID(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Submits</b></em>' reference list.
 	 * The list contents are of type {@link gendev.hw1.Review}.
+	 * It is bidirectional and its opposite is '{@link gendev.hw1.Review#getSubmittedBy <em>Submitted By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Submits</em>' reference list.
 	 * @see gendev.hw1.Hw1Package#getCustomer_Submits()
-	 * @model
+	 * @see gendev.hw1.Review#getSubmittedBy
+	 * @model opposite="submittedBy"
 	 * @generated
 	 */
 	EList<Review> getSubmits();

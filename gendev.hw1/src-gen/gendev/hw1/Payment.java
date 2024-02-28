@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link gendev.hw1.Payment#getAmountPaid <em>Amount Paid</em>}</li>
  *   <li>{@link gendev.hw1.Payment#getPaymentMethod <em>Payment Method</em>}</li>
  *   <li>{@link gendev.hw1.Payment#getPaymentStatus <em>Payment Status</em>}</li>
+ *   <li>{@link gendev.hw1.Payment#getPaidFor <em>Paid For</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getPayment()
@@ -88,5 +89,27 @@ public interface Payment extends EObject {
 	 * @generated
 	 */
 	void setPaymentStatus(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Paid For</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Paid For</em>' reference.
+	 * @see #setPaidFor(EventBooking)
+	 * @see gendev.hw1.Hw1Package#getPayment_PaidFor()
+	 * @model required="true"
+	 * @generated
+	 */
+	EventBooking getPaidFor();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.Payment#getPaidFor <em>Paid For</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Paid For</em>' reference.
+	 * @see #getPaidFor()
+	 * @generated
+	 */
+	void setPaidFor(EventBooking value);
 
 } // Payment

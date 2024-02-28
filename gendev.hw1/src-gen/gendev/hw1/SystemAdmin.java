@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link gendev.hw1.SystemAdmin#getPhone <em>Phone</em>}</li>
  *   <li>{@link gendev.hw1.SystemAdmin#getEmail <em>Email</em>}</li>
  *   <li>{@link gendev.hw1.SystemAdmin#getName <em>Name</em>}</li>
- *   <li>{@link gendev.hw1.SystemAdmin#getManages <em>Manages</em>}</li>
+ *   <li>{@link gendev.hw1.SystemAdmin#getManagedBy <em>Managed By</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getSystemAdmin()
@@ -93,15 +93,15 @@ public interface SystemAdmin extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Manages</b></em>' reference list.
+	 * Returns the value of the '<em><b>Managed By</b></em>' reference list.
 	 * The list contents are of type {@link gendev.hw1.Venue}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Manages</em>' reference list.
-	 * @see gendev.hw1.Hw1Package#getSystemAdmin_Manages()
+	 * @return the value of the '<em>Managed By</em>' reference list.
+	 * @see gendev.hw1.Hw1Package#getSystemAdmin_ManagedBy()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Venue> getManages();
+	EList<Venue> getManagedBy();
 
 } // SystemAdmin

@@ -41,7 +41,7 @@
         eType="#//Customer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="approvedBookings" upperBound="-1"
         eType="#//BookingAgent" eOpposite="#//BookingAgent/approvedBy"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hosted_at" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hostedAt" lowerBound="1"
         eType="#//Venue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="canHave" upperBound="-1"
         eType="#//Review"/>

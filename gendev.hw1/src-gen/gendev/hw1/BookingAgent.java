@@ -12,7 +12,7 @@ package gendev.hw1;
  * </p>
  * <ul>
  *   <li>{@link gendev.hw1.BookingAgent#getAgentID <em>Agent ID</em>}</li>
- *   <li>{@link gendev.hw1.BookingAgent#getApproves <em>Approves</em>}</li>
+ *   <li>{@link gendev.hw1.BookingAgent#getApprovedBy <em>Approved By</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getBookingAgent()
@@ -43,25 +43,27 @@ public interface BookingAgent extends SystemAdmin {
 	void setAgentID(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Approves</b></em>' reference.
+	 * Returns the value of the '<em><b>Approved By</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link gendev.hw1.Booking#getApprovedBookings <em>Approved Bookings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Approves</em>' reference.
-	 * @see #setApproves(Booking)
-	 * @see gendev.hw1.Hw1Package#getBookingAgent_Approves()
-	 * @model required="true"
+	 * @return the value of the '<em>Approved By</em>' reference.
+	 * @see #setApprovedBy(Booking)
+	 * @see gendev.hw1.Hw1Package#getBookingAgent_ApprovedBy()
+	 * @see gendev.hw1.Booking#getApprovedBookings
+	 * @model opposite="approvedBookings"
 	 * @generated
 	 */
-	Booking getApproves();
+	Booking getApprovedBy();
 
 	/**
-	 * Sets the value of the '{@link gendev.hw1.BookingAgent#getApproves <em>Approves</em>}' reference.
+	 * Sets the value of the '{@link gendev.hw1.BookingAgent#getApprovedBy <em>Approved By</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Approves</em>' reference.
-	 * @see #getApproves()
+	 * @param value the new value of the '<em>Approved By</em>' reference.
+	 * @see #getApprovedBy()
 	 * @generated
 	 */
-	void setApproves(Booking value);
+	void setApprovedBy(Booking value);
 
 } // BookingAgent
