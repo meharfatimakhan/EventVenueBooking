@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link gendev.hw1.MenuTastingBooking#getMenuOptions <em>Menu Options</em>}</li>
+ *   <li>{@link gendev.hw1.MenuTastingBooking#getMenuTastingVisitID <em>Menu Tasting Visit ID</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getMenuTastingBooking()
@@ -42,6 +43,28 @@ public interface MenuTastingBooking extends Booking {
 	 * @generated
 	 */
 	void setMenuOptions(EList<?> value);
+
+	/**
+	 * Returns the value of the '<em><b>Menu Tasting Visit ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Menu Tasting Visit ID</em>' attribute.
+	 * @see #setMenuTastingVisitID(String)
+	 * @see gendev.hw1.Hw1Package#getMenuTastingBooking_MenuTastingVisitID()
+	 * @model
+	 * @generated
+	 */
+	String getMenuTastingVisitID();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.MenuTastingBooking#getMenuTastingVisitID <em>Menu Tasting Visit ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Menu Tasting Visit ID</em>' attribute.
+	 * @see #getMenuTastingVisitID()
+	 * @generated
+	 */
+	void setMenuTastingVisitID(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

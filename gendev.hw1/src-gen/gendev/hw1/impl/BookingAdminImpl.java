@@ -5,14 +5,8 @@ package gendev.hw1.impl;
 import gendev.hw1.BookingAdmin;
 import gendev.hw1.EventBooking;
 import gendev.hw1.Hw1Package;
-
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -27,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link gendev.hw1.impl.BookingAdminImpl#getApprovedBookings <em>Approved Bookings</em>}</li>
+ *   <li>{@link gendev.hw1.impl.BookingAdminImpl#getApprovalRate <em>Approval Rate</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,6 +36,25 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	 * @ordered
 	 */
 	protected EventBooking approvedBookings;
+
+	/**
+	 * The default value of the '{@link #getApprovalRate() <em>Approval Rate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApprovalRate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double APPROVAL_RATE_EDEFAULT = 0.0;
+	/**
+	 * The cached value of the '{@link #getApprovalRate() <em>Approval Rate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApprovalRate()
+	 * @generated
+	 * @ordered
+	 */
+	protected double approvalRate = APPROVAL_RATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,10 +148,21 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void approveBookings() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public double getApprovalRate() {
+		return approvalRate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setApprovalRate(double newApprovalRate) {
+		double oldApprovalRate = approvalRate;
+		approvalRate = newApprovalRate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING_ADMIN__APPROVAL_RATE,
+					oldApprovalRate, approvalRate));
 	}
 
 	/**
@@ -183,6 +208,8 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 			if (resolve)
 				return getApprovedBookings();
 			return basicGetApprovedBookings();
+		case Hw1Package.BOOKING_ADMIN__APPROVAL_RATE:
+			return getApprovalRate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -197,6 +224,9 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 		switch (featureID) {
 		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
 			setApprovedBookings((EventBooking) newValue);
+			return;
+		case Hw1Package.BOOKING_ADMIN__APPROVAL_RATE:
+			setApprovalRate((Double) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -213,6 +243,9 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
 			setApprovedBookings((EventBooking) null);
 			return;
+		case Hw1Package.BOOKING_ADMIN__APPROVAL_RATE:
+			setApprovalRate(APPROVAL_RATE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -227,6 +260,8 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 		switch (featureID) {
 		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
 			return approvedBookings != null;
+		case Hw1Package.BOOKING_ADMIN__APPROVAL_RATE:
+			return approvalRate != APPROVAL_RATE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -237,13 +272,15 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case Hw1Package.BOOKING_ADMIN___APPROVE_BOOKINGS:
-			approveBookings();
-			return null;
-		}
-		return super.eInvoke(operationID, arguments);
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (approvalRate: ");
+		result.append(approvalRate);
+		result.append(')');
+		return result.toString();
 	}
 
 } //BookingAdminImpl

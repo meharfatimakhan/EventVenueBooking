@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link gendev.hw1.impl.MenuTastingBookingImpl#getMenuOptions <em>Menu Options</em>}</li>
+ *   <li>{@link gendev.hw1.impl.MenuTastingBookingImpl#getMenuTastingVisitID <em>Menu Tasting Visit ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,6 +38,25 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 	 * @ordered
 	 */
 	protected EList<?> menuOptions;
+
+	/**
+	 * The default value of the '{@link #getMenuTastingVisitID() <em>Menu Tasting Visit ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMenuTastingVisitID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MENU_TASTING_VISIT_ID_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getMenuTastingVisitID() <em>Menu Tasting Visit ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMenuTastingVisitID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String menuTastingVisitID = MENU_TASTING_VISIT_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,6 +104,28 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getMenuTastingVisitID() {
+		return menuTastingVisitID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMenuTastingVisitID(String newMenuTastingVisitID) {
+		String oldMenuTastingVisitID = menuTastingVisitID;
+		menuTastingVisitID = newMenuTastingVisitID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					Hw1Package.MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID, oldMenuTastingVisitID, menuTastingVisitID));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void selectMenuOptions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -100,6 +142,8 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 		switch (featureID) {
 		case Hw1Package.MENU_TASTING_BOOKING__MENU_OPTIONS:
 			return getMenuOptions();
+		case Hw1Package.MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID:
+			return getMenuTastingVisitID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,6 +158,9 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 		switch (featureID) {
 		case Hw1Package.MENU_TASTING_BOOKING__MENU_OPTIONS:
 			setMenuOptions((EList<?>) newValue);
+			return;
+		case Hw1Package.MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID:
+			setMenuTastingVisitID((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,6 +177,9 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 		case Hw1Package.MENU_TASTING_BOOKING__MENU_OPTIONS:
 			setMenuOptions((EList<?>) null);
 			return;
+		case Hw1Package.MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID:
+			setMenuTastingVisitID(MENU_TASTING_VISIT_ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -144,6 +194,9 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 		switch (featureID) {
 		case Hw1Package.MENU_TASTING_BOOKING__MENU_OPTIONS:
 			return menuOptions != null;
+		case Hw1Package.MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID:
+			return MENU_TASTING_VISIT_ID_EDEFAULT == null ? menuTastingVisitID != null
+					: !MENU_TASTING_VISIT_ID_EDEFAULT.equals(menuTastingVisitID);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -176,6 +229,8 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (MenuOptions: ");
 		result.append(menuOptions);
+		result.append(", MenuTastingVisitID: ");
+		result.append(menuTastingVisitID);
 		result.append(')');
 		return result.toString();
 	}

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link gendev.hw1.impl.VenueVisitBookingImpl#getVisitPurpose <em>Visit Purpose</em>}</li>
+ *   <li>{@link gendev.hw1.impl.VenueVisitBookingImpl#getVisitID <em>Visit ID</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,6 +45,26 @@ public class VenueVisitBookingImpl extends BookingImpl implements VenueVisitBook
 	 * @ordered
 	 */
 	protected String visitPurpose = VISIT_PURPOSE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getVisitID() <em>Visit ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisitID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int VISIT_ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getVisitID() <em>Visit ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisitID()
+	 * @generated
+	 * @ordered
+	 */
+	protected int visitID = VISIT_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,11 +112,35 @@ public class VenueVisitBookingImpl extends BookingImpl implements VenueVisitBook
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getVisitID() {
+		return visitID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVisitID(int newVisitID) {
+		int oldVisitID = visitID;
+		visitID = newVisitID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.VENUE_VISIT_BOOKING__VISIT_ID, oldVisitID,
+					visitID));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case Hw1Package.VENUE_VISIT_BOOKING__VISIT_PURPOSE:
 			return getVisitPurpose();
+		case Hw1Package.VENUE_VISIT_BOOKING__VISIT_ID:
+			return getVisitID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,6 +155,9 @@ public class VenueVisitBookingImpl extends BookingImpl implements VenueVisitBook
 		switch (featureID) {
 		case Hw1Package.VENUE_VISIT_BOOKING__VISIT_PURPOSE:
 			setVisitPurpose((String) newValue);
+			return;
+		case Hw1Package.VENUE_VISIT_BOOKING__VISIT_ID:
+			setVisitID((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,6 +174,9 @@ public class VenueVisitBookingImpl extends BookingImpl implements VenueVisitBook
 		case Hw1Package.VENUE_VISIT_BOOKING__VISIT_PURPOSE:
 			setVisitPurpose(VISIT_PURPOSE_EDEFAULT);
 			return;
+		case Hw1Package.VENUE_VISIT_BOOKING__VISIT_ID:
+			setVisitID(VISIT_ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,6 +191,8 @@ public class VenueVisitBookingImpl extends BookingImpl implements VenueVisitBook
 		switch (featureID) {
 		case Hw1Package.VENUE_VISIT_BOOKING__VISIT_PURPOSE:
 			return VISIT_PURPOSE_EDEFAULT == null ? visitPurpose != null : !VISIT_PURPOSE_EDEFAULT.equals(visitPurpose);
+		case Hw1Package.VENUE_VISIT_BOOKING__VISIT_ID:
+			return visitID != VISIT_ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -157,6 +210,8 @@ public class VenueVisitBookingImpl extends BookingImpl implements VenueVisitBook
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (VisitPurpose: ");
 		result.append(visitPurpose);
+		result.append(", VisitID: ");
+		result.append(visitID);
 		result.append(')');
 		return result.toString();
 	}

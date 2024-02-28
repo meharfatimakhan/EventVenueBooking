@@ -5,8 +5,6 @@ package gendev.hw1.impl;
 import gendev.hw1.Hw1Package;
 import gendev.hw1.SystemAdmin;
 import gendev.hw1.Venue;
-
-import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -250,17 +248,6 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void manageVenues() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -354,21 +341,6 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 			return adminID != ADMIN_ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case Hw1Package.SYSTEM_ADMIN___MANAGE_VENUES:
-			manageVenues();
-			return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

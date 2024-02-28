@@ -127,12 +127,4 @@ public interface SystemAdmin extends EObject {
 	 */
 	void setAdminID(int value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void manageVenues();
-
 } // SystemAdmin

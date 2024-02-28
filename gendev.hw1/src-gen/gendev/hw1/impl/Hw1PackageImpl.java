@@ -423,15 +423,6 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getSystemAdmin__ManageVenues() {
-		return systemAdminEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBookingAdmin() {
 		return bookingAdminEClass;
 	}
@@ -450,8 +441,8 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingAdmin__ApproveBookings() {
-		return bookingAdminEClass.getEOperations().get(0);
+	public EAttribute getBookingAdmin_ApprovalRate() {
+		return (EAttribute) bookingAdminEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -648,6 +639,15 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getVenueVisitBooking_VisitID() {
+		return (EAttribute) venueVisitBookingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEventBooking() {
 		return eventBookingEClass;
 	}
@@ -695,6 +695,15 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 */
 	public EAttribute getMenuTastingBooking_MenuOptions() {
 		return (EAttribute) menuTastingBookingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMenuTastingBooking_MenuTastingVisitID() {
+		return (EAttribute) menuTastingBookingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -774,11 +783,10 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		createEAttribute(systemAdminEClass, SYSTEM_ADMIN__NAME);
 		createEReference(systemAdminEClass, SYSTEM_ADMIN__VENUES_MANAGED);
 		createEAttribute(systemAdminEClass, SYSTEM_ADMIN__ADMIN_ID);
-		createEOperation(systemAdminEClass, SYSTEM_ADMIN___MANAGE_VENUES);
 
 		bookingAdminEClass = createEClass(BOOKING_ADMIN);
 		createEReference(bookingAdminEClass, BOOKING_ADMIN__APPROVED_BOOKINGS);
-		createEOperation(bookingAdminEClass, BOOKING_ADMIN___APPROVE_BOOKINGS);
+		createEAttribute(bookingAdminEClass, BOOKING_ADMIN__APPROVAL_RATE);
 
 		bookingEClass = createEClass(BOOKING);
 		createEAttribute(bookingEClass, BOOKING__EVENT_DESCRIPTION);
@@ -803,6 +811,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 
 		venueVisitBookingEClass = createEClass(VENUE_VISIT_BOOKING);
 		createEAttribute(venueVisitBookingEClass, VENUE_VISIT_BOOKING__VISIT_PURPOSE);
+		createEAttribute(venueVisitBookingEClass, VENUE_VISIT_BOOKING__VISIT_ID);
 
 		eventBookingEClass = createEClass(EVENT_BOOKING);
 		createEAttribute(eventBookingEClass, EVENT_BOOKING__ESTIMATED_PRICE_QUOTE);
@@ -811,6 +820,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 
 		menuTastingBookingEClass = createEClass(MENU_TASTING_BOOKING);
 		createEAttribute(menuTastingBookingEClass, MENU_TASTING_BOOKING__MENU_OPTIONS);
+		createEAttribute(menuTastingBookingEClass, MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID);
 		createEOperation(menuTastingBookingEClass, MENU_TASTING_BOOKING___SELECT_MENU_OPTIONS);
 
 		// Create data types
@@ -913,15 +923,14 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		initEAttribute(getSystemAdmin_AdminID(), ecorePackage.getEInt(), "AdminID", null, 0, 1, SystemAdmin.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getSystemAdmin__ManageVenues(), null, "manageVenues", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(bookingAdminEClass, BookingAdmin.class, "BookingAdmin", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBookingAdmin_ApprovedBookings(), this.getEventBooking(), this.getEventBooking_ApprovedBy(),
 				"approvedBookings", null, 0, 1, BookingAdmin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getBookingAdmin__ApproveBookings(), null, "approveBookings", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEAttribute(getBookingAdmin_ApprovalRate(), ecorePackage.getEDouble(), "approvalRate", null, 0, 1,
+				BookingAdmin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(bookingEClass, Booking.class, "Booking", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBooking_EventDescription(), ecorePackage.getEString(), "EventDescription", null, 0, 1,
@@ -975,6 +984,9 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		initEAttribute(getVenueVisitBooking_VisitPurpose(), ecorePackage.getEString(), "VisitPurpose", null, 0, 1,
 				VenueVisitBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVenueVisitBooking_VisitID(), ecorePackage.getEInt(), "VisitID", null, 0, 1,
+				VenueVisitBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(eventBookingEClass, EventBooking.class, "EventBooking", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -995,6 +1007,9 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		g1.getETypeArguments().add(g2);
 		initEAttribute(getMenuTastingBooking_MenuOptions(), g1, "MenuOptions", null, 0, 1, MenuTastingBooking.class,
 				IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMenuTastingBooking_MenuTastingVisitID(), ecorePackage.getEString(), "MenuTastingVisitID",
+				null, 0, 1, MenuTastingBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getMenuTastingBooking__SelectMenuOptions(), null, "selectMenuOptions", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
