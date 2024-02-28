@@ -23,8 +23,6 @@
     <eOperations name="checkAvailibility"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Capacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hostedAt" lowerBound="1"
-        eType="#//Booking" eOpposite="#//Booking/hasBookings"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SystemAdmin">
     <eOperations name="manageVenues"/>
@@ -48,11 +46,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BookingStatus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="madeBy" lowerBound="1"
         eType="#//Customer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hostedAt" lowerBound="1"
+        eType="#//Venue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="canHave" upperBound="-1"
         eType="#//Review"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BookingType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasBookings" upperBound="-1"
-        eType="#//Venue" eOpposite="#//Venue/hostedAt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Payment">
     <eOperations name="processPayment"/>
