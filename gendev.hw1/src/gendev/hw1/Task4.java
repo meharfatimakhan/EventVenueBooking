@@ -1,10 +1,6 @@
 package gendev.hw1;
 import java.io.IOException;
-import java.sql.Date;
-import java.util.*;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Collections; 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -75,17 +71,13 @@ public class Task4 {
         
         
         // -------------------- Creating EventBooking object
-
-        // Set the Calendar object to the parsed date
-	    Calendar calendar1 = Calendar.getInstance();
-        
         EventBooking eventBooking = Hw1Factory.eINSTANCE.createEventBooking();
         eventBooking.setEventDescription("a wedding being hosted for 100 people with white decor and white baloons all over");
         eventBooking.setEstimatedPriceQuote(1000);
         eventBooking.setBookingBy(customer1); // link 3
         eventBooking.setHostedAt(venue1); // link 4
         eventBooking.setApprovedBy(bookingAdmin); // link 5
-        eventBooking.setBookingDate(calendar1);
+        eventBooking.setBookingDate( "Mon Feb 27 10:30:00 GMT 2024");
         eventBooking.setBookingType("Event");
         eventBooking.setBookingStatus("Confirmed");
         eventBooking.setNumberOfGuests(30);
@@ -99,13 +91,10 @@ public class Task4 {
                 
         // -------------------- Creating Venue Viist object
         VenueVisitBooking venueVisitBooking = Hw1Factory.eINSTANCE.createVenueVisitBooking();
-        
-        // Set the Calendar object to the parsed date
-	    Calendar calendar2 = Calendar.getInstance();
 
         venueVisitBooking.setVisitPurpose("FINALIZE DECOR");
         venueVisitBooking.setBookingBy(customer2); // link 6
-        venueVisitBooking.setBookingDate(calendar2);
+        venueVisitBooking.setBookingDate( "Mon Feb 25 10:30:00 GMT 2024");
         venueVisitBooking.setBookingStatus("Confirmed");
         venueVisitBooking.setBookingType("Visit");
         venueVisitBooking.setVisitID(3);

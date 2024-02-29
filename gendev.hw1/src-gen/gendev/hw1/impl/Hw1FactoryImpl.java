@@ -3,11 +3,7 @@
 package gendev.hw1.impl;
 
 import gendev.hw1.*;
-
-import java.util.Calendar;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -78,36 +74,6 @@ public class Hw1FactoryImpl extends EFactoryImpl implements Hw1Factory {
 			return createMenuTastingBooking();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-		case Hw1Package.CALENDAR:
-			return createCalendarFromString(eDataType, initialValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-		case Hw1Package.CALENDAR:
-			return convertCalendarToString(eDataType, instanceValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -199,24 +165,6 @@ public class Hw1FactoryImpl extends EFactoryImpl implements Hw1Factory {
 	public MenuTastingBooking createMenuTastingBooking() {
 		MenuTastingBookingImpl menuTastingBooking = new MenuTastingBookingImpl();
 		return menuTastingBooking;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Calendar createCalendarFromString(EDataType eDataType, String initialValue) {
-		return (Calendar) super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertCalendarToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

@@ -4,7 +4,6 @@ package gendev.hw1;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -525,22 +524,13 @@ public interface Hw1Package extends EPackage {
 	int BOOKING__BOOKING_ID = 0;
 
 	/**
-	 * The feature id for the '<em><b>Booking Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__BOOKING_DATE = 1;
-
-	/**
 	 * The feature id for the '<em><b>Booking Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__BOOKING_STATUS = 2;
+	int BOOKING__BOOKING_STATUS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Booking By</b></em>' reference.
@@ -549,7 +539,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__BOOKING_BY = 3;
+	int BOOKING__BOOKING_BY = 2;
 
 	/**
 	 * The feature id for the '<em><b>Has Reviews</b></em>' reference list.
@@ -558,7 +548,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__HAS_REVIEWS = 4;
+	int BOOKING__HAS_REVIEWS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Booking Type</b></em>' attribute.
@@ -567,7 +557,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__BOOKING_TYPE = 5;
+	int BOOKING__BOOKING_TYPE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Hosted At</b></em>' reference.
@@ -576,7 +566,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__HOSTED_AT = 6;
+	int BOOKING__HOSTED_AT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Menu Options</b></em>' attribute.
@@ -585,7 +575,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__MENU_OPTIONS = 7;
+	int BOOKING__MENU_OPTIONS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Number Of Guests</b></em>' attribute.
@@ -594,7 +584,16 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__NUMBER_OF_GUESTS = 8;
+	int BOOKING__NUMBER_OF_GUESTS = 7;
+
+	/**
+	 * The feature id for the '<em><b>Booking Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__BOOKING_DATE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Booking</em>' class.
@@ -761,15 +760,6 @@ public interface Hw1Package extends EPackage {
 	int VENUE_VISIT_BOOKING__BOOKING_ID = BOOKING__BOOKING_ID;
 
 	/**
-	 * The feature id for the '<em><b>Booking Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VENUE_VISIT_BOOKING__BOOKING_DATE = BOOKING__BOOKING_DATE;
-
-	/**
 	 * The feature id for the '<em><b>Booking Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -831,6 +821,15 @@ public interface Hw1Package extends EPackage {
 	 * @ordered
 	 */
 	int VENUE_VISIT_BOOKING__NUMBER_OF_GUESTS = BOOKING__NUMBER_OF_GUESTS;
+
+	/**
+	 * The feature id for the '<em><b>Booking Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VENUE_VISIT_BOOKING__BOOKING_DATE = BOOKING__BOOKING_DATE;
 
 	/**
 	 * The feature id for the '<em><b>Visit Purpose</b></em>' attribute.
@@ -906,15 +905,6 @@ public interface Hw1Package extends EPackage {
 	int EVENT_BOOKING__BOOKING_ID = BOOKING__BOOKING_ID;
 
 	/**
-	 * The feature id for the '<em><b>Booking Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_BOOKING__BOOKING_DATE = BOOKING__BOOKING_DATE;
-
-	/**
 	 * The feature id for the '<em><b>Booking Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -976,6 +966,15 @@ public interface Hw1Package extends EPackage {
 	 * @ordered
 	 */
 	int EVENT_BOOKING__NUMBER_OF_GUESTS = BOOKING__NUMBER_OF_GUESTS;
+
+	/**
+	 * The feature id for the '<em><b>Booking Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_BOOKING__BOOKING_DATE = BOOKING__BOOKING_DATE;
 
 	/**
 	 * The feature id for the '<em><b>Estimated Price Quote</b></em>' attribute.
@@ -1060,15 +1059,6 @@ public interface Hw1Package extends EPackage {
 	int MENU_TASTING_BOOKING__BOOKING_ID = BOOKING__BOOKING_ID;
 
 	/**
-	 * The feature id for the '<em><b>Booking Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MENU_TASTING_BOOKING__BOOKING_DATE = BOOKING__BOOKING_DATE;
-
-	/**
 	 * The feature id for the '<em><b>Booking Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1132,6 +1122,15 @@ public interface Hw1Package extends EPackage {
 	int MENU_TASTING_BOOKING__NUMBER_OF_GUESTS = BOOKING__NUMBER_OF_GUESTS;
 
 	/**
+	 * The feature id for the '<em><b>Booking Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_TASTING_BOOKING__BOOKING_DATE = BOOKING__BOOKING_DATE;
+
+	/**
 	 * The feature id for the '<em><b>Menu Tasting Visit ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1175,16 +1174,6 @@ public interface Hw1Package extends EPackage {
 	 * @ordered
 	 */
 	int MENU_TASTING_BOOKING_OPERATION_COUNT = BOOKING_OPERATION_COUNT + 1;
-
-	/**
-	 * The meta object id for the '<em>Calendar</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.util.Calendar
-	 * @see gendev.hw1.impl.Hw1PackageImpl#getCalendar()
-	 * @generated
-	 */
-	int CALENDAR = 10;
 
 	/**
 	 * Returns the meta object for class '{@link gendev.hw1.Customer <em>Customer</em>}'.
@@ -1910,17 +1899,6 @@ public interface Hw1Package extends EPackage {
 	EOperation getMenuTastingBooking__SendMenuTastingVisitEmail();
 
 	/**
-	 * Returns the meta object for data type '{@link java.util.Calendar <em>Calendar</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Calendar</em>'.
-	 * @see java.util.Calendar
-	 * @model instanceClass="java.util.Calendar"
-	 * @generated
-	 */
-	EDataType getCalendar();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2509,16 +2487,6 @@ public interface Hw1Package extends EPackage {
 		 */
 		EOperation MENU_TASTING_BOOKING___SEND_MENU_TASTING_VISIT_EMAIL = eINSTANCE
 				.getMenuTastingBooking__SendMenuTastingVisitEmail();
-
-		/**
-		 * The meta object literal for the '<em>Calendar</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.util.Calendar
-		 * @see gendev.hw1.impl.Hw1PackageImpl#getCalendar()
-		 * @generated
-		 */
-		EDataType CALENDAR = eINSTANCE.getCalendar();
 
 	}
 

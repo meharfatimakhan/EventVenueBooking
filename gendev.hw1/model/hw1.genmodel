@@ -10,7 +10,6 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Hw1" basePackage="gendev" disposableProviderFactory="true"
       ecorePackage="hw1.ecore#/">
-    <genDataTypes ecoreDataType="hw1.ecore#//Calendar"/>
     <genClasses ecoreClass="hw1.ecore#//Customer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Customer/Name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Customer/Email"/>
@@ -49,7 +48,6 @@
     </genClasses>
     <genClasses image="false" ecoreClass="hw1.ecore#//Booking">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Booking/BookingID"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Booking/BookingDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Booking/BookingStatus"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Booking/bookingBy"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Booking/hasReviews"/>
@@ -57,6 +55,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Booking/hostedAt"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Booking/MenuOptions"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Booking/NumberOfGuests"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Booking/BookingDate"/>
       <genOperations ecoreOperation="hw1.ecore#//Booking/viewBookingInfo"/>
     </genClasses>
     <genClasses ecoreClass="hw1.ecore#//Payment">

@@ -9,8 +9,6 @@ import gendev.hw1.Hw1Package;
 import gendev.hw1.Review;
 import gendev.hw1.Venue;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Calendar;
-
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -32,7 +30,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingID <em>Booking ID</em>}</li>
- *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingDate <em>Booking Date</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingStatus <em>Booking Status</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingBy <em>Booking By</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getHasReviews <em>Has Reviews</em>}</li>
@@ -40,6 +37,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link gendev.hw1.impl.BookingImpl#getHostedAt <em>Hosted At</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getMenuOptions <em>Menu Options</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getNumberOfGuests <em>Number Of Guests</em>}</li>
+ *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingDate <em>Booking Date</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,26 +62,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected int bookingID = BOOKING_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getBookingDate() <em>Booking Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBookingDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Calendar BOOKING_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getBookingDate() <em>Booking Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBookingDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Calendar bookingDate = BOOKING_DATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBookingStatus() <em>Booking Status</em>}' attribute.
@@ -186,6 +164,26 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	protected int numberOfGuests = NUMBER_OF_GUESTS_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getBookingDate() <em>Booking Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBookingDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String BOOKING_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getBookingDate() <em>Booking Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBookingDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected String bookingDate = BOOKING_DATE_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -231,7 +229,7 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Calendar getBookingDate() {
+	public String getBookingDate() {
 		return bookingDate;
 	}
 
@@ -240,8 +238,8 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBookingDate(Calendar newBookingDate) {
-		Calendar oldBookingDate = bookingDate;
+	public void setBookingDate(String newBookingDate) {
+		String oldBookingDate = bookingDate;
 		bookingDate = newBookingDate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING__BOOKING_DATE, oldBookingDate,
@@ -504,8 +502,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case Hw1Package.BOOKING__BOOKING_ID:
 			return getBookingID();
-		case Hw1Package.BOOKING__BOOKING_DATE:
-			return getBookingDate();
 		case Hw1Package.BOOKING__BOOKING_STATUS:
 			return getBookingStatus();
 		case Hw1Package.BOOKING__BOOKING_BY:
@@ -524,6 +520,8 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 			return getMenuOptions();
 		case Hw1Package.BOOKING__NUMBER_OF_GUESTS:
 			return getNumberOfGuests();
+		case Hw1Package.BOOKING__BOOKING_DATE:
+			return getBookingDate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -539,9 +537,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case Hw1Package.BOOKING__BOOKING_ID:
 			setBookingID((Integer) newValue);
-			return;
-		case Hw1Package.BOOKING__BOOKING_DATE:
-			setBookingDate((Calendar) newValue);
 			return;
 		case Hw1Package.BOOKING__BOOKING_STATUS:
 			setBookingStatus((String) newValue);
@@ -565,6 +560,9 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		case Hw1Package.BOOKING__NUMBER_OF_GUESTS:
 			setNumberOfGuests((Integer) newValue);
 			return;
+		case Hw1Package.BOOKING__BOOKING_DATE:
+			setBookingDate((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -579,9 +577,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case Hw1Package.BOOKING__BOOKING_ID:
 			setBookingID(BOOKING_ID_EDEFAULT);
-			return;
-		case Hw1Package.BOOKING__BOOKING_DATE:
-			setBookingDate(BOOKING_DATE_EDEFAULT);
 			return;
 		case Hw1Package.BOOKING__BOOKING_STATUS:
 			setBookingStatus(BOOKING_STATUS_EDEFAULT);
@@ -604,6 +599,9 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		case Hw1Package.BOOKING__NUMBER_OF_GUESTS:
 			setNumberOfGuests(NUMBER_OF_GUESTS_EDEFAULT);
 			return;
+		case Hw1Package.BOOKING__BOOKING_DATE:
+			setBookingDate(BOOKING_DATE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -618,8 +616,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case Hw1Package.BOOKING__BOOKING_ID:
 			return bookingID != BOOKING_ID_EDEFAULT;
-		case Hw1Package.BOOKING__BOOKING_DATE:
-			return BOOKING_DATE_EDEFAULT == null ? bookingDate != null : !BOOKING_DATE_EDEFAULT.equals(bookingDate);
 		case Hw1Package.BOOKING__BOOKING_STATUS:
 			return BOOKING_STATUS_EDEFAULT == null ? bookingStatus != null
 					: !BOOKING_STATUS_EDEFAULT.equals(bookingStatus);
@@ -635,6 +631,8 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 			return menuOptions != null;
 		case Hw1Package.BOOKING__NUMBER_OF_GUESTS:
 			return numberOfGuests != NUMBER_OF_GUESTS_EDEFAULT;
+		case Hw1Package.BOOKING__BOOKING_DATE:
+			return BOOKING_DATE_EDEFAULT == null ? bookingDate != null : !BOOKING_DATE_EDEFAULT.equals(bookingDate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -667,8 +665,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (BookingID: ");
 		result.append(bookingID);
-		result.append(", BookingDate: ");
-		result.append(bookingDate);
 		result.append(", BookingStatus: ");
 		result.append(bookingStatus);
 		result.append(", BookingType: ");
@@ -677,6 +673,8 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		result.append(menuOptions);
 		result.append(", NumberOfGuests: ");
 		result.append(numberOfGuests);
+		result.append(", BookingDate: ");
+		result.append(bookingDate);
 		result.append(')');
 		return result.toString();
 	}

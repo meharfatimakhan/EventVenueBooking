@@ -3,8 +3,6 @@
 package gendev.hw1.util;
 
 import gendev.hw1.*;
-
-import java.util.Calendar;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -132,8 +130,6 @@ public class Hw1Validator extends EObjectValidator {
 			return validateEventBooking((EventBooking) value, diagnostics, context);
 		case Hw1Package.MENU_TASTING_BOOKING:
 			return validateMenuTastingBooking((MenuTastingBooking) value, diagnostics, context);
-		case Hw1Package.CALENDAR:
-			return validateCalendar((Calendar) value, diagnostics, context);
 		default:
 			return true;
 		}
@@ -394,15 +390,6 @@ public class Hw1Validator extends EObjectValidator {
 	public boolean validateMenuTastingBooking(MenuTastingBooking menuTastingBooking, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(menuTastingBooking, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCalendar(Calendar calendar, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
 	}
 
 	/**

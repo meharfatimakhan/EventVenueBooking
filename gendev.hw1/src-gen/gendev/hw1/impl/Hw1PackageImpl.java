@@ -16,11 +16,8 @@ import gendev.hw1.Venue;
 import gendev.hw1.VenueVisitBooking;
 
 import gendev.hw1.util.Hw1Validator;
-import java.util.Calendar;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -105,13 +102,6 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * @generated
 	 */
 	private EClass menuTastingBookingEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType calendarEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -514,7 +504,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * @generated
 	 */
 	public EAttribute getBooking_BookingDate() {
-		return (EAttribute) bookingEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) bookingEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -523,7 +513,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * @generated
 	 */
 	public EAttribute getBooking_BookingStatus() {
-		return (EAttribute) bookingEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) bookingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -532,7 +522,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * @generated
 	 */
 	public EReference getBooking_BookingBy() {
-		return (EReference) bookingEClass.getEStructuralFeatures().get(3);
+		return (EReference) bookingEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -541,7 +531,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * @generated
 	 */
 	public EReference getBooking_HasReviews() {
-		return (EReference) bookingEClass.getEStructuralFeatures().get(4);
+		return (EReference) bookingEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -550,7 +540,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * @generated
 	 */
 	public EAttribute getBooking_BookingType() {
-		return (EAttribute) bookingEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) bookingEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -559,7 +549,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * @generated
 	 */
 	public EReference getBooking_HostedAt() {
-		return (EReference) bookingEClass.getEStructuralFeatures().get(6);
+		return (EReference) bookingEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -568,7 +558,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * @generated
 	 */
 	public EAttribute getBooking_MenuOptions() {
-		return (EAttribute) bookingEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) bookingEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -577,7 +567,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * @generated
 	 */
 	public EAttribute getBooking_NumberOfGuests() {
-		return (EAttribute) bookingEClass.getEStructuralFeatures().get(8);
+		return (EAttribute) bookingEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -801,15 +791,6 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getCalendar() {
-		return calendarEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Hw1Factory getHw1Factory() {
 		return (Hw1Factory) getEFactoryInstance();
 	}
@@ -875,7 +856,6 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 
 		bookingEClass = createEClass(BOOKING);
 		createEAttribute(bookingEClass, BOOKING__BOOKING_ID);
-		createEAttribute(bookingEClass, BOOKING__BOOKING_DATE);
 		createEAttribute(bookingEClass, BOOKING__BOOKING_STATUS);
 		createEReference(bookingEClass, BOOKING__BOOKING_BY);
 		createEReference(bookingEClass, BOOKING__HAS_REVIEWS);
@@ -883,6 +863,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		createEReference(bookingEClass, BOOKING__HOSTED_AT);
 		createEAttribute(bookingEClass, BOOKING__MENU_OPTIONS);
 		createEAttribute(bookingEClass, BOOKING__NUMBER_OF_GUESTS);
+		createEAttribute(bookingEClass, BOOKING__BOOKING_DATE);
 		createEOperation(bookingEClass, BOOKING___VIEW_BOOKING_INFO);
 
 		paymentEClass = createEClass(PAYMENT);
@@ -911,9 +892,6 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		menuTastingBookingEClass = createEClass(MENU_TASTING_BOOKING);
 		createEAttribute(menuTastingBookingEClass, MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID);
 		createEOperation(menuTastingBookingEClass, MENU_TASTING_BOOKING___SEND_MENU_TASTING_VISIT_EMAIL);
-
-		// Create data types
-		calendarEDataType = createEDataType(CALENDAR);
 	}
 
 	/**
@@ -1057,8 +1035,6 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		initEClass(bookingEClass, Booking.class, "Booking", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBooking_BookingID(), ecorePackage.getEInt(), "BookingID", null, 1, 1, Booking.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBooking_BookingDate(), this.getCalendar(), "BookingDate", null, 0, 1, Booking.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBooking_BookingStatus(), ecorePackage.getEString(), "BookingStatus", null, 0, 1,
 				Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -1079,6 +1055,8 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		initEAttribute(getBooking_MenuOptions(), g1, "MenuOptions", null, 0, 1, Booking.class, IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBooking_NumberOfGuests(), ecorePackage.getEInt(), "NumberOfGuests", null, 1, 1, Booking.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBooking_BookingDate(), ecorePackage.getEString(), "BookingDate", null, 0, 1, Booking.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getBooking__ViewBookingInfo(), null, "viewBookingInfo", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1144,9 +1122,6 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 
 		initEOperation(getMenuTastingBooking__SendMenuTastingVisitEmail(), null, "sendMenuTastingVisitEmail", 0, 1,
 				IS_UNIQUE, IS_ORDERED);
-
-		// Initialize data types
-		initEDataType(calendarEDataType, Calendar.class, "Calendar", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

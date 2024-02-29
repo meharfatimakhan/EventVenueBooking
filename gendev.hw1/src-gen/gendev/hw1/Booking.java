@@ -2,8 +2,6 @@
  */
 package gendev.hw1;
 
-import java.util.Calendar;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
@@ -17,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link gendev.hw1.Booking#getBookingID <em>Booking ID</em>}</li>
- *   <li>{@link gendev.hw1.Booking#getBookingDate <em>Booking Date</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getBookingStatus <em>Booking Status</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getBookingBy <em>Booking By</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getHasReviews <em>Has Reviews</em>}</li>
@@ -25,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link gendev.hw1.Booking#getHostedAt <em>Hosted At</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getMenuOptions <em>Menu Options</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getNumberOfGuests <em>Number Of Guests</em>}</li>
+ *   <li>{@link gendev.hw1.Booking#getBookingDate <em>Booking Date</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getBooking()
@@ -59,12 +57,12 @@ public interface Booking extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Booking Date</em>' attribute.
-	 * @see #setBookingDate(Calendar)
+	 * @see #setBookingDate(String)
 	 * @see gendev.hw1.Hw1Package#getBooking_BookingDate()
-	 * @model dataType="gendev.hw1.Calendar"
+	 * @model
 	 * @generated
 	 */
-	Calendar getBookingDate();
+	String getBookingDate();
 
 	/**
 	 * Sets the value of the '{@link gendev.hw1.Booking#getBookingDate <em>Booking Date</em>}' attribute.
@@ -74,7 +72,7 @@ public interface Booking extends EObject {
 	 * @see #getBookingDate()
 	 * @generated
 	 */
-	void setBookingDate(Calendar value);
+	void setBookingDate(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Booking Status</b></em>' attribute.

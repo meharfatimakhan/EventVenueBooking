@@ -16,7 +16,6 @@ package gendev.hw1;
 import java.lang.String;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.ocl.pivot.ParameterTypes;
 import org.eclipse.ocl.pivot.TemplateParameters;
 import org.eclipse.ocl.pivot.ids.ClassId;
 import org.eclipse.ocl.pivot.ids.CollectionTypeId;
@@ -79,7 +78,6 @@ public class Hw1Tables extends AbstractTables
 	public static final /*@NonInvalid*/ ClassId CLSSid_Review = Hw1Tables.PACKid_http_c_s_s_www_example_org_s_hw1.getClassId("Review", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_SystemAdmin = Hw1Tables.PACKid_http_c_s_s_www_example_org_s_hw1.getClassId("SystemAdmin", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_Venue = Hw1Tables.PACKid_http_c_s_s_www_example_org_s_hw1.getClassId("Venue", 0);
-	public static final /*@NonInvalid*/ DataTypeId DATAid_Calendar = Hw1Tables.PACKid_http_c_s_s_www_example_org_s_hw1.getDataTypeId("Calendar", 0);
 	public static final /*@NonInvalid*/ DataTypeId DATAid_EEList = Hw1Tables.PACKid_http_c_s_s_www_eclipse_org_s_ocl_s_2015_s_Orphanage.getDataTypeId("EEList", 0);
 	public static final /*@NonInvalid*/ DataTypeId DATAid_EInt = Hw1Tables.PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EInt", 0);
 	public static final /*@NonInvalid*/ IntegerValue INT_0 = ValueUtil.integerValueOf("0");
@@ -126,7 +124,6 @@ public class Hw1Tables extends AbstractTables
 
 		public static final EcoreExecutorType _Booking = new EcoreExecutorType(Hw1Package.Literals.BOOKING, PACKAGE, 0 | ExecutorType.ABSTRACT);
 		public static final EcoreExecutorType _BookingAdmin = new EcoreExecutorType(Hw1Package.Literals.BOOKING_ADMIN, PACKAGE, 0);
-		public static final EcoreExecutorType _Calendar = new EcoreExecutorType("Calendar", PACKAGE, 0);
 		public static final EcoreExecutorType _Customer = new EcoreExecutorType(Hw1Package.Literals.CUSTOMER, PACKAGE, 0);
 		public static final EcoreExecutorType _EventBooking = new EcoreExecutorType(Hw1Package.Literals.EVENT_BOOKING, PACKAGE, 0);
 		public static final EcoreExecutorType _MenuTastingBooking = new EcoreExecutorType(Hw1Package.Literals.MENU_TASTING_BOOKING, PACKAGE, 0);
@@ -139,7 +136,6 @@ public class Hw1Tables extends AbstractTables
 		private static final EcoreExecutorType /*@NonNull*/ [] types = {
 			_Booking,
 			_BookingAdmin,
-			_Calendar,
 			_Customer,
 			_EventBooking,
 			_MenuTastingBooking,
@@ -181,10 +177,6 @@ public class Hw1Tables extends AbstractTables
 		private static final ExecutorFragment _BookingAdmin__OclAny = new ExecutorFragment(Types._BookingAdmin, OCLstdlibTables.Types._OclAny);
 		private static final ExecutorFragment _BookingAdmin__OclElement = new ExecutorFragment(Types._BookingAdmin, OCLstdlibTables.Types._OclElement);
 		private static final ExecutorFragment _BookingAdmin__SystemAdmin = new ExecutorFragment(Types._BookingAdmin, Hw1Tables.Types._SystemAdmin);
-
-		private static final ExecutorFragment _Calendar__Calendar = new ExecutorFragment(Types._Calendar, Hw1Tables.Types._Calendar);
-		private static final ExecutorFragment _Calendar__OclAny = new ExecutorFragment(Types._Calendar, OCLstdlibTables.Types._OclAny);
-		private static final ExecutorFragment _Calendar__OclComparable = new ExecutorFragment(Types._Calendar, OCLstdlibTables.Types._OclComparable);
 
 		private static final ExecutorFragment _Customer__Customer = new ExecutorFragment(Types._Customer, Hw1Tables.Types._Customer);
 		private static final ExecutorFragment _Customer__OclAny = new ExecutorFragment(Types._Customer, OCLstdlibTables.Types._OclAny);
@@ -244,7 +236,6 @@ public class Hw1Tables extends AbstractTables
 			Fragments.init();
 		}
 
-		public static final ParameterTypes _OclSelf = TypeUtil.createParameterTypes(OCLstdlibTables.Types._OclSelf);
 
 		static {
 			Init.initEnd();
@@ -273,9 +264,6 @@ public class Hw1Tables extends AbstractTables
 			0, TemplateParameters.EMPTY_LIST, null);
 
 		public static final ExecutorOperation _BookingAdmin__approveCustomerBooking = new ExecutorOperation("approveCustomerBooking", TypeUtil.EMPTY_PARAMETER_TYPES, Types._BookingAdmin,
-			0, TemplateParameters.EMPTY_LIST, null);
-
-		public static final ExecutorOperation _Calendar__compareTo = new ExecutorOperation("compareTo", Parameters._OclSelf, Types._Calendar,
 			0, TemplateParameters.EMPTY_LIST, null);
 
 		public static final ExecutorOperation _Customer__cancelBooking = new ExecutorOperation("cancelBooking", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Customer,
@@ -419,14 +407,6 @@ public class Hw1Tables extends AbstractTables
 			};
 		private static final int /*@NonNull*/ [] __BookingAdmin = { 1,1,1,1 };
 
-		private static final ExecutorFragment /*@NonNull*/ [] _Calendar =
-			{
-				Fragments._Calendar__OclAny /* 0 */,
-				Fragments._Calendar__OclComparable /* 1 */,
-				Fragments._Calendar__Calendar /* 2 */
-			};
-		private static final int /*@NonNull*/ [] __Calendar = { 1,1,1 };
-
 		private static final ExecutorFragment /*@NonNull*/ [] _Customer =
 			{
 				Fragments._Customer__OclAny /* 0 */,
@@ -500,7 +480,6 @@ public class Hw1Tables extends AbstractTables
 		static {
 			Types._Booking.initFragments(_Booking, __Booking);
 			Types._BookingAdmin.initFragments(_BookingAdmin, __BookingAdmin);
-			Types._Calendar.initFragments(_Calendar, __Calendar);
 			Types._Customer.initFragments(_Customer, __Customer);
 			Types._EventBooking.initFragments(_EventBooking, __EventBooking);
 			Types._MenuTastingBooking.initFragments(_MenuTastingBooking, __MenuTastingBooking);
@@ -588,34 +567,6 @@ public class Hw1Tables extends AbstractTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 		private static final ExecutorOperation /*@NonNull*/ [] _BookingAdmin__SystemAdmin = {};
-
-		private static final ExecutorOperation /*@NonNull*/ [] _Calendar__Calendar = {
-			Hw1Tables.Operations._Calendar__compareTo /* compareTo(OclSelf[1]) */
-		};
-		private static final ExecutorOperation /*@NonNull*/ [] _Calendar__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[1]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[1]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[1]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[1]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final ExecutorOperation /*@NonNull*/ [] _Calendar__OclComparable = {
-			OCLstdlibTables.Operations._OclComparable___lt_ /* _'<'(OclSelf[1]) */,
-			OCLstdlibTables.Operations._OclComparable___lt__eq_ /* _'<='(OclSelf[1]) */,
-			OCLstdlibTables.Operations._OclComparable___gt_ /* _'>'(OclSelf[1]) */,
-			OCLstdlibTables.Operations._OclComparable___gt__eq_ /* _'>='(OclSelf[1]) */,
-			Hw1Tables.Operations._Calendar__compareTo /* compareTo(OclSelf[1]) */
-		};
 
 		private static final ExecutorOperation /*@NonNull*/ [] _Customer__Customer = {
 			Hw1Tables.Operations._Customer__cancelBooking /* cancelBooking() */,
@@ -879,10 +830,6 @@ public class Hw1Tables extends AbstractTables
 			Fragments._BookingAdmin__OclElement.initOperations(_BookingAdmin__OclElement);
 			Fragments._BookingAdmin__SystemAdmin.initOperations(_BookingAdmin__SystemAdmin);
 
-			Fragments._Calendar__Calendar.initOperations(_Calendar__Calendar);
-			Fragments._Calendar__OclAny.initOperations(_Calendar__OclAny);
-			Fragments._Calendar__OclComparable.initOperations(_Calendar__OclComparable);
-
 			Fragments._Customer__Customer.initOperations(_Customer__Customer);
 			Fragments._Customer__OclAny.initOperations(_Customer__OclAny);
 			Fragments._Customer__OclElement.initOperations(_Customer__OclElement);
@@ -961,8 +908,6 @@ public class Hw1Tables extends AbstractTables
 			OCLstdlibTables.Properties._OclElement__oclContents,
 			Hw1Tables.Properties._SystemAdmin__venuesManaged
 		};
-
-		private static final ExecutorProperty /*@NonNull*/ [] _Calendar = {};
 
 		private static final ExecutorProperty /*@NonNull*/ [] _Customer = {
 			Hw1Tables.Properties._Customer__CustomerBookingID,
@@ -1069,7 +1014,6 @@ public class Hw1Tables extends AbstractTables
 		static {
 			Fragments._Booking__Booking.initProperties(_Booking);
 			Fragments._BookingAdmin__BookingAdmin.initProperties(_BookingAdmin);
-			Fragments._Calendar__Calendar.initProperties(_Calendar);
 			Fragments._Customer__Customer.initProperties(_Customer);
 			Fragments._EventBooking__EventBooking.initProperties(_EventBooking);
 			Fragments._MenuTastingBooking__MenuTastingBooking.initProperties(_MenuTastingBooking);
