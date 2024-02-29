@@ -64,6 +64,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Payment/PaymentStatus"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Payment/paidFor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Payment/PaymentID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Payment/AmountRefunded"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Payment/PaymentType"/>
       <genOperations ecoreOperation="hw1.ecore#//Payment/processPayment"/>
       <genOperations ecoreOperation="hw1.ecore#//Payment/refundPayment"/>
       <genOperations ecoreOperation="hw1.ecore#//Payment/sendPaymenyReceiptEmail"/>

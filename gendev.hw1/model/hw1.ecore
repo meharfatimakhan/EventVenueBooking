@@ -70,6 +70,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="paidFor" lowerBound="1"
         eType="#//EventBooking"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="PaymentID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AmountRefunded" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="PaymentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VenueVisitBooking" eSuperTypes="#//Booking">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="VisitPurpose" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
