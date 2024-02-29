@@ -784,3 +784,115 @@ org.eclipse.emf.common.util.BasicEList$BasicIndexOutOfBoundsException: index=5, 
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+!SESSION 2024-02-29 22:17:22.813 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2024-02-29 22:17:41.928
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.ocl.examples.xtext.build 4 0 2024-02-29 22:17:42.290
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.ocl.examples.xtext.build [851]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.generator; bundle-version="[2.9.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.xtext.generator; bundle-version="2.14.0.v20180522-1833"; singleton:="true"
+       org.eclipse.xtext.generator [906]
+         Unresolved requirement: Require-Bundle: de.itemis.xtext.antlr; bundle-version="2.0.0"; visibility:="reexport"; resolution:="optional"
+         Unresolved requirement: Require-Bundle: org.eclipse.emf.mwe2.lib; bundle-version="2.7.0"; visibility:="reexport"; resolution:="optional"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtext.generator [osgi.identity; type="osgi.bundle"; version:Version="2.14.0.v20180522-1833"; osgi.identity="org.eclipse.xtext.generator"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="74.2.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtext.generator [osgi.identity; type="osgi.bundle"; version:Version="2.14.0.v20180522-1833"; osgi.identity="org.eclipse.xtext.generator"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend)(bundle-version>=1.1.0))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="74.2.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtext.generator [osgi.identity; type="osgi.bundle"; version:Version="2.14.0.v20180522-1833"; osgi.identity="org.eclipse.xtext.generator"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.xtext.generator 4 0 2024-02-29 22:17:42.299
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtext.generator [906]
+  Unresolved requirement: Require-Bundle: de.itemis.xtext.antlr; bundle-version="2.0.0"; visibility:="reexport"; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.eclipse.emf.mwe2.lib; bundle-version="2.7.0"; visibility:="reexport"; resolution:="optional"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.xtext.generator [osgi.identity; type="osgi.bundle"; version:Version="2.14.0.v20180522-1833"; osgi.identity="org.eclipse.xtext.generator"; singleton:="true"] because it is exposed to package 'com.ibm.icu.math' from resources com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="74.2.0"; osgi.identity="com.ibm.icu"] and com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtext.generator [osgi.identity; type="osgi.bundle"; version:Version="2.14.0.v20180522-1833"; osgi.identity="org.eclipse.xtext.generator"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend)(bundle-version>=1.1.0))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend
+  com.ibm.icu [osgi.identity; type="osgi.bundle"; version:Version="74.2.0"; osgi.identity="com.ibm.icu"]
+
+Chain 2:
+  org.eclipse.xtext.generator [osgi.identity; type="osgi.bundle"; version:Version="2.14.0.v20180522-1833"; osgi.identity="org.eclipse.xtext.generator"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.ibm.icu.text)(version>=4.0.0))
+     |
+    export: osgi.wiring.package: com.ibm.icu.text; uses:=com.ibm.icu.math
+    export: osgi.wiring.package=com.ibm.icu.math
+  com.ibm.icu.base [osgi.identity; type="osgi.bundle"; version:Version="58.2.0.v20170418-1837"; osgi.identity="com.ibm.icu.base"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2024-02-29 22:17:43.111
+!MESSAGE Logback config file: D:\Eclipse\GenDevAssignment2\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.jface 2 0 2024-02-29 22:17:45.223
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-02-29 22:17:45.223
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-02-29 22:17:57.903
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\mfati'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.

@@ -1,9 +1,11 @@
 package gendev.hw1;
 import java.io.IOException;
+import java.sql.Date;
+import java.util.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Collections; 
-import java.util.Map;
-
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI; 
@@ -15,7 +17,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 public class Task4 {
 	public static String instance = "task4-Instances/instance.xmi";
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		System.out.println("Creating and saving instance to file " + instance);
 
         Hw1Package.eINSTANCE.eClass();
@@ -72,15 +74,18 @@ public class Task4 {
         bookingAdmin.setName("Ada Jade");
         
         
-        // creating EventBooking object
-        Calendar calendar = Calendar.getInstance();
+        // -------------------- Creating EventBooking object
+
+        // Set the Calendar object to the parsed date
+	    Calendar calendar1 = Calendar.getInstance();
+        
         EventBooking eventBooking = Hw1Factory.eINSTANCE.createEventBooking();
         eventBooking.setEventDescription("a wedding being hosted for 100 people with white decor and white baloons all over");
         eventBooking.setEstimatedPriceQuote(1000);
         eventBooking.setBookingBy(customer1); // link 3
         eventBooking.setHostedAt(venue1); // link 4
         eventBooking.setApprovedBy(bookingAdmin); // link 5
-        eventBooking.setBookingDate(calendar);
+        eventBooking.setBookingDate(calendar1);
         eventBooking.setBookingType("Event");
         eventBooking.setBookingStatus("Confirmed");
         eventBooking.setNumberOfGuests(30);
@@ -92,9 +97,12 @@ public class Task4 {
         menuItems1.add("Coke");
         eventBooking.setMenuOptions(menuItems1);	 
                 
-        // create venue visit object
+        // -------------------- Creating Venue Viist object
         VenueVisitBooking venueVisitBooking = Hw1Factory.eINSTANCE.createVenueVisitBooking();
-        Calendar calendar2 = Calendar.getInstance();
+        
+        // Set the Calendar object to the parsed date
+	    Calendar calendar2 = Calendar.getInstance();
+
         venueVisitBooking.setVisitPurpose("FINALIZE DECOR");
         venueVisitBooking.setBookingBy(customer2); // link 6
         venueVisitBooking.setBookingDate(calendar2);
@@ -114,7 +122,9 @@ public class Task4 {
         saveModel(instance, customer1, customer2, review1, review2, venue1, venue2, eventBooking, venueVisitBooking, bookingAdmin);
     }
 	
-	private static void saveModel(String fileName, Customer customer1, Customer customer2, Review review1, Review review2, Venue venue1, Venue venue2, EventBooking eventBooking, VenueVisitBooking venueVisitBooking, BookingAdmin bookingAdmin) {
+	private static void saveModel(String fileName, Customer customer1, Customer customer2, 
+			Review review1, Review review2, Venue venue1, Venue venue2, 
+			EventBooking eventBooking, VenueVisitBooking venueVisitBooking, BookingAdmin bookingAdmin) {
 	        ResourceSet resourceSet = new ResourceSetImpl();
 
 	        // Register the XMI resource factory
@@ -122,7 +132,7 @@ public class Task4 {
 
 	        // Create a resource
 	        Resource resource = resourceSet.createResource(URI.createURI(fileName));
-
+	        System.out.println("URI" + URI.createURI(fileName));
 	        // Add instances to the resource
 	        resource.getContents().add(customer1);
 	        resource.getContents().add(customer2);
