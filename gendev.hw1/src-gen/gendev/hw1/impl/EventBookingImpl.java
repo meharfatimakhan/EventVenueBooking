@@ -216,9 +216,7 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 	 * @generated
 	 */
 	public void calculateFinalPrice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/hw1!EventBooking!calculateFinalPrice()
 	}
 
 	/**

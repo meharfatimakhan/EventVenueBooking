@@ -41,4 +41,12 @@ public interface MenuTastingBooking extends Booking {
 	 */
 	void setMenuTastingVisitID(String value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void sendMenuTastingVisitEmail();
+
 } // MenuTastingBooking

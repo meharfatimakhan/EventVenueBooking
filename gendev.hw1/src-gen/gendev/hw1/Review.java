@@ -32,7 +32,7 @@ public interface Review extends EObject {
 	 * @return the value of the '<em>Rating</em>' attribute.
 	 * @see #setRating(int)
 	 * @see gendev.hw1.Hw1Package#getReview_Rating()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getRating();
@@ -76,7 +76,7 @@ public interface Review extends EObject {
 	 * @return the value of the '<em>Review Booking ID</em>' attribute.
 	 * @see #setReviewBookingID(int)
 	 * @see gendev.hw1.Hw1Package#getReview_ReviewBookingID()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getReviewBookingID();
@@ -122,7 +122,7 @@ public interface Review extends EObject {
 	 * @return the value of the '<em>Review ID</em>' attribute.
 	 * @see #setReviewID(int)
 	 * @see gendev.hw1.Hw1Package#getReview_ReviewID()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getReviewID();

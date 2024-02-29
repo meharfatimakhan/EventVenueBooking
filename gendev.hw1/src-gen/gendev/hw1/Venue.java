@@ -2,6 +2,8 @@
  */
 package gendev.hw1;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
@@ -21,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getVenue()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='null'"
  * @generated
  */
 public interface Venue extends EObject {
@@ -54,7 +56,7 @@ public interface Venue extends EObject {
 	 * @return the value of the '<em>Capacity</em>' attribute.
 	 * @see #setCapacity(int)
 	 * @see gendev.hw1.Hw1Package#getVenue_Capacity()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getCapacity();
@@ -90,7 +92,7 @@ public interface Venue extends EObject {
 	 * @return the value of the '<em>Venue ID</em>' attribute.
 	 * @see #setVenueID(int)
 	 * @see gendev.hw1.Hw1Package#getVenue_VenueID()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getVenueID();
@@ -112,5 +114,13 @@ public interface Venue extends EObject {
 	 * @generated
 	 */
 	void checkAvailibility();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.bookings-&gt;notEmpty()\n    \tand self.bookings-&gt;forAll(booking | \n        (if booking.NumberOfGuests &gt;= self.Capacity * 0.8 \n        \tthen booking.BookingStatus = \'Fully Booked\' \n        \telse booking.BookingStatus &lt;&gt; \'Not Fully Booked\' endif\n        ))'"
+	 * @generated
+	 */
+	boolean null_(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Venue

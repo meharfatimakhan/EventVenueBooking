@@ -55,7 +55,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SystemAdmin">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Phone" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Phone" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Email" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="venuesManaged" lowerBound="1"
@@ -70,6 +70,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="null" value="self.venuesManaged->notEmpty()&#xA;    &#x9;and self.approvedBookings->exists(booking | not booking.oclIsUndefined())&#xA;    &#x9;and self.NumberOfApprovals >= 0"/>
     </eAnnotations>
+    <eOperations name="approveCustomerBooking"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="approvedBookings" eType="#//EventBooking"
         eOpposite="#//EventBooking/approvedBy"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumberOfApprovals" lowerBound="1"
@@ -99,7 +100,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Payment">
     <eOperations name="processPayment"/>
     <eOperations name="refundPayment"/>
-    <eOperations name="sendPaymenyReceiptEmail"/>
+    <eOperations name="sentPaymentReceiptEmail"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="AmountPaid" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="PaymentMethod" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -113,6 +114,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="PaymentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VenueVisitBooking" eSuperTypes="#//Booking">
+    <eOperations name="sendVenueVisitBookingEmail"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="VisitPurpose" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="VisitID" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -126,6 +128,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EventDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MenuTastingBooking" eSuperTypes="#//Booking">
+    <eOperations name="sendMenuTastingVisitEmail"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="MenuTastingVisitID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Calendar" instanceClassName="java.util.Calendar"/>

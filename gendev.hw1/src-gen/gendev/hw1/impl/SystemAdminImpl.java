@@ -44,7 +44,7 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int PHONE_EDEFAULT = 0;
+	protected static final String PHONE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getPhone() <em>Phone</em>}' attribute.
@@ -54,7 +54,7 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 	 * @generated
 	 * @ordered
 	 */
-	protected int phone = PHONE_EDEFAULT;
+	protected String phone = PHONE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEmail() <em>Email</em>}' attribute.
@@ -150,7 +150,7 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
@@ -159,8 +159,8 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPhone(int newPhone) {
-		int oldPhone = phone;
+	public void setPhone(String newPhone) {
+		String oldPhone = phone;
 		phone = newPhone;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.SYSTEM_ADMIN__PHONE, oldPhone, phone));
@@ -275,7 +275,7 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case Hw1Package.SYSTEM_ADMIN__PHONE:
-			setPhone((Integer) newValue);
+			setPhone((String) newValue);
 			return;
 		case Hw1Package.SYSTEM_ADMIN__EMAIL:
 			setEmail((String) newValue);
@@ -330,7 +330,7 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case Hw1Package.SYSTEM_ADMIN__PHONE:
-			return phone != PHONE_EDEFAULT;
+			return PHONE_EDEFAULT == null ? phone != null : !PHONE_EDEFAULT.equals(phone);
 		case Hw1Package.SYSTEM_ADMIN__EMAIL:
 			return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
 		case Hw1Package.SYSTEM_ADMIN__NAME:

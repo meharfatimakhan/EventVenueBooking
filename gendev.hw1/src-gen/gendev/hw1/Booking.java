@@ -39,7 +39,7 @@ public interface Booking extends EObject {
 	 * @return the value of the '<em>Booking ID</em>' attribute.
 	 * @see #setBookingID(int)
 	 * @see gendev.hw1.Hw1Package#getBooking_BookingID()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getBookingID();
@@ -207,7 +207,7 @@ public interface Booking extends EObject {
 	 * @return the value of the '<em>Number Of Guests</em>' attribute.
 	 * @see #setNumberOfGuests(int)
 	 * @see gendev.hw1.Hw1Package#getBooking_NumberOfGuests()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getNumberOfGuests();

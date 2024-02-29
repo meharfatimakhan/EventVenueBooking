@@ -362,9 +362,7 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	 * @generated
 	 */
 	public void processPayment() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/hw1!Payment!processPayment()
 	}
 
 	/**
@@ -373,9 +371,7 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	 * @generated
 	 */
 	public void refundPayment() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/hw1!Payment!refundPayment()
 	}
 
 	/**
@@ -383,10 +379,8 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void sendPaymenyReceiptEmail() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void sentPaymentReceiptEmail() {
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/hw1!Payment!sentPaymentReceiptEmail()
 	}
 
 	/**
@@ -525,8 +519,8 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 		case Hw1Package.PAYMENT___REFUND_PAYMENT:
 			refundPayment();
 			return null;
-		case Hw1Package.PAYMENT___SEND_PAYMENY_RECEIPT_EMAIL:
-			sendPaymenyReceiptEmail();
+		case Hw1Package.PAYMENT___SENT_PAYMENT_RECEIPT_EMAIL:
+			sentPaymentReceiptEmail();
 			return null;
 		}
 		return super.eInvoke(operationID, arguments);

@@ -5,8 +5,10 @@ package gendev.hw1.impl;
 import gendev.hw1.Hw1Package;
 import gendev.hw1.VenueVisitBooking;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -134,6 +136,15 @@ public class VenueVisitBookingImpl extends BookingImpl implements VenueVisitBook
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void sendVenueVisitBookingEmail() {
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/hw1!VenueVisitBooking!sendVenueVisitBookingEmail()
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -195,6 +206,21 @@ public class VenueVisitBookingImpl extends BookingImpl implements VenueVisitBook
 			return visitID != VISIT_ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case Hw1Package.VENUE_VISIT_BOOKING___SEND_VENUE_VISIT_BOOKING_EMAIL:
+			sendVenueVisitBookingEmail();
+			return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

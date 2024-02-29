@@ -4,13 +4,18 @@ package gendev.hw1.impl;
 
 import gendev.hw1.Booking;
 import gendev.hw1.Hw1Package;
+import gendev.hw1.Hw1Tables;
 import gendev.hw1.Venue;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
@@ -19,6 +24,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.IdResolver;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.library.collection.CollectionNotEmptyOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.messages.PivotMessages;
+import org.eclipse.ocl.pivot.utilities.PivotUtil;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.InvalidValueException;
+import org.eclipse.ocl.pivot.values.OrderedSetValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -208,9 +226,109 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 	 * @generated
 	 */
 	public void checkAvailibility() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/hw1!Venue!checkAvailibility()
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean null_(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "Venue::null";
+		try {
+			/**
+			 *
+			 * inv _'null':
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let
+			 *         result : Boolean[?] = self.bookings->notEmpty() and
+			 *         self.bookings->forAll(booking |
+			 *           if booking.NumberOfGuests >= self.Capacity * 0.8
+			 *           then booking.BookingStatus = 'Fully Booked'
+			 *           else booking.BookingStatus <> 'Not Fully Booked'
+			 *           endif)
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
+			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor,
+					Hw1Package.Literals.VENUE___NULL____DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE
+					.evaluate(executor, severity_0, Hw1Tables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean local_0;
+			if (le) {
+				local_0 = true;
+			} else {
+				/*@Caught*/ Object CAUGHT_result;
+				try {
+					final /*@NonInvalid*/ List<Booking> bookings_0 = this.getBookings();
+					final /*@NonInvalid*/ OrderedSetValue BOXED_bookings_0 = idResolver
+							.createOrderedSetOfAll(Hw1Tables.ORD_CLSSid_Booking, bookings_0);
+					final /*@NonInvalid*/ boolean notEmpty = CollectionNotEmptyOperation.INSTANCE
+							.evaluate(BOXED_bookings_0).booleanValue();
+					final /*@Thrown*/ Boolean result;
+					if (!notEmpty) {
+						result = ValueUtil.FALSE_VALUE;
+					} else {
+						/*@Thrown*/ Object accumulator = ValueUtil.TRUE_VALUE;
+						Iterator<Object> ITERATOR_booking = BOXED_bookings_0.iterator();
+						/*@NonInvalid*/ Boolean forAll;
+						while (true) {
+							if (!ITERATOR_booking.hasNext()) {
+								if (accumulator == ValueUtil.TRUE_VALUE) {
+									forAll = ValueUtil.TRUE_VALUE;
+								} else {
+									throw (InvalidValueException) accumulator;
+								}
+								break;
+							}
+							/*@NonInvalid*/ Booking booking = (Booking) ITERATOR_booking.next();
+							/**
+							 * booking.BookingStatus = 'Fully Booked'
+							 */
+							final /*@NonInvalid*/ String BookingStatus = booking.getBookingStatus();
+							final /*@NonInvalid*/ boolean eq = Hw1Tables.STR_Fully_32_Booked.equals(BookingStatus);
+							//
+							if (!eq) { // Normal unsuccessful body evaluation result
+								forAll = ValueUtil.FALSE_VALUE;
+								break; // Stop immediately
+							} else if (eq) { // Normal successful body evaluation result
+								; // Carry on
+							} else { // Impossible badly typed result
+								accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
+							}
+						}
+						if (forAll == ValueUtil.FALSE_VALUE) {
+							result = ValueUtil.FALSE_VALUE;
+						} else {
+							if (forAll == null) {
+								result = null;
+							} else {
+								result = ValueUtil.TRUE_VALUE;
+							}
+						}
+					}
+					CAUGHT_result = result;
+				} catch (Exception e) {
+					CAUGHT_result = ValueUtil.createInvalidValue(e);
+				}
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE
+						.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object) null, diagnostics, context,
+								(Object) null, severity_0, CAUGHT_result, Hw1Tables.INT_0)
+						.booleanValue();
+				local_0 = logDiagnostic;
+			}
+			return local_0;
+		} catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
 	}
 
 	/**
@@ -338,11 +456,14 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 	 * @generated
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case Hw1Package.VENUE___CHECK_AVAILIBILITY:
 			checkAvailibility();
 			return null;
+		case Hw1Package.VENUE___NULL____DIAGNOSTICCHAIN_MAP:
+			return null_((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

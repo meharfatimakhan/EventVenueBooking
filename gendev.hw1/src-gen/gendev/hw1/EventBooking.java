@@ -28,7 +28,7 @@ public interface EventBooking extends Booking {
 	 * @return the value of the '<em>Estimated Price Quote</em>' attribute.
 	 * @see #setEstimatedPriceQuote(int)
 	 * @see gendev.hw1.Hw1Package#getEventBooking_EstimatedPriceQuote()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getEstimatedPriceQuote();

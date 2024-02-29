@@ -5,12 +5,36 @@ package gendev.hw1.impl;
 import gendev.hw1.BookingAdmin;
 import gendev.hw1.EventBooking;
 import gendev.hw1.Hw1Package;
+import gendev.hw1.Hw1Tables;
+import gendev.hw1.Venue;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.IdResolver;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.library.collection.CollectionNotEmptyOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsSetOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanEqualOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.messages.PivotMessages;
+import org.eclipse.ocl.pivot.utilities.PivotUtil;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.InvalidValueException;
+import org.eclipse.ocl.pivot.values.OrderedSetValue;
+import org.eclipse.ocl.pivot.values.SetValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +45,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link gendev.hw1.impl.BookingAdminImpl#getApprovedBookings <em>Approved Bookings</em>}</li>
- *   <li>{@link gendev.hw1.impl.BookingAdminImpl#getApprovalRate <em>Approval Rate</em>}</li>
+ *   <li>{@link gendev.hw1.impl.BookingAdminImpl#getNumberOfApprovals <em>Number Of Approvals</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,23 +62,24 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	protected EventBooking approvedBookings;
 
 	/**
-	 * The default value of the '{@link #getApprovalRate() <em>Approval Rate</em>}' attribute.
+	 * The default value of the '{@link #getNumberOfApprovals() <em>Number Of Approvals</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getApprovalRate()
+	 * @see #getNumberOfApprovals()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double APPROVAL_RATE_EDEFAULT = 0.0;
+	protected static final int NUMBER_OF_APPROVALS_EDEFAULT = 0;
+
 	/**
-	 * The cached value of the '{@link #getApprovalRate() <em>Approval Rate</em>}' attribute.
+	 * The cached value of the '{@link #getNumberOfApprovals() <em>Number Of Approvals</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getApprovalRate()
+	 * @see #getNumberOfApprovals()
 	 * @generated
 	 * @ordered
 	 */
-	protected double approvalRate = APPROVAL_RATE_EDEFAULT;
+	protected int numberOfApprovals = NUMBER_OF_APPROVALS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,8 +173,8 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double getApprovalRate() {
-		return approvalRate;
+	public int getNumberOfApprovals() {
+		return numberOfApprovals;
 	}
 
 	/**
@@ -157,12 +182,165 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setApprovalRate(double newApprovalRate) {
-		double oldApprovalRate = approvalRate;
-		approvalRate = newApprovalRate;
+	public void setNumberOfApprovals(int newNumberOfApprovals) {
+		int oldNumberOfApprovals = numberOfApprovals;
+		numberOfApprovals = newNumberOfApprovals;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING_ADMIN__APPROVAL_RATE,
-					oldApprovalRate, approvalRate));
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING_ADMIN__NUMBER_OF_APPROVALS,
+					oldNumberOfApprovals, numberOfApprovals));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void approveCustomerBooking() {
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/hw1!BookingAdmin!approveCustomerBooking()
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean null_(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "BookingAdmin::null";
+		try {
+			/**
+			 *
+			 * inv _'null':
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let
+			 *         result : Boolean[?] = self.venuesManaged->notEmpty() and
+			 *         self.approvedBookings->exists(booking |
+			 *           not booking.oclIsUndefined()) and self.NumberOfApprovals >= 0
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
+			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor,
+					Hw1Package.Literals.BOOKING_ADMIN___NULL____DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE
+					.evaluate(executor, severity_0, Hw1Tables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean local_0;
+			if (le) {
+				local_0 = true;
+			} else {
+				/*@Caught*/ Object CAUGHT_result;
+				try {
+					/*@Caught*/ Object CAUGHT_and;
+					try {
+						final /*@NonInvalid*/ List<Venue> venuesManaged = this.getVenuesManaged();
+						final /*@NonInvalid*/ OrderedSetValue BOXED_venuesManaged = idResolver
+								.createOrderedSetOfAll(Hw1Tables.ORD_CLSSid_Venue, venuesManaged);
+						final /*@NonInvalid*/ boolean notEmpty = CollectionNotEmptyOperation.INSTANCE
+								.evaluate(BOXED_venuesManaged).booleanValue();
+						final /*@Thrown*/ Boolean and;
+						if (!notEmpty) {
+							and = ValueUtil.FALSE_VALUE;
+						} else {
+							/*@Caught*/ Object CAUGHT_exists;
+							try {
+								final /*@NonInvalid*/ EventBooking approvedBookings = this.getApprovedBookings();
+								final /*@Thrown*/ SetValue oclAsSet = OclAnyOclAsSetOperation.INSTANCE
+										.evaluate(executor, Hw1Tables.SET_CLSSid_EventBooking, approvedBookings);
+								/*@Thrown*/ Object accumulator = ValueUtil.FALSE_VALUE;
+								Iterator<Object> ITERATOR_booking = oclAsSet.iterator();
+								/*@Thrown*/ Boolean exists;
+								while (true) {
+									if (!ITERATOR_booking.hasNext()) {
+										if (accumulator == null) {
+											exists = null;
+										} else if (accumulator == ValueUtil.FALSE_VALUE) {
+											exists = ValueUtil.FALSE_VALUE;
+										} else {
+											throw (InvalidValueException) accumulator;
+										}
+										break;
+									}
+									/*@NonInvalid*/ EventBooking booking = (EventBooking) ITERATOR_booking.next();
+									/**
+									 * not booking.oclIsUndefined()
+									 */
+									final /*@NonInvalid*/ Boolean not = ValueUtil.TRUE_VALUE;
+									//
+									if (not == ValueUtil.TRUE_VALUE) { // Normal successful body evaluation result
+										exists = ValueUtil.TRUE_VALUE;
+										break; // Stop immediately
+									} else if (not == ValueUtil.FALSE_VALUE) { // Normal unsuccessful body evaluation result
+										; // Carry on
+									} else if (not == null) { // Abnormal null body evaluation result
+										if (accumulator == ValueUtil.FALSE_VALUE) {
+											accumulator = null; // Cache a null failure
+										}
+									} else { // Impossible badly typed result
+										accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "exists");
+									}
+								}
+								CAUGHT_exists = exists;
+							} catch (Exception e) {
+								CAUGHT_exists = ValueUtil.createInvalidValue(e);
+							}
+							if (CAUGHT_exists == ValueUtil.FALSE_VALUE) {
+								and = ValueUtil.FALSE_VALUE;
+							} else {
+								if (CAUGHT_exists instanceof InvalidValueException) {
+									throw (InvalidValueException) CAUGHT_exists;
+								}
+								if (CAUGHT_exists == null) {
+									and = null;
+								} else {
+									and = ValueUtil.TRUE_VALUE;
+								}
+							}
+						}
+						CAUGHT_and = and;
+					} catch (Exception e) {
+						CAUGHT_and = ValueUtil.createInvalidValue(e);
+					}
+					final /*@Thrown*/ Boolean result;
+					if (CAUGHT_and == ValueUtil.FALSE_VALUE) {
+						result = ValueUtil.FALSE_VALUE;
+					} else {
+						final /*@NonInvalid*/ int NumberOfApprovals = this.getNumberOfApprovals();
+						final /*@NonInvalid*/ IntegerValue BOXED_NumberOfApprovals = ValueUtil
+								.integerValueOf(NumberOfApprovals);
+						final /*@NonInvalid*/ boolean ge = OclComparableGreaterThanEqualOperation.INSTANCE
+								.evaluate(executor, BOXED_NumberOfApprovals, Hw1Tables.INT_0).booleanValue();
+						if (!ge) {
+							result = ValueUtil.FALSE_VALUE;
+						} else {
+							if (CAUGHT_and instanceof InvalidValueException) {
+								throw (InvalidValueException) CAUGHT_and;
+							}
+							if (CAUGHT_and == null) {
+								result = null;
+							} else {
+								result = ValueUtil.TRUE_VALUE;
+							}
+						}
+					}
+					CAUGHT_result = result;
+				} catch (Exception e) {
+					CAUGHT_result = ValueUtil.createInvalidValue(e);
+				}
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE
+						.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object) null, diagnostics, context,
+								(Object) null, severity_0, CAUGHT_result, Hw1Tables.INT_0)
+						.booleanValue();
+				local_0 = logDiagnostic;
+			}
+			return local_0;
+		} catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
 	}
 
 	/**
@@ -208,8 +386,8 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 			if (resolve)
 				return getApprovedBookings();
 			return basicGetApprovedBookings();
-		case Hw1Package.BOOKING_ADMIN__APPROVAL_RATE:
-			return getApprovalRate();
+		case Hw1Package.BOOKING_ADMIN__NUMBER_OF_APPROVALS:
+			return getNumberOfApprovals();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -225,8 +403,8 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
 			setApprovedBookings((EventBooking) newValue);
 			return;
-		case Hw1Package.BOOKING_ADMIN__APPROVAL_RATE:
-			setApprovalRate((Double) newValue);
+		case Hw1Package.BOOKING_ADMIN__NUMBER_OF_APPROVALS:
+			setNumberOfApprovals((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,8 +421,8 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
 			setApprovedBookings((EventBooking) null);
 			return;
-		case Hw1Package.BOOKING_ADMIN__APPROVAL_RATE:
-			setApprovalRate(APPROVAL_RATE_EDEFAULT);
+		case Hw1Package.BOOKING_ADMIN__NUMBER_OF_APPROVALS:
+			setNumberOfApprovals(NUMBER_OF_APPROVALS_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -260,10 +438,28 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 		switch (featureID) {
 		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
 			return approvedBookings != null;
-		case Hw1Package.BOOKING_ADMIN__APPROVAL_RATE:
-			return approvalRate != APPROVAL_RATE_EDEFAULT;
+		case Hw1Package.BOOKING_ADMIN__NUMBER_OF_APPROVALS:
+			return numberOfApprovals != NUMBER_OF_APPROVALS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case Hw1Package.BOOKING_ADMIN___APPROVE_CUSTOMER_BOOKING:
+			approveCustomerBooking();
+			return null;
+		case Hw1Package.BOOKING_ADMIN___NULL____DIAGNOSTICCHAIN_MAP:
+			return null_((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -277,8 +473,8 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (approvalRate: ");
-		result.append(approvalRate);
+		result.append(" (NumberOfApprovals: ");
+		result.append(numberOfApprovals);
 		result.append(')');
 		return result.toString();
 	}

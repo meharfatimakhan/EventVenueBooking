@@ -34,7 +34,7 @@ public interface Payment extends EObject {
 	 * @return the value of the '<em>Amount Paid</em>' attribute.
 	 * @see #setAmountPaid(int)
 	 * @see gendev.hw1.Hw1Package#getPayment_AmountPaid()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getAmountPaid();
@@ -122,7 +122,7 @@ public interface Payment extends EObject {
 	 * @return the value of the '<em>Payment ID</em>' attribute.
 	 * @see #setPaymentID(int)
 	 * @see gendev.hw1.Hw1Package#getPayment_PaymentID()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getPaymentID();
@@ -144,7 +144,7 @@ public interface Payment extends EObject {
 	 * @return the value of the '<em>Amount Refunded</em>' attribute.
 	 * @see #setAmountRefunded(int)
 	 * @see gendev.hw1.Hw1Package#getPayment_AmountRefunded()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getAmountRefunded();
@@ -203,6 +203,6 @@ public interface Payment extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void sendPaymenyReceiptEmail();
+	void sentPaymentReceiptEmail();
 
 } // Payment

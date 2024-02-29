@@ -32,12 +32,12 @@ public interface SystemAdmin extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Phone</em>' attribute.
-	 * @see #setPhone(int)
+	 * @see #setPhone(String)
 	 * @see gendev.hw1.Hw1Package#getSystemAdmin_Phone()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	int getPhone();
+	String getPhone();
 
 	/**
 	 * Sets the value of the '{@link gendev.hw1.SystemAdmin#getPhone <em>Phone</em>}' attribute.
@@ -47,7 +47,7 @@ public interface SystemAdmin extends EObject {
 	 * @see #getPhone()
 	 * @generated
 	 */
-	void setPhone(int value);
+	void setPhone(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Email</b></em>' attribute.
@@ -112,7 +112,7 @@ public interface SystemAdmin extends EObject {
 	 * @return the value of the '<em>Admin ID</em>' attribute.
 	 * @see #setAdminID(int)
 	 * @see gendev.hw1.Hw1Package#getSystemAdmin_AdminID()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getAdminID();

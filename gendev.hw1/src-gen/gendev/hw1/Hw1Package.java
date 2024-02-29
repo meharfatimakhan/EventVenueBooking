@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see gendev.hw1.Hw1Factory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore"
  * @generated
  */
 public interface Hw1Package extends EPackage {
@@ -150,13 +151,22 @@ public interface Hw1Package extends EPackage {
 	int CUSTOMER___CANCEL_BOOKING = 2;
 
 	/**
+	 * The operation id for the '<em>Null </em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER___NULL____DIAGNOSTICCHAIN_MAP = 3;
+
+	/**
 	 * The number of operations of the '<em>Customer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER_OPERATION_COUNT = 3;
+	int CUSTOMER_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link gendev.hw1.impl.ReviewImpl <em>Review</em>}' class.
@@ -296,13 +306,22 @@ public interface Hw1Package extends EPackage {
 	int VENUE___CHECK_AVAILIBILITY = 0;
 
 	/**
+	 * The operation id for the '<em>Null </em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VENUE___NULL____DIAGNOSTICCHAIN_MAP = 1;
+
+	/**
 	 * The number of operations of the '<em>Venue</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VENUE_OPERATION_COUNT = 1;
+	int VENUE_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link gendev.hw1.impl.SystemAdminImpl <em>System Admin</em>}' class.
@@ -442,13 +461,13 @@ public interface Hw1Package extends EPackage {
 	int BOOKING_ADMIN__APPROVED_BOOKINGS = SYSTEM_ADMIN_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Approval Rate</b></em>' attribute.
+	 * The feature id for the '<em><b>Number Of Approvals</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_ADMIN__APPROVAL_RATE = SYSTEM_ADMIN_FEATURE_COUNT + 1;
+	int BOOKING_ADMIN__NUMBER_OF_APPROVALS = SYSTEM_ADMIN_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Booking Admin</em>' class.
@@ -460,13 +479,31 @@ public interface Hw1Package extends EPackage {
 	int BOOKING_ADMIN_FEATURE_COUNT = SYSTEM_ADMIN_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Approve Customer Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_ADMIN___APPROVE_CUSTOMER_BOOKING = SYSTEM_ADMIN_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Null </em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_ADMIN___NULL____DIAGNOSTICCHAIN_MAP = SYSTEM_ADMIN_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Booking Admin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_ADMIN_OPERATION_COUNT = SYSTEM_ADMIN_OPERATION_COUNT + 0;
+	int BOOKING_ADMIN_OPERATION_COUNT = SYSTEM_ADMIN_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link gendev.hw1.impl.BookingImpl <em>Booking</em>}' class.
@@ -687,13 +724,13 @@ public interface Hw1Package extends EPackage {
 	int PAYMENT___REFUND_PAYMENT = 1;
 
 	/**
-	 * The operation id for the '<em>Send Paymeny Receipt Email</em>' operation.
+	 * The operation id for the '<em>Sent Payment Receipt Email</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT___SEND_PAYMENY_RECEIPT_EMAIL = 2;
+	int PAYMENT___SENT_PAYMENT_RECEIPT_EMAIL = 2;
 
 	/**
 	 * The number of operations of the '<em>Payment</em>' class.
@@ -832,13 +869,22 @@ public interface Hw1Package extends EPackage {
 	int VENUE_VISIT_BOOKING___VIEW_BOOKING_INFO = BOOKING___VIEW_BOOKING_INFO;
 
 	/**
+	 * The operation id for the '<em>Send Venue Visit Booking Email</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VENUE_VISIT_BOOKING___SEND_VENUE_VISIT_BOOKING_EMAIL = BOOKING_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Venue Visit Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VENUE_VISIT_BOOKING_OPERATION_COUNT = BOOKING_OPERATION_COUNT + 0;
+	int VENUE_VISIT_BOOKING_OPERATION_COUNT = BOOKING_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link gendev.hw1.impl.EventBookingImpl <em>Event Booking</em>}' class.
@@ -1113,13 +1159,22 @@ public interface Hw1Package extends EPackage {
 	int MENU_TASTING_BOOKING___VIEW_BOOKING_INFO = BOOKING___VIEW_BOOKING_INFO;
 
 	/**
+	 * The operation id for the '<em>Send Menu Tasting Visit Email</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_TASTING_BOOKING___SEND_MENU_TASTING_VISIT_EMAIL = BOOKING_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Menu Tasting Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_TASTING_BOOKING_OPERATION_COUNT = BOOKING_OPERATION_COUNT + 0;
+	int MENU_TASTING_BOOKING_OPERATION_COUNT = BOOKING_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '<em>Calendar</em>' data type.
@@ -1225,6 +1280,16 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	EOperation getCustomer__CancelBooking();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.Customer#null_(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Null </em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Null </em>' operation.
+	 * @see gendev.hw1.Customer#null_(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getCustomer__Null___DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link gendev.hw1.Review <em>Review</em>}'.
@@ -1356,6 +1421,16 @@ public interface Hw1Package extends EPackage {
 	EOperation getVenue__CheckAvailibility();
 
 	/**
+	 * Returns the meta object for the '{@link gendev.hw1.Venue#null_(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Null </em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Null </em>' operation.
+	 * @see gendev.hw1.Venue#null_(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getVenue__Null___DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link gendev.hw1.SystemAdmin <em>System Admin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1442,15 +1517,35 @@ public interface Hw1Package extends EPackage {
 	EReference getBookingAdmin_ApprovedBookings();
 
 	/**
-	 * Returns the meta object for the attribute '{@link gendev.hw1.BookingAdmin#getApprovalRate <em>Approval Rate</em>}'.
+	 * Returns the meta object for the attribute '{@link gendev.hw1.BookingAdmin#getNumberOfApprovals <em>Number Of Approvals</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Approval Rate</em>'.
-	 * @see gendev.hw1.BookingAdmin#getApprovalRate()
+	 * @return the meta object for the attribute '<em>Number Of Approvals</em>'.
+	 * @see gendev.hw1.BookingAdmin#getNumberOfApprovals()
 	 * @see #getBookingAdmin()
 	 * @generated
 	 */
-	EAttribute getBookingAdmin_ApprovalRate();
+	EAttribute getBookingAdmin_NumberOfApprovals();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.BookingAdmin#approveCustomerBooking() <em>Approve Customer Booking</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Approve Customer Booking</em>' operation.
+	 * @see gendev.hw1.BookingAdmin#approveCustomerBooking()
+	 * @generated
+	 */
+	EOperation getBookingAdmin__ApproveCustomerBooking();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.BookingAdmin#null_(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Null </em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Null </em>' operation.
+	 * @see gendev.hw1.BookingAdmin#null_(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getBookingAdmin__Null___DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link gendev.hw1.Booking <em>Booking</em>}'.
@@ -1679,14 +1774,14 @@ public interface Hw1Package extends EPackage {
 	EOperation getPayment__RefundPayment();
 
 	/**
-	 * Returns the meta object for the '{@link gendev.hw1.Payment#sendPaymenyReceiptEmail() <em>Send Paymeny Receipt Email</em>}' operation.
+	 * Returns the meta object for the '{@link gendev.hw1.Payment#sentPaymentReceiptEmail() <em>Sent Payment Receipt Email</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Send Paymeny Receipt Email</em>' operation.
-	 * @see gendev.hw1.Payment#sendPaymenyReceiptEmail()
+	 * @return the meta object for the '<em>Sent Payment Receipt Email</em>' operation.
+	 * @see gendev.hw1.Payment#sentPaymentReceiptEmail()
 	 * @generated
 	 */
-	EOperation getPayment__SendPaymenyReceiptEmail();
+	EOperation getPayment__SentPaymentReceiptEmail();
 
 	/**
 	 * Returns the meta object for class '{@link gendev.hw1.VenueVisitBooking <em>Venue Visit Booking</em>}'.
@@ -1719,6 +1814,16 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getVenueVisitBooking_VisitID();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.VenueVisitBooking#sendVenueVisitBookingEmail() <em>Send Venue Visit Booking Email</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Send Venue Visit Booking Email</em>' operation.
+	 * @see gendev.hw1.VenueVisitBooking#sendVenueVisitBookingEmail()
+	 * @generated
+	 */
+	EOperation getVenueVisitBooking__SendVenueVisitBookingEmail();
 
 	/**
 	 * Returns the meta object for class '{@link gendev.hw1.EventBooking <em>Event Booking</em>}'.
@@ -1793,6 +1898,16 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMenuTastingBooking_MenuTastingVisitID();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.MenuTastingBooking#sendMenuTastingVisitEmail() <em>Send Menu Tasting Visit Email</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Send Menu Tasting Visit Email</em>' operation.
+	 * @see gendev.hw1.MenuTastingBooking#sendMenuTastingVisitEmail()
+	 * @generated
+	 */
+	EOperation getMenuTastingBooking__SendMenuTastingVisitEmail();
 
 	/**
 	 * Returns the meta object for data type '{@link java.util.Calendar <em>Calendar</em>}'.
@@ -1903,6 +2018,14 @@ public interface Hw1Package extends EPackage {
 		EOperation CUSTOMER___CANCEL_BOOKING = eINSTANCE.getCustomer__CancelBooking();
 
 		/**
+		 * The meta object literal for the '<em><b>Null </b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOMER___NULL____DIAGNOSTICCHAIN_MAP = eINSTANCE.getCustomer__Null___DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.ReviewImpl <em>Review</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2003,6 +2126,14 @@ public interface Hw1Package extends EPackage {
 		EOperation VENUE___CHECK_AVAILIBILITY = eINSTANCE.getVenue__CheckAvailibility();
 
 		/**
+		 * The meta object literal for the '<em><b>Null </b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation VENUE___NULL____DIAGNOSTICCHAIN_MAP = eINSTANCE.getVenue__Null___DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.SystemAdminImpl <em>System Admin</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2071,12 +2202,29 @@ public interface Hw1Package extends EPackage {
 		EReference BOOKING_ADMIN__APPROVED_BOOKINGS = eINSTANCE.getBookingAdmin_ApprovedBookings();
 
 		/**
-		 * The meta object literal for the '<em><b>Approval Rate</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Number Of Approvals</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BOOKING_ADMIN__APPROVAL_RATE = eINSTANCE.getBookingAdmin_ApprovalRate();
+		EAttribute BOOKING_ADMIN__NUMBER_OF_APPROVALS = eINSTANCE.getBookingAdmin_NumberOfApprovals();
+
+		/**
+		 * The meta object literal for the '<em><b>Approve Customer Booking</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_ADMIN___APPROVE_CUSTOMER_BOOKING = eINSTANCE.getBookingAdmin__ApproveCustomerBooking();
+
+		/**
+		 * The meta object literal for the '<em><b>Null </b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BOOKING_ADMIN___NULL____DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getBookingAdmin__Null___DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.BookingImpl <em>Booking</em>}' class.
@@ -2251,12 +2399,12 @@ public interface Hw1Package extends EPackage {
 		EOperation PAYMENT___REFUND_PAYMENT = eINSTANCE.getPayment__RefundPayment();
 
 		/**
-		 * The meta object literal for the '<em><b>Send Paymeny Receipt Email</b></em>' operation.
+		 * The meta object literal for the '<em><b>Sent Payment Receipt Email</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation PAYMENT___SEND_PAYMENY_RECEIPT_EMAIL = eINSTANCE.getPayment__SendPaymenyReceiptEmail();
+		EOperation PAYMENT___SENT_PAYMENT_RECEIPT_EMAIL = eINSTANCE.getPayment__SentPaymentReceiptEmail();
 
 		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.VenueVisitBookingImpl <em>Venue Visit Booking</em>}' class.
@@ -2283,6 +2431,15 @@ public interface Hw1Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute VENUE_VISIT_BOOKING__VISIT_ID = eINSTANCE.getVenueVisitBooking_VisitID();
+
+		/**
+		 * The meta object literal for the '<em><b>Send Venue Visit Booking Email</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation VENUE_VISIT_BOOKING___SEND_VENUE_VISIT_BOOKING_EMAIL = eINSTANCE
+				.getVenueVisitBooking__SendVenueVisitBookingEmail();
 
 		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.EventBookingImpl <em>Event Booking</em>}' class.
@@ -2343,6 +2500,15 @@ public interface Hw1Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID = eINSTANCE.getMenuTastingBooking_MenuTastingVisitID();
+
+		/**
+		 * The meta object literal for the '<em><b>Send Menu Tasting Visit Email</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MENU_TASTING_BOOKING___SEND_MENU_TASTING_VISIT_EMAIL = eINSTANCE
+				.getMenuTastingBooking__SendMenuTastingVisitEmail();
 
 		/**
 		 * The meta object literal for the '<em>Calendar</em>' data type.

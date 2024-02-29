@@ -2,6 +2,8 @@
  */
 package gendev.hw1;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -23,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getCustomer()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='null'"
  * @generated
  */
 public interface Customer extends EObject {
@@ -76,12 +78,12 @@ public interface Customer extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Phone</em>' attribute.
-	 * @see #setPhone(int)
+	 * @see #setPhone(String)
 	 * @see gendev.hw1.Hw1Package#getCustomer_Phone()
 	 * @model
 	 * @generated
 	 */
-	int getPhone();
+	String getPhone();
 
 	/**
 	 * Sets the value of the '{@link gendev.hw1.Customer#getPhone <em>Phone</em>}' attribute.
@@ -91,7 +93,7 @@ public interface Customer extends EObject {
 	 * @see #getPhone()
 	 * @generated
 	 */
-	void setPhone(int value);
+	void setPhone(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Customer Booking ID</b></em>' attribute.
@@ -100,7 +102,7 @@ public interface Customer extends EObject {
 	 * @return the value of the '<em>Customer Booking ID</em>' attribute.
 	 * @see #setCustomerBookingID(int)
 	 * @see gendev.hw1.Hw1Package#getCustomer_CustomerBookingID()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getCustomerBookingID();
@@ -152,5 +154,13 @@ public interface Customer extends EObject {
 	 * @generated
 	 */
 	void cancelBooking();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Customer.allInstances()-&gt;forAll(c | c &lt;&gt; self implies c.Email &lt;&gt; self.Email)\n\t\tand self.submits-&gt;notEmpty() implies self.submits-&gt;forAll(review | review.Rating &gt;= 1 and review.Rating &lt;= 5)\n\t\tand self.Phone.toString().size() = 10'"
+	 * @generated
+	 */
+	boolean null_(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Customer

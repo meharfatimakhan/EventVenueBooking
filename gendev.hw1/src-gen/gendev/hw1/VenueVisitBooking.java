@@ -49,7 +49,7 @@ public interface VenueVisitBooking extends Booking {
 	 * @return the value of the '<em>Visit ID</em>' attribute.
 	 * @see #setVisitID(int)
 	 * @see gendev.hw1.Hw1Package#getVenueVisitBooking_VisitID()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getVisitID();
@@ -63,5 +63,13 @@ public interface VenueVisitBooking extends Booking {
 	 * @generated
 	 */
 	void setVisitID(int value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void sendVenueVisitBookingEmail();
 
 } // VenueVisitBooking

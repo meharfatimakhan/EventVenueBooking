@@ -460,9 +460,7 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public void viewBookingInfo() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException(); // FIXME Unimplemented http://www.example.org/hw1!Booking!viewBookingInfo()
 	}
 
 	/**
