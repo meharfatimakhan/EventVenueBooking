@@ -6,3 +6,35 @@ Our business is an event booking system which caters to various venues across Le
 4) billing system which will process payment
 
 Once a customer confirms booking and pays for booking, a confirmation of email receipt is sent, they can book visits for tasting menu (hosted at separate location) and for visiting the venue if they want
+
+-- Meaningful invariant: Customer's email should be unique across all customers
+context Customer
+inv:
+     -- Navigation leading to a single instance: If a customer submitted a review, the review should have a valid rating
+    Customer.allInstances()->forAll(c | c <> self implies c.Email <> self.Email)
+    -- Meaningful invariant: If a customer submitted a review, the review should have a valid rating
+    and self.submits#submittedBy->notEmpty() implies self.submits#submittedBy.Rating >= 1 and self.submits#submittedBy.Rating <= 5
+    -- Meaningful invariant: Customer's phone number should have exactly 10 digits
+    and self.Phone.size() = 10;
+    
+    
+-- Navigation leading to a set of instances: A venue should have at least one booking
+Context: Venue
+		invariant: self.bookings->notEmpty()
+    	-- Additional invariant: Ensure the venue is not overbooked
+    	and self.bookings->forAll(booking | 
+        -- If number of guests is equal to or more than 80% of the capacity, booking status should be 'Fully Booked', otherwise, it should not be 'Fully Booked'
+        (if booking.NumberOfGuests >= self.Capacity * 0.8 
+        	then booking.BookingStatus = 'Fully Booked' 
+        	else booking.BookingStatus <> 'Not Fully Booked' endif
+        ));
+    
+-- Navigation via multiple associations: An admin should manage at least one venue	
+context BookingAdmin
+	invariant:
+    self.venuesManaged->notEmpty()
+    -- Use of exists(): An admin should have approved at least one booking
+    and self.approvedBookings->exists(booking | not booking.oclIsUndefined())
+    -- Use of forall(): The approval rate should be between 0 and 1
+    and self.approvalRate >= 0;
+    

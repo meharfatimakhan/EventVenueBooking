@@ -5,7 +5,7 @@
     <semanticResources>hw1.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_tm5FUMXVEe6jEMP-Hke9Iw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tnEEcMXVEe6jEMP-Hke9Iw" name="hw1" repPath="#_tnAaEMXVEe6jEMP-Hke9Iw" changeId="1709221464594">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tnEEcMXVEe6jEMP-Hke9Iw" name="hw1" repPath="#_tnAaEMXVEe6jEMP-Hke9Iw" changeId="1709223337786">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="hw1.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -680,7 +680,7 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_t7mAINXSEe64IrUTaxnBSA" name="BookingAdmin" tooltipText="" outgoingEdges="_kLZ-MNYvEe64IrUTaxnBSA _-_7z3NYzEe64IrUTaxnBSA" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_t7mAINXSEe64IrUTaxnBSA" name="BookingAdmin" tooltipText="&#xA;ERROR : The «invariant» 'hw1::BookingAdmin::null' is invalid: 'self.venuesManaged->notEmpty()&#xA;    -- Use of exists(): An admin should have approved at least one booking&#xA;    and self.approvedBookings->exists(booking | not booking.oclIsUndefined())&#xA;    -- Use of forall(): The approval rate should be between 0 and 1&#xA;    and self.approvalRate >= 0'&#xA;6:14: Unresolved Property 'hw1::BookingAdmin::approvalRate'&#xA;6: Unresolved Operation 'OclInvalid::>=(Integer)'&#xA;ERROR :     -- Use of exists(): An admin should have approved at least one booking&#xA;ERROR :     and self.approvedBookings->exists(booking | not booking.oclIsUndefined())&#xA;ERROR :     -- Use of forall(): The approval rate should be between 0 and 1&#xA;ERROR :     and self.approvalRate >= 0'&#xA;ERROR : 6:14: Unresolved Property 'hw1::BookingAdmin::approvalRate'&#xA;ERROR : 6: Unresolved Operation 'OclInvalid::>=(Integer)'" outgoingEdges="_kLZ-MNYvEe64IrUTaxnBSA _-_7z3NYzEe64IrUTaxnBSA" width="12" height="10">
       <target xmi:type="ecore:EClass" href="hw1.ecore#//BookingAdmin"/>
       <semanticElements xmi:type="ecore:EClass" href="hw1.ecore#//BookingAdmin"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -690,9 +690,9 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_BJm90NZ7Ee64IrUTaxnBSA" name="approvalRate : EDouble = 0.0" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="hw1.ecore#//BookingAdmin/approvalRate"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="hw1.ecore#//BookingAdmin/approvalRate"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_BJm90NZ7Ee64IrUTaxnBSA" name="NumberOfApprovals : EInt" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="hw1.ecore#//BookingAdmin/NumberOfApprovals"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="hw1.ecore#//BookingAdmin/NumberOfApprovals"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_h53TINcQEe6i0IsI2VktPg" labelAlignment="LEFT" description="_h5xMgNcQEe6i0IsI2VktPg">
           <labelFormat>bold</labelFormat>
         </ownedStyle>
