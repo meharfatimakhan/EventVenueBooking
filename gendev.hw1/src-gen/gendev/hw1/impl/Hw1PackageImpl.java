@@ -1035,7 +1035,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		initEClass(bookingAdminEClass, BookingAdmin.class, "BookingAdmin", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBookingAdmin_ApprovedBookings(), this.getEventBooking(), this.getEventBooking_ApprovedBy(),
-				"approvedBookings", null, 0, 1, BookingAdmin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				"approvedBookings", null, 0, -1, BookingAdmin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBookingAdmin_NumberOfApprovals(), ecorePackage.getEInt(), "NumberOfApprovals", null, 1, 1,
 				BookingAdmin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,

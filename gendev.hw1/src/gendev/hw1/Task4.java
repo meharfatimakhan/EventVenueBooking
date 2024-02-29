@@ -68,19 +68,24 @@ public class Task4 {
         bookingAdmin.setAdminID(0);
         bookingAdmin.setEmail("ada@gmail.com");
         bookingAdmin.setPhone("3124313262");
-        // creating eventbooking object
+        bookingAdmin.setNumberOfApprovals(1);
+        bookingAdmin.setName("Ada Jade");
+//        bookingAdmin.set
+        
+        // creating EventBooking object
         Calendar calendar = Calendar.getInstance();
         EventBooking eventBooking = Hw1Factory.eINSTANCE.createEventBooking();
         eventBooking.setEventDescription("a wedding being hosted for 100 people with white decor and white baloons all over");
         eventBooking.setEstimatedPriceQuote(1000);
         eventBooking.setBookingBy(customer1); // link 3
         eventBooking.setHostedAt(venue2);
-        eventBooking.setApprovedBy(null);
-//        eventBooking.setBookingDate(calendar);
+        eventBooking.setApprovedBy(bookingAdmin);
+        eventBooking.setBookingDate(calendar);
         eventBooking.setBookingType("Event");
         eventBooking.setBookingStatus("Confirmed");
         eventBooking.setNumberOfGuests(30);
         eventBooking.setBookingID(3);
+
         EList<String> menuItems1 = new BasicEList<String>();
         menuItems1.add("French Fries");
         menuItems1.add("Burgers");

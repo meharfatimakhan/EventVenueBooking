@@ -91,10 +91,10 @@ public class Hw1Tables extends AbstractTables
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_Payment = TypeId.BAG.getSpecializedId(Hw1Tables.CLSSid_Payment);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_SystemAdmin = TypeId.BAG.getSpecializedId(Hw1Tables.CLSSid_SystemAdmin);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Booking = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_Booking);
+	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EventBooking = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_EventBooking);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Review = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_Review);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Venue = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_Venue);
 	public static final /*@NonInvalid*/ CollectionTypeId SET_CLSSid_Customer = TypeId.SET.getSpecializedId(Hw1Tables.CLSSid_Customer);
-	public static final /*@NonInvalid*/ CollectionTypeId SET_CLSSid_EventBooking = TypeId.SET.getSpecializedId(Hw1Tables.CLSSid_EventBooking);
 
 	/**
 	 *	The type parameters for templated types and operations.

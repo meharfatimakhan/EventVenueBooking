@@ -8,6 +8,7 @@ import gendev.hw1.Hw1Package;
 import gendev.hw1.Hw1Tables;
 import gendev.hw1.Venue;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -19,11 +20,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.ocl.pivot.evaluation.Executor;
 import org.eclipse.ocl.pivot.ids.IdResolver;
 import org.eclipse.ocl.pivot.ids.TypeId;
 import org.eclipse.ocl.pivot.library.collection.CollectionNotEmptyOperation;
-import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsSetOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanEqualOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
 import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
@@ -34,7 +36,6 @@ import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import org.eclipse.ocl.pivot.values.IntegerValue;
 import org.eclipse.ocl.pivot.values.InvalidValueException;
 import org.eclipse.ocl.pivot.values.OrderedSetValue;
-import org.eclipse.ocl.pivot.values.SetValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,14 +53,14 @@ import org.eclipse.ocl.pivot.values.SetValue;
  */
 public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	/**
-	 * The cached value of the '{@link #getApprovedBookings() <em>Approved Bookings</em>}' reference.
+	 * The cached value of the '{@link #getApprovedBookings() <em>Approved Bookings</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getApprovedBookings()
 	 * @generated
 	 * @ordered
 	 */
-	protected EventBooking approvedBookings;
+	protected EList<EventBooking> approvedBookings;
 
 	/**
 	 * The default value of the '{@link #getNumberOfApprovals() <em>Number Of Approvals</em>}' attribute.
@@ -105,67 +106,12 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventBooking getApprovedBookings() {
-		if (approvedBookings != null && approvedBookings.eIsProxy()) {
-			InternalEObject oldApprovedBookings = (InternalEObject) approvedBookings;
-			approvedBookings = (EventBooking) eResolveProxy(oldApprovedBookings);
-			if (approvedBookings != oldApprovedBookings) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS, oldApprovedBookings, approvedBookings));
-			}
+	public EList<EventBooking> getApprovedBookings() {
+		if (approvedBookings == null) {
+			approvedBookings = new EObjectWithInverseResolvingEList<EventBooking>(EventBooking.class, this,
+					Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS, Hw1Package.EVENT_BOOKING__APPROVED_BY);
 		}
 		return approvedBookings;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EventBooking basicGetApprovedBookings() {
-		return approvedBookings;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetApprovedBookings(EventBooking newApprovedBookings, NotificationChain msgs) {
-		EventBooking oldApprovedBookings = approvedBookings;
-		approvedBookings = newApprovedBookings;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS, oldApprovedBookings, newApprovedBookings);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setApprovedBookings(EventBooking newApprovedBookings) {
-		if (newApprovedBookings != approvedBookings) {
-			NotificationChain msgs = null;
-			if (approvedBookings != null)
-				msgs = ((InternalEObject) approvedBookings).eInverseRemove(this, Hw1Package.EVENT_BOOKING__APPROVED_BY,
-						EventBooking.class, msgs);
-			if (newApprovedBookings != null)
-				msgs = ((InternalEObject) newApprovedBookings).eInverseAdd(this, Hw1Package.EVENT_BOOKING__APPROVED_BY,
-						EventBooking.class, msgs);
-			msgs = basicSetApprovedBookings(newApprovedBookings, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS,
-					newApprovedBookings, newApprovedBookings));
 	}
 
 	/**
@@ -248,11 +194,11 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 						} else {
 							/*@Caught*/ Object CAUGHT_exists;
 							try {
-								final /*@NonInvalid*/ EventBooking approvedBookings = this.getApprovedBookings();
-								final /*@Thrown*/ SetValue oclAsSet = OclAnyOclAsSetOperation.INSTANCE
-										.evaluate(executor, Hw1Tables.SET_CLSSid_EventBooking, approvedBookings);
+								final /*@NonInvalid*/ List<EventBooking> approvedBookings = this.getApprovedBookings();
+								final /*@NonInvalid*/ OrderedSetValue BOXED_approvedBookings = idResolver
+										.createOrderedSetOfAll(Hw1Tables.ORD_CLSSid_EventBooking, approvedBookings);
 								/*@Thrown*/ Object accumulator = ValueUtil.FALSE_VALUE;
-								Iterator<Object> ITERATOR_booking = oclAsSet.iterator();
+								Iterator<Object> ITERATOR_booking = BOXED_approvedBookings.iterator();
 								/*@Thrown*/ Boolean exists;
 								while (true) {
 									if (!ITERATOR_booking.hasNext()) {
@@ -348,14 +294,12 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
-			if (approvedBookings != null)
-				msgs = ((InternalEObject) approvedBookings).eInverseRemove(this, Hw1Package.EVENT_BOOKING__APPROVED_BY,
-						EventBooking.class, msgs);
-			return basicSetApprovedBookings((EventBooking) otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getApprovedBookings()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -369,7 +313,7 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
-			return basicSetApprovedBookings(null, msgs);
+			return ((InternalEList<?>) getApprovedBookings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -383,9 +327,7 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
-			if (resolve)
-				return getApprovedBookings();
-			return basicGetApprovedBookings();
+			return getApprovedBookings();
 		case Hw1Package.BOOKING_ADMIN__NUMBER_OF_APPROVALS:
 			return getNumberOfApprovals();
 		}
@@ -397,11 +339,13 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
-			setApprovedBookings((EventBooking) newValue);
+			getApprovedBookings().clear();
+			getApprovedBookings().addAll((Collection<? extends EventBooking>) newValue);
 			return;
 		case Hw1Package.BOOKING_ADMIN__NUMBER_OF_APPROVALS:
 			setNumberOfApprovals((Integer) newValue);
@@ -419,7 +363,7 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
-			setApprovedBookings((EventBooking) null);
+			getApprovedBookings().clear();
 			return;
 		case Hw1Package.BOOKING_ADMIN__NUMBER_OF_APPROVALS:
 			setNumberOfApprovals(NUMBER_OF_APPROVALS_EDEFAULT);
@@ -437,7 +381,7 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
-			return approvedBookings != null;
+			return approvedBookings != null && !approvedBookings.isEmpty();
 		case Hw1Package.BOOKING_ADMIN__NUMBER_OF_APPROVALS:
 			return numberOfApprovals != NUMBER_OF_APPROVALS_EDEFAULT;
 		}

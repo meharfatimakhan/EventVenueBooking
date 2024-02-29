@@ -452,7 +452,7 @@ public interface Hw1Package extends EPackage {
 	int BOOKING_ADMIN__ADMIN_ID = SYSTEM_ADMIN__ADMIN_ID;
 
 	/**
-	 * The feature id for the '<em><b>Approved Bookings</b></em>' reference.
+	 * The feature id for the '<em><b>Approved Bookings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1506,10 +1506,10 @@ public interface Hw1Package extends EPackage {
 	EClass getBookingAdmin();
 
 	/**
-	 * Returns the meta object for the reference '{@link gendev.hw1.BookingAdmin#getApprovedBookings <em>Approved Bookings</em>}'.
+	 * Returns the meta object for the reference list '{@link gendev.hw1.BookingAdmin#getApprovedBookings <em>Approved Bookings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Approved Bookings</em>'.
+	 * @return the meta object for the reference list '<em>Approved Bookings</em>'.
 	 * @see gendev.hw1.BookingAdmin#getApprovedBookings()
 	 * @see #getBookingAdmin()
 	 * @generated
@@ -2194,7 +2194,7 @@ public interface Hw1Package extends EPackage {
 		EClass BOOKING_ADMIN = eINSTANCE.getBookingAdmin();
 
 		/**
-		 * The meta object literal for the '<em><b>Approved Bookings</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Approved Bookings</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

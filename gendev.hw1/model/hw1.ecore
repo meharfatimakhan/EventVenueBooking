@@ -71,8 +71,8 @@
       <details key="null" value="self.venuesManaged->notEmpty()&#xA;    &#x9;and self.approvedBookings->exists(booking | not booking.oclIsUndefined())&#xA;    &#x9;and self.NumberOfApprovals >= 0"/>
     </eAnnotations>
     <eOperations name="approveCustomerBooking"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="approvedBookings" eType="#//EventBooking"
-        eOpposite="#//EventBooking/approvedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="approvedBookings" upperBound="-1"
+        eType="#//EventBooking" eOpposite="#//EventBooking/approvedBy"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumberOfApprovals" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>

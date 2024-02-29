@@ -4,6 +4,7 @@ package gendev.hw1;
 
 import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,28 +25,18 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  */
 public interface BookingAdmin extends SystemAdmin {
 	/**
-	 * Returns the value of the '<em><b>Approved Bookings</b></em>' reference.
+	 * Returns the value of the '<em><b>Approved Bookings</b></em>' reference list.
+	 * The list contents are of type {@link gendev.hw1.EventBooking}.
 	 * It is bidirectional and its opposite is '{@link gendev.hw1.EventBooking#getApprovedBy <em>Approved By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Approved Bookings</em>' reference.
-	 * @see #setApprovedBookings(EventBooking)
+	 * @return the value of the '<em>Approved Bookings</em>' reference list.
 	 * @see gendev.hw1.Hw1Package#getBookingAdmin_ApprovedBookings()
 	 * @see gendev.hw1.EventBooking#getApprovedBy
 	 * @model opposite="approvedBy"
 	 * @generated
 	 */
-	EventBooking getApprovedBookings();
-
-	/**
-	 * Sets the value of the '{@link gendev.hw1.BookingAdmin#getApprovedBookings <em>Approved Bookings</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Approved Bookings</em>' reference.
-	 * @see #getApprovedBookings()
-	 * @generated
-	 */
-	void setApprovedBookings(EventBooking value);
+	EList<EventBooking> getApprovedBookings();
 
 	/**
 	 * Returns the value of the '<em><b>Number Of Approvals</b></em>' attribute.
