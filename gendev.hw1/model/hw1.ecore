@@ -58,6 +58,7 @@
         <eTypeArguments/>
       </eGenericType>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumberOfGuests" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Payment">
     <eOperations name="processPayment"/>
@@ -79,7 +80,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EstimatedPriceQuote" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="approvedBy" eType="#//BookingAdmin"
         eOpposite="#//BookingAdmin/approvedBookings"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumberOfGuests" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EventDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MenuTastingBooking" eSuperTypes="#//Booking">

@@ -55,6 +55,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Booking/BookingType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Booking/hostedAt"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Booking/MenuOptions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Booking/NumberOfGuests"/>
       <genOperations ecoreOperation="hw1.ecore#//Booking/viewBookingInfo"/>
     </genClasses>
     <genClasses ecoreClass="hw1.ecore#//Payment">
@@ -74,7 +75,6 @@
     <genClasses ecoreClass="hw1.ecore#//EventBooking">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//EventBooking/EstimatedPriceQuote"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//EventBooking/approvedBy"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//EventBooking/NumberOfGuests"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//EventBooking/EventDescription"/>
       <genOperations ecoreOperation="hw1.ecore#//EventBooking/calculateFinalPrice"/>
     </genClasses>
