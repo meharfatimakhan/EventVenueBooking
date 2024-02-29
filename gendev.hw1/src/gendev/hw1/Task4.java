@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl; 
 
 public class Task4 {
-	public static String instance = "task4_Instances/instance.xmi";
+	public static String instance = "task4-Instances/instance.xmi";
 
 	public static void main(String[] args) {
 		System.out.println("Creating and saving instance to file " + instance);
@@ -140,46 +140,5 @@ public class Task4 {
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
-	    }
-	
-	 private static EventBooking createEventBooking(Customer customer) {
-		    Calendar calendar = Calendar.getInstance();
-	        EventBooking eventBooking = Hw1Factory.eINSTANCE.createEventBooking();
-	        eventBooking.setEventDescription("a wedding being hosted for 100 people with white decor and white baloons all over");
-	        eventBooking.setEstimatedPriceQuote(1000);
-	        eventBooking.setBookingBy(customer);
-//	        eventBooking.setBookingDate(calendar);
-	        eventBooking.setBookingType("Event");
-	        eventBooking.setBookingStatus("Confirmed");
-	        eventBooking.setNumberOfGuests(30);
-	        eventBooking.setBookingID(3);
-	        EList<String> menuItems = new BasicEList<String>();
-	        menuItems.add("French Fries");
-	        menuItems.add("Burgers");
-	        menuItems.add("Caviar");
-	        menuItems.add("Coke");
-	        eventBooking.setMenuOptions(menuItems);	        
-	        
-	        return eventBooking;
-	    }
-
-	    private static VenueVisitBooking createVenueVisitBooking(Customer customer) {
-	        VenueVisitBooking venueVisitBooking = Hw1Factory.eINSTANCE.createVenueVisitBooking();
-	        Calendar calendar = Calendar.getInstance();
-	        venueVisitBooking.setVisitPurpose("FINALIZE DECOR");
-	        venueVisitBooking.setBookingBy(customer);
-//	        venueVisitBooking.setBookingDate(calendar);
-	        venueVisitBooking.setBookingStatus("Confirmed");
-	        venueVisitBooking.setBookingType("Visit");
-	        venueVisitBooking.setVisitID(3);
-	        venueVisitBooking.setNumberOfGuests(61);
-	        venueVisitBooking.setBookingID(5);
-	        EList<String> menuItems = new BasicEList<String>();
-	        menuItems.add("Biryani");
-	        menuItems.add("Chai");
-	        menuItems.add("Chicken Curry");
-	        venueVisitBooking.setMenuOptions(menuItems);	
-	        return venueVisitBooking;
-	    }
-
+	  }
 }
