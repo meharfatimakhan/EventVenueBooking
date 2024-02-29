@@ -479,22 +479,13 @@ public interface Hw1Package extends EPackage {
 	int BOOKING = 5;
 
 	/**
-	 * The feature id for the '<em><b>Event Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__EVENT_DESCRIPTION = 0;
-
-	/**
 	 * The feature id for the '<em><b>Booking ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__BOOKING_ID = 1;
+	int BOOKING__BOOKING_ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Booking Date</b></em>' attribute.
@@ -503,7 +494,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__BOOKING_DATE = 2;
+	int BOOKING__BOOKING_DATE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Booking Status</b></em>' attribute.
@@ -512,7 +503,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__BOOKING_STATUS = 3;
+	int BOOKING__BOOKING_STATUS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Booking By</b></em>' reference.
@@ -521,7 +512,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__BOOKING_BY = 4;
+	int BOOKING__BOOKING_BY = 3;
 
 	/**
 	 * The feature id for the '<em><b>Has Reviews</b></em>' reference list.
@@ -530,7 +521,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__HAS_REVIEWS = 5;
+	int BOOKING__HAS_REVIEWS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Booking Type</b></em>' attribute.
@@ -539,7 +530,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__BOOKING_TYPE = 6;
+	int BOOKING__BOOKING_TYPE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Hosted At</b></em>' reference.
@@ -548,7 +539,25 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__HOSTED_AT = 7;
+	int BOOKING__HOSTED_AT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Menu Options</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__MENU_OPTIONS = 7;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Guests</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__NUMBER_OF_GUESTS = 8;
 
 	/**
 	 * The number of structural features of the '<em>Booking</em>' class.
@@ -557,7 +566,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_FEATURE_COUNT = 8;
+	int BOOKING_FEATURE_COUNT = 9;
 
 	/**
 	 * The operation id for the '<em>View Booking Info</em>' operation.
@@ -633,13 +642,31 @@ public interface Hw1Package extends EPackage {
 	int PAYMENT__PAYMENT_ID = 4;
 
 	/**
+	 * The feature id for the '<em><b>Amount Refunded</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__AMOUNT_REFUNDED = 5;
+
+	/**
+	 * The feature id for the '<em><b>Payment Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__PAYMENT_TYPE = 6;
+
+	/**
 	 * The number of structural features of the '<em>Payment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_FEATURE_COUNT = 5;
+	int PAYMENT_FEATURE_COUNT = 7;
 
 	/**
 	 * The operation id for the '<em>Process Payment</em>' operation.
@@ -686,15 +713,6 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	int VENUE_VISIT_BOOKING = 7;
-
-	/**
-	 * The feature id for the '<em><b>Event Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VENUE_VISIT_BOOKING__EVENT_DESCRIPTION = BOOKING__EVENT_DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Booking ID</b></em>' attribute.
@@ -760,6 +778,24 @@ public interface Hw1Package extends EPackage {
 	int VENUE_VISIT_BOOKING__HOSTED_AT = BOOKING__HOSTED_AT;
 
 	/**
+	 * The feature id for the '<em><b>Menu Options</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VENUE_VISIT_BOOKING__MENU_OPTIONS = BOOKING__MENU_OPTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Guests</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VENUE_VISIT_BOOKING__NUMBER_OF_GUESTS = BOOKING__NUMBER_OF_GUESTS;
+
+	/**
 	 * The feature id for the '<em><b>Visit Purpose</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -813,15 +849,6 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	int EVENT_BOOKING = 8;
-
-	/**
-	 * The feature id for the '<em><b>Event Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_BOOKING__EVENT_DESCRIPTION = BOOKING__EVENT_DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Booking ID</b></em>' attribute.
@@ -887,6 +914,24 @@ public interface Hw1Package extends EPackage {
 	int EVENT_BOOKING__HOSTED_AT = BOOKING__HOSTED_AT;
 
 	/**
+	 * The feature id for the '<em><b>Menu Options</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_BOOKING__MENU_OPTIONS = BOOKING__MENU_OPTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Guests</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_BOOKING__NUMBER_OF_GUESTS = BOOKING__NUMBER_OF_GUESTS;
+
+	/**
 	 * The feature id for the '<em><b>Estimated Price Quote</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -905,13 +950,22 @@ public interface Hw1Package extends EPackage {
 	int EVENT_BOOKING__APPROVED_BY = BOOKING_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Event Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_BOOKING__EVENT_DESCRIPTION = BOOKING_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Event Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_BOOKING_FEATURE_COUNT = BOOKING_FEATURE_COUNT + 2;
+	int EVENT_BOOKING_FEATURE_COUNT = BOOKING_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>View Booking Info</em>' operation.
@@ -949,15 +1003,6 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	int MENU_TASTING_BOOKING = 9;
-
-	/**
-	 * The feature id for the '<em><b>Event Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MENU_TASTING_BOOKING__EVENT_DESCRIPTION = BOOKING__EVENT_DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Booking ID</b></em>' attribute.
@@ -1029,7 +1074,16 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_TASTING_BOOKING__MENU_OPTIONS = BOOKING_FEATURE_COUNT + 0;
+	int MENU_TASTING_BOOKING__MENU_OPTIONS = BOOKING__MENU_OPTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Guests</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_TASTING_BOOKING__NUMBER_OF_GUESTS = BOOKING__NUMBER_OF_GUESTS;
 
 	/**
 	 * The feature id for the '<em><b>Menu Tasting Visit ID</b></em>' attribute.
@@ -1038,7 +1092,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID = BOOKING_FEATURE_COUNT + 1;
+	int MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID = BOOKING_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Menu Tasting Booking</em>' class.
@@ -1047,7 +1101,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_TASTING_BOOKING_FEATURE_COUNT = BOOKING_FEATURE_COUNT + 2;
+	int MENU_TASTING_BOOKING_FEATURE_COUNT = BOOKING_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>View Booking Info</em>' operation.
@@ -1059,22 +1113,13 @@ public interface Hw1Package extends EPackage {
 	int MENU_TASTING_BOOKING___VIEW_BOOKING_INFO = BOOKING___VIEW_BOOKING_INFO;
 
 	/**
-	 * The operation id for the '<em>Select Menu Options</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MENU_TASTING_BOOKING___SELECT_MENU_OPTIONS = BOOKING_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Menu Tasting Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_TASTING_BOOKING_OPERATION_COUNT = BOOKING_OPERATION_COUNT + 1;
+	int MENU_TASTING_BOOKING_OPERATION_COUNT = BOOKING_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '<em>Calendar</em>' data type.
@@ -1418,17 +1463,6 @@ public interface Hw1Package extends EPackage {
 	EClass getBooking();
 
 	/**
-	 * Returns the meta object for the attribute '{@link gendev.hw1.Booking#getEventDescription <em>Event Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Event Description</em>'.
-	 * @see gendev.hw1.Booking#getEventDescription()
-	 * @see #getBooking()
-	 * @generated
-	 */
-	EAttribute getBooking_EventDescription();
-
-	/**
 	 * Returns the meta object for the attribute '{@link gendev.hw1.Booking#getBookingID <em>Booking ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1506,6 +1540,28 @@ public interface Hw1Package extends EPackage {
 	EReference getBooking_HostedAt();
 
 	/**
+	 * Returns the meta object for the attribute '{@link gendev.hw1.Booking#getMenuOptions <em>Menu Options</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Menu Options</em>'.
+	 * @see gendev.hw1.Booking#getMenuOptions()
+	 * @see #getBooking()
+	 * @generated
+	 */
+	EAttribute getBooking_MenuOptions();
+
+	/**
+	 * Returns the meta object for the attribute '{@link gendev.hw1.Booking#getNumberOfGuests <em>Number Of Guests</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Number Of Guests</em>'.
+	 * @see gendev.hw1.Booking#getNumberOfGuests()
+	 * @see #getBooking()
+	 * @generated
+	 */
+	EAttribute getBooking_NumberOfGuests();
+
+	/**
 	 * Returns the meta object for the '{@link gendev.hw1.Booking#viewBookingInfo() <em>View Booking Info</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1579,6 +1635,28 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPayment_PaymentID();
+
+	/**
+	 * Returns the meta object for the attribute '{@link gendev.hw1.Payment#getAmountRefunded <em>Amount Refunded</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Amount Refunded</em>'.
+	 * @see gendev.hw1.Payment#getAmountRefunded()
+	 * @see #getPayment()
+	 * @generated
+	 */
+	EAttribute getPayment_AmountRefunded();
+
+	/**
+	 * Returns the meta object for the attribute '{@link gendev.hw1.Payment#getPaymentType <em>Payment Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Payment Type</em>'.
+	 * @see gendev.hw1.Payment#getPaymentType()
+	 * @see #getPayment()
+	 * @generated
+	 */
+	EAttribute getPayment_PaymentType();
 
 	/**
 	 * Returns the meta object for the '{@link gendev.hw1.Payment#processPayment() <em>Process Payment</em>}' operation.
@@ -1675,6 +1753,17 @@ public interface Hw1Package extends EPackage {
 	EReference getEventBooking_ApprovedBy();
 
 	/**
+	 * Returns the meta object for the attribute '{@link gendev.hw1.EventBooking#getEventDescription <em>Event Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Event Description</em>'.
+	 * @see gendev.hw1.EventBooking#getEventDescription()
+	 * @see #getEventBooking()
+	 * @generated
+	 */
+	EAttribute getEventBooking_EventDescription();
+
+	/**
 	 * Returns the meta object for the '{@link gendev.hw1.EventBooking#calculateFinalPrice() <em>Calculate Final Price</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1695,17 +1784,6 @@ public interface Hw1Package extends EPackage {
 	EClass getMenuTastingBooking();
 
 	/**
-	 * Returns the meta object for the attribute '{@link gendev.hw1.MenuTastingBooking#getMenuOptions <em>Menu Options</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Menu Options</em>'.
-	 * @see gendev.hw1.MenuTastingBooking#getMenuOptions()
-	 * @see #getMenuTastingBooking()
-	 * @generated
-	 */
-	EAttribute getMenuTastingBooking_MenuOptions();
-
-	/**
 	 * Returns the meta object for the attribute '{@link gendev.hw1.MenuTastingBooking#getMenuTastingVisitID <em>Menu Tasting Visit ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1715,16 +1793,6 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMenuTastingBooking_MenuTastingVisitID();
-
-	/**
-	 * Returns the meta object for the '{@link gendev.hw1.MenuTastingBooking#selectMenuOptions() <em>Select Menu Options</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Select Menu Options</em>' operation.
-	 * @see gendev.hw1.MenuTastingBooking#selectMenuOptions()
-	 * @generated
-	 */
-	EOperation getMenuTastingBooking__SelectMenuOptions();
 
 	/**
 	 * Returns the meta object for data type '{@link java.util.Calendar <em>Calendar</em>}'.
@@ -2021,14 +2089,6 @@ public interface Hw1Package extends EPackage {
 		EClass BOOKING = eINSTANCE.getBooking();
 
 		/**
-		 * The meta object literal for the '<em><b>Event Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BOOKING__EVENT_DESCRIPTION = eINSTANCE.getBooking_EventDescription();
-
-		/**
 		 * The meta object literal for the '<em><b>Booking ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2083,6 +2143,22 @@ public interface Hw1Package extends EPackage {
 		 * @generated
 		 */
 		EReference BOOKING__HOSTED_AT = eINSTANCE.getBooking_HostedAt();
+
+		/**
+		 * The meta object literal for the '<em><b>Menu Options</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOKING__MENU_OPTIONS = eINSTANCE.getBooking_MenuOptions();
+
+		/**
+		 * The meta object literal for the '<em><b>Number Of Guests</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOKING__NUMBER_OF_GUESTS = eINSTANCE.getBooking_NumberOfGuests();
 
 		/**
 		 * The meta object literal for the '<em><b>View Booking Info</b></em>' operation.
@@ -2141,6 +2217,22 @@ public interface Hw1Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute PAYMENT__PAYMENT_ID = eINSTANCE.getPayment_PaymentID();
+
+		/**
+		 * The meta object literal for the '<em><b>Amount Refunded</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PAYMENT__AMOUNT_REFUNDED = eINSTANCE.getPayment_AmountRefunded();
+
+		/**
+		 * The meta object literal for the '<em><b>Payment Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PAYMENT__PAYMENT_TYPE = eINSTANCE.getPayment_PaymentType();
 
 		/**
 		 * The meta object literal for the '<em><b>Process Payment</b></em>' operation.
@@ -2219,6 +2311,14 @@ public interface Hw1Package extends EPackage {
 		EReference EVENT_BOOKING__APPROVED_BY = eINSTANCE.getEventBooking_ApprovedBy();
 
 		/**
+		 * The meta object literal for the '<em><b>Event Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EVENT_BOOKING__EVENT_DESCRIPTION = eINSTANCE.getEventBooking_EventDescription();
+
+		/**
 		 * The meta object literal for the '<em><b>Calculate Final Price</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2237,28 +2337,12 @@ public interface Hw1Package extends EPackage {
 		EClass MENU_TASTING_BOOKING = eINSTANCE.getMenuTastingBooking();
 
 		/**
-		 * The meta object literal for the '<em><b>Menu Options</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MENU_TASTING_BOOKING__MENU_OPTIONS = eINSTANCE.getMenuTastingBooking_MenuOptions();
-
-		/**
 		 * The meta object literal for the '<em><b>Menu Tasting Visit ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID = eINSTANCE.getMenuTastingBooking_MenuTastingVisitID();
-
-		/**
-		 * The meta object literal for the '<em><b>Select Menu Options</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MENU_TASTING_BOOKING___SELECT_MENU_OPTIONS = eINSTANCE.getMenuTastingBooking__SelectMenuOptions();
 
 		/**
 		 * The meta object literal for the '<em>Calendar</em>' data type.

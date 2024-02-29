@@ -4,12 +4,7 @@ package gendev.hw1.impl;
 
 import gendev.hw1.Hw1Package;
 import gendev.hw1.MenuTastingBooking;
-
-import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -22,23 +17,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link gendev.hw1.impl.MenuTastingBookingImpl#getMenuOptions <em>Menu Options</em>}</li>
  *   <li>{@link gendev.hw1.impl.MenuTastingBookingImpl#getMenuTastingVisitID <em>Menu Tasting Visit ID</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBooking {
-	/**
-	 * The cached value of the '{@link #getMenuOptions() <em>Menu Options</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMenuOptions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<?> menuOptions;
-
 	/**
 	 * The default value of the '{@link #getMenuTastingVisitID() <em>Menu Tasting Visit ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -82,28 +66,6 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<?> getMenuOptions() {
-		return menuOptions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMenuOptions(EList<?> newMenuOptions) {
-		EList<?> oldMenuOptions = menuOptions;
-		menuOptions = newMenuOptions;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.MENU_TASTING_BOOKING__MENU_OPTIONS,
-					oldMenuOptions, menuOptions));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getMenuTastingVisitID() {
 		return menuTastingVisitID;
 	}
@@ -126,22 +88,9 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void selectMenuOptions() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Hw1Package.MENU_TASTING_BOOKING__MENU_OPTIONS:
-			return getMenuOptions();
 		case Hw1Package.MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID:
 			return getMenuTastingVisitID();
 		}
@@ -156,9 +105,6 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Hw1Package.MENU_TASTING_BOOKING__MENU_OPTIONS:
-			setMenuOptions((EList<?>) newValue);
-			return;
 		case Hw1Package.MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID:
 			setMenuTastingVisitID((String) newValue);
 			return;
@@ -174,9 +120,6 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Hw1Package.MENU_TASTING_BOOKING__MENU_OPTIONS:
-			setMenuOptions((EList<?>) null);
-			return;
 		case Hw1Package.MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID:
 			setMenuTastingVisitID(MENU_TASTING_VISIT_ID_EDEFAULT);
 			return;
@@ -192,8 +135,6 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Hw1Package.MENU_TASTING_BOOKING__MENU_OPTIONS:
-			return menuOptions != null;
 		case Hw1Package.MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID:
 			return MENU_TASTING_VISIT_ID_EDEFAULT == null ? menuTastingVisitID != null
 					: !MENU_TASTING_VISIT_ID_EDEFAULT.equals(menuTastingVisitID);
@@ -207,29 +148,12 @@ public class MenuTastingBookingImpl extends BookingImpl implements MenuTastingBo
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case Hw1Package.MENU_TASTING_BOOKING___SELECT_MENU_OPTIONS:
-			selectMenuOptions();
-			return null;
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String toString() {
 		if (eIsProxy())
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (MenuOptions: ");
-		result.append(menuOptions);
-		result.append(", MenuTastingVisitID: ");
+		result.append(" (MenuTastingVisitID: ");
 		result.append(menuTastingVisitID);
 		result.append(')');
 		return result.toString();

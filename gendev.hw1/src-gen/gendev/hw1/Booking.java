@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link gendev.hw1.Booking#getEventDescription <em>Event Description</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getBookingID <em>Booking ID</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getBookingDate <em>Booking Date</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getBookingStatus <em>Booking Status</em>}</li>
@@ -24,6 +23,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link gendev.hw1.Booking#getHasReviews <em>Has Reviews</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getBookingType <em>Booking Type</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getHostedAt <em>Hosted At</em>}</li>
+ *   <li>{@link gendev.hw1.Booking#getMenuOptions <em>Menu Options</em>}</li>
+ *   <li>{@link gendev.hw1.Booking#getNumberOfGuests <em>Number Of Guests</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getBooking()
@@ -31,28 +32,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Booking extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Event Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Event Description</em>' attribute.
-	 * @see #setEventDescription(String)
-	 * @see gendev.hw1.Hw1Package#getBooking_EventDescription()
-	 * @model
-	 * @generated
-	 */
-	String getEventDescription();
-
-	/**
-	 * Sets the value of the '{@link gendev.hw1.Booking#getEventDescription <em>Event Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Event Description</em>' attribute.
-	 * @see #getEventDescription()
-	 * @generated
-	 */
-	void setEventDescription(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Booking ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -198,6 +177,50 @@ public interface Booking extends EObject {
 	 * @generated
 	 */
 	void setHostedAt(Venue value);
+
+	/**
+	 * Returns the value of the '<em><b>Menu Options</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Menu Options</em>' attribute.
+	 * @see #setMenuOptions(EList)
+	 * @see gendev.hw1.Hw1Package#getBooking_MenuOptions()
+	 * @model many="false" transient="true"
+	 * @generated
+	 */
+	EList<?> getMenuOptions();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.Booking#getMenuOptions <em>Menu Options</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Menu Options</em>' attribute.
+	 * @see #getMenuOptions()
+	 * @generated
+	 */
+	void setMenuOptions(EList<?> value);
+
+	/**
+	 * Returns the value of the '<em><b>Number Of Guests</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Number Of Guests</em>' attribute.
+	 * @see #setNumberOfGuests(int)
+	 * @see gendev.hw1.Hw1Package#getBooking_NumberOfGuests()
+	 * @model
+	 * @generated
+	 */
+	int getNumberOfGuests();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.Booking#getNumberOfGuests <em>Number Of Guests</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Number Of Guests</em>' attribute.
+	 * @see #getNumberOfGuests()
+	 * @generated
+	 */
+	void setNumberOfGuests(int value);
 
 	/**
 	 * <!-- begin-user-doc -->

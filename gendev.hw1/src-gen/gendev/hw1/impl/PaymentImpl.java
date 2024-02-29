@@ -29,6 +29,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link gendev.hw1.impl.PaymentImpl#getPaymentStatus <em>Payment Status</em>}</li>
  *   <li>{@link gendev.hw1.impl.PaymentImpl#getPaidFor <em>Paid For</em>}</li>
  *   <li>{@link gendev.hw1.impl.PaymentImpl#getPaymentID <em>Payment ID</em>}</li>
+ *   <li>{@link gendev.hw1.impl.PaymentImpl#getAmountRefunded <em>Amount Refunded</em>}</li>
+ *   <li>{@link gendev.hw1.impl.PaymentImpl#getPaymentType <em>Payment Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -123,6 +125,46 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	 * @ordered
 	 */
 	protected int paymentID = PAYMENT_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAmountRefunded() <em>Amount Refunded</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAmountRefunded()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int AMOUNT_REFUNDED_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getAmountRefunded() <em>Amount Refunded</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAmountRefunded()
+	 * @generated
+	 * @ordered
+	 */
+	protected int amountRefunded = AMOUNT_REFUNDED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPaymentType() <em>Payment Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PAYMENT_TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPaymentType() <em>Payment Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String paymentType = PAYMENT_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -275,6 +317,50 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getAmountRefunded() {
+		return amountRefunded;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAmountRefunded(int newAmountRefunded) {
+		int oldAmountRefunded = amountRefunded;
+		amountRefunded = newAmountRefunded;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.PAYMENT__AMOUNT_REFUNDED,
+					oldAmountRefunded, amountRefunded));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPaymentType() {
+		return paymentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPaymentType(String newPaymentType) {
+		String oldPaymentType = paymentType;
+		paymentType = newPaymentType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.PAYMENT__PAYMENT_TYPE, oldPaymentType,
+					paymentType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void processPayment() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -323,6 +409,10 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 			return basicGetPaidFor();
 		case Hw1Package.PAYMENT__PAYMENT_ID:
 			return getPaymentID();
+		case Hw1Package.PAYMENT__AMOUNT_REFUNDED:
+			return getAmountRefunded();
+		case Hw1Package.PAYMENT__PAYMENT_TYPE:
+			return getPaymentType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -349,6 +439,12 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 			return;
 		case Hw1Package.PAYMENT__PAYMENT_ID:
 			setPaymentID((Integer) newValue);
+			return;
+		case Hw1Package.PAYMENT__AMOUNT_REFUNDED:
+			setAmountRefunded((Integer) newValue);
+			return;
+		case Hw1Package.PAYMENT__PAYMENT_TYPE:
+			setPaymentType((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -377,6 +473,12 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 		case Hw1Package.PAYMENT__PAYMENT_ID:
 			setPaymentID(PAYMENT_ID_EDEFAULT);
 			return;
+		case Hw1Package.PAYMENT__AMOUNT_REFUNDED:
+			setAmountRefunded(AMOUNT_REFUNDED_EDEFAULT);
+			return;
+		case Hw1Package.PAYMENT__PAYMENT_TYPE:
+			setPaymentType(PAYMENT_TYPE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -401,6 +503,10 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 			return paidFor != null;
 		case Hw1Package.PAYMENT__PAYMENT_ID:
 			return paymentID != PAYMENT_ID_EDEFAULT;
+		case Hw1Package.PAYMENT__AMOUNT_REFUNDED:
+			return amountRefunded != AMOUNT_REFUNDED_EDEFAULT;
+		case Hw1Package.PAYMENT__PAYMENT_TYPE:
+			return PAYMENT_TYPE_EDEFAULT == null ? paymentType != null : !PAYMENT_TYPE_EDEFAULT.equals(paymentType);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -445,6 +551,10 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 		result.append(paymentStatus);
 		result.append(", PaymentID: ");
 		result.append(paymentID);
+		result.append(", AmountRefunded: ");
+		result.append(amountRefunded);
+		result.append(", PaymentType: ");
+		result.append(paymentType);
 		result.append(')');
 		return result.toString();
 	}

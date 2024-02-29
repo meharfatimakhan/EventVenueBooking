@@ -31,7 +31,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link gendev.hw1.impl.BookingImpl#getEventDescription <em>Event Description</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingID <em>Booking ID</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingDate <em>Booking Date</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingStatus <em>Booking Status</em>}</li>
@@ -39,31 +38,13 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link gendev.hw1.impl.BookingImpl#getHasReviews <em>Has Reviews</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingType <em>Booking Type</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getHostedAt <em>Hosted At</em>}</li>
+ *   <li>{@link gendev.hw1.impl.BookingImpl#getMenuOptions <em>Menu Options</em>}</li>
+ *   <li>{@link gendev.hw1.impl.BookingImpl#getNumberOfGuests <em>Number Of Guests</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class BookingImpl extends MinimalEObjectImpl.Container implements Booking {
-	/**
-	 * The default value of the '{@link #getEventDescription() <em>Event Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEventDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EVENT_DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEventDescription() <em>Event Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEventDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String eventDescription = EVENT_DESCRIPTION_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getBookingID() <em>Booking ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -175,6 +156,36 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	protected Venue hostedAt;
 
 	/**
+	 * The cached value of the '{@link #getMenuOptions() <em>Menu Options</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMenuOptions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<?> menuOptions;
+
+	/**
+	 * The default value of the '{@link #getNumberOfGuests() <em>Number Of Guests</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumberOfGuests()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NUMBER_OF_GUESTS_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getNumberOfGuests() <em>Number Of Guests</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumberOfGuests()
+	 * @generated
+	 * @ordered
+	 */
+	protected int numberOfGuests = NUMBER_OF_GUESTS_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -191,28 +202,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	protected EClass eStaticClass() {
 		return Hw1Package.Literals.BOOKING;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getEventDescription() {
-		return eventDescription;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEventDescription(String newEventDescription) {
-		String oldEventDescription = eventDescription;
-		eventDescription = newEventDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING__EVENT_DESCRIPTION,
-					oldEventDescription, eventDescription));
 	}
 
 	/**
@@ -426,6 +415,50 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<?> getMenuOptions() {
+		return menuOptions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMenuOptions(EList<?> newMenuOptions) {
+		EList<?> oldMenuOptions = menuOptions;
+		menuOptions = newMenuOptions;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING__MENU_OPTIONS, oldMenuOptions,
+					menuOptions));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getNumberOfGuests() {
+		return numberOfGuests;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNumberOfGuests(int newNumberOfGuests) {
+		int oldNumberOfGuests = numberOfGuests;
+		numberOfGuests = newNumberOfGuests;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING__NUMBER_OF_GUESTS,
+					oldNumberOfGuests, numberOfGuests));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void viewBookingInfo() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -471,8 +504,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Hw1Package.BOOKING__EVENT_DESCRIPTION:
-			return getEventDescription();
 		case Hw1Package.BOOKING__BOOKING_ID:
 			return getBookingID();
 		case Hw1Package.BOOKING__BOOKING_DATE:
@@ -491,6 +522,10 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 			if (resolve)
 				return getHostedAt();
 			return basicGetHostedAt();
+		case Hw1Package.BOOKING__MENU_OPTIONS:
+			return getMenuOptions();
+		case Hw1Package.BOOKING__NUMBER_OF_GUESTS:
+			return getNumberOfGuests();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -504,9 +539,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Hw1Package.BOOKING__EVENT_DESCRIPTION:
-			setEventDescription((String) newValue);
-			return;
 		case Hw1Package.BOOKING__BOOKING_ID:
 			setBookingID((Integer) newValue);
 			return;
@@ -529,6 +561,12 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		case Hw1Package.BOOKING__HOSTED_AT:
 			setHostedAt((Venue) newValue);
 			return;
+		case Hw1Package.BOOKING__MENU_OPTIONS:
+			setMenuOptions((EList<?>) newValue);
+			return;
+		case Hw1Package.BOOKING__NUMBER_OF_GUESTS:
+			setNumberOfGuests((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -541,9 +579,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Hw1Package.BOOKING__EVENT_DESCRIPTION:
-			setEventDescription(EVENT_DESCRIPTION_EDEFAULT);
-			return;
 		case Hw1Package.BOOKING__BOOKING_ID:
 			setBookingID(BOOKING_ID_EDEFAULT);
 			return;
@@ -565,6 +600,12 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		case Hw1Package.BOOKING__HOSTED_AT:
 			setHostedAt((Venue) null);
 			return;
+		case Hw1Package.BOOKING__MENU_OPTIONS:
+			setMenuOptions((EList<?>) null);
+			return;
+		case Hw1Package.BOOKING__NUMBER_OF_GUESTS:
+			setNumberOfGuests(NUMBER_OF_GUESTS_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -577,9 +618,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Hw1Package.BOOKING__EVENT_DESCRIPTION:
-			return EVENT_DESCRIPTION_EDEFAULT == null ? eventDescription != null
-					: !EVENT_DESCRIPTION_EDEFAULT.equals(eventDescription);
 		case Hw1Package.BOOKING__BOOKING_ID:
 			return bookingID != BOOKING_ID_EDEFAULT;
 		case Hw1Package.BOOKING__BOOKING_DATE:
@@ -595,6 +633,10 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 			return BOOKING_TYPE_EDEFAULT == null ? bookingType != null : !BOOKING_TYPE_EDEFAULT.equals(bookingType);
 		case Hw1Package.BOOKING__HOSTED_AT:
 			return hostedAt != null;
+		case Hw1Package.BOOKING__MENU_OPTIONS:
+			return menuOptions != null;
+		case Hw1Package.BOOKING__NUMBER_OF_GUESTS:
+			return numberOfGuests != NUMBER_OF_GUESTS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -625,9 +667,7 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (EventDescription: ");
-		result.append(eventDescription);
-		result.append(", BookingID: ");
+		result.append(" (BookingID: ");
 		result.append(bookingID);
 		result.append(", BookingDate: ");
 		result.append(bookingDate);
@@ -635,6 +675,10 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		result.append(bookingStatus);
 		result.append(", BookingType: ");
 		result.append(bookingType);
+		result.append(", MenuOptions: ");
+		result.append(menuOptions);
+		result.append(", NumberOfGuests: ");
+		result.append(numberOfGuests);
 		result.append(')');
 		return result.toString();
 	}

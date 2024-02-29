@@ -13,6 +13,7 @@ package gendev.hw1;
  * <ul>
  *   <li>{@link gendev.hw1.EventBooking#getEstimatedPriceQuote <em>Estimated Price Quote</em>}</li>
  *   <li>{@link gendev.hw1.EventBooking#getApprovedBy <em>Approved By</em>}</li>
+ *   <li>{@link gendev.hw1.EventBooking#getEventDescription <em>Event Description</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getEventBooking()
@@ -65,6 +66,28 @@ public interface EventBooking extends Booking {
 	 * @generated
 	 */
 	void setApprovedBy(BookingAdmin value);
+
+	/**
+	 * Returns the value of the '<em><b>Event Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Event Description</em>' attribute.
+	 * @see #setEventDescription(String)
+	 * @see gendev.hw1.Hw1Package#getEventBooking_EventDescription()
+	 * @model
+	 * @generated
+	 */
+	String getEventDescription();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.EventBooking#getEventDescription <em>Event Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Event Description</em>' attribute.
+	 * @see #getEventDescription()
+	 * @generated
+	 */
+	void setEventDescription(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

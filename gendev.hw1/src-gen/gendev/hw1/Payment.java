@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link gendev.hw1.Payment#getPaymentStatus <em>Payment Status</em>}</li>
  *   <li>{@link gendev.hw1.Payment#getPaidFor <em>Paid For</em>}</li>
  *   <li>{@link gendev.hw1.Payment#getPaymentID <em>Payment ID</em>}</li>
+ *   <li>{@link gendev.hw1.Payment#getAmountRefunded <em>Amount Refunded</em>}</li>
+ *   <li>{@link gendev.hw1.Payment#getPaymentType <em>Payment Type</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getPayment()
@@ -134,6 +136,50 @@ public interface Payment extends EObject {
 	 * @generated
 	 */
 	void setPaymentID(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Amount Refunded</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Amount Refunded</em>' attribute.
+	 * @see #setAmountRefunded(int)
+	 * @see gendev.hw1.Hw1Package#getPayment_AmountRefunded()
+	 * @model
+	 * @generated
+	 */
+	int getAmountRefunded();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.Payment#getAmountRefunded <em>Amount Refunded</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Amount Refunded</em>' attribute.
+	 * @see #getAmountRefunded()
+	 * @generated
+	 */
+	void setAmountRefunded(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Payment Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Payment Type</em>' attribute.
+	 * @see #setPaymentType(String)
+	 * @see gendev.hw1.Hw1Package#getPayment_PaymentType()
+	 * @model
+	 * @generated
+	 */
+	String getPaymentType();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.Payment#getPaymentType <em>Payment Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Payment Type</em>' attribute.
+	 * @see #getPaymentType()
+	 * @generated
+	 */
+	void setPaymentType(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

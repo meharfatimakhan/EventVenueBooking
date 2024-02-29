@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link gendev.hw1.impl.EventBookingImpl#getEstimatedPriceQuote <em>Estimated Price Quote</em>}</li>
  *   <li>{@link gendev.hw1.impl.EventBookingImpl#getApprovedBy <em>Approved By</em>}</li>
+ *   <li>{@link gendev.hw1.impl.EventBookingImpl#getEventDescription <em>Event Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,6 +58,26 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 	 * @ordered
 	 */
 	protected BookingAdmin approvedBy;
+
+	/**
+	 * The default value of the '{@link #getEventDescription() <em>Event Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEventDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EVENT_DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getEventDescription() <em>Event Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEventDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String eventDescription = EVENT_DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,6 +193,28 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getEventDescription() {
+		return eventDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEventDescription(String newEventDescription) {
+		String oldEventDescription = eventDescription;
+		eventDescription = newEventDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.EVENT_BOOKING__EVENT_DESCRIPTION,
+					oldEventDescription, eventDescription));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void calculateFinalPrice() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -223,6 +266,8 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 			if (resolve)
 				return getApprovedBy();
 			return basicGetApprovedBy();
+		case Hw1Package.EVENT_BOOKING__EVENT_DESCRIPTION:
+			return getEventDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -240,6 +285,9 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 			return;
 		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
 			setApprovedBy((BookingAdmin) newValue);
+			return;
+		case Hw1Package.EVENT_BOOKING__EVENT_DESCRIPTION:
+			setEventDescription((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -259,6 +307,9 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
 			setApprovedBy((BookingAdmin) null);
 			return;
+		case Hw1Package.EVENT_BOOKING__EVENT_DESCRIPTION:
+			setEventDescription(EVENT_DESCRIPTION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -275,6 +326,9 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 			return estimatedPriceQuote != ESTIMATED_PRICE_QUOTE_EDEFAULT;
 		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
 			return approvedBy != null;
+		case Hw1Package.EVENT_BOOKING__EVENT_DESCRIPTION:
+			return EVENT_DESCRIPTION_EDEFAULT == null ? eventDescription != null
+					: !EVENT_DESCRIPTION_EDEFAULT.equals(eventDescription);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -307,6 +361,8 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (EstimatedPriceQuote: ");
 		result.append(estimatedPriceQuote);
+		result.append(", EventDescription: ");
+		result.append(eventDescription);
 		result.append(')');
 		return result.toString();
 	}
