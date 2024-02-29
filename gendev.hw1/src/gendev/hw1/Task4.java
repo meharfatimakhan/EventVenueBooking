@@ -70,7 +70,7 @@ public class Task4 {
         bookingAdmin.setPhone("3124313262");
         bookingAdmin.setNumberOfApprovals(1);
         bookingAdmin.setName("Ada Jade");
-//        bookingAdmin.set
+        
         
         // creating EventBooking object
         Calendar calendar = Calendar.getInstance();
@@ -78,47 +78,43 @@ public class Task4 {
         eventBooking.setEventDescription("a wedding being hosted for 100 people with white decor and white baloons all over");
         eventBooking.setEstimatedPriceQuote(1000);
         eventBooking.setBookingBy(customer1); // link 3
-        eventBooking.setHostedAt(venue2);
-        eventBooking.setApprovedBy(bookingAdmin);
+        eventBooking.setHostedAt(venue1); // link 4
+        eventBooking.setApprovedBy(bookingAdmin); // link 5
         eventBooking.setBookingDate(calendar);
         eventBooking.setBookingType("Event");
         eventBooking.setBookingStatus("Confirmed");
         eventBooking.setNumberOfGuests(30);
         eventBooking.setBookingID(3);
-
         EList<String> menuItems1 = new BasicEList<String>();
         menuItems1.add("French Fries");
         menuItems1.add("Burgers");
         menuItems1.add("Caviar");
         menuItems1.add("Coke");
         eventBooking.setMenuOptions(menuItems1);	 
-        
-        venue1.getBookings().add(eventBooking); // link 4
-        
+                
         // create venue visit object
         VenueVisitBooking venueVisitBooking = Hw1Factory.eINSTANCE.createVenueVisitBooking();
         Calendar calendar2 = Calendar.getInstance();
         venueVisitBooking.setVisitPurpose("FINALIZE DECOR");
-        venueVisitBooking.setBookingBy(customer2); // link 5
-//        venueVisitBooking.setBookingDate(calendar2);
+        venueVisitBooking.setBookingBy(customer2); // link 6
+        venueVisitBooking.setBookingDate(calendar2);
         venueVisitBooking.setBookingStatus("Confirmed");
         venueVisitBooking.setBookingType("Visit");
         venueVisitBooking.setVisitID(3);
         venueVisitBooking.setNumberOfGuests(61);
         venueVisitBooking.setBookingID(5);
+        venueVisitBooking.setHostedAt(venue2); // link 7
         EList<String> menuItems2 = new BasicEList<String>();
         menuItems2.add("Biryani");
         menuItems2.add("Chai");
         menuItems2.add("Chicken Curry");
         venueVisitBooking.setMenuOptions(menuItems2);	
         
-        venue2.getBookings().add(venueVisitBooking); //link 6
-
         // Save the model to XMI file
-        saveModel(instance, customer1, customer2, review1, review2, venue1, venue2);
+        saveModel(instance, customer1, customer2, review1, review2, venue1, venue2, eventBooking, venueVisitBooking, bookingAdmin);
     }
 	
-	private static void saveModel(String fileName, Customer customer1, Customer customer2, Review review1, Review review2, Venue venue1, Venue venue2) {
+	private static void saveModel(String fileName, Customer customer1, Customer customer2, Review review1, Review review2, Venue venue1, Venue venue2, EventBooking eventBooking, VenueVisitBooking venueVisitBooking, BookingAdmin bookingAdmin) {
 	        ResourceSet resourceSet = new ResourceSetImpl();
 
 	        // Register the XMI resource factory
@@ -134,7 +130,9 @@ public class Task4 {
 	        resource.getContents().add(review2);
 	        resource.getContents().add(venue1);
 	        resource.getContents().add(venue2);
-
+	        resource.getContents().add(eventBooking);
+	        resource.getContents().add(venueVisitBooking);
+	        resource.getContents().add(bookingAdmin);
 	        // Save the resource
 	        try {
 	            resource.save(Collections.EMPTY_MAP);
