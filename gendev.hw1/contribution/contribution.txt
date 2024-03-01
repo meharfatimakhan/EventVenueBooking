@@ -4,26 +4,31 @@ Member 2:  ns643 - 40%
 
 TASK 1:
 System & OCL Description: 
-Initially written by Nikhil. 
-Later amended/modified a bit by Mehar.
+Initially written by Nikhil. Later amended/modified a bit by Mehar.
 
 
 TASK 2:
-Use Case Diagram: Both of us worked on this together as a pair
-Activity Diagram: Both of us worked on this together as a pair
+Part a) - Use Case Diagram: 
+Both of us worked on this together as a pair
+
+Part b) - Activity Diagram:
+Both of us worked on this together as a pair
 
 
 TASK 3
-Class Diagram: Created by Mehar
+Part a) - Class Diagram: 
+Created by Mehar
+
+Part b) - OCL Invariants: 
 OCLs: Created by Mehar
 
 
 TASK 4
-Part a: 
+Part a) - Instance of Ecore Model (Object Diagram): 
 Nikhil worked on the code for creating objects 
 Mehar worked on the code for linking those objects together
 
 
-Part b: 
+Part b) - Instances of OCL Invariants:
 Nikhil created the instances which satisfy OCL
 Mehar created instances which violate OCL
