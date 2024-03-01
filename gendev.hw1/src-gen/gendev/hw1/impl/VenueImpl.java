@@ -6,7 +6,6 @@ import gendev.hw1.Booking;
 import gendev.hw1.Hw1Package;
 import gendev.hw1.Hw1Tables;
 import gendev.hw1.Venue;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Iterator;
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.ocl.pivot.evaluation.Executor;
 import org.eclipse.ocl.pivot.ids.IdResolver;
@@ -48,8 +47,8 @@ import org.eclipse.ocl.pivot.values.OrderedSetValue;
  * <ul>
  *   <li>{@link gendev.hw1.impl.VenueImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link gendev.hw1.impl.VenueImpl#getCapacity <em>Capacity</em>}</li>
- *   <li>{@link gendev.hw1.impl.VenueImpl#getBookings <em>Bookings</em>}</li>
  *   <li>{@link gendev.hw1.impl.VenueImpl#getVenueID <em>Venue ID</em>}</li>
+ *   <li>{@link gendev.hw1.impl.VenueImpl#getBookings <em>Bookings</em>}</li>
  * </ul>
  *
  * @generated
@@ -96,16 +95,6 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 	protected int capacity = CAPACITY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getBookings() <em>Bookings</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBookings()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Booking> bookings;
-
-	/**
 	 * The default value of the '{@link #getVenueID() <em>Venue ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -124,6 +113,16 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 	 * @ordered
 	 */
 	protected int venueID = VENUE_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getBookings() <em>Bookings</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBookings()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Booking> bookings;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,19 +190,6 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Booking> getBookings() {
-		if (bookings == null) {
-			bookings = new EObjectWithInverseResolvingEList<Booking>(Booking.class, this, Hw1Package.VENUE__BOOKINGS,
-					Hw1Package.BOOKING__HOSTED_AT);
-		}
-		return bookings;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getVenueID() {
 		return venueID;
 	}
@@ -218,6 +204,18 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 		venueID = newVenueID;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.VENUE__VENUE_ID, oldVenueID, venueID));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Booking> getBookings() {
+		if (bookings == null) {
+			bookings = new EObjectContainmentEList<Booking>(Booking.class, this, Hw1Package.VENUE__BOOKINGS);
+		}
+		return bookings;
 	}
 
 	/**
@@ -336,21 +334,6 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case Hw1Package.VENUE__BOOKINGS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getBookings()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -372,10 +355,10 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 			return getLocation();
 		case Hw1Package.VENUE__CAPACITY:
 			return getCapacity();
-		case Hw1Package.VENUE__BOOKINGS:
-			return getBookings();
 		case Hw1Package.VENUE__VENUE_ID:
 			return getVenueID();
+		case Hw1Package.VENUE__BOOKINGS:
+			return getBookings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -395,12 +378,12 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 		case Hw1Package.VENUE__CAPACITY:
 			setCapacity((Integer) newValue);
 			return;
+		case Hw1Package.VENUE__VENUE_ID:
+			setVenueID((Integer) newValue);
+			return;
 		case Hw1Package.VENUE__BOOKINGS:
 			getBookings().clear();
 			getBookings().addAll((Collection<? extends Booking>) newValue);
-			return;
-		case Hw1Package.VENUE__VENUE_ID:
-			setVenueID((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -420,11 +403,11 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 		case Hw1Package.VENUE__CAPACITY:
 			setCapacity(CAPACITY_EDEFAULT);
 			return;
-		case Hw1Package.VENUE__BOOKINGS:
-			getBookings().clear();
-			return;
 		case Hw1Package.VENUE__VENUE_ID:
 			setVenueID(VENUE_ID_EDEFAULT);
+			return;
+		case Hw1Package.VENUE__BOOKINGS:
+			getBookings().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -442,10 +425,10 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 			return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
 		case Hw1Package.VENUE__CAPACITY:
 			return capacity != CAPACITY_EDEFAULT;
-		case Hw1Package.VENUE__BOOKINGS:
-			return bookings != null && !bookings.isEmpty();
 		case Hw1Package.VENUE__VENUE_ID:
 			return venueID != VENUE_ID_EDEFAULT;
+		case Hw1Package.VENUE__BOOKINGS:
+			return bookings != null && !bookings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

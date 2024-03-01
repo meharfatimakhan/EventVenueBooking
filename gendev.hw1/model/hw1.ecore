@@ -47,10 +47,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Capacity" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bookings" upperBound="-1"
-        eType="#//Booking" eOpposite="#//Booking/hostedAt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="VenueID" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bookings" upperBound="-1"
+        eType="#//Booking" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SystemAdmin">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -75,10 +75,10 @@
       <details key="bookingAdminChecks" value="self.venuesManaged->notEmpty()&#xA;    &#x9;and self.approvedBookings->exists(booking | not booking.oclIsUndefined())&#xA;    &#x9;and self.NumberOfApprovals >= 0"/>
     </eAnnotations>
     <eOperations name="approveCustomerBooking"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="approvedBookings" upperBound="-1"
-        eType="#//EventBooking" eOpposite="#//EventBooking/approvedBy"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumberOfApprovals" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="approvedBookings" upperBound="-1"
+        eType="#//EventBooking" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Booking" abstract="true">
     <eOperations name="viewBookingInfo"/>
@@ -86,12 +86,10 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BookingStatus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bookingBy" lowerBound="1"
-        eType="#//Customer"/>
+        eType="#//Customer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasReviews" upperBound="-1"
         eType="#//Review"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BookingType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hostedAt" lowerBound="1"
-        eType="#//Venue" eOpposite="#//Venue/bookings"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="MenuOptions" transient="true">
       <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
         <eTypeArguments/>
@@ -127,8 +125,6 @@
     <eOperations name="calculateFinalPrice"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EstimatedPriceQuote" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="approvedBy" eType="#//BookingAdmin"
-        eOpposite="#//BookingAdmin/approvedBookings"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EventDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MenuTastingBooking" eSuperTypes="#//Booking">

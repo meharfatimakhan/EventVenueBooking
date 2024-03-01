@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hw1:Venue xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:hw1="http://www.example.org/hw1"
+    Location="Kings Hall, Leicester, L31098"
+    Capacity="100"
+    VenueID="45">
+  <bookings
+      xsi:type="hw1:EventBooking"
+      BookingID="21"
+      BookingStatus="Confirmed"
+      BookingType="Event"
+      NumberOfGuests="100"
+      BookingDate="27th Feb"
+      EstimatedPriceQuote="900"
+      EventDescription="A wedding of 100 people">
+    <bookingBy
+        Name="Mehar Fatima Khan"
+        Email="meharf@gmail.com"
+        Phone="2123465430"
+        CustomerBookingID="21">
+      <submits
+          Rating="5"
+          Comment="Amazed by the service!"
+          ReviewBookingID="21"
+          ReviewID="45"/>
+    </bookingBy>
+  </bookings>
+</hw1:Venue>

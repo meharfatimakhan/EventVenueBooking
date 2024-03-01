@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link gendev.hw1.Booking#getBookingBy <em>Booking By</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getHasReviews <em>Has Reviews</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getBookingType <em>Booking Type</em>}</li>
- *   <li>{@link gendev.hw1.Booking#getHostedAt <em>Hosted At</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getMenuOptions <em>Menu Options</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getNumberOfGuests <em>Number Of Guests</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getBookingDate <em>Booking Date</em>}</li>
@@ -97,22 +96,22 @@ public interface Booking extends EObject {
 	void setBookingStatus(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Booking By</b></em>' reference.
+	 * Returns the value of the '<em><b>Booking By</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Booking By</em>' reference.
+	 * @return the value of the '<em>Booking By</em>' containment reference.
 	 * @see #setBookingBy(Customer)
 	 * @see gendev.hw1.Hw1Package#getBooking_BookingBy()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Customer getBookingBy();
 
 	/**
-	 * Sets the value of the '{@link gendev.hw1.Booking#getBookingBy <em>Booking By</em>}' reference.
+	 * Sets the value of the '{@link gendev.hw1.Booking#getBookingBy <em>Booking By</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Booking By</em>' reference.
+	 * @param value the new value of the '<em>Booking By</em>' containment reference.
 	 * @see #getBookingBy()
 	 * @generated
 	 */
@@ -151,30 +150,6 @@ public interface Booking extends EObject {
 	 * @generated
 	 */
 	void setBookingType(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Hosted At</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link gendev.hw1.Venue#getBookings <em>Bookings</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Hosted At</em>' reference.
-	 * @see #setHostedAt(Venue)
-	 * @see gendev.hw1.Hw1Package#getBooking_HostedAt()
-	 * @see gendev.hw1.Venue#getBookings
-	 * @model opposite="bookings" required="true"
-	 * @generated
-	 */
-	Venue getHostedAt();
-
-	/**
-	 * Sets the value of the '{@link gendev.hw1.Booking#getHostedAt <em>Hosted At</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Hosted At</em>' reference.
-	 * @see #getHostedAt()
-	 * @generated
-	 */
-	void setHostedAt(Venue value);
 
 	/**
 	 * Returns the value of the '<em><b>Menu Options</b></em>' attribute.

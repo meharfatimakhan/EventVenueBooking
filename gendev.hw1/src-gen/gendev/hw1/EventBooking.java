@@ -12,7 +12,6 @@ package gendev.hw1;
  * </p>
  * <ul>
  *   <li>{@link gendev.hw1.EventBooking#getEstimatedPriceQuote <em>Estimated Price Quote</em>}</li>
- *   <li>{@link gendev.hw1.EventBooking#getApprovedBy <em>Approved By</em>}</li>
  *   <li>{@link gendev.hw1.EventBooking#getEventDescription <em>Event Description</em>}</li>
  * </ul>
  *
@@ -42,30 +41,6 @@ public interface EventBooking extends Booking {
 	 * @generated
 	 */
 	void setEstimatedPriceQuote(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Approved By</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link gendev.hw1.BookingAdmin#getApprovedBookings <em>Approved Bookings</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Approved By</em>' reference.
-	 * @see #setApprovedBy(BookingAdmin)
-	 * @see gendev.hw1.Hw1Package#getEventBooking_ApprovedBy()
-	 * @see gendev.hw1.BookingAdmin#getApprovedBookings
-	 * @model opposite="approvedBookings"
-	 * @generated
-	 */
-	BookingAdmin getApprovedBy();
-
-	/**
-	 * Sets the value of the '{@link gendev.hw1.EventBooking#getApprovedBy <em>Approved By</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Approved By</em>' reference.
-	 * @see #getApprovedBy()
-	 * @generated
-	 */
-	void setApprovedBy(BookingAdmin value);
 
 	/**
 	 * Returns the value of the '<em><b>Event Description</b></em>' attribute.

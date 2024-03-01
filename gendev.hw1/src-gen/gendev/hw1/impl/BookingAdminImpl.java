@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.ocl.pivot.evaluation.Executor;
 import org.eclipse.ocl.pivot.ids.IdResolver;
@@ -45,23 +45,13 @@ import org.eclipse.ocl.pivot.values.OrderedSetValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link gendev.hw1.impl.BookingAdminImpl#getApprovedBookings <em>Approved Bookings</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingAdminImpl#getNumberOfApprovals <em>Number Of Approvals</em>}</li>
+ *   <li>{@link gendev.hw1.impl.BookingAdminImpl#getApprovedBookings <em>Approved Bookings</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
-	/**
-	 * The cached value of the '{@link #getApprovedBookings() <em>Approved Bookings</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getApprovedBookings()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EventBooking> approvedBookings;
-
 	/**
 	 * The default value of the '{@link #getNumberOfApprovals() <em>Number Of Approvals</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -81,6 +71,16 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	 * @ordered
 	 */
 	protected int numberOfApprovals = NUMBER_OF_APPROVALS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getApprovedBookings() <em>Approved Bookings</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApprovedBookings()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EventBooking> approvedBookings;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,8 +108,8 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	 */
 	public EList<EventBooking> getApprovedBookings() {
 		if (approvedBookings == null) {
-			approvedBookings = new EObjectWithInverseResolvingEList<EventBooking>(EventBooking.class, this,
-					Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS, Hw1Package.EVENT_BOOKING__APPROVED_BY);
+			approvedBookings = new EObjectContainmentEList<EventBooking>(EventBooking.class, this,
+					Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS);
 		}
 		return approvedBookings;
 	}
@@ -294,21 +294,6 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getApprovedBookings()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -326,10 +311,10 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
-			return getApprovedBookings();
 		case Hw1Package.BOOKING_ADMIN__NUMBER_OF_APPROVALS:
 			return getNumberOfApprovals();
+		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
+			return getApprovedBookings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -343,12 +328,12 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case Hw1Package.BOOKING_ADMIN__NUMBER_OF_APPROVALS:
+			setNumberOfApprovals((Integer) newValue);
+			return;
 		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
 			getApprovedBookings().clear();
 			getApprovedBookings().addAll((Collection<? extends EventBooking>) newValue);
-			return;
-		case Hw1Package.BOOKING_ADMIN__NUMBER_OF_APPROVALS:
-			setNumberOfApprovals((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -362,11 +347,11 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
-			getApprovedBookings().clear();
-			return;
 		case Hw1Package.BOOKING_ADMIN__NUMBER_OF_APPROVALS:
 			setNumberOfApprovals(NUMBER_OF_APPROVALS_EDEFAULT);
+			return;
+		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
+			getApprovedBookings().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -380,10 +365,10 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
-			return approvedBookings != null && !approvedBookings.isEmpty();
 		case Hw1Package.BOOKING_ADMIN__NUMBER_OF_APPROVALS:
 			return numberOfApprovals != NUMBER_OF_APPROVALS_EDEFAULT;
+		case Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS:
+			return approvedBookings != null && !approvedBookings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

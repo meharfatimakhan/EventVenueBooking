@@ -15,8 +15,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link gendev.hw1.BookingAdmin#getApprovedBookings <em>Approved Bookings</em>}</li>
  *   <li>{@link gendev.hw1.BookingAdmin#getNumberOfApprovals <em>Number Of Approvals</em>}</li>
+ *   <li>{@link gendev.hw1.BookingAdmin#getApprovedBookings <em>Approved Bookings</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getBookingAdmin()
@@ -25,15 +25,13 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface BookingAdmin extends SystemAdmin {
 	/**
-	 * Returns the value of the '<em><b>Approved Bookings</b></em>' reference list.
+	 * Returns the value of the '<em><b>Approved Bookings</b></em>' containment reference list.
 	 * The list contents are of type {@link gendev.hw1.EventBooking}.
-	 * It is bidirectional and its opposite is '{@link gendev.hw1.EventBooking#getApprovedBy <em>Approved By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Approved Bookings</em>' reference list.
+	 * @return the value of the '<em>Approved Bookings</em>' containment reference list.
 	 * @see gendev.hw1.Hw1Package#getBookingAdmin_ApprovedBookings()
-	 * @see gendev.hw1.EventBooking#getApprovedBy
-	 * @model opposite="approvedBy"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<EventBooking> getApprovedBookings();

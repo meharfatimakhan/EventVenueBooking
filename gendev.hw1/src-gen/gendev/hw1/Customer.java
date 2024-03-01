@@ -2,6 +2,8 @@
  */
 package gendev.hw1;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -21,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getCustomer()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='validateCustomers'"
  * @generated
  */
 public interface Customer extends EObject {
@@ -158,5 +160,13 @@ public interface Customer extends EObject {
 	 * @generated
 	 */
 	void cancelBooking();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Customer.allInstances()-&gt;forAll(c | c &lt;&gt; self implies c.Email &lt;&gt; self.Email)\n    \tand self.submits-&gt;notEmpty() implies self.submits-&gt;forAll(review | review.Rating &gt;= 1 and review.Rating &lt;= 5)\n    \tand self.Phone.toString().size() = 10'"
+	 * @generated
+	 */
+	boolean validateCustomers(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Customer

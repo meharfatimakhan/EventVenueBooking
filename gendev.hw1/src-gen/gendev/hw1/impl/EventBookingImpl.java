@@ -2,15 +2,12 @@
  */
 package gendev.hw1.impl;
 
-import gendev.hw1.BookingAdmin;
 import gendev.hw1.EventBooking;
 import gendev.hw1.Hw1Package;
 import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -22,7 +19,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link gendev.hw1.impl.EventBookingImpl#getEstimatedPriceQuote <em>Estimated Price Quote</em>}</li>
- *   <li>{@link gendev.hw1.impl.EventBookingImpl#getApprovedBy <em>Approved By</em>}</li>
  *   <li>{@link gendev.hw1.impl.EventBookingImpl#getEventDescription <em>Event Description</em>}</li>
  * </ul>
  *
@@ -48,16 +44,6 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 	 * @ordered
 	 */
 	protected int estimatedPriceQuote = ESTIMATED_PRICE_QUOTE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getApprovedBy() <em>Approved By</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getApprovedBy()
-	 * @generated
-	 * @ordered
-	 */
-	protected BookingAdmin approvedBy;
 
 	/**
 	 * The default value of the '{@link #getEventDescription() <em>Event Description</em>}' attribute.
@@ -125,74 +111,6 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BookingAdmin getApprovedBy() {
-		if (approvedBy != null && approvedBy.eIsProxy()) {
-			InternalEObject oldApprovedBy = (InternalEObject) approvedBy;
-			approvedBy = (BookingAdmin) eResolveProxy(oldApprovedBy);
-			if (approvedBy != oldApprovedBy) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Hw1Package.EVENT_BOOKING__APPROVED_BY,
-							oldApprovedBy, approvedBy));
-			}
-		}
-		return approvedBy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BookingAdmin basicGetApprovedBy() {
-		return approvedBy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetApprovedBy(BookingAdmin newApprovedBy, NotificationChain msgs) {
-		BookingAdmin oldApprovedBy = approvedBy;
-		approvedBy = newApprovedBy;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Hw1Package.EVENT_BOOKING__APPROVED_BY, oldApprovedBy, newApprovedBy);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setApprovedBy(BookingAdmin newApprovedBy) {
-		if (newApprovedBy != approvedBy) {
-			NotificationChain msgs = null;
-			if (approvedBy != null)
-				msgs = ((InternalEObject) approvedBy).eInverseRemove(this, Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS,
-						BookingAdmin.class, msgs);
-			if (newApprovedBy != null)
-				msgs = ((InternalEObject) newApprovedBy).eInverseAdd(this, Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS,
-						BookingAdmin.class, msgs);
-			msgs = basicSetApprovedBy(newApprovedBy, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.EVENT_BOOKING__APPROVED_BY, newApprovedBy,
-					newApprovedBy));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getEventDescription() {
 		return eventDescription;
 	}
@@ -225,45 +143,10 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
-			if (approvedBy != null)
-				msgs = ((InternalEObject) approvedBy).eInverseRemove(this, Hw1Package.BOOKING_ADMIN__APPROVED_BOOKINGS,
-						BookingAdmin.class, msgs);
-			return basicSetApprovedBy((BookingAdmin) otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
-			return basicSetApprovedBy(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case Hw1Package.EVENT_BOOKING__ESTIMATED_PRICE_QUOTE:
 			return getEstimatedPriceQuote();
-		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
-			if (resolve)
-				return getApprovedBy();
-			return basicGetApprovedBy();
 		case Hw1Package.EVENT_BOOKING__EVENT_DESCRIPTION:
 			return getEventDescription();
 		}
@@ -280,9 +163,6 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 		switch (featureID) {
 		case Hw1Package.EVENT_BOOKING__ESTIMATED_PRICE_QUOTE:
 			setEstimatedPriceQuote((Integer) newValue);
-			return;
-		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
-			setApprovedBy((BookingAdmin) newValue);
 			return;
 		case Hw1Package.EVENT_BOOKING__EVENT_DESCRIPTION:
 			setEventDescription((String) newValue);
@@ -302,9 +182,6 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 		case Hw1Package.EVENT_BOOKING__ESTIMATED_PRICE_QUOTE:
 			setEstimatedPriceQuote(ESTIMATED_PRICE_QUOTE_EDEFAULT);
 			return;
-		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
-			setApprovedBy((BookingAdmin) null);
-			return;
 		case Hw1Package.EVENT_BOOKING__EVENT_DESCRIPTION:
 			setEventDescription(EVENT_DESCRIPTION_EDEFAULT);
 			return;
@@ -322,8 +199,6 @@ public class EventBookingImpl extends BookingImpl implements EventBooking {
 		switch (featureID) {
 		case Hw1Package.EVENT_BOOKING__ESTIMATED_PRICE_QUOTE:
 			return estimatedPriceQuote != ESTIMATED_PRICE_QUOTE_EDEFAULT;
-		case Hw1Package.EVENT_BOOKING__APPROVED_BY:
-			return approvedBy != null;
 		case Hw1Package.EVENT_BOOKING__EVENT_DESCRIPTION:
 			return EVENT_DESCRIPTION_EDEFAULT == null ? eventDescription != null
 					: !EVENT_DESCRIPTION_EDEFAULT.equals(eventDescription);

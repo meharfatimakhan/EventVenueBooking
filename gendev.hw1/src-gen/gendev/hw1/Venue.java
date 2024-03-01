@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link gendev.hw1.Venue#getLocation <em>Location</em>}</li>
  *   <li>{@link gendev.hw1.Venue#getCapacity <em>Capacity</em>}</li>
- *   <li>{@link gendev.hw1.Venue#getBookings <em>Bookings</em>}</li>
  *   <li>{@link gendev.hw1.Venue#getVenueID <em>Venue ID</em>}</li>
+ *   <li>{@link gendev.hw1.Venue#getBookings <em>Bookings</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getVenue()
@@ -72,20 +72,6 @@ public interface Venue extends EObject {
 	void setCapacity(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Bookings</b></em>' reference list.
-	 * The list contents are of type {@link gendev.hw1.Booking}.
-	 * It is bidirectional and its opposite is '{@link gendev.hw1.Booking#getHostedAt <em>Hosted At</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Bookings</em>' reference list.
-	 * @see gendev.hw1.Hw1Package#getVenue_Bookings()
-	 * @see gendev.hw1.Booking#getHostedAt
-	 * @model opposite="hostedAt"
-	 * @generated
-	 */
-	EList<Booking> getBookings();
-
-	/**
 	 * Returns the value of the '<em><b>Venue ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,6 +92,18 @@ public interface Venue extends EObject {
 	 * @generated
 	 */
 	void setVenueID(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Bookings</b></em>' containment reference list.
+	 * The list contents are of type {@link gendev.hw1.Booking}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bookings</em>' containment reference list.
+	 * @see gendev.hw1.Hw1Package#getVenue_Bookings()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Booking> getBookings();
 
 	/**
 	 * <!-- begin-user-doc -->

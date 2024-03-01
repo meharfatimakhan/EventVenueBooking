@@ -14,6 +14,7 @@ package gendev.hw1;
 // import gendev.hw1.Hw1Package;
 // import gendev.hw1.Hw1Tables;
 import java.lang.String;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.ocl.pivot.TemplateParameters;
 import org.eclipse.ocl.pivot.ids.ClassId;
@@ -21,6 +22,7 @@ import org.eclipse.ocl.pivot.ids.CollectionTypeId;
 import org.eclipse.ocl.pivot.ids.DataTypeId;
 import org.eclipse.ocl.pivot.ids.IdManager;
 import org.eclipse.ocl.pivot.ids.NsURIPackageId;
+import org.eclipse.ocl.pivot.ids.RootPackageId;
 import org.eclipse.ocl.pivot.ids.TypeId;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorPackage;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorProperty;
@@ -63,11 +65,13 @@ public class Hw1Tables extends AbstractTables
 	/**
 	 *	Constants used by auto-generated code.
 	 */
+	public static final /*@NonInvalid*/ RootPackageId PACKid_$metamodel$ = IdManager.getRootPackageId("$metamodel$");
 	public static final /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore = IdManager.getNsURIPackageId("http://www.eclipse.org/emf/2002/Ecore", null, EcorePackage.eINSTANCE);
 	public static final /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_www_eclipse_org_s_ocl_s_2015_s_Orphanage = IdManager.getNsURIPackageId("http://www.eclipse.org/ocl/2015/Orphanage", "orphanage", null);
 	public static final /*@NonInvalid*/ NsURIPackageId PACKid_http_c_s_s_www_example_org_s_hw1 = IdManager.getNsURIPackageId("http://www.example.org/hw1", null, Hw1Package.eINSTANCE);
 	public static final /*@NonInvalid*/ ClassId CLSSid_Booking = Hw1Tables.PACKid_http_c_s_s_www_example_org_s_hw1.getClassId("Booking", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_BookingAdmin = Hw1Tables.PACKid_http_c_s_s_www_example_org_s_hw1.getClassId("BookingAdmin", 0);
+	public static final /*@NonInvalid*/ ClassId CLSSid_Class = Hw1Tables.PACKid_$metamodel$.getClassId("Class", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_Customer = Hw1Tables.PACKid_http_c_s_s_www_example_org_s_hw1.getClassId("Customer", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_EventBooking = Hw1Tables.PACKid_http_c_s_s_www_example_org_s_hw1.getClassId("EventBooking", 0);
 	public static final /*@NonInvalid*/ ClassId CLSSid_Payment = Hw1Tables.PACKid_http_c_s_s_www_example_org_s_hw1.getClassId("Payment", 0);
@@ -78,7 +82,7 @@ public class Hw1Tables extends AbstractTables
 	public static final /*@NonInvalid*/ DataTypeId DATAid_EInt = Hw1Tables.PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EInt", 0);
 	public static final /*@NonInvalid*/ IntegerValue INT_0 = ValueUtil.integerValueOf("0");
 	public static final /*@NonInvalid*/ IntegerValue INT_1 = ValueUtil.integerValueOf("1");
-	public static final /*@NonInvalid*/ IntegerValue INT_100 = ValueUtil.integerValueOf("100");
+	public static final /*@NonInvalid*/ IntegerValue INT_10 = ValueUtil.integerValueOf("10");
 	public static final /*@NonInvalid*/ IntegerValue INT_5 = ValueUtil.integerValueOf("5");
 	public static final /*@NonInvalid*/ CollectionTypeId SET_PRIMid_String = TypeId.SET.getSpecializedId(TypeId.STRING);
 	public static final /*@NonInvalid*/ String STR_Fully_32_Booked = "Fully Booked";
@@ -88,6 +92,8 @@ public class Hw1Tables extends AbstractTables
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EventBooking = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_EventBooking);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Review = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_Review);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Venue = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_Venue);
+	public static final /*@NonInvalid*/ CollectionTypeId SET_CLSSid_Customer = TypeId.SET.getSpecializedId(Hw1Tables.CLSSid_Customer);
+	public static final /*@NonInvalid*/ CollectionTypeId SET_CLSSid_Review = TypeId.SET.getSpecializedId(Hw1Tables.CLSSid_Review);
 
 	/**
 	 *	The type parameters for templated types and operations.
@@ -318,7 +324,7 @@ public class Hw1Tables extends AbstractTables
 		public static final ExecutorProperty _Booking__NumberOfGuests = new EcoreExecutorProperty(Hw1Package.Literals.BOOKING__NUMBER_OF_GUESTS, Types._Booking, 5);
 		public static final ExecutorProperty _Booking__bookingBy = new EcoreExecutorProperty(Hw1Package.Literals.BOOKING__BOOKING_BY, Types._Booking, 6);
 		public static final ExecutorProperty _Booking__hasReviews = new EcoreExecutorProperty(Hw1Package.Literals.BOOKING__HAS_REVIEWS, Types._Booking, 7);
-		public static final ExecutorProperty _Booking__hostedAt = new EcoreExecutorProperty(Hw1Package.Literals.BOOKING__HOSTED_AT, Types._Booking, 8);
+		public static final ExecutorProperty _Booking__Venue__bookings = new ExecutorPropertyWithImplementation("Venue", Types._Booking, 8, new EcoreLibraryOppositeProperty(Hw1Package.Literals.VENUE__BOOKINGS));
 
 		public static final ExecutorProperty _BookingAdmin__NumberOfApprovals = new EcoreExecutorProperty(Hw1Package.Literals.BOOKING_ADMIN__NUMBER_OF_APPROVALS, Types._BookingAdmin, 0);
 		public static final ExecutorProperty _BookingAdmin__approvedBookings = new EcoreExecutorProperty(Hw1Package.Literals.BOOKING_ADMIN__APPROVED_BOOKINGS, Types._BookingAdmin, 1);
@@ -332,7 +338,7 @@ public class Hw1Tables extends AbstractTables
 
 		public static final ExecutorProperty _EventBooking__EstimatedPriceQuote = new EcoreExecutorProperty(Hw1Package.Literals.EVENT_BOOKING__ESTIMATED_PRICE_QUOTE, Types._EventBooking, 0);
 		public static final ExecutorProperty _EventBooking__EventDescription = new EcoreExecutorProperty(Hw1Package.Literals.EVENT_BOOKING__EVENT_DESCRIPTION, Types._EventBooking, 1);
-		public static final ExecutorProperty _EventBooking__approvedBy = new EcoreExecutorProperty(Hw1Package.Literals.EVENT_BOOKING__APPROVED_BY, Types._EventBooking, 2);
+		public static final ExecutorProperty _EventBooking__BookingAdmin__approvedBookings = new ExecutorPropertyWithImplementation("BookingAdmin", Types._EventBooking, 2, new EcoreLibraryOppositeProperty(Hw1Package.Literals.BOOKING_ADMIN__APPROVED_BOOKINGS));
 		public static final ExecutorProperty _EventBooking__Payment__paidFor = new ExecutorPropertyWithImplementation("Payment", Types._EventBooking, 3, new EcoreLibraryOppositeProperty(Hw1Package.Literals.PAYMENT__PAID_FOR));
 
 		public static final ExecutorProperty _MenuTastingBooking__MenuTastingVisitID = new EcoreExecutorProperty(Hw1Package.Literals.MENU_TASTING_BOOKING__MENU_TASTING_VISIT_ID, Types._MenuTastingBooking, 0);
@@ -887,7 +893,6 @@ public class Hw1Tables extends AbstractTables
 			Hw1Tables.Properties._Booking__NumberOfGuests,
 			Hw1Tables.Properties._Booking__bookingBy,
 			Hw1Tables.Properties._Booking__hasReviews,
-			Hw1Tables.Properties._Booking__hostedAt,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
@@ -923,10 +928,8 @@ public class Hw1Tables extends AbstractTables
 			Hw1Tables.Properties._EventBooking__EventDescription,
 			Hw1Tables.Properties._Booking__MenuOptions,
 			Hw1Tables.Properties._Booking__NumberOfGuests,
-			Hw1Tables.Properties._EventBooking__approvedBy,
 			Hw1Tables.Properties._Booking__bookingBy,
 			Hw1Tables.Properties._Booking__hasReviews,
-			Hw1Tables.Properties._Booking__hostedAt,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
@@ -941,7 +944,6 @@ public class Hw1Tables extends AbstractTables
 			Hw1Tables.Properties._Booking__NumberOfGuests,
 			Hw1Tables.Properties._Booking__bookingBy,
 			Hw1Tables.Properties._Booking__hasReviews,
-			Hw1Tables.Properties._Booking__hostedAt,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
@@ -997,7 +999,6 @@ public class Hw1Tables extends AbstractTables
 			Hw1Tables.Properties._VenueVisitBooking__VisitPurpose,
 			Hw1Tables.Properties._Booking__bookingBy,
 			Hw1Tables.Properties._Booking__hasReviews,
-			Hw1Tables.Properties._Booking__hostedAt,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
@@ -1098,5 +1099,17 @@ public class Hw1Tables extends AbstractTables
 
 	private Hw1Tables() {
 		super(Hw1Package.eNS_URI);
+	}
+
+	/*
+	 * The EClasses whose instances should be cached to support allInstances().
+	 */
+	private static final EClass allInstancesEClasses /*@NonNull*/ [] = {
+		Hw1Package.Literals.CUSTOMER
+	};
+
+	@Override
+	public EClass /*@NonNull*/ [] basicGetAllInstancesClasses() {
+		return allInstancesEClasses;
 	}
 }

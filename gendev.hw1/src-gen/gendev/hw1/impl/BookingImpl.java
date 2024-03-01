@@ -7,7 +7,6 @@ import gendev.hw1.Customer;
 import gendev.hw1.Hw1Package;
 
 import gendev.hw1.Review;
-import gendev.hw1.Venue;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
@@ -34,7 +33,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingBy <em>Booking By</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getHasReviews <em>Has Reviews</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingType <em>Booking Type</em>}</li>
- *   <li>{@link gendev.hw1.impl.BookingImpl#getHostedAt <em>Hosted At</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getMenuOptions <em>Menu Options</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getNumberOfGuests <em>Number Of Guests</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingDate <em>Booking Date</em>}</li>
@@ -84,7 +82,7 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	protected String bookingStatus = BOOKING_STATUS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getBookingBy() <em>Booking By</em>}' reference.
+	 * The cached value of the '{@link #getBookingBy() <em>Booking By</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBookingBy()
@@ -122,16 +120,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected String bookingType = BOOKING_TYPE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getHostedAt() <em>Hosted At</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHostedAt()
-	 * @generated
-	 * @ordered
-	 */
-	protected Venue hostedAt;
 
 	/**
 	 * The cached value of the '{@link #getMenuOptions() <em>Menu Options</em>}' attribute.
@@ -274,15 +262,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public Customer getBookingBy() {
-		if (bookingBy != null && bookingBy.eIsProxy()) {
-			InternalEObject oldBookingBy = (InternalEObject) bookingBy;
-			bookingBy = (Customer) eResolveProxy(oldBookingBy);
-			if (bookingBy != oldBookingBy) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Hw1Package.BOOKING__BOOKING_BY,
-							oldBookingBy, bookingBy));
-			}
-		}
 		return bookingBy;
 	}
 
@@ -291,8 +270,18 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Customer basicGetBookingBy() {
-		return bookingBy;
+	public NotificationChain basicSetBookingBy(Customer newBookingBy, NotificationChain msgs) {
+		Customer oldBookingBy = bookingBy;
+		bookingBy = newBookingBy;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					Hw1Package.BOOKING__BOOKING_BY, oldBookingBy, newBookingBy);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -301,11 +290,20 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public void setBookingBy(Customer newBookingBy) {
-		Customer oldBookingBy = bookingBy;
-		bookingBy = newBookingBy;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING__BOOKING_BY, oldBookingBy,
-					bookingBy));
+		if (newBookingBy != bookingBy) {
+			NotificationChain msgs = null;
+			if (bookingBy != null)
+				msgs = ((InternalEObject) bookingBy).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - Hw1Package.BOOKING__BOOKING_BY, null, msgs);
+			if (newBookingBy != null)
+				msgs = ((InternalEObject) newBookingBy).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - Hw1Package.BOOKING__BOOKING_BY, null, msgs);
+			msgs = basicSetBookingBy(newBookingBy, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING__BOOKING_BY, newBookingBy,
+					newBookingBy));
 	}
 
 	/**
@@ -340,72 +338,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING__BOOKING_TYPE, oldBookingType,
 					bookingType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Venue getHostedAt() {
-		if (hostedAt != null && hostedAt.eIsProxy()) {
-			InternalEObject oldHostedAt = (InternalEObject) hostedAt;
-			hostedAt = (Venue) eResolveProxy(oldHostedAt);
-			if (hostedAt != oldHostedAt) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Hw1Package.BOOKING__HOSTED_AT,
-							oldHostedAt, hostedAt));
-			}
-		}
-		return hostedAt;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Venue basicGetHostedAt() {
-		return hostedAt;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetHostedAt(Venue newHostedAt, NotificationChain msgs) {
-		Venue oldHostedAt = hostedAt;
-		hostedAt = newHostedAt;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Hw1Package.BOOKING__HOSTED_AT, oldHostedAt, newHostedAt);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setHostedAt(Venue newHostedAt) {
-		if (newHostedAt != hostedAt) {
-			NotificationChain msgs = null;
-			if (hostedAt != null)
-				msgs = ((InternalEObject) hostedAt).eInverseRemove(this, Hw1Package.VENUE__BOOKINGS, Venue.class, msgs);
-			if (newHostedAt != null)
-				msgs = ((InternalEObject) newHostedAt).eInverseAdd(this, Hw1Package.VENUE__BOOKINGS, Venue.class, msgs);
-			msgs = basicSetHostedAt(newHostedAt, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.BOOKING__HOSTED_AT, newHostedAt,
-					newHostedAt));
 	}
 
 	/**
@@ -466,28 +398,11 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case Hw1Package.BOOKING__HOSTED_AT:
-			if (hostedAt != null)
-				msgs = ((InternalEObject) hostedAt).eInverseRemove(this, Hw1Package.VENUE__BOOKINGS, Venue.class, msgs);
-			return basicSetHostedAt((Venue) otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Hw1Package.BOOKING__HOSTED_AT:
-			return basicSetHostedAt(null, msgs);
+		case Hw1Package.BOOKING__BOOKING_BY:
+			return basicSetBookingBy(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -505,17 +420,11 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		case Hw1Package.BOOKING__BOOKING_STATUS:
 			return getBookingStatus();
 		case Hw1Package.BOOKING__BOOKING_BY:
-			if (resolve)
-				return getBookingBy();
-			return basicGetBookingBy();
+			return getBookingBy();
 		case Hw1Package.BOOKING__HAS_REVIEWS:
 			return getHasReviews();
 		case Hw1Package.BOOKING__BOOKING_TYPE:
 			return getBookingType();
-		case Hw1Package.BOOKING__HOSTED_AT:
-			if (resolve)
-				return getHostedAt();
-			return basicGetHostedAt();
 		case Hw1Package.BOOKING__MENU_OPTIONS:
 			return getMenuOptions();
 		case Hw1Package.BOOKING__NUMBER_OF_GUESTS:
@@ -550,9 +459,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 			return;
 		case Hw1Package.BOOKING__BOOKING_TYPE:
 			setBookingType((String) newValue);
-			return;
-		case Hw1Package.BOOKING__HOSTED_AT:
-			setHostedAt((Venue) newValue);
 			return;
 		case Hw1Package.BOOKING__MENU_OPTIONS:
 			setMenuOptions((EList<?>) newValue);
@@ -590,9 +496,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		case Hw1Package.BOOKING__BOOKING_TYPE:
 			setBookingType(BOOKING_TYPE_EDEFAULT);
 			return;
-		case Hw1Package.BOOKING__HOSTED_AT:
-			setHostedAt((Venue) null);
-			return;
 		case Hw1Package.BOOKING__MENU_OPTIONS:
 			setMenuOptions((EList<?>) null);
 			return;
@@ -625,8 +528,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 			return hasReviews != null && !hasReviews.isEmpty();
 		case Hw1Package.BOOKING__BOOKING_TYPE:
 			return BOOKING_TYPE_EDEFAULT == null ? bookingType != null : !BOOKING_TYPE_EDEFAULT.equals(bookingType);
-		case Hw1Package.BOOKING__HOSTED_AT:
-			return hostedAt != null;
 		case Hw1Package.BOOKING__MENU_OPTIONS:
 			return menuOptions != null;
 		case Hw1Package.BOOKING__NUMBER_OF_GUESTS:

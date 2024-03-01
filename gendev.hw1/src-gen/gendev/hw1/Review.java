@@ -2,8 +2,6 @@
  */
 package gendev.hw1;
 
-import java.util.Map;
-import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getReview()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='reviewValidations'"
+ * @model
  * @generated
  */
 public interface Review extends EObject {
@@ -113,13 +111,5 @@ public interface Review extends EObject {
 	 * @generated
 	 */
 	void setReviewID(int value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.Rating &gt;= 1 and self.Rating &lt;= 5 and self.Comment-&gt;notEmpty() and self.Comment.size() &lt;= 100'"
-	 * @generated
-	 */
-	boolean reviewValidations(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Review

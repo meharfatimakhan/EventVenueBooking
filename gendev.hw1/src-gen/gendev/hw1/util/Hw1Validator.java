@@ -6,7 +6,6 @@ import gendev.hw1.*;
 import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
@@ -38,12 +37,12 @@ public class Hw1Validator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "gendev.hw1";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Review Validations' of 'Review'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Customers' of 'Customer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int REVIEW__REVIEW_VALIDATIONS = 1;
+	public static final int CUSTOMER__VALIDATE_CUSTOMERS = 1;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Venue Bookings Check' of 'Venue'.
@@ -147,7 +146,37 @@ public class Hw1Validator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCustomer(Customer customer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(customer, diagnostics, context);
+		if (!validate_NoCircularContainment(customer, diagnostics, context))
+			return false;
+		boolean result = validate_EveryMultiplicityConforms(customer, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(customer, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(customer, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(customer, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(customer, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(customer, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(customer, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(customer, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateCustomer_validateCustomers(customer, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the validateCustomers constraint of '<em>Customer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCustomer_validateCustomers(Customer customer, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return customer.validateCustomers(diagnostics, context);
 	}
 
 	/**
@@ -156,37 +185,7 @@ public class Hw1Validator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReview(Review review, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(review, diagnostics, context))
-			return false;
-		boolean result = validate_EveryMultiplicityConforms(review, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryDataValueConforms(review, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryReferenceIsContained(review, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryBidirectionalReferenceIsPaired(review, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryProxyResolves(review, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_UniqueID(review, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryKeyUnique(review, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryMapEntryUnique(review, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validateReview_reviewValidations(review, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the reviewValidations constraint of '<em>Review</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateReview_reviewValidations(Review review, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		return review.reviewValidations(diagnostics, context);
+		return validate_EveryDefaultConstraint(review, diagnostics, context);
 	}
 
 	/**
