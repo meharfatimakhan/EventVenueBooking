@@ -83,13 +83,12 @@ public class Hw1Tables extends AbstractTables
 	public static final /*@NonInvalid*/ IntegerValue INT_1 = ValueUtil.integerValueOf("1");
 	public static final /*@NonInvalid*/ IntegerValue INT_10 = ValueUtil.integerValueOf("10");
 	public static final /*@NonInvalid*/ IntegerValue INT_5 = ValueUtil.integerValueOf("5");
-	public static final /*@NonInvalid*/ CollectionTypeId SET_PRIMid_String = TypeId.SET.getSpecializedId(TypeId.STRING);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_Payment = TypeId.BAG.getSpecializedId(Hw1Tables.CLSSid_Payment);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Booking = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_Booking);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EventBooking = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_EventBooking);
+	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Review = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_Review);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Venue = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_Venue);
 	public static final /*@NonInvalid*/ CollectionTypeId SET_CLSSid_Customer = TypeId.SET.getSpecializedId(Hw1Tables.CLSSid_Customer);
-	public static final /*@NonInvalid*/ CollectionTypeId SET_CLSSid_Review = TypeId.SET.getSpecializedId(Hw1Tables.CLSSid_Review);
 
 	/**
 	 *	The type parameters for templated types and operations.

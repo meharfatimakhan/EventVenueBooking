@@ -7,7 +7,9 @@ import gendev.hw1.Hw1Package;
 import gendev.hw1.Hw1Tables;
 import gendev.hw1.Review;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -20,12 +22,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.ocl.pivot.evaluation.Executor;
 import org.eclipse.ocl.pivot.ids.IdResolver;
 import org.eclipse.ocl.pivot.ids.TypeId;
 import org.eclipse.ocl.pivot.library.classifier.ClassifierAllInstancesOperation;
 import org.eclipse.ocl.pivot.library.collection.CollectionNotEmptyOperation;
-import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsSetOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanEqualOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
@@ -37,6 +40,7 @@ import org.eclipse.ocl.pivot.utilities.PivotUtil;
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import org.eclipse.ocl.pivot.values.IntegerValue;
 import org.eclipse.ocl.pivot.values.InvalidValueException;
+import org.eclipse.ocl.pivot.values.OrderedSetValue;
 import org.eclipse.ocl.pivot.values.SetValue;
 
 /**
@@ -138,14 +142,14 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	protected int customerBookingID = CUSTOMER_BOOKING_ID_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSubmits() <em>Submits</em>}' containment reference.
+	 * The cached value of the '{@link #getSubmits() <em>Submits</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSubmits()
 	 * @generated
 	 * @ordered
 	 */
-	protected Review submits;
+	protected EList<Review> submits;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -256,49 +260,11 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Review getSubmits() {
-		return submits;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSubmits(Review newSubmits, NotificationChain msgs) {
-		Review oldSubmits = submits;
-		submits = newSubmits;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Hw1Package.CUSTOMER__SUBMITS,
-					oldSubmits, newSubmits);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public EList<Review> getSubmits() {
+		if (submits == null) {
+			submits = new EObjectContainmentEList<Review>(Review.class, this, Hw1Package.CUSTOMER__SUBMITS);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSubmits(Review newSubmits) {
-		if (newSubmits != submits) {
-			NotificationChain msgs = null;
-			if (submits != null)
-				msgs = ((InternalEObject) submits).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - Hw1Package.CUSTOMER__SUBMITS, null, msgs);
-			if (newSubmits != null)
-				msgs = ((InternalEObject) newSubmits).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - Hw1Package.CUSTOMER__SUBMITS, null, msgs);
-			msgs = basicSetSubmits(newSubmits, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.CUSTOMER__SUBMITS, newSubmits,
-					newSubmits));
+		return submits;
 	}
 
 	/**
@@ -430,11 +396,11 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 						if (CAUGHT_forAll == ValueUtil.FALSE_VALUE) {
 							and = ValueUtil.FALSE_VALUE;
 						} else {
-							final /*@NonInvalid*/ Review submits = this.getSubmits();
-							final /*@NonInvalid*/ SetValue oclAsSet = OclAnyOclAsSetOperation.INSTANCE
-									.evaluate(executor, Hw1Tables.SET_CLSSid_Review, submits);
+							final /*@NonInvalid*/ List<Review> submits = this.getSubmits();
+							final /*@NonInvalid*/ OrderedSetValue BOXED_submits = idResolver
+									.createOrderedSetOfAll(Hw1Tables.ORD_CLSSid_Review, submits);
 							final /*@NonInvalid*/ boolean notEmpty = CollectionNotEmptyOperation.INSTANCE
-									.evaluate(oclAsSet).booleanValue();
+									.evaluate(BOXED_submits).booleanValue();
 							if (!notEmpty) {
 								and = ValueUtil.FALSE_VALUE;
 							} else {
@@ -460,11 +426,11 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 						try {
 							/*@Caught*/ Object CAUGHT_forAll_0;
 							try {
-								final /*@NonInvalid*/ Review submits_0 = this.getSubmits();
-								final /*@NonInvalid*/ SetValue oclAsSet_0 = OclAnyOclAsSetOperation.INSTANCE
-										.evaluate(executor, Hw1Tables.SET_CLSSid_Review, submits_0);
+								final /*@NonInvalid*/ List<Review> submits_0 = this.getSubmits();
+								final /*@NonInvalid*/ OrderedSetValue BOXED_submits_0 = idResolver
+										.createOrderedSetOfAll(Hw1Tables.ORD_CLSSid_Review, submits_0);
 								/*@Thrown*/ Object accumulator_0 = ValueUtil.TRUE_VALUE;
-								Iterator<Object> ITERATOR_review = oclAsSet_0.iterator();
+								Iterator<Object> ITERATOR_review = BOXED_submits_0.iterator();
 								/*@Thrown*/ Boolean forAll_0;
 								while (true) {
 									if (!ITERATOR_review.hasNext()) {
@@ -594,7 +560,7 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Hw1Package.CUSTOMER__SUBMITS:
-			return basicSetSubmits(null, msgs);
+			return ((InternalEList<?>) getSubmits()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -643,7 +609,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 			setCustomerBookingID((Integer) newValue);
 			return;
 		case Hw1Package.CUSTOMER__SUBMITS:
-			setSubmits((Review) newValue);
+			getSubmits().clear();
+			getSubmits().addAll((Collection<? extends Review>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -670,7 +637,7 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 			setCustomerBookingID(CUSTOMER_BOOKING_ID_EDEFAULT);
 			return;
 		case Hw1Package.CUSTOMER__SUBMITS:
-			setSubmits((Review) null);
+			getSubmits().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -693,7 +660,7 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 		case Hw1Package.CUSTOMER__CUSTOMER_BOOKING_ID:
 			return customerBookingID != CUSTOMER_BOOKING_ID_EDEFAULT;
 		case Hw1Package.CUSTOMER__SUBMITS:
-			return submits != null;
+			return submits != null && !submits.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

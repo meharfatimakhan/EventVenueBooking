@@ -2,8 +2,6 @@
  */
 package gendev.hw1;
 
-import java.util.Map;
-import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -25,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getSystemAdmin()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='systemChecks'"
+ * @model
  * @generated
  */
 public interface SystemAdmin extends EObject {
@@ -128,13 +126,5 @@ public interface SystemAdmin extends EObject {
 	 * @generated
 	 */
 	void setAdminID(int value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.Email-&gt;notEmpty()'"
-	 * @generated
-	 */
-	boolean systemChecks(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // SystemAdmin

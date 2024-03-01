@@ -27,6 +27,7 @@ import org.eclipse.ocl.pivot.ids.IdResolver;
 import org.eclipse.ocl.pivot.ids.TypeId;
 import org.eclipse.ocl.pivot.library.collection.CollectionNotEmptyOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanEqualOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
 import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
 import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
@@ -164,7 +165,11 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 			 *       let
 			 *         result : Boolean[?] = self.venuesManaged->notEmpty() and
 			 *         self.approvedBookings->exists(booking |
-			 *           not booking.oclIsUndefined()) and self.NumberOfApprovals >= 0
+			 *           not booking.oclIsUndefined()) and self.NumberOfApprovals >= 0 and
+			 *         if self.approvedBookings->notEmpty()
+			 *         then self.NumberOfApprovals > 0
+			 *         else true
+			 *         endif
 			 *       in
 			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 			 *     endif
@@ -175,98 +180,135 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 					Hw1Package.Literals.BOOKING_ADMIN___BOOKING_ADMIN_CHECKS__DIAGNOSTICCHAIN_MAP);
 			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE
 					.evaluate(executor, severity_0, Hw1Tables.INT_0).booleanValue();
-			/*@NonInvalid*/ boolean local_0;
+			/*@NonInvalid*/ boolean local_1;
 			if (le) {
-				local_0 = true;
+				local_1 = true;
 			} else {
 				/*@Caught*/ Object CAUGHT_result;
 				try {
-					/*@Caught*/ Object CAUGHT_and;
+					final /*@NonInvalid*/ List<EventBooking> approvedBookings_0 = this.getApprovedBookings();
+					final /*@NonInvalid*/ OrderedSetValue BOXED_approvedBookings_0 = idResolver
+							.createOrderedSetOfAll(Hw1Tables.ORD_CLSSid_EventBooking, approvedBookings_0);
+					/*@Caught*/ Object CAUGHT_and_0;
 					try {
-						final /*@NonInvalid*/ List<Venue> venuesManaged = this.getVenuesManaged();
-						final /*@NonInvalid*/ OrderedSetValue BOXED_venuesManaged = idResolver
-								.createOrderedSetOfAll(Hw1Tables.ORD_CLSSid_Venue, venuesManaged);
-						final /*@NonInvalid*/ boolean notEmpty = CollectionNotEmptyOperation.INSTANCE
-								.evaluate(BOXED_venuesManaged).booleanValue();
-						final /*@Thrown*/ Boolean and;
-						if (!notEmpty) {
-							and = ValueUtil.FALSE_VALUE;
-						} else {
-							/*@Caught*/ Object CAUGHT_exists;
-							try {
-								final /*@NonInvalid*/ List<EventBooking> approvedBookings = this.getApprovedBookings();
-								final /*@NonInvalid*/ OrderedSetValue BOXED_approvedBookings = idResolver
-										.createOrderedSetOfAll(Hw1Tables.ORD_CLSSid_EventBooking, approvedBookings);
-								/*@Thrown*/ Object accumulator = ValueUtil.FALSE_VALUE;
-								Iterator<Object> ITERATOR_booking = BOXED_approvedBookings.iterator();
-								/*@Thrown*/ Boolean exists;
-								while (true) {
-									if (!ITERATOR_booking.hasNext()) {
-										if (accumulator == null) {
-											exists = null;
-										} else if (accumulator == ValueUtil.FALSE_VALUE) {
-											exists = ValueUtil.FALSE_VALUE;
-										} else {
-											throw (InvalidValueException) accumulator;
-										}
-										break;
-									}
-									/*@NonInvalid*/ EventBooking booking = (EventBooking) ITERATOR_booking.next();
-									/**
-									 * not booking.oclIsUndefined()
-									 */
-									final /*@NonInvalid*/ Boolean not = ValueUtil.TRUE_VALUE;
-									//
-									if (not == ValueUtil.TRUE_VALUE) { // Normal successful body evaluation result
-										exists = ValueUtil.TRUE_VALUE;
-										break; // Stop immediately
-									} else if (not == ValueUtil.FALSE_VALUE) { // Normal unsuccessful body evaluation result
-										; // Carry on
-									} else if (not == null) { // Abnormal null body evaluation result
-										if (accumulator == ValueUtil.FALSE_VALUE) {
-											accumulator = null; // Cache a null failure
-										}
-									} else { // Impossible badly typed result
-										accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "exists");
-									}
-								}
-								CAUGHT_exists = exists;
-							} catch (Exception e) {
-								CAUGHT_exists = ValueUtil.createInvalidValue(e);
-							}
-							if (CAUGHT_exists == ValueUtil.FALSE_VALUE) {
+						/*@Caught*/ Object CAUGHT_and;
+						try {
+							final /*@NonInvalid*/ List<Venue> venuesManaged = this.getVenuesManaged();
+							final /*@NonInvalid*/ OrderedSetValue BOXED_venuesManaged = idResolver
+									.createOrderedSetOfAll(Hw1Tables.ORD_CLSSid_Venue, venuesManaged);
+							final /*@NonInvalid*/ boolean notEmpty = CollectionNotEmptyOperation.INSTANCE
+									.evaluate(BOXED_venuesManaged).booleanValue();
+							final /*@Thrown*/ Boolean and;
+							if (!notEmpty) {
 								and = ValueUtil.FALSE_VALUE;
 							} else {
-								if (CAUGHT_exists instanceof InvalidValueException) {
-									throw (InvalidValueException) CAUGHT_exists;
+								/*@Caught*/ Object CAUGHT_exists;
+								try {
+									/*@Thrown*/ Object accumulator = ValueUtil.FALSE_VALUE;
+									Iterator<Object> ITERATOR_booking = BOXED_approvedBookings_0.iterator();
+									/*@Thrown*/ Boolean exists;
+									while (true) {
+										if (!ITERATOR_booking.hasNext()) {
+											if (accumulator == null) {
+												exists = null;
+											} else if (accumulator == ValueUtil.FALSE_VALUE) {
+												exists = ValueUtil.FALSE_VALUE;
+											} else {
+												throw (InvalidValueException) accumulator;
+											}
+											break;
+										}
+										/*@NonInvalid*/ EventBooking booking = (EventBooking) ITERATOR_booking.next();
+										/**
+										 * not booking.oclIsUndefined()
+										 */
+										final /*@NonInvalid*/ Boolean not = ValueUtil.TRUE_VALUE;
+										//
+										if (not == ValueUtil.TRUE_VALUE) { // Normal successful body evaluation result
+											exists = ValueUtil.TRUE_VALUE;
+											break; // Stop immediately
+										} else if (not == ValueUtil.FALSE_VALUE) { // Normal unsuccessful body evaluation result
+											; // Carry on
+										} else if (not == null) { // Abnormal null body evaluation result
+											if (accumulator == ValueUtil.FALSE_VALUE) {
+												accumulator = null; // Cache a null failure
+											}
+										} else { // Impossible badly typed result
+											accumulator = new InvalidValueException(PivotMessages.NonBooleanBody,
+													"exists");
+										}
+									}
+									CAUGHT_exists = exists;
+								} catch (Exception e) {
+									CAUGHT_exists = ValueUtil.createInvalidValue(e);
 								}
-								if (CAUGHT_exists == null) {
-									and = null;
+								if (CAUGHT_exists == ValueUtil.FALSE_VALUE) {
+									and = ValueUtil.FALSE_VALUE;
 								} else {
-									and = ValueUtil.TRUE_VALUE;
+									if (CAUGHT_exists instanceof InvalidValueException) {
+										throw (InvalidValueException) CAUGHT_exists;
+									}
+									if (CAUGHT_exists == null) {
+										and = null;
+									} else {
+										and = ValueUtil.TRUE_VALUE;
+									}
+								}
+							}
+							CAUGHT_and = and;
+						} catch (Exception e) {
+							CAUGHT_and = ValueUtil.createInvalidValue(e);
+						}
+						final /*@Thrown*/ Boolean and_0;
+						if (CAUGHT_and == ValueUtil.FALSE_VALUE) {
+							and_0 = ValueUtil.FALSE_VALUE;
+						} else {
+							final /*@NonInvalid*/ int NumberOfApprovals = this.getNumberOfApprovals();
+							final /*@NonInvalid*/ IntegerValue BOXED_NumberOfApprovals = ValueUtil
+									.integerValueOf(NumberOfApprovals);
+							final /*@NonInvalid*/ boolean ge = OclComparableGreaterThanEqualOperation.INSTANCE
+									.evaluate(executor, BOXED_NumberOfApprovals, Hw1Tables.INT_0).booleanValue();
+							if (!ge) {
+								and_0 = ValueUtil.FALSE_VALUE;
+							} else {
+								if (CAUGHT_and instanceof InvalidValueException) {
+									throw (InvalidValueException) CAUGHT_and;
+								}
+								if (CAUGHT_and == null) {
+									and_0 = null;
+								} else {
+									and_0 = ValueUtil.TRUE_VALUE;
 								}
 							}
 						}
-						CAUGHT_and = and;
+						CAUGHT_and_0 = and_0;
 					} catch (Exception e) {
-						CAUGHT_and = ValueUtil.createInvalidValue(e);
+						CAUGHT_and_0 = ValueUtil.createInvalidValue(e);
 					}
 					final /*@Thrown*/ Boolean result;
-					if (CAUGHT_and == ValueUtil.FALSE_VALUE) {
+					if (CAUGHT_and_0 == ValueUtil.FALSE_VALUE) {
 						result = ValueUtil.FALSE_VALUE;
 					} else {
-						final /*@NonInvalid*/ int NumberOfApprovals = this.getNumberOfApprovals();
-						final /*@NonInvalid*/ IntegerValue BOXED_NumberOfApprovals = ValueUtil
-								.integerValueOf(NumberOfApprovals);
-						final /*@NonInvalid*/ boolean ge = OclComparableGreaterThanEqualOperation.INSTANCE
-								.evaluate(executor, BOXED_NumberOfApprovals, Hw1Tables.INT_0).booleanValue();
-						if (!ge) {
+						final /*@NonInvalid*/ boolean notEmpty_0 = CollectionNotEmptyOperation.INSTANCE
+								.evaluate(BOXED_approvedBookings_0).booleanValue();
+						/*@NonInvalid*/ boolean local_0;
+						if (notEmpty_0) {
+							final /*@NonInvalid*/ int NumberOfApprovals_0 = this.getNumberOfApprovals();
+							final /*@NonInvalid*/ IntegerValue BOXED_NumberOfApprovals_0 = ValueUtil
+									.integerValueOf(NumberOfApprovals_0);
+							final /*@NonInvalid*/ boolean gt = OclComparableGreaterThanOperation.INSTANCE
+									.evaluate(executor, BOXED_NumberOfApprovals_0, Hw1Tables.INT_0).booleanValue();
+							local_0 = gt;
+						} else {
+							local_0 = true;
+						}
+						if (!local_0) {
 							result = ValueUtil.FALSE_VALUE;
 						} else {
-							if (CAUGHT_and instanceof InvalidValueException) {
-								throw (InvalidValueException) CAUGHT_and;
+							if (CAUGHT_and_0 instanceof InvalidValueException) {
+								throw (InvalidValueException) CAUGHT_and_0;
 							}
-							if (CAUGHT_and == null) {
+							if (CAUGHT_and_0 == null) {
 								result = null;
 							} else {
 								result = ValueUtil.TRUE_VALUE;
@@ -281,9 +323,9 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 						.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object) null, diagnostics, context,
 								(Object) null, severity_0, CAUGHT_result, Hw1Tables.INT_0)
 						.booleanValue();
-				local_0 = logDiagnostic;
+				local_1 = logDiagnostic;
 			}
-			return local_0;
+			return local_1;
 		} catch (Throwable e) {
 			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
 		}

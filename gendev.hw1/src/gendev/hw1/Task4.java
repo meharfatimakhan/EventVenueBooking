@@ -17,111 +17,90 @@ public class Task4 {
 		System.out.println("Creating and saving instance to file " + instance);
 
         Hw1Package.eINSTANCE.eClass();
+        
+     // Create instances of the Ecore Model
+        Customer customer1 = Hw1Factory.eINSTANCE.createCustomer();
+        customer1.setName("Mehar");
+        customer1.setEmail("mehar@gmail.com");
+        customer1.setPhone("0091665433");
+        
+        Customer customer2 = Hw1Factory.eINSTANCE.createCustomer();
+        customer2.setName("Nikhil");
+        customer2.setEmail("nikhil@gmail.com");
+        customer2.setPhone("0091665432");
 
-        // Create instances of the Ecore Model
-        Customer customer1 = Hw1Factory.eINSTANCE.createCustomer(); // object 1
-        Customer customer2 = Hw1Factory.eINSTANCE.createCustomer(); // object 2
-        Review review1 = Hw1Factory.eINSTANCE.createReview(); // object 3
-        Review review2 = Hw1Factory.eINSTANCE.createReview(); // object 4
-        Venue venue1 = Hw1Factory.eINSTANCE.createVenue(); // object 5
-        Venue venue2 = Hw1Factory.eINSTANCE.createVenue(); // object 6
+        Review review1 = Hw1Factory.eINSTANCE.createReview();
+        review1.setRating(4);
+        review1.setComment("Great experience!");
+        review1.setReviewBookingID(1);
+        review1.setReviewID(1);
 
-        // Setting values for the objects
-        
-        // settings for object 1
-        customer1.setName("Nikhil Sukesula");
-        customer1.setEmail("nikhilpt75@gmail.com");
-        customer1.setPhone("5214508654");
-        customer1.setCustomerBookingID(32);
-        
-        // settings for object 2
-        review1.setRating(3);
-        review1.setComment("Food was just okay.but venue was nice..");
-        review1.setReviewID(0);
-        review1.setReviewBookingID(45);
-        customer1.setSubmits(review1); // link 1
-        
-        
-        // settings for object 3
-        customer2.setName("Mehar Fatima Khan");
-        customer2.setEmail("meharf@gmail.com");
-        customer2.setPhone("5725208652");
-        customer2.setCustomerBookingID(42);
-        
-        // settings for object 4
+        Review review2 = Hw1Factory.eINSTANCE.createReview();
         review2.setRating(5);
-        review2.setComment("Absolutly amazing service! The venue was beautiful and the food tasted heavenly!");
-        review2.setReviewID(1);
-        review1.setReviewBookingID(35);
-        
-      
-        customer2.setSubmits(review2); // link 2
-        
-        // settings for object 5
-        venue1.setLocation("Valley Suites 105 Graham Road Leicester LE5 1HQ");
-        venue1.setCapacity(50);
+        review2.setComment("Nice decor");
+        review2.setReviewBookingID(4);
+        review2.setReviewID(2);
+
+        Venue venue1 = Hw1Factory.eINSTANCE.createVenue();
+        venue1.setLocation("Lark Venues, Leicester LE3GHK");
+        venue1.setCapacity(100);
         venue1.setVenueID(1);
         
+//        Venue venue2 = Hw1Factory.eINSTANCE.createVenue();
+//        venue2.setLocation("GRU Hall, Leicester LE4198");
+//        venue2.setCapacity(50);
+//        venue2.setVenueID(2);
 
-        // settings for object 6
-        venue2.setLocation("St Martins House Conference Centre Leicester, The Grand Hall, Leicester, LE1 5PZ");
-        venue2.setCapacity(100);
-        venue2.setVenueID(2);
-  
-      
-        
-        
-        // -------------------- Creating EventBooking object
         EventBooking eventBooking = Hw1Factory.eINSTANCE.createEventBooking();
-        eventBooking.setEventDescription("a wedding being hosted for 100 people with white decor and white baloons all over");
-        eventBooking.setEstimatedPriceQuote(1000);
-        eventBooking.setBookingBy(customer1); // link 3
-        eventBooking.setBookingDate( "Mon Feb 27 10:30:00 GMT 2024");
+        eventBooking.setEventDescription("A birthday party of a boy 10 year old with toy story theme");
+        eventBooking.setEstimatedPriceQuote(2000);
+        eventBooking.setBookingBy(customer1);
+        eventBooking.setBookingDate("Mon Feb 27 10:30:00 GMT 2024");
         eventBooking.setBookingType("Event");
         eventBooking.setBookingStatus("Confirmed");
-        eventBooking.setNumberOfGuests(30);
-        eventBooking.setBookingID(3);
-        EList<String> menuItems1 = new BasicEList<String>();
-        menuItems1.add("French Fries");
-        menuItems1.add("Burgers");
-        menuItems1.add("Caviar");
-        menuItems1.add("Coke");
-        eventBooking.setMenuOptions(menuItems1); 
+        eventBooking.setNumberOfGuests(50);
+        eventBooking.setBookingID(2);
         
-        venue1.getBookings().add(eventBooking); // link 4
-        
-     // -------------------- Creating BookingAdmin object
+        EventBooking eventBooking2 = Hw1Factory.eINSTANCE.createEventBooking();
+        eventBooking2.setEventDescription("A wedding with white balloons");
+        eventBooking2.setEstimatedPriceQuote(4000);
+        eventBooking2.setBookingBy(customer2);
+        eventBooking2.setBookingDate("Mon Feb 29 10:30:00 GMT 2024");
+        eventBooking2.setBookingType("Event");
+        eventBooking2.setBookingStatus("Confirmed");
+        eventBooking2.setNumberOfGuests(80);
+        eventBooking2.setBookingID(3);
+
         BookingAdmin bookingAdmin = Hw1Factory.eINSTANCE.createBookingAdmin();
-        bookingAdmin.setAdminID(0);
-        bookingAdmin.setEmail("ada@gmail.com");
-        bookingAdmin.setPhone("3124313262");
+        bookingAdmin.setAdminID(1);
+        bookingAdmin.setEmail("ava@gmail.com");
+        bookingAdmin.setPhone("9876543210");
         bookingAdmin.setNumberOfApprovals(1);
-        bookingAdmin.setName("Ada Jade");
-        bookingAdmin.getApprovedBookings().add(eventBooking); // link 5
-        
-                
-        // -------------------- Creating VenueViistBooking object
+        bookingAdmin.setName("Ava John");
+
         VenueVisitBooking venueVisitBooking = Hw1Factory.eINSTANCE.createVenueVisitBooking();
-        venueVisitBooking.setVisitPurpose("FINALIZE DECOR");
-        venueVisitBooking.setBookingBy(customer2); // link 6
-        venueVisitBooking.setBookingDate( "Mon Feb 25 10:30:00 GMT 2024");
+        venueVisitBooking.setVisitPurpose("Lark Venue Visit");
+        venueVisitBooking.setBookingBy(customer2);
+        venueVisitBooking.setBookingDate("Mon Feb 28 10:30:00 GMT 2024");
         venueVisitBooking.setBookingStatus("Confirmed");
         venueVisitBooking.setBookingType("Visit");
         venueVisitBooking.setVisitID(3);
-        venueVisitBooking.setNumberOfGuests(61);
-        venueVisitBooking.setBookingID(5);
-        EList<String> menuItems2 = new BasicEList<String>();
-        menuItems2.add("Biryani");
-        menuItems2.add("Chai");
-        menuItems2.add("Chicken Curry");
-        venueVisitBooking.setMenuOptions(menuItems2);	
-        
+        venueVisitBooking.setNumberOfGuests(20);
+        venueVisitBooking.setBookingID(3);
+
+        // Establish links between objects
+        customer1.getSubmits().add(review1);
+        customer1.getSubmits().add(review2);
+        venue1.getBookings().add(eventBooking);
+        venue1.getBookings().add(eventBooking2);
+        bookingAdmin.getApprovedBookings().add(eventBooking);
+        bookingAdmin.getApprovedBookings().add(eventBooking2);
         // Save the model to XMI file
-        saveModel(instance, customer1, customer2, review1, review2, venue1, venue2, eventBooking, venueVisitBooking, bookingAdmin);
+        saveModel(instance, customer1, review1, venue1, eventBooking, venueVisitBooking, bookingAdmin);
     }
 	
-	private static void saveModel(String fileName, Customer customer1, Customer customer2, 
-			Review review1, Review review2, Venue venue1, Venue venue2, 
+	private static void saveModel(String fileName, Customer customer1, 
+			Review review2, Venue venue2, 
 			EventBooking eventBooking, VenueVisitBooking venueVisitBooking, BookingAdmin bookingAdmin) {
 	        ResourceSet resourceSet = new ResourceSetImpl();
 
@@ -133,10 +112,7 @@ public class Task4 {
 	        System.out.println("URI" + URI.createURI(fileName));
 	        // Add instances to the resource
 	        resource.getContents().add(customer1);
-	        resource.getContents().add(customer2);
-	        resource.getContents().add(review1);
 	        resource.getContents().add(review2);
-	        resource.getContents().add(venue1);
 	        resource.getContents().add(venue2);
 	        resource.getContents().add(eventBooking);
 	        resource.getContents().add(venueVisitBooking);

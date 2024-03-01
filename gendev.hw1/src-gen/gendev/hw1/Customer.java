@@ -4,6 +4,7 @@ package gendev.hw1;
 
 import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -116,26 +117,16 @@ public interface Customer extends EObject {
 	void setCustomerBookingID(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Submits</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Submits</b></em>' containment reference list.
+	 * The list contents are of type {@link gendev.hw1.Review}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Submits</em>' containment reference.
-	 * @see #setSubmits(Review)
+	 * @return the value of the '<em>Submits</em>' containment reference list.
 	 * @see gendev.hw1.Hw1Package#getCustomer_Submits()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	Review getSubmits();
-
-	/**
-	 * Sets the value of the '{@link gendev.hw1.Customer#getSubmits <em>Submits</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Submits</em>' containment reference.
-	 * @see #getSubmits()
-	 * @generated
-	 */
-	void setSubmits(Review value);
+	EList<Review> getSubmits();
 
 	/**
 	 * <!-- begin-user-doc -->

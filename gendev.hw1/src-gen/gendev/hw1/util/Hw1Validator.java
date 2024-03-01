@@ -53,20 +53,12 @@ public class Hw1Validator extends EObjectValidator {
 	public static final int VENUE__VENUE_BOOKINGS_CHECK = 2;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'System Checks' of 'System Admin'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int SYSTEM_ADMIN__SYSTEM_CHECKS = 3;
-
-	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Booking Admin Checks' of 'Booking Admin'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int BOOKING_ADMIN__BOOKING_ADMIN_CHECKS = 4;
+	public static final int BOOKING_ADMIN__BOOKING_ADMIN_CHECKS = 3;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -74,7 +66,7 @@ public class Hw1Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 4;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 3;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -234,37 +226,7 @@ public class Hw1Validator extends EObjectValidator {
 	 */
 	public boolean validateSystemAdmin(SystemAdmin systemAdmin, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(systemAdmin, diagnostics, context))
-			return false;
-		boolean result = validate_EveryMultiplicityConforms(systemAdmin, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryDataValueConforms(systemAdmin, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryReferenceIsContained(systemAdmin, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryBidirectionalReferenceIsPaired(systemAdmin, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryProxyResolves(systemAdmin, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_UniqueID(systemAdmin, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryKeyUnique(systemAdmin, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryMapEntryUnique(systemAdmin, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validateSystemAdmin_systemChecks(systemAdmin, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the systemChecks constraint of '<em>System Admin</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateSystemAdmin_systemChecks(SystemAdmin systemAdmin, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		return systemAdmin.systemChecks(diagnostics, context);
+		return validate_EveryDefaultConstraint(systemAdmin, diagnostics, context);
 	}
 
 	/**
@@ -291,8 +253,6 @@ public class Hw1Validator extends EObjectValidator {
 			result &= validate_EveryKeyUnique(bookingAdmin, diagnostics, context);
 		if (result || diagnostics != null)
 			result &= validate_EveryMapEntryUnique(bookingAdmin, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validateSystemAdmin_systemChecks(bookingAdmin, diagnostics, context);
 		if (result || diagnostics != null)
 			result &= validateBookingAdmin_bookingAdminChecks(bookingAdmin, diagnostics, context);
 		return result;

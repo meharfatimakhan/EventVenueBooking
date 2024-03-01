@@ -8,7 +8,7 @@
     Email="maf@gmail.com"
     Name="mahnoor"
     AdminID="12"
-    NumberOfApprovals="3">
+    NumberOfApprovals="-1">
   <venuesManaged
       Location="Lark Area, 241L31"
       Capacity="80"

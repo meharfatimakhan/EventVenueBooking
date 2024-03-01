@@ -105,7 +105,7 @@ public interface Hw1Package extends EPackage {
 	int CUSTOMER__CUSTOMER_BOOKING_ID = 3;
 
 	/**
-	 * The feature id for the '<em><b>Submits</b></em>' containment reference.
+	 * The feature id for the '<em><b>Submits</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -378,22 +378,13 @@ public interface Hw1Package extends EPackage {
 	int SYSTEM_ADMIN_FEATURE_COUNT = 5;
 
 	/**
-	 * The operation id for the '<em>System Checks</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM_ADMIN___SYSTEM_CHECKS__DIAGNOSTICCHAIN_MAP = 0;
-
-	/**
 	 * The number of operations of the '<em>System Admin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_ADMIN_OPERATION_COUNT = 1;
+	int SYSTEM_ADMIN_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link gendev.hw1.impl.BookingAdminImpl <em>Booking Admin</em>}' class.
@@ -476,15 +467,6 @@ public interface Hw1Package extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_ADMIN_FEATURE_COUNT = SYSTEM_ADMIN_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>System Checks</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING_ADMIN___SYSTEM_CHECKS__DIAGNOSTICCHAIN_MAP = SYSTEM_ADMIN___SYSTEM_CHECKS__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Approve Customer Booking</em>' operation.
@@ -1158,10 +1140,10 @@ public interface Hw1Package extends EPackage {
 	EAttribute getCustomer_CustomerBookingID();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link gendev.hw1.Customer#getSubmits <em>Submits</em>}'.
+	 * Returns the meta object for the containment reference list '{@link gendev.hw1.Customer#getSubmits <em>Submits</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Submits</em>'.
+	 * @return the meta object for the containment reference list '<em>Submits</em>'.
 	 * @see gendev.hw1.Customer#getSubmits()
 	 * @see #getCustomer()
 	 * @generated
@@ -1400,16 +1382,6 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSystemAdmin_AdminID();
-
-	/**
-	 * Returns the meta object for the '{@link gendev.hw1.SystemAdmin#systemChecks(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>System Checks</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>System Checks</em>' operation.
-	 * @see gendev.hw1.SystemAdmin#systemChecks(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getSystemAdmin__SystemChecks__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link gendev.hw1.BookingAdmin <em>Booking Admin</em>}'.
@@ -1858,7 +1830,7 @@ public interface Hw1Package extends EPackage {
 		EAttribute CUSTOMER__CUSTOMER_BOOKING_ID = eINSTANCE.getCustomer_CustomerBookingID();
 
 		/**
-		 * The meta object literal for the '<em><b>Submits</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Submits</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2048,15 +2020,6 @@ public interface Hw1Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute SYSTEM_ADMIN__ADMIN_ID = eINSTANCE.getSystemAdmin_AdminID();
-
-		/**
-		 * The meta object literal for the '<em><b>System Checks</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SYSTEM_ADMIN___SYSTEM_CHECKS__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getSystemAdmin__SystemChecks__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.BookingAdminImpl <em>Booking Admin</em>}' class.

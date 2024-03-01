@@ -69,7 +69,7 @@ public interface BookingAdmin extends SystemAdmin {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.venuesManaged-&gt;notEmpty()\n    \tand self.approvedBookings-&gt;exists(booking | not booking.oclIsUndefined())\n    \tand self.NumberOfApprovals &gt;= 0'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t    self.venuesManaged-&gt;notEmpty() and\n\t    self.approvedBookings-&gt;exists(booking | not booking.oclIsUndefined()) and\n\t    self.NumberOfApprovals &gt;= 0 and\n\t    (if self.approvedBookings-&gt;notEmpty() \n\t     then self.NumberOfApprovals &gt; 0 \n\t     else true \n\t     endif)'"
 	 * @generated
 	 */
 	boolean bookingAdminChecks(DiagnosticChain diagnostics, Map<Object, Object> context);

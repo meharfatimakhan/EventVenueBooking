@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hw1="http://www.example.org/hw1">
-  <hw1:Customer Name="Nikhil Sukesula" Email="nikhilpt75@gmail.com" Phone="5214508654" CustomerBookingID="32"/>
-  <hw1:Customer Name="Mehar Fatima Khan" Email="meharf@gmail.com" Phone="5725208652" CustomerBookingID="42"/>
-  <hw1:Review Rating="3" Comment="Food was just okay.but venue was nice.." ReviewBookingID="35"/>
-  <hw1:Review Rating="5" Comment="Absolutly amazing service! The venue was beautiful and the food tasted heavenly!" ReviewID="1"/>
-  <hw1:Venue Location="Valley Suites 105 Graham Road Leicester LE5 1HQ" Capacity="50" VenueID="1"/>
-  <hw1:Venue Location="St Martins House Conference Centre Leicester, The Grand Hall, Leicester, LE1 5PZ" Capacity="100" VenueID="2"/>
-  <hw1:EventBooking BookingID="3" BookingStatus="Confirmed" BookingType="Event" NumberOfGuests="30" BookingDate="Mon Feb 27 10:30:00 GMT 2024" EstimatedPriceQuote="1000" EventDescription="a wedding being hosted for 100 people with white decor and white baloons all over"/>
-  <hw1:VenueVisitBooking BookingID="5" BookingStatus="Confirmed" BookingType="Visit" NumberOfGuests="61" BookingDate="Mon Feb 25 10:30:00 GMT 2024" VisitPurpose="FINALIZE DECOR" VisitID="3"/>
-  <hw1:BookingAdmin Phone="3124313262" Email="ada@gmail.com" Name="Ada Jade" NumberOfApprovals="1"/>
+  <hw1:Customer Name="Mehar" Email="mehar@gmail.com" Phone="0091665433">
+    <submits Rating="5" Comment="Nice decor" ReviewBookingID="4" ReviewID="2"/>
+  </hw1:Customer>
+  <hw1:Review Rating="4" Comment="Great experience!" ReviewBookingID="1" ReviewID="1"/>
+  <hw1:Venue Location="Lark Venues, Leicester LE3GHK" Capacity="100" VenueID="1"/>
+  <hw1:EventBooking BookingID="2" BookingStatus="Confirmed" BookingType="Event" NumberOfGuests="50" BookingDate="Mon Feb 27 10:30:00 GMT 2024" EstimatedPriceQuote="2000" EventDescription="A birthday party of a boy 10 year old with toy story theme"/>
+  <hw1:VenueVisitBooking BookingID="3" BookingStatus="Confirmed" BookingType="Visit" NumberOfGuests="20" BookingDate="Mon Feb 28 10:30:00 GMT 2024" VisitPurpose="Lark Venue Visit" VisitID="3">
+    <bookingBy Name="Nikhil" Email="nikhil@gmail.com" Phone="0091665432"/>
+  </hw1:VenueVisitBooking>
+  <hw1:BookingAdmin Phone="9876543210" Email="ava@gmail.com" Name="Ava John" AdminID="1" NumberOfApprovals="1">
+    <approvedBookings BookingID="3" BookingStatus="Confirmed" BookingType="Event" NumberOfGuests="80" BookingDate="Mon Feb 29 10:30:00 GMT 2024" EstimatedPriceQuote="4000" EventDescription="A wedding with white balloons"/>
+  </hw1:BookingAdmin>
 </xmi:XMI>

@@ -5,12 +5,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:hw1="http://www.example.org/hw1"
     Phone="1234554321"
-    Email="maf@gmail.com"
-    Name="mahnoor"
+    Email="monique@gmail.com"
+    Name="Monique M"
     AdminID="12"
-    NumberOfApprovals="3">
+    NumberOfApprovals="1">
   <venuesManaged
-      Location="Lark Area, 241L31"
+      Location="Lark Area, Leicester, L35DR4"
       Capacity="80"
       VenueID="12">
     <bookings
@@ -19,20 +19,60 @@
         BookingStatus="Confirmed"
         BookingType="Event"
         NumberOfGuests="78"
-        BookingDate="4th May"
+        BookingDate="4th May, 2025"
         EstimatedPriceQuote="400"
-        EventDescription="A school event">
+        EventDescription="An inter-university sports competition between DeMontfor &amp; University of Leicester">
       <bookingBy
-          Name="avamson@gmail.com"
-          Email="Ava Mason"
-          Phone="1131311100"
+          Name="Ava Mason"
+          Email="avamson@gmail.com"
+          Phone="1234554321"
           CustomerBookingID="13">
         <submits
             Rating="5"
-            Comment="What an amazing service!"
+            Comment="Great range of menu options &amp; amazing service!"
             ReviewBookingID="13"
             ReviewID="41"/>
       </bookingBy>
     </bookings>
   </venuesManaged>
+  <venuesManaged
+      Location="Victoria Halls, LE47ER"
+      Capacity="100"
+      VenueID="45">
+    <bookings
+        xsi:type="hw1:EventBooking"
+        BookingID="21"
+        BookingStatus="Confirmed"
+        BookingType="Event"
+        NumberOfGuests="80"
+        BookingDate="1st March"
+        EstimatedPriceQuote="800"
+        EventDescription="A careers fair organized by University of Leicester">
+      <bookingBy
+          Name="Mehar Fatima"
+          Email="meharf@gmail.com"
+          Phone="1234554321"
+          CustomerBookingID="21">
+        <submits
+            Rating="5"
+            Comment="Good place to book your events!"
+            ReviewBookingID="21"
+            ReviewID="4"/>
+      </bookingBy>
+    </bookings>
+  </venuesManaged>
+  <approvedBookings
+      BookingID="43"
+      BookingStatus="Confirmed"
+      BookingType="Event"
+      NumberOfGuests="30"
+      BookingDate="12"
+      EstimatedPriceQuote="400"
+      EventDescription="A fundraiser &amp; awareness campaign for breast cancer.">
+    <bookingBy
+        Name="mehar@gmail.com"
+        Email="Mehar Fatima"
+        Phone="1234554321"
+        CustomerBookingID="43"/>
+  </approvedBookings>
 </hw1:BookingAdmin>

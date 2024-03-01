@@ -431,15 +431,6 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getSystemAdmin__SystemChecks__DiagnosticChain_Map() {
-		return systemAdminEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBookingAdmin() {
 		return bookingAdminEClass;
 	}
@@ -819,7 +810,6 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		createEAttribute(systemAdminEClass, SYSTEM_ADMIN__NAME);
 		createEReference(systemAdminEClass, SYSTEM_ADMIN__VENUES_MANAGED);
 		createEAttribute(systemAdminEClass, SYSTEM_ADMIN__ADMIN_ID);
-		createEOperation(systemAdminEClass, SYSTEM_ADMIN___SYSTEM_CHECKS__DIAGNOSTICCHAIN_MAP);
 
 		bookingAdminEClass = createEClass(BOOKING_ADMIN);
 		createEAttribute(bookingAdminEClass, BOOKING_ADMIN__NUMBER_OF_APPROVALS);
@@ -910,7 +900,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		initEAttribute(getCustomer_CustomerBookingID(), ecorePackage.getEInt(), "CustomerBookingID", null, 1, 1,
 				Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getCustomer_Submits(), this.getReview(), null, "submits", null, 1, 1, Customer.class,
+		initEReference(getCustomer_Submits(), this.getReview(), null, "submits", null, 0, -1, Customer.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -976,16 +966,6 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystemAdmin_AdminID(), ecorePackage.getEInt(), "AdminID", null, 1, 1, SystemAdmin.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = initEOperation(getSystemAdmin__SystemChecks__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"systemChecks", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(bookingAdminEClass, BookingAdmin.class, "BookingAdmin", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1112,7 +1092,6 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		addAnnotation(this, source, new String[] {});
 		addAnnotation(customerEClass, source, new String[] { "constraints", "validateCustomers" });
 		addAnnotation(venueEClass, source, new String[] { "constraints", "venueBookingsCheck" });
-		addAnnotation(systemAdminEClass, source, new String[] { "constraints", "systemChecks" });
 		addAnnotation(bookingAdminEClass, source, new String[] { "constraints", "bookingAdminChecks" });
 	}
 
@@ -1128,10 +1107,8 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 				"Customer.allInstances()->forAll(c | c <> self implies c.Email <> self.Email)\n    \tand self.submits->notEmpty() implies self.submits->forAll(review | review.Rating >= 1 and review.Rating <= 5)\n    \tand self.Phone.toString().size() = 10" });
 		addAnnotation(getVenue__VenueBookingsCheck__DiagnosticChain_Map(), source, new String[] { "body",
 				"self.bookings->notEmpty()\n\t\tand self.bookings->exists(booking | \n        booking.NumberOfGuests <= self.Capacity)" });
-		addAnnotation(getSystemAdmin__SystemChecks__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.Email->notEmpty()" });
 		addAnnotation(getBookingAdmin__BookingAdminChecks__DiagnosticChain_Map(), source, new String[] { "body",
-				"self.venuesManaged->notEmpty()\n    \tand self.approvedBookings->exists(booking | not booking.oclIsUndefined())\n    \tand self.NumberOfApprovals >= 0" });
+				"\n\t    self.venuesManaged->notEmpty() and\n\t    self.approvedBookings->exists(booking | not booking.oclIsUndefined()) and\n\t    self.NumberOfApprovals >= 0 and\n\t    (if self.approvedBookings->notEmpty() \n\t     then self.NumberOfApprovals > 0 \n\t     else true \n\t     endif)" });
 	}
 
 } //Hw1PackageImpl
