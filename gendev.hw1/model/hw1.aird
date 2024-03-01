@@ -8,7 +8,7 @@
     <semanticResources>../task4-Instances/inv3_fail.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_tm5FUMXVEe6jEMP-Hke9Iw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tnEEcMXVEe6jEMP-Hke9Iw" name="hw1" repPath="#_tnAaEMXVEe6jEMP-Hke9Iw" changeId="1709262727267">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tnEEcMXVEe6jEMP-Hke9Iw" name="hw1" repPath="#_tnAaEMXVEe6jEMP-Hke9Iw" changeId="1709281628083">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="hw1.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -427,7 +427,7 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_TvAx0NdvEe6HDs-OqUIFJw" type="4001" element="_TfH7vNdvEe6HDs-OqUIFJw" source="_t7sGwNXSEe64IrUTaxnBSA" target="_WX_WcNXTEe64IrUTaxnBSA">
           <children xmi:type="notation:Node" xmi:id="_TvFDQNdvEe6HDs-OqUIFJw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TvFDQddvEe6HDs-OqUIFJw" x="61" y="-35"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TvFDQddvEe6HDs-OqUIFJw" x="31" y="-11"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_TvFqUNdvEe6HDs-OqUIFJw" type="6002">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TvFqUddvEe6HDs-OqUIFJw" y="10"/>
@@ -443,7 +443,7 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_fXJ5oNdvEe6HDs-OqUIFJw" type="4001" element="_fJc03NdvEe6HDs-OqUIFJw" source="_o0imwNXSEe64IrUTaxnBSA" target="_xYchgNXSEe64IrUTaxnBSA">
           <children xmi:type="notation:Node" xmi:id="_fXJ5pNdvEe6HDs-OqUIFJw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fXJ5pddvEe6HDs-OqUIFJw" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fXJ5pddvEe6HDs-OqUIFJw" x="7" y="5"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_fXJ5ptdvEe6HDs-OqUIFJw" type="6002">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fXJ5p9dvEe6HDs-OqUIFJw" y="10"/>
