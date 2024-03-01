@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hw1="http://www.example.org/hw1">
+  <hw1:Customer Name="Ava John" Email="avaJ@gmail.com" Phone="412441451" submits="/1"/>
+  <hw1:Review Rating="6" Comment="I loved the food absolutely!" submittedBy="/0" ReviewID="65"/>
+</xmi:XMI>

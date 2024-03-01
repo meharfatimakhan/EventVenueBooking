@@ -10,12 +10,6 @@
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Customer">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="null"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="null" value="Customer.allInstances()->forAll(c | c &lt;> self implies c.Email &lt;> self.Email)&#xA;&#x9;&#x9;and self.submits->notEmpty() implies self.submits->forAll(review | review.Rating >= 1 and review.Rating &lt;= 5)&#xA;&#x9;&#x9;and self.Phone.toString().size() = 10"/>
-    </eAnnotations>
     <eOperations name="submitReview"/>
     <eOperations name="createBooking"/>
     <eOperations name="cancelBooking"/>
@@ -28,6 +22,12 @@
         eType="#//Review" eOpposite="#//Review/submittedBy"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Review">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="reviewValidations"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="reviewValidations" value="self.Rating >= 1 and self.Rating &lt;= 5 and self.Comment->notEmpty() and self.Comment.size() &lt;= 100"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Rating" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -40,10 +40,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Venue">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="null"/>
+      <details key="constraints" value="venueBookingsCheck"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="null" value="self.bookings->notEmpty()&#xA;    &#x9;and self.bookings->forAll(booking | &#xA;        (if booking.NumberOfGuests >= self.Capacity * 0.8 &#xA;        &#x9;then booking.BookingStatus = 'Fully Booked' &#xA;        &#x9;else booking.BookingStatus &lt;> 'Not Fully Booked' endif&#xA;        ))"/>
+      <details key="venueBookingsCheck" value="self.bookings->notEmpty()&#xA;    &#x9;and self.bookings->forAll(booking | &#xA;        (if booking.NumberOfGuests >= self.Capacity * 0.8 &#xA;        &#x9;then booking.BookingStatus = 'Fully Booked' &#xA;        &#x9;else booking.BookingStatus &lt;> 'Not Fully Booked' endif&#xA;        ))"/>
     </eAnnotations>
     <eOperations name="checkAvailibility"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -65,10 +65,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BookingAdmin" eSuperTypes="#//SystemAdmin">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="null"/>
+      <details key="constraints" value="bookingAdminChecks"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="null" value="self.venuesManaged->notEmpty()&#xA;    &#x9;and self.approvedBookings->exists(booking | not booking.oclIsUndefined())&#xA;    &#x9;and self.NumberOfApprovals >= 0"/>
+      <details key="bookingAdminChecks" value="self.venuesManaged->notEmpty()&#xA;    &#x9;and self.approvedBookings->exists(booking | not booking.oclIsUndefined())&#xA;    &#x9;and self.NumberOfApprovals >= 0"/>
     </eAnnotations>
     <eOperations name="approveCustomerBooking"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="approvedBookings" upperBound="-1"

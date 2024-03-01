@@ -40,8 +40,8 @@ public class Task4 {
         
         // settings for object 3
         review1.setRating(3);
-        review2.setComment("Food was just okay. but venue was nice..");
-        review2.setReviewID(0);
+        review1.setComment("Food was just okay. but venue was nice..");
+        review1.setReviewID(0);
         
         // settings for object 4
         review2.setRating(5);
