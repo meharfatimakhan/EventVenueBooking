@@ -2,18 +2,32 @@
  */
 package gendev.hw1.impl;
 
-import gendev.hw1.Customer;
 import gendev.hw1.Hw1Package;
+import gendev.hw1.Hw1Tables;
 import gendev.hw1.Review;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.library.collection.CollectionNotEmptyOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsSetOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanEqualOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.library.string.StringSizeOperation;
+import org.eclipse.ocl.pivot.utilities.PivotUtil;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.InvalidValueException;
+import org.eclipse.ocl.pivot.values.SetValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +40,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link gendev.hw1.impl.ReviewImpl#getRating <em>Rating</em>}</li>
  *   <li>{@link gendev.hw1.impl.ReviewImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link gendev.hw1.impl.ReviewImpl#getReviewBookingID <em>Review Booking ID</em>}</li>
- *   <li>{@link gendev.hw1.impl.ReviewImpl#getSubmittedBy <em>Submitted By</em>}</li>
  *   <li>{@link gendev.hw1.impl.ReviewImpl#getReviewID <em>Review ID</em>}</li>
  * </ul>
  *
@@ -92,16 +105,6 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 	 * @ordered
 	 */
 	protected int reviewBookingID = REVIEW_BOOKING_ID_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSubmittedBy() <em>Submitted By</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubmittedBy()
-	 * @generated
-	 * @ordered
-	 */
-	protected Customer submittedBy;
 
 	/**
 	 * The default value of the '{@link #getReviewID() <em>Review ID</em>}' attribute.
@@ -211,74 +214,6 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Customer getSubmittedBy() {
-		if (submittedBy != null && submittedBy.eIsProxy()) {
-			InternalEObject oldSubmittedBy = (InternalEObject) submittedBy;
-			submittedBy = (Customer) eResolveProxy(oldSubmittedBy);
-			if (submittedBy != oldSubmittedBy) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Hw1Package.REVIEW__SUBMITTED_BY,
-							oldSubmittedBy, submittedBy));
-			}
-		}
-		return submittedBy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Customer basicGetSubmittedBy() {
-		return submittedBy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSubmittedBy(Customer newSubmittedBy, NotificationChain msgs) {
-		Customer oldSubmittedBy = submittedBy;
-		submittedBy = newSubmittedBy;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Hw1Package.REVIEW__SUBMITTED_BY, oldSubmittedBy, newSubmittedBy);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSubmittedBy(Customer newSubmittedBy) {
-		if (newSubmittedBy != submittedBy) {
-			NotificationChain msgs = null;
-			if (submittedBy != null)
-				msgs = ((InternalEObject) submittedBy).eInverseRemove(this, Hw1Package.CUSTOMER__SUBMITS,
-						Customer.class, msgs);
-			if (newSubmittedBy != null)
-				msgs = ((InternalEObject) newSubmittedBy).eInverseAdd(this, Hw1Package.CUSTOMER__SUBMITS,
-						Customer.class, msgs);
-			msgs = basicSetSubmittedBy(newSubmittedBy, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.REVIEW__SUBMITTED_BY, newSubmittedBy,
-					newSubmittedBy));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getReviewID() {
 		return reviewID;
 	}
@@ -300,30 +235,133 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case Hw1Package.REVIEW__SUBMITTED_BY:
-			if (submittedBy != null)
-				msgs = ((InternalEObject) submittedBy).eInverseRemove(this, Hw1Package.CUSTOMER__SUBMITS,
-						Customer.class, msgs);
-			return basicSetSubmittedBy((Customer) otherEnd, msgs);
+	public boolean reviewValidations(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "Review::reviewValidations";
+		try {
+			/**
+			 *
+			 * inv reviewValidations:
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let result : Boolean[?] = self.Rating >= 1 and self.Rating <= 5 and
+			 *         self.Comment->notEmpty() and
+			 *         self.Comment.size() <= 100
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor,
+					Hw1Package.Literals.REVIEW___REVIEW_VALIDATIONS__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE
+					.evaluate(executor, severity_0, Hw1Tables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean local_0;
+			if (le) {
+				local_0 = true;
+			} else {
+				/*@Caught*/ Object CAUGHT_result;
+				try {
+					/*@Caught*/ Object CAUGHT_and_0;
+					try {
+						final /*@NonInvalid*/ int Rating_0 = this.getRating();
+						final /*@NonInvalid*/ IntegerValue BOXED_Rating_0 = ValueUtil.integerValueOf(Rating_0);
+						final /*@NonInvalid*/ boolean ge = OclComparableGreaterThanEqualOperation.INSTANCE
+								.evaluate(executor, BOXED_Rating_0, Hw1Tables.INT_1).booleanValue();
+						final /*@NonInvalid*/ Boolean and;
+						if (!ge) {
+							and = ValueUtil.FALSE_VALUE;
+						} else {
+							final /*@NonInvalid*/ boolean le_0 = OclComparableLessThanEqualOperation.INSTANCE
+									.evaluate(executor, BOXED_Rating_0, Hw1Tables.INT_5).booleanValue();
+							if (!le_0) {
+								and = ValueUtil.FALSE_VALUE;
+							} else {
+								and = ValueUtil.TRUE_VALUE;
+							}
+						}
+						final /*@Thrown*/ Boolean and_0;
+						if (and == ValueUtil.FALSE_VALUE) {
+							and_0 = ValueUtil.FALSE_VALUE;
+						} else {
+							/*@Caught*/ Object CAUGHT_notEmpty;
+							try {
+								final /*@NonInvalid*/ String Comment = this.getComment();
+								final /*@Thrown*/ SetValue oclAsSet = OclAnyOclAsSetOperation.INSTANCE
+										.evaluate(executor, Hw1Tables.SET_PRIMid_String, Comment);
+								final /*@Thrown*/ boolean notEmpty = CollectionNotEmptyOperation.INSTANCE
+										.evaluate(oclAsSet).booleanValue();
+								CAUGHT_notEmpty = notEmpty;
+							} catch (Exception e) {
+								CAUGHT_notEmpty = ValueUtil.createInvalidValue(e);
+							}
+							if (CAUGHT_notEmpty == ValueUtil.FALSE_VALUE) {
+								and_0 = ValueUtil.FALSE_VALUE;
+							} else {
+								if (CAUGHT_notEmpty instanceof InvalidValueException) {
+									throw (InvalidValueException) CAUGHT_notEmpty;
+								}
+								if (and == null) {
+									and_0 = null;
+								} else {
+									and_0 = ValueUtil.TRUE_VALUE;
+								}
+							}
+						}
+						CAUGHT_and_0 = and_0;
+					} catch (Exception e) {
+						CAUGHT_and_0 = ValueUtil.createInvalidValue(e);
+					}
+					final /*@Thrown*/ Boolean result;
+					if (CAUGHT_and_0 == ValueUtil.FALSE_VALUE) {
+						result = ValueUtil.FALSE_VALUE;
+					} else {
+						/*@Caught*/ Object CAUGHT_le_1;
+						try {
+							final /*@NonInvalid*/ String Comment_0 = this.getComment();
+							if (Comment_0 == null) {
+								throw new InvalidValueException(
+										"Null \'\'String\'\' rather than \'\'OclVoid\'\' value required");
+							}
+							final /*@Thrown*/ IntegerValue size = StringSizeOperation.INSTANCE.evaluate(Comment_0);
+							final /*@Thrown*/ boolean le_1 = OclComparableLessThanEqualOperation.INSTANCE
+									.evaluate(executor, size, Hw1Tables.INT_100).booleanValue();
+							CAUGHT_le_1 = le_1;
+						} catch (Exception e) {
+							CAUGHT_le_1 = ValueUtil.createInvalidValue(e);
+						}
+						if (CAUGHT_le_1 == ValueUtil.FALSE_VALUE) {
+							result = ValueUtil.FALSE_VALUE;
+						} else {
+							if (CAUGHT_and_0 instanceof InvalidValueException) {
+								throw (InvalidValueException) CAUGHT_and_0;
+							}
+							if (CAUGHT_le_1 instanceof InvalidValueException) {
+								throw (InvalidValueException) CAUGHT_le_1;
+							}
+							if (CAUGHT_and_0 == null) {
+								result = null;
+							} else {
+								result = ValueUtil.TRUE_VALUE;
+							}
+						}
+					}
+					CAUGHT_result = result;
+				} catch (Exception e) {
+					CAUGHT_result = ValueUtil.createInvalidValue(e);
+				}
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE
+						.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object) null, diagnostics, context,
+								(Object) null, severity_0, CAUGHT_result, Hw1Tables.INT_0)
+						.booleanValue();
+				local_0 = logDiagnostic;
+			}
+			return local_0;
+		} catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
 		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case Hw1Package.REVIEW__SUBMITTED_BY:
-			return basicSetSubmittedBy(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -340,10 +378,6 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 			return getComment();
 		case Hw1Package.REVIEW__REVIEW_BOOKING_ID:
 			return getReviewBookingID();
-		case Hw1Package.REVIEW__SUBMITTED_BY:
-			if (resolve)
-				return getSubmittedBy();
-			return basicGetSubmittedBy();
 		case Hw1Package.REVIEW__REVIEW_ID:
 			return getReviewID();
 		}
@@ -366,9 +400,6 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 			return;
 		case Hw1Package.REVIEW__REVIEW_BOOKING_ID:
 			setReviewBookingID((Integer) newValue);
-			return;
-		case Hw1Package.REVIEW__SUBMITTED_BY:
-			setSubmittedBy((Customer) newValue);
 			return;
 		case Hw1Package.REVIEW__REVIEW_ID:
 			setReviewID((Integer) newValue);
@@ -394,9 +425,6 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 		case Hw1Package.REVIEW__REVIEW_BOOKING_ID:
 			setReviewBookingID(REVIEW_BOOKING_ID_EDEFAULT);
 			return;
-		case Hw1Package.REVIEW__SUBMITTED_BY:
-			setSubmittedBy((Customer) null);
-			return;
 		case Hw1Package.REVIEW__REVIEW_ID:
 			setReviewID(REVIEW_ID_EDEFAULT);
 			return;
@@ -418,12 +446,25 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 			return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 		case Hw1Package.REVIEW__REVIEW_BOOKING_ID:
 			return reviewBookingID != REVIEW_BOOKING_ID_EDEFAULT;
-		case Hw1Package.REVIEW__SUBMITTED_BY:
-			return submittedBy != null;
 		case Hw1Package.REVIEW__REVIEW_ID:
 			return reviewID != REVIEW_ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case Hw1Package.REVIEW___REVIEW_VALIDATIONS__DIAGNOSTICCHAIN_MAP:
+			return reviewValidations((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

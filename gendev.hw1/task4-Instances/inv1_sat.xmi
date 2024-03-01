@@ -1,5 +1,14 @@
-<?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hw1="http://www.example.org/hw1">
-  <hw1:Customer Name="Ava John" Email="avaJ@gmail.com" Phone="412441451" submits="/1"/>
-  <hw1:Review Rating="5" Comment="I loved the food absolutely!" submittedBy="/0" ReviewID="65"/>
-</xmi:XMI>
+<?xml version="1.0" encoding="UTF-8"?>
+<hw1:Customer
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:hw1="http://www.example.org/hw1"
+    Name="Mehar Fatima Khan"
+    Email="meharf@gmail.com"
+    Phone="3512444119"
+    CustomerBookingID="1">
+  <submits Rating="5"
+      Comment="Amazing food! love it!"
+      ReviewBookingID="100"
+      ReviewID="5"/>
+</hw1:Customer>

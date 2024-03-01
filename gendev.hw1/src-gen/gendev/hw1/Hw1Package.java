@@ -105,7 +105,7 @@ public interface Hw1Package extends EPackage {
 	int CUSTOMER__CUSTOMER_BOOKING_ID = 3;
 
 	/**
-	 * The feature id for the '<em><b>Submits</b></em>' reference list.
+	 * The feature id for the '<em><b>Submits</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -150,22 +150,13 @@ public interface Hw1Package extends EPackage {
 	int CUSTOMER___CANCEL_BOOKING = 2;
 
 	/**
-	 * The operation id for the '<em>Null </em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER___NULL____DIAGNOSTICCHAIN_MAP = 3;
-
-	/**
 	 * The number of operations of the '<em>Customer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER_OPERATION_COUNT = 4;
+	int CUSTOMER_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link gendev.hw1.impl.ReviewImpl <em>Review</em>}' class.
@@ -205,22 +196,13 @@ public interface Hw1Package extends EPackage {
 	int REVIEW__REVIEW_BOOKING_ID = 2;
 
 	/**
-	 * The feature id for the '<em><b>Submitted By</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REVIEW__SUBMITTED_BY = 3;
-
-	/**
 	 * The feature id for the '<em><b>Review ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REVIEW__REVIEW_ID = 4;
+	int REVIEW__REVIEW_ID = 3;
 
 	/**
 	 * The number of structural features of the '<em>Review</em>' class.
@@ -229,7 +211,16 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVIEW_FEATURE_COUNT = 5;
+	int REVIEW_FEATURE_COUNT = 4;
+
+	/**
+	 * The operation id for the '<em>Review Validations</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW___REVIEW_VALIDATIONS__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
 	 * The number of operations of the '<em>Review</em>' class.
@@ -238,7 +229,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVIEW_OPERATION_COUNT = 0;
+	int REVIEW_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link gendev.hw1.impl.VenueImpl <em>Venue</em>}' class.
@@ -305,13 +296,13 @@ public interface Hw1Package extends EPackage {
 	int VENUE___CHECK_AVAILIBILITY = 0;
 
 	/**
-	 * The operation id for the '<em>Null </em>' operation.
+	 * The operation id for the '<em>Venue Bookings Check</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VENUE___NULL____DIAGNOSTICCHAIN_MAP = 1;
+	int VENUE___VENUE_BOOKINGS_CHECK__DIAGNOSTICCHAIN_MAP = 1;
 
 	/**
 	 * The number of operations of the '<em>Venue</em>' class.
@@ -360,7 +351,7 @@ public interface Hw1Package extends EPackage {
 	int SYSTEM_ADMIN__NAME = 2;
 
 	/**
-	 * The feature id for the '<em><b>Venues Managed</b></em>' reference list.
+	 * The feature id for the '<em><b>Venues Managed</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -387,13 +378,22 @@ public interface Hw1Package extends EPackage {
 	int SYSTEM_ADMIN_FEATURE_COUNT = 5;
 
 	/**
+	 * The operation id for the '<em>System Checks</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM_ADMIN___SYSTEM_CHECKS__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>System Admin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_ADMIN_OPERATION_COUNT = 0;
+	int SYSTEM_ADMIN_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link gendev.hw1.impl.BookingAdminImpl <em>Booking Admin</em>}' class.
@@ -433,7 +433,7 @@ public interface Hw1Package extends EPackage {
 	int BOOKING_ADMIN__NAME = SYSTEM_ADMIN__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Venues Managed</b></em>' reference list.
+	 * The feature id for the '<em><b>Venues Managed</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -478,6 +478,15 @@ public interface Hw1Package extends EPackage {
 	int BOOKING_ADMIN_FEATURE_COUNT = SYSTEM_ADMIN_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>System Checks</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_ADMIN___SYSTEM_CHECKS__DIAGNOSTICCHAIN_MAP = SYSTEM_ADMIN___SYSTEM_CHECKS__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The operation id for the '<em>Approve Customer Booking</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -487,13 +496,13 @@ public interface Hw1Package extends EPackage {
 	int BOOKING_ADMIN___APPROVE_CUSTOMER_BOOKING = SYSTEM_ADMIN_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Null </em>' operation.
+	 * The operation id for the '<em>Booking Admin Checks</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_ADMIN___NULL____DIAGNOSTICCHAIN_MAP = SYSTEM_ADMIN_OPERATION_COUNT + 1;
+	int BOOKING_ADMIN___BOOKING_ADMIN_CHECKS__DIAGNOSTICCHAIN_MAP = SYSTEM_ADMIN_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Booking Admin</em>' class.
@@ -1230,10 +1239,10 @@ public interface Hw1Package extends EPackage {
 	EAttribute getCustomer_CustomerBookingID();
 
 	/**
-	 * Returns the meta object for the reference list '{@link gendev.hw1.Customer#getSubmits <em>Submits</em>}'.
+	 * Returns the meta object for the containment reference '{@link gendev.hw1.Customer#getSubmits <em>Submits</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Submits</em>'.
+	 * @return the meta object for the containment reference '<em>Submits</em>'.
 	 * @see gendev.hw1.Customer#getSubmits()
 	 * @see #getCustomer()
 	 * @generated
@@ -1269,16 +1278,6 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	EOperation getCustomer__CancelBooking();
-
-	/**
-	 * Returns the meta object for the '{@link gendev.hw1.Customer#null_(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Null </em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Null </em>' operation.
-	 * @see gendev.hw1.Customer#null_(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getCustomer__Null___DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link gendev.hw1.Review <em>Review</em>}'.
@@ -1324,17 +1323,6 @@ public interface Hw1Package extends EPackage {
 	EAttribute getReview_ReviewBookingID();
 
 	/**
-	 * Returns the meta object for the reference '{@link gendev.hw1.Review#getSubmittedBy <em>Submitted By</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Submitted By</em>'.
-	 * @see gendev.hw1.Review#getSubmittedBy()
-	 * @see #getReview()
-	 * @generated
-	 */
-	EReference getReview_SubmittedBy();
-
-	/**
 	 * Returns the meta object for the attribute '{@link gendev.hw1.Review#getReviewID <em>Review ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1344,6 +1332,16 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getReview_ReviewID();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.Review#reviewValidations(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Review Validations</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Review Validations</em>' operation.
+	 * @see gendev.hw1.Review#reviewValidations(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getReview__ReviewValidations__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link gendev.hw1.Venue <em>Venue</em>}'.
@@ -1410,14 +1408,14 @@ public interface Hw1Package extends EPackage {
 	EOperation getVenue__CheckAvailibility();
 
 	/**
-	 * Returns the meta object for the '{@link gendev.hw1.Venue#null_(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Null </em>}' operation.
+	 * Returns the meta object for the '{@link gendev.hw1.Venue#venueBookingsCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Venue Bookings Check</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Null </em>' operation.
-	 * @see gendev.hw1.Venue#null_(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the '<em>Venue Bookings Check</em>' operation.
+	 * @see gendev.hw1.Venue#venueBookingsCheck(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getVenue__Null___DiagnosticChain_Map();
+	EOperation getVenue__VenueBookingsCheck__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link gendev.hw1.SystemAdmin <em>System Admin</em>}'.
@@ -1463,10 +1461,10 @@ public interface Hw1Package extends EPackage {
 	EAttribute getSystemAdmin_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link gendev.hw1.SystemAdmin#getVenuesManaged <em>Venues Managed</em>}'.
+	 * Returns the meta object for the containment reference list '{@link gendev.hw1.SystemAdmin#getVenuesManaged <em>Venues Managed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Venues Managed</em>'.
+	 * @return the meta object for the containment reference list '<em>Venues Managed</em>'.
 	 * @see gendev.hw1.SystemAdmin#getVenuesManaged()
 	 * @see #getSystemAdmin()
 	 * @generated
@@ -1483,6 +1481,16 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSystemAdmin_AdminID();
+
+	/**
+	 * Returns the meta object for the '{@link gendev.hw1.SystemAdmin#systemChecks(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>System Checks</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>System Checks</em>' operation.
+	 * @see gendev.hw1.SystemAdmin#systemChecks(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getSystemAdmin__SystemChecks__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link gendev.hw1.BookingAdmin <em>Booking Admin</em>}'.
@@ -1527,14 +1535,14 @@ public interface Hw1Package extends EPackage {
 	EOperation getBookingAdmin__ApproveCustomerBooking();
 
 	/**
-	 * Returns the meta object for the '{@link gendev.hw1.BookingAdmin#null_(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Null </em>}' operation.
+	 * Returns the meta object for the '{@link gendev.hw1.BookingAdmin#bookingAdminChecks(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Booking Admin Checks</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Null </em>' operation.
-	 * @see gendev.hw1.BookingAdmin#null_(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the '<em>Booking Admin Checks</em>' operation.
+	 * @see gendev.hw1.BookingAdmin#bookingAdminChecks(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getBookingAdmin__Null___DiagnosticChain_Map();
+	EOperation getBookingAdmin__BookingAdminChecks__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link gendev.hw1.Booking <em>Booking</em>}'.
@@ -1964,7 +1972,7 @@ public interface Hw1Package extends EPackage {
 		EAttribute CUSTOMER__CUSTOMER_BOOKING_ID = eINSTANCE.getCustomer_CustomerBookingID();
 
 		/**
-		 * The meta object literal for the '<em><b>Submits</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Submits</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1994,14 +2002,6 @@ public interface Hw1Package extends EPackage {
 		 * @generated
 		 */
 		EOperation CUSTOMER___CANCEL_BOOKING = eINSTANCE.getCustomer__CancelBooking();
-
-		/**
-		 * The meta object literal for the '<em><b>Null </b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CUSTOMER___NULL____DIAGNOSTICCHAIN_MAP = eINSTANCE.getCustomer__Null___DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.ReviewImpl <em>Review</em>}' class.
@@ -2038,20 +2038,21 @@ public interface Hw1Package extends EPackage {
 		EAttribute REVIEW__REVIEW_BOOKING_ID = eINSTANCE.getReview_ReviewBookingID();
 
 		/**
-		 * The meta object literal for the '<em><b>Submitted By</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REVIEW__SUBMITTED_BY = eINSTANCE.getReview_SubmittedBy();
-
-		/**
 		 * The meta object literal for the '<em><b>Review ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute REVIEW__REVIEW_ID = eINSTANCE.getReview_ReviewID();
+
+		/**
+		 * The meta object literal for the '<em><b>Review Validations</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation REVIEW___REVIEW_VALIDATIONS__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getReview__ReviewValidations__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.VenueImpl <em>Venue</em>}' class.
@@ -2104,12 +2105,13 @@ public interface Hw1Package extends EPackage {
 		EOperation VENUE___CHECK_AVAILIBILITY = eINSTANCE.getVenue__CheckAvailibility();
 
 		/**
-		 * The meta object literal for the '<em><b>Null </b></em>' operation.
+		 * The meta object literal for the '<em><b>Venue Bookings Check</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation VENUE___NULL____DIAGNOSTICCHAIN_MAP = eINSTANCE.getVenue__Null___DiagnosticChain_Map();
+		EOperation VENUE___VENUE_BOOKINGS_CHECK__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getVenue__VenueBookingsCheck__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.SystemAdminImpl <em>System Admin</em>}' class.
@@ -2146,7 +2148,7 @@ public interface Hw1Package extends EPackage {
 		EAttribute SYSTEM_ADMIN__NAME = eINSTANCE.getSystemAdmin_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Venues Managed</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Venues Managed</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2160,6 +2162,15 @@ public interface Hw1Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute SYSTEM_ADMIN__ADMIN_ID = eINSTANCE.getSystemAdmin_AdminID();
+
+		/**
+		 * The meta object literal for the '<em><b>System Checks</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SYSTEM_ADMIN___SYSTEM_CHECKS__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getSystemAdmin__SystemChecks__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.BookingAdminImpl <em>Booking Admin</em>}' class.
@@ -2196,13 +2207,13 @@ public interface Hw1Package extends EPackage {
 		EOperation BOOKING_ADMIN___APPROVE_CUSTOMER_BOOKING = eINSTANCE.getBookingAdmin__ApproveCustomerBooking();
 
 		/**
-		 * The meta object literal for the '<em><b>Null </b></em>' operation.
+		 * The meta object literal for the '<em><b>Booking Admin Checks</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BOOKING_ADMIN___NULL____DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getBookingAdmin__Null___DiagnosticChain_Map();
+		EOperation BOOKING_ADMIN___BOOKING_ADMIN_CHECKS__DIAGNOSTICCHAIN_MAP = eINSTANCE
+				.getBookingAdmin__BookingAdminChecks__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link gendev.hw1.impl.BookingImpl <em>Booking</em>}' class.

@@ -10,6 +10,12 @@
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Customer">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="validateCustomers"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="validateCustomers" value="Customer.allInstances()->forAll(c | c &lt;> self implies c.Email &lt;> self.Email)&#xA;    &#x9;and self.submits->notEmpty() implies self.submits->forAll(review | review.Rating >= 1 and review.Rating &lt;= 5)&#xA;    &#x9;and self.Phone.toString().size() = 10"/>
+    </eAnnotations>
     <eOperations name="submitReview"/>
     <eOperations name="createBooking"/>
     <eOperations name="cancelBooking"/>
@@ -18,23 +24,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Phone" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="CustomerBookingID" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="submits" upperBound="-1"
-        eType="#//Review" eOpposite="#//Review/submittedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="submits" lowerBound="1"
+        eType="#//Review" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Review">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="reviewValidations"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="reviewValidations" value="self.Rating >= 1 and self.Rating &lt;= 5 and self.Comment->notEmpty() and self.Comment.size() &lt;= 100"/>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Rating" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ReviewBookingID" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="submittedBy" lowerBound="1"
-        eType="#//Customer" eOpposite="#//Customer/submits"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ReviewID" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>

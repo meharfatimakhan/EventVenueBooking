@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getBookingAdmin()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='null'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='bookingAdminChecks'"
  * @generated
  */
 public interface BookingAdmin extends SystemAdmin {
@@ -74,6 +74,6 @@ public interface BookingAdmin extends SystemAdmin {
 	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.venuesManaged-&gt;notEmpty()\n    \tand self.approvedBookings-&gt;exists(booking | not booking.oclIsUndefined())\n    \tand self.NumberOfApprovals &gt;= 0'"
 	 * @generated
 	 */
-	boolean null_(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean bookingAdminChecks(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // BookingAdmin

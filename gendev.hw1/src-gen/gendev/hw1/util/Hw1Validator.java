@@ -4,8 +4,6 @@ package gendev.hw1.util;
 
 import gendev.hw1.*;
 import java.util.Map;
-
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
@@ -40,28 +38,36 @@ public class Hw1Validator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "gendev.hw1";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Null ' of 'Customer'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Review Validations' of 'Review'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CUSTOMER__NULL_ = 1;
+	public static final int REVIEW__REVIEW_VALIDATIONS = 1;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Null ' of 'Venue'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Venue Bookings Check' of 'Venue'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VENUE__NULL_ = 2;
+	public static final int VENUE__VENUE_BOOKINGS_CHECK = 2;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Null ' of 'Booking Admin'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'System Checks' of 'System Admin'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int BOOKING_ADMIN__NULL_ = 3;
+	public static final int SYSTEM_ADMIN__SYSTEM_CHECKS = 3;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Booking Admin Checks' of 'Booking Admin'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int BOOKING_ADMIN__BOOKING_ADMIN_CHECKS = 4;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -69,7 +75,7 @@ public class Hw1Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 3;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 4;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -141,60 +147,7 @@ public class Hw1Validator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCustomer(Customer customer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(customer, diagnostics, context))
-			return false;
-		boolean result = validate_EveryMultiplicityConforms(customer, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryDataValueConforms(customer, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryReferenceIsContained(customer, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryBidirectionalReferenceIsPaired(customer, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryProxyResolves(customer, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_UniqueID(customer, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryKeyUnique(customer, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validate_EveryMapEntryUnique(customer, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validateCustomer_null(customer, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validateCustomer_null_(customer, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the null constraint of '<em>Customer</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCustomer_null(Customer customer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0,
-						"_UI_GenericConstraint_diagnostic", new Object[] { "null", getObjectLabel(customer, context) },
-						new Object[] { customer }, context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Validates the null_ constraint of '<em>Customer</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCustomer_null_(Customer customer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return customer.null_(diagnostics, context);
+		return validate_EveryDefaultConstraint(customer, diagnostics, context);
 	}
 
 	/**
@@ -203,7 +156,37 @@ public class Hw1Validator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReview(Review review, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(review, diagnostics, context);
+		if (!validate_NoCircularContainment(review, diagnostics, context))
+			return false;
+		boolean result = validate_EveryMultiplicityConforms(review, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(review, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(review, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(review, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(review, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(review, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(review, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(review, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateReview_reviewValidations(review, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the reviewValidations constraint of '<em>Review</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReview_reviewValidations(Review review, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return review.reviewValidations(diagnostics, context);
 	}
 
 	/**
@@ -230,42 +213,19 @@ public class Hw1Validator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validate_EveryMapEntryUnique(venue, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateVenue_null(venue, diagnostics, context);
-		if (result || diagnostics != null)
-			result &= validateVenue_null_(venue, diagnostics, context);
+			result &= validateVenue_venueBookingsCheck(venue, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the null constraint of '<em>Venue</em>'.
+	 * Validates the venueBookingsCheck constraint of '<em>Venue</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVenue_null(Venue venue, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0,
-						"_UI_GenericConstraint_diagnostic", new Object[] { "null", getObjectLabel(venue, context) },
-						new Object[] { venue }, context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Validates the null_ constraint of '<em>Venue</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateVenue_null_(Venue venue, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return venue.null_(diagnostics, context);
+	public boolean validateVenue_venueBookingsCheck(Venue venue, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return venue.venueBookingsCheck(diagnostics, context);
 	}
 
 	/**
@@ -275,7 +235,37 @@ public class Hw1Validator extends EObjectValidator {
 	 */
 	public boolean validateSystemAdmin(SystemAdmin systemAdmin, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(systemAdmin, diagnostics, context);
+		if (!validate_NoCircularContainment(systemAdmin, diagnostics, context))
+			return false;
+		boolean result = validate_EveryMultiplicityConforms(systemAdmin, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(systemAdmin, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(systemAdmin, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(systemAdmin, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(systemAdmin, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(systemAdmin, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(systemAdmin, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(systemAdmin, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateSystemAdmin_systemChecks(systemAdmin, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the systemChecks constraint of '<em>System Admin</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSystemAdmin_systemChecks(SystemAdmin systemAdmin, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return systemAdmin.systemChecks(diagnostics, context);
 	}
 
 	/**
@@ -303,45 +293,21 @@ public class Hw1Validator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validate_EveryMapEntryUnique(bookingAdmin, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateBookingAdmin_null(bookingAdmin, diagnostics, context);
+			result &= validateSystemAdmin_systemChecks(bookingAdmin, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateBookingAdmin_null_(bookingAdmin, diagnostics, context);
+			result &= validateBookingAdmin_bookingAdminChecks(bookingAdmin, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the null constraint of '<em>Booking Admin</em>'.
+	 * Validates the bookingAdminChecks constraint of '<em>Booking Admin</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateBookingAdmin_null(BookingAdmin bookingAdmin, DiagnosticChain diagnostics,
+	public boolean validateBookingAdmin_bookingAdminChecks(BookingAdmin bookingAdmin, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add(
-						createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
-								new Object[] { "null", getObjectLabel(bookingAdmin, context) },
-								new Object[] { bookingAdmin }, context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Validates the null_ constraint of '<em>Booking Admin</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateBookingAdmin_null_(BookingAdmin bookingAdmin, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		return bookingAdmin.null_(diagnostics, context);
+		return bookingAdmin.bookingAdminChecks(diagnostics, context);
 	}
 
 	/**

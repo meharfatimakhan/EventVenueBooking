@@ -32,21 +32,30 @@ public class Task4 {
         customer1.setName("Nikhil Sukesula");
         customer1.setEmail("nikhilpt75@gmail.com");
         customer1.setPhone("5214508654");
+        customer1.setCustomerBookingID(32);
         
         // settings for object 2
+        review1.setRating(3);
+        review1.setComment("Food was just okay.but venue was nice..");
+        review1.setReviewID(0);
+        review1.setReviewBookingID(45);
+        customer1.setSubmits(review1); // link 1
+        
+        
+        // settings for object 3
         customer2.setName("Mehar Fatima Khan");
         customer2.setEmail("meharf@gmail.com");
         customer2.setPhone("5725208652");
-        
-        // settings for object 3
-        review1.setRating(3);
-        review1.setComment("Food was just okay. but venue was nice..");
-        review1.setReviewID(0);
+        customer2.setCustomerBookingID(42);
         
         // settings for object 4
         review2.setRating(5);
         review2.setComment("Absolutly amazing service! The venue was beautiful and the food tasted heavenly!");
         review2.setReviewID(1);
+        review1.setReviewBookingID(35);
+        
+      
+        customer2.setSubmits(review2); // link 2
         
         // settings for object 5
         venue1.setLocation("Valley Suites 105 Graham Road Leicester LE5 1HQ");
@@ -58,10 +67,8 @@ public class Task4 {
         venue2.setCapacity(100);
         venue2.setVenueID(2);
   
-        // Create links between objects
-        customer1.getSubmits().add(review1); // link 1
-        customer2.getSubmits().add(review2); // link 2
-        
+      
+        // -------------------- Creating BookingAdmin object
         BookingAdmin bookingAdmin = Hw1Factory.eINSTANCE.createBookingAdmin();
         bookingAdmin.setAdminID(0);
         bookingAdmin.setEmail("ada@gmail.com");
@@ -89,9 +96,8 @@ public class Task4 {
         menuItems1.add("Coke");
         eventBooking.setMenuOptions(menuItems1);	 
                 
-        // -------------------- Creating Venue Viist object
+        // -------------------- Creating VenueViistBooking object
         VenueVisitBooking venueVisitBooking = Hw1Factory.eINSTANCE.createVenueVisitBooking();
-
         venueVisitBooking.setVisitPurpose("FINALIZE DECOR");
         venueVisitBooking.setBookingBy(customer2); // link 6
         venueVisitBooking.setBookingDate( "Mon Feb 25 10:30:00 GMT 2024");

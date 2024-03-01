@@ -2,10 +2,6 @@
  */
 package gendev.hw1;
 
-import java.util.Map;
-import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -25,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getCustomer()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='null'"
+ * @model
  * @generated
  */
 public interface Customer extends EObject {
@@ -118,18 +114,26 @@ public interface Customer extends EObject {
 	void setCustomerBookingID(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Submits</b></em>' reference list.
-	 * The list contents are of type {@link gendev.hw1.Review}.
-	 * It is bidirectional and its opposite is '{@link gendev.hw1.Review#getSubmittedBy <em>Submitted By</em>}'.
+	 * Returns the value of the '<em><b>Submits</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Submits</em>' reference list.
+	 * @return the value of the '<em>Submits</em>' containment reference.
+	 * @see #setSubmits(Review)
 	 * @see gendev.hw1.Hw1Package#getCustomer_Submits()
-	 * @see gendev.hw1.Review#getSubmittedBy
-	 * @model opposite="submittedBy"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Review> getSubmits();
+	Review getSubmits();
+
+	/**
+	 * Sets the value of the '{@link gendev.hw1.Customer#getSubmits <em>Submits</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Submits</em>' containment reference.
+	 * @see #getSubmits()
+	 * @generated
+	 */
+	void setSubmits(Review value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,13 +158,5 @@ public interface Customer extends EObject {
 	 * @generated
 	 */
 	void cancelBooking();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Customer.allInstances()-&gt;forAll(c | c &lt;&gt; self implies c.Email &lt;&gt; self.Email)\n\t\tand self.submits-&gt;notEmpty() implies self.submits-&gt;forAll(review | review.Rating &gt;= 1 and review.Rating &lt;= 5)\n\t\tand self.Phone.toString().size() = 10'"
-	 * @generated
-	 */
-	boolean null_(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Customer

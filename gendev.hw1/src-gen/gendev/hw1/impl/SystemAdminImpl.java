@@ -3,20 +3,38 @@
 package gendev.hw1.impl;
 
 import gendev.hw1.Hw1Package;
+import gendev.hw1.Hw1Tables;
 import gendev.hw1.SystemAdmin;
 import gendev.hw1.Venue;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.library.collection.CollectionNotEmptyOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsSetOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.utilities.PivotUtil;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.SetValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -97,7 +115,7 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getVenuesManaged() <em>Venues Managed</em>}' reference list.
+	 * The cached value of the '{@link #getVenuesManaged() <em>Venues Managed</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVenuesManaged()
@@ -215,7 +233,7 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 	 */
 	public EList<Venue> getVenuesManaged() {
 		if (venuesManaged == null) {
-			venuesManaged = new EObjectResolvingEList<Venue>(Venue.class, this,
+			venuesManaged = new EObjectContainmentEList<Venue>(Venue.class, this,
 					Hw1Package.SYSTEM_ADMIN__VENUES_MANAGED);
 		}
 		return venuesManaged;
@@ -241,6 +259,73 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Hw1Package.SYSTEM_ADMIN__ADMIN_ID, oldAdminID,
 					adminID));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean systemChecks(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "SystemAdmin::systemChecks";
+		try {
+			/**
+			 *
+			 * inv systemChecks:
+			 *   let severity : Integer[1] = constraintName.getSeverity()
+			 *   in
+			 *     if severity <= 0
+			 *     then true
+			 *     else
+			 *       let result : Boolean[1] = self.Email->notEmpty()
+			 *       in
+			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+			 *     endif
+			 */
+			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
+			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor,
+					Hw1Package.Literals.SYSTEM_ADMIN___SYSTEM_CHECKS__DIAGNOSTICCHAIN_MAP);
+			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE
+					.evaluate(executor, severity_0, Hw1Tables.INT_0).booleanValue();
+			/*@NonInvalid*/ boolean local_0;
+			if (le) {
+				local_0 = true;
+			} else {
+				/*@Caught*/ Object CAUGHT_result;
+				try {
+					final /*@NonInvalid*/ String Email = this.getEmail();
+					final /*@Thrown*/ SetValue oclAsSet = OclAnyOclAsSetOperation.INSTANCE.evaluate(executor,
+							Hw1Tables.SET_PRIMid_String, Email);
+					final /*@Thrown*/ boolean result = CollectionNotEmptyOperation.INSTANCE.evaluate(oclAsSet)
+							.booleanValue();
+					CAUGHT_result = result;
+				} catch (Exception e) {
+					CAUGHT_result = ValueUtil.createInvalidValue(e);
+				}
+				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE
+						.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object) null, diagnostics, context,
+								(Object) null, severity_0, CAUGHT_result, Hw1Tables.INT_0)
+						.booleanValue();
+				local_0 = logDiagnostic;
+			}
+			return local_0;
+		} catch (Throwable e) {
+			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Hw1Package.SYSTEM_ADMIN__VENUES_MANAGED:
+			return ((InternalEList<?>) getVenuesManaged()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -341,6 +426,21 @@ public class SystemAdminImpl extends MinimalEObjectImpl.Container implements Sys
 			return adminID != ADMIN_ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case Hw1Package.SYSTEM_ADMIN___SYSTEM_CHECKS__DIAGNOSTICCHAIN_MAP:
+			return systemChecks((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

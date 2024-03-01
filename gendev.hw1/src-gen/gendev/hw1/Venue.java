@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getVenue()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='null'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='venueBookingsCheck'"
  * @generated
  */
 public interface Venue extends EObject {
@@ -121,6 +121,6 @@ public interface Venue extends EObject {
 	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.bookings-&gt;notEmpty()\n    \tand self.bookings-&gt;forAll(booking | \n        (if booking.NumberOfGuests &gt;= self.Capacity * 0.8 \n        \tthen booking.BookingStatus = \'Fully Booked\' \n        \telse booking.BookingStatus &lt;&gt; \'Not Fully Booked\' endif\n        ))'"
 	 * @generated
 	 */
-	boolean null_(DiagnosticChain diagnostics, Map<Object, Object> context);
+	boolean venueBookingsCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Venue

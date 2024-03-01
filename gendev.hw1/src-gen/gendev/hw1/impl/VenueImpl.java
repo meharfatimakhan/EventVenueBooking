@@ -234,12 +234,12 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean null_(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		final String constraintName = "Venue::null";
+	public boolean venueBookingsCheck(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "Venue::venueBookingsCheck";
 		try {
 			/**
 			 *
-			 * inv _'null':
+			 * inv venueBookingsCheck:
 			 *   let severity : Integer[1] = constraintName.getSeverity()
 			 *   in
 			 *     if severity <= 0
@@ -259,7 +259,7 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
 			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
 			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor,
-					Hw1Package.Literals.VENUE___NULL____DIAGNOSTICCHAIN_MAP);
+					Hw1Package.Literals.VENUE___VENUE_BOOKINGS_CHECK__DIAGNOSTICCHAIN_MAP);
 			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE
 					.evaluate(executor, severity_0, Hw1Tables.INT_0).booleanValue();
 			/*@NonInvalid*/ boolean local_0;
@@ -462,8 +462,8 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 		case Hw1Package.VENUE___CHECK_AVAILIBILITY:
 			checkAvailibility();
 			return null;
-		case Hw1Package.VENUE___NULL____DIAGNOSTICCHAIN_MAP:
-			return null_((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case Hw1Package.VENUE___VENUE_BOOKINGS_CHECK__DIAGNOSTICCHAIN_MAP:
+			return venueBookingsCheck((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

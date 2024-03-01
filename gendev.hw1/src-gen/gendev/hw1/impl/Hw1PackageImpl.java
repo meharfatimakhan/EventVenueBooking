@@ -260,15 +260,6 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCustomer__Null___DiagnosticChain_Map() {
-		return customerEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getReview() {
 		return reviewEClass;
 	}
@@ -305,8 +296,8 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getReview_SubmittedBy() {
-		return (EReference) reviewEClass.getEStructuralFeatures().get(3);
+	public EAttribute getReview_ReviewID() {
+		return (EAttribute) reviewEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -314,8 +305,8 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getReview_ReviewID() {
-		return (EAttribute) reviewEClass.getEStructuralFeatures().get(4);
+	public EOperation getReview__ReviewValidations__DiagnosticChain_Map() {
+		return reviewEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -377,7 +368,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getVenue__Null___DiagnosticChain_Map() {
+	public EOperation getVenue__VenueBookingsCheck__DiagnosticChain_Map() {
 		return venueEClass.getEOperations().get(1);
 	}
 
@@ -440,6 +431,15 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getSystemAdmin__SystemChecks__DiagnosticChain_Map() {
+		return systemAdminEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBookingAdmin() {
 		return bookingAdminEClass;
 	}
@@ -476,7 +476,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBookingAdmin__Null___DiagnosticChain_Map() {
+	public EOperation getBookingAdmin__BookingAdminChecks__DiagnosticChain_Map() {
 		return bookingAdminEClass.getEOperations().get(1);
 	}
 
@@ -824,14 +824,13 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		createEOperation(customerEClass, CUSTOMER___SUBMIT_REVIEW);
 		createEOperation(customerEClass, CUSTOMER___CREATE_BOOKING);
 		createEOperation(customerEClass, CUSTOMER___CANCEL_BOOKING);
-		createEOperation(customerEClass, CUSTOMER___NULL____DIAGNOSTICCHAIN_MAP);
 
 		reviewEClass = createEClass(REVIEW);
 		createEAttribute(reviewEClass, REVIEW__RATING);
 		createEAttribute(reviewEClass, REVIEW__COMMENT);
 		createEAttribute(reviewEClass, REVIEW__REVIEW_BOOKING_ID);
-		createEReference(reviewEClass, REVIEW__SUBMITTED_BY);
 		createEAttribute(reviewEClass, REVIEW__REVIEW_ID);
+		createEOperation(reviewEClass, REVIEW___REVIEW_VALIDATIONS__DIAGNOSTICCHAIN_MAP);
 
 		venueEClass = createEClass(VENUE);
 		createEAttribute(venueEClass, VENUE__LOCATION);
@@ -839,7 +838,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		createEReference(venueEClass, VENUE__BOOKINGS);
 		createEAttribute(venueEClass, VENUE__VENUE_ID);
 		createEOperation(venueEClass, VENUE___CHECK_AVAILIBILITY);
-		createEOperation(venueEClass, VENUE___NULL____DIAGNOSTICCHAIN_MAP);
+		createEOperation(venueEClass, VENUE___VENUE_BOOKINGS_CHECK__DIAGNOSTICCHAIN_MAP);
 
 		systemAdminEClass = createEClass(SYSTEM_ADMIN);
 		createEAttribute(systemAdminEClass, SYSTEM_ADMIN__PHONE);
@@ -847,12 +846,13 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		createEAttribute(systemAdminEClass, SYSTEM_ADMIN__NAME);
 		createEReference(systemAdminEClass, SYSTEM_ADMIN__VENUES_MANAGED);
 		createEAttribute(systemAdminEClass, SYSTEM_ADMIN__ADMIN_ID);
+		createEOperation(systemAdminEClass, SYSTEM_ADMIN___SYSTEM_CHECKS__DIAGNOSTICCHAIN_MAP);
 
 		bookingAdminEClass = createEClass(BOOKING_ADMIN);
 		createEReference(bookingAdminEClass, BOOKING_ADMIN__APPROVED_BOOKINGS);
 		createEAttribute(bookingAdminEClass, BOOKING_ADMIN__NUMBER_OF_APPROVALS);
 		createEOperation(bookingAdminEClass, BOOKING_ADMIN___APPROVE_CUSTOMER_BOOKING);
-		createEOperation(bookingAdminEClass, BOOKING_ADMIN___NULL____DIAGNOSTICCHAIN_MAP);
+		createEOperation(bookingAdminEClass, BOOKING_ADMIN___BOOKING_ADMIN_CHECKS__DIAGNOSTICCHAIN_MAP);
 
 		bookingEClass = createEClass(BOOKING);
 		createEAttribute(bookingEClass, BOOKING__BOOKING_ID);
@@ -940,25 +940,15 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		initEAttribute(getCustomer_CustomerBookingID(), ecorePackage.getEInt(), "CustomerBookingID", null, 1, 1,
 				Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getCustomer_Submits(), this.getReview(), this.getReview_SubmittedBy(), "submits", null, 0, -1,
-				Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustomer_Submits(), this.getReview(), null, "submits", null, 1, 1, Customer.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getCustomer__SubmitReview(), null, "submitReview", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getCustomer__CreateBooking(), null, "createBooking", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getCustomer__CancelBooking(), null, "cancelBooking", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		EOperation op = initEOperation(getCustomer__Null___DiagnosticChain_Map(), ecorePackage.getEBoolean(), "null_",
-				0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
-		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(reviewEClass, Review.class, "Review", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReview_Rating(), ecorePackage.getEInt(), "Rating", null, 1, 1, Review.class, !IS_TRANSIENT,
@@ -967,11 +957,18 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReview_ReviewBookingID(), ecorePackage.getEInt(), "ReviewBookingID", null, 1, 1, Review.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getReview_SubmittedBy(), this.getCustomer(), this.getCustomer_Submits(), "submittedBy", null, 1,
-				1, Review.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReview_ReviewID(), ecorePackage.getEInt(), "ReviewID", null, 1, 1, Review.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = initEOperation(getReview__ReviewValidations__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
+				"reviewValidations", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(venueEClass, Venue.class, "Venue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVenue_Location(), ecorePackage.getEString(), "Location", null, 0, 1, Venue.class,
@@ -986,8 +983,8 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 
 		initEOperation(getVenue__CheckAvailibility(), null, "checkAvailibility", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getVenue__Null___DiagnosticChain_Map(), ecorePackage.getEBoolean(), "null_", 0, 1,
-				IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getVenue__VenueBookingsCheck__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
+				"venueBookingsCheck", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1005,10 +1002,20 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		initEAttribute(getSystemAdmin_Name(), ecorePackage.getEString(), "Name", null, 0, 1, SystemAdmin.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSystemAdmin_VenuesManaged(), this.getVenue(), null, "venuesManaged", null, 1, -1,
-				SystemAdmin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				SystemAdmin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystemAdmin_AdminID(), ecorePackage.getEInt(), "AdminID", null, 1, 1, SystemAdmin.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getSystemAdmin__SystemChecks__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
+				"systemChecks", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(bookingAdminEClass, BookingAdmin.class, "BookingAdmin", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1022,8 +1029,8 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		initEOperation(getBookingAdmin__ApproveCustomerBooking(), null, "approveCustomerBooking", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
 
-		op = initEOperation(getBookingAdmin__Null___DiagnosticChain_Map(), ecorePackage.getEBoolean(), "null_", 0, 1,
-				IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getBookingAdmin__BookingAdminChecks__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
+				"bookingAdminChecks", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1142,9 +1149,10 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation(this, source, new String[] {});
-		addAnnotation(customerEClass, source, new String[] { "constraints", "null" });
-		addAnnotation(venueEClass, source, new String[] { "constraints", "null" });
-		addAnnotation(bookingAdminEClass, source, new String[] { "constraints", "null" });
+		addAnnotation(reviewEClass, source, new String[] { "constraints", "reviewValidations" });
+		addAnnotation(venueEClass, source, new String[] { "constraints", "venueBookingsCheck" });
+		addAnnotation(systemAdminEClass, source, new String[] { "constraints", "systemChecks" });
+		addAnnotation(bookingAdminEClass, source, new String[] { "constraints", "bookingAdminChecks" });
 	}
 
 	/**
@@ -1155,11 +1163,13 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 */
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
-		addAnnotation(getCustomer__Null___DiagnosticChain_Map(), source, new String[] { "body",
-				"Customer.allInstances()->forAll(c | c <> self implies c.Email <> self.Email)\n\t\tand self.submits->notEmpty() implies self.submits->forAll(review | review.Rating >= 1 and review.Rating <= 5)\n\t\tand self.Phone.toString().size() = 10" });
-		addAnnotation(getVenue__Null___DiagnosticChain_Map(), source, new String[] { "body",
+		addAnnotation(getReview__ReviewValidations__DiagnosticChain_Map(), source, new String[] { "body",
+				"self.Rating >= 1 and self.Rating <= 5 and self.Comment->notEmpty() and self.Comment.size() <= 100" });
+		addAnnotation(getVenue__VenueBookingsCheck__DiagnosticChain_Map(), source, new String[] { "body",
 				"self.bookings->notEmpty()\n    \tand self.bookings->forAll(booking | \n        (if booking.NumberOfGuests >= self.Capacity * 0.8 \n        \tthen booking.BookingStatus = \'Fully Booked\' \n        \telse booking.BookingStatus <> \'Not Fully Booked\' endif\n        ))" });
-		addAnnotation(getBookingAdmin__Null___DiagnosticChain_Map(), source, new String[] { "body",
+		addAnnotation(getSystemAdmin__SystemChecks__DiagnosticChain_Map(), source,
+				new String[] { "body", "self.Email->notEmpty()" });
+		addAnnotation(getBookingAdmin__BookingAdminChecks__DiagnosticChain_Map(), source, new String[] { "body",
 				"self.venuesManaged->notEmpty()\n    \tand self.approvedBookings->exists(booking | not booking.oclIsUndefined())\n    \tand self.NumberOfApprovals >= 0" });
 	}
 

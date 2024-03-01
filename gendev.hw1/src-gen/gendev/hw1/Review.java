@@ -2,6 +2,8 @@
  */
 package gendev.hw1;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,12 +18,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link gendev.hw1.Review#getRating <em>Rating</em>}</li>
  *   <li>{@link gendev.hw1.Review#getComment <em>Comment</em>}</li>
  *   <li>{@link gendev.hw1.Review#getReviewBookingID <em>Review Booking ID</em>}</li>
- *   <li>{@link gendev.hw1.Review#getSubmittedBy <em>Submitted By</em>}</li>
  *   <li>{@link gendev.hw1.Review#getReviewID <em>Review ID</em>}</li>
  * </ul>
  *
  * @see gendev.hw1.Hw1Package#getReview()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='reviewValidations'"
  * @generated
  */
 public interface Review extends EObject {
@@ -92,30 +93,6 @@ public interface Review extends EObject {
 	void setReviewBookingID(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Submitted By</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link gendev.hw1.Customer#getSubmits <em>Submits</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Submitted By</em>' reference.
-	 * @see #setSubmittedBy(Customer)
-	 * @see gendev.hw1.Hw1Package#getReview_SubmittedBy()
-	 * @see gendev.hw1.Customer#getSubmits
-	 * @model opposite="submits" required="true"
-	 * @generated
-	 */
-	Customer getSubmittedBy();
-
-	/**
-	 * Sets the value of the '{@link gendev.hw1.Review#getSubmittedBy <em>Submitted By</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Submitted By</em>' reference.
-	 * @see #getSubmittedBy()
-	 * @generated
-	 */
-	void setSubmittedBy(Customer value);
-
-	/**
 	 * Returns the value of the '<em><b>Review ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -136,5 +113,13 @@ public interface Review extends EObject {
 	 * @generated
 	 */
 	void setReviewID(int value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.Rating &gt;= 1 and self.Rating &lt;= 5 and self.Comment-&gt;notEmpty() and self.Comment.size() &lt;= 100'"
+	 * @generated
+	 */
+	boolean reviewValidations(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Review

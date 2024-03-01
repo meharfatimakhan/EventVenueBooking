@@ -150,12 +150,12 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean null_(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		final String constraintName = "BookingAdmin::null";
+	public boolean bookingAdminChecks(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		final String constraintName = "BookingAdmin::bookingAdminChecks";
 		try {
 			/**
 			 *
-			 * inv _'null':
+			 * inv bookingAdminChecks:
 			 *   let severity : Integer[1] = constraintName.getSeverity()
 			 *   in
 			 *     if severity <= 0
@@ -172,7 +172,7 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
 			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
 			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor,
-					Hw1Package.Literals.BOOKING_ADMIN___NULL____DIAGNOSTICCHAIN_MAP);
+					Hw1Package.Literals.BOOKING_ADMIN___BOOKING_ADMIN_CHECKS__DIAGNOSTICCHAIN_MAP);
 			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE
 					.evaluate(executor, severity_0, Hw1Tables.INT_0).booleanValue();
 			/*@NonInvalid*/ boolean local_0;
@@ -400,8 +400,8 @@ public class BookingAdminImpl extends SystemAdminImpl implements BookingAdmin {
 		case Hw1Package.BOOKING_ADMIN___APPROVE_CUSTOMER_BOOKING:
 			approveCustomerBooking();
 			return null;
-		case Hw1Package.BOOKING_ADMIN___NULL____DIAGNOSTICCHAIN_MAP:
-			return null_((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case Hw1Package.BOOKING_ADMIN___BOOKING_ADMIN_CHECKS__DIAGNOSTICCHAIN_MAP:
+			return bookingAdminChecks((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
