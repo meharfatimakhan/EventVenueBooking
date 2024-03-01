@@ -1,5 +1,29 @@
 Percentage of contribution:
-Member 1:  mfk11 %
-Member 2:  %
+Member 1:  mfk11 - 60%
+Member 2:  ns643 - 40%
 
-Explain contribution in words here.
+TASK 1:
+System & OCL Description: 
+Initially written by Nikhil. 
+Later amended/modified a bit by Mehar.
+
+
+TASK 2:
+Use Case Diagram: Both of us worked on this together as a pair
+Activity Diagram: Both of us worked on this together as a pair
+
+
+TASK 3
+Class Diagram: Created by Mehar
+OCLs: Created by Mehar
+
+
+TASK 4
+Part a: 
+Nikhil worked on the code for creating objects 
+Mehar worked on the code for linking those objects together
+
+
+Part b: 
+Nikhil created the instances which satisfy OCL
+Mehar created instances which violate OCL
