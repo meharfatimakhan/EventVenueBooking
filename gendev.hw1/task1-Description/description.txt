@@ -1,8 +1,21 @@
 System Outline:
 The Event Venue Booking System is designed to facilitate seamless interactions among key stakeholders involved in event planning and execution. The main stakeholders are Admins, Booking Agents, and Customers.
-The primary entities within the system include Customer, Review, Venue, SystemAdmin, BookingAdmin, Payment, and Booking. The Booking entity, serving as the parent, encompasses sub-entities such as EventBooking, VenueVisitBooking, and MenuTastingBooking.
+The primary entities within the system include Customer, Review, Venue, SystemAdmin, BookingAdmin, Payment, and Booking. The Booking entity, serving as the parent, encompasses sub-entities: EventBooking, VenueVisitBooking, and MenuTastingVisitBooking.
 Using this platform, customers can “Book an event at a particular venue by adding relevant details”, “Book visits to the venue”, and for “Book visits for tasting menus”, “Give reviews”, “Cancel event bookings”, and “Issued a refund”. System admins can “Manage venues”, and booking admins can also “Manage Venues”, with the additional ability to “approve the system-generated price quote and booking”. Customer can confirm booking and “Make a Payment” and “Payment will be processed” by the billing system. After payment is made, system will send a “Confirmation of booking email to customer”
 Currently, our activity diagram illustrates the process flow, depicting how a customer initiates a booking on our system by selecting a desired venue on their preferred date and pay, and how customers can basically book visits to the venue and for menu tasting after they confirm booking.
 
 
 Explanation of Invariants:
+inv1: This invariant ensures that each customer's email is unique and the rating of submitted reviews are between 1 and 5. It also verifies that the phone number length is 10 digits only.
+inv1_sat: Phone digits for Customer are exactly 10. Email is unique and rating is between 1 and 5
+inv1_fail: Phone digits for Customer are greater than 10
+
+
+inv2: This invariant ensures that venues cannot be booked beyond their capacity. By checking that bookings exist and that the number of guests does not exceed the venue's capacity, the system prevents overbooking.
+inv2_sat: NumberOfGuests for EventBooking and Capacity in Venue are equal
+inv2_fail: NumberOfGuests for EventBooking are 51, where Capacity in Venue is 50
+
+
+inv3: This invariant validates that BookingAdmins manage at least one venue, approve more than 0 bookings, and maintain a positive number of approvals.
+inv3_sat: NumberOfApprovals by BookingAdmins is set to 1. 2 Venues are being managed and 1 approvedBooking
+inv3_fail: NumberOfApprovals by BookingAdmins is set to 0 and there are 0 approvedBookings performed

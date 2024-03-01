@@ -7,8 +7,7 @@
     Phone="1234554321"
     Email="maf@gmail.com"
     Name="mahnoor"
-    AdminID="12"
-    NumberOfApprovals="-1">
+    AdminID="12">
   <venuesManaged
       Location="Lark Area, 241L31"
       Capacity="80"
