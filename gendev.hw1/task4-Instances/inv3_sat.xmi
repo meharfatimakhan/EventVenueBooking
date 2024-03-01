@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hw1:BookingAdmin
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:hw1="http://www.example.org/hw1"
+    Phone="1234554321"
+    Email="maf@gmail.com"
+    Name="mahnoor"
+    AdminID="12"
+    NumberOfApprovals="3">
+  <venuesManaged
+      Location="Lark Area, 241L31"
+      Capacity="80"
+      VenueID="12">
+    <bookings
+        xsi:type="hw1:EventBooking"
+        BookingID="13"
+        BookingStatus="Confirmed"
+        BookingType="Event"
+        NumberOfGuests="78"
+        BookingDate="4th May"
+        EstimatedPriceQuote="400"
+        EventDescription="A school event">
+      <bookingBy
+          Name="avamson@gmail.com"
+          Email="Ava Mason"
+          Phone="1131311100"
+          CustomerBookingID="13">
+        <submits
+            Rating="5"
+            Comment="What an amazing service!"
+            ReviewBookingID="13"
+            ReviewID="41"/>
+      </bookingBy>
+    </bookings>
+  </venuesManaged>
+</hw1:BookingAdmin>

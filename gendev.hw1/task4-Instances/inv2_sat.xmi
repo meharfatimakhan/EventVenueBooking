@@ -9,7 +9,7 @@
   <bookings
       xsi:type="hw1:EventBooking"
       BookingID="21"
-      BookingStatus="Confirmed"
+      BookingStatus="Fully Booked"
       BookingType="Event"
       NumberOfGuests="100"
       BookingDate="27th Feb"

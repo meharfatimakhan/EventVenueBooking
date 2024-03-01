@@ -116,7 +116,7 @@ public interface Venue extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.bookings-&gt;notEmpty()\n    \tand self.bookings-&gt;forAll(booking | \n        (if booking.NumberOfGuests &gt;= self.Capacity * 0.8 \n        \tthen booking.BookingStatus = \'Fully Booked\' \n        \telse booking.BookingStatus &lt;&gt; \'Not Fully Booked\' endif\n        ))'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.bookings-&gt;notEmpty()\n\t\tand self.bookings-&gt;exists(booking | \n        booking.NumberOfGuests &lt;= self.Capacity)'"
 	 * @generated
 	 */
 	boolean venueBookingsCheck(DiagnosticChain diagnostics, Map<Object, Object> context);

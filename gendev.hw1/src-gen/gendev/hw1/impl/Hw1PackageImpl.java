@@ -504,7 +504,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * @generated
 	 */
 	public EAttribute getBooking_BookingDate() {
-		return (EAttribute) bookingEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) bookingEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -530,17 +530,8 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBooking_HasReviews() {
-		return (EReference) bookingEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getBooking_BookingType() {
-		return (EAttribute) bookingEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) bookingEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -549,7 +540,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * @generated
 	 */
 	public EAttribute getBooking_MenuOptions() {
-		return (EAttribute) bookingEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) bookingEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -558,7 +549,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 	 * @generated
 	 */
 	public EAttribute getBooking_NumberOfGuests() {
-		return (EAttribute) bookingEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) bookingEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -840,7 +831,6 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		createEAttribute(bookingEClass, BOOKING__BOOKING_ID);
 		createEAttribute(bookingEClass, BOOKING__BOOKING_STATUS);
 		createEReference(bookingEClass, BOOKING__BOOKING_BY);
-		createEReference(bookingEClass, BOOKING__HAS_REVIEWS);
 		createEAttribute(bookingEClass, BOOKING__BOOKING_TYPE);
 		createEAttribute(bookingEClass, BOOKING__MENU_OPTIONS);
 		createEAttribute(bookingEClass, BOOKING__NUMBER_OF_GUESTS);
@@ -1028,9 +1018,6 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		initEReference(getBooking_BookingBy(), this.getCustomer(), null, "bookingBy", null, 1, 1, Booking.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBooking_HasReviews(), this.getReview(), null, "hasReviews", null, 0, -1, Booking.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBooking_BookingType(), ecorePackage.getEString(), "BookingType", null, 0, 1, Booking.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEEList());
@@ -1140,7 +1127,7 @@ public class Hw1PackageImpl extends EPackageImpl implements Hw1Package {
 		addAnnotation(getCustomer__ValidateCustomers__DiagnosticChain_Map(), source, new String[] { "body",
 				"Customer.allInstances()->forAll(c | c <> self implies c.Email <> self.Email)\n    \tand self.submits->notEmpty() implies self.submits->forAll(review | review.Rating >= 1 and review.Rating <= 5)\n    \tand self.Phone.toString().size() = 10" });
 		addAnnotation(getVenue__VenueBookingsCheck__DiagnosticChain_Map(), source, new String[] { "body",
-				"self.bookings->notEmpty()\n    \tand self.bookings->forAll(booking | \n        (if booking.NumberOfGuests >= self.Capacity * 0.8 \n        \tthen booking.BookingStatus = \'Fully Booked\' \n        \telse booking.BookingStatus <> \'Not Fully Booked\' endif\n        ))" });
+				"self.bookings->notEmpty()\n\t\tand self.bookings->exists(booking | \n        booking.NumberOfGuests <= self.Capacity)" });
 		addAnnotation(getSystemAdmin__SystemChecks__DiagnosticChain_Map(), source,
 				new String[] { "body", "self.Email->notEmpty()" });
 		addAnnotation(getBookingAdmin__BookingAdminChecks__DiagnosticChain_Map(), source, new String[] { "body",

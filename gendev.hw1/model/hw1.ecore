@@ -41,7 +41,7 @@
       <details key="constraints" value="venueBookingsCheck"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="venueBookingsCheck" value="self.bookings->notEmpty()&#xA;    &#x9;and self.bookings->forAll(booking | &#xA;        (if booking.NumberOfGuests >= self.Capacity * 0.8 &#xA;        &#x9;then booking.BookingStatus = 'Fully Booked' &#xA;        &#x9;else booking.BookingStatus &lt;> 'Not Fully Booked' endif&#xA;        ))"/>
+      <details key="venueBookingsCheck" value="self.bookings->notEmpty()&#xA;&#x9;&#x9;and self.bookings->exists(booking | &#xA;        booking.NumberOfGuests &lt;= self.Capacity)"/>
     </eAnnotations>
     <eOperations name="checkAvailibility"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -53,12 +53,6 @@
         eType="#//Booking" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SystemAdmin">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="systemChecks"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="systemChecks" value="self.Email->notEmpty()"/>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Phone" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Email" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -72,7 +66,7 @@
       <details key="constraints" value="bookingAdminChecks"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="bookingAdminChecks" value="self.venuesManaged->notEmpty()&#xA;    &#x9;and self.approvedBookings->exists(booking | not booking.oclIsUndefined())&#xA;    &#x9;and self.NumberOfApprovals >= 0"/>
+      <details key="bookingAdminChecks" value="&#xA;&#x9;    self.venuesManaged->notEmpty() and&#xA;&#x9;    self.approvedBookings->exists(booking | not booking.oclIsUndefined()) and&#xA;&#x9;    self.NumberOfApprovals >= 0 and&#xA;&#x9;    (if self.approvedBookings->notEmpty() &#xA;&#x9;     then self.NumberOfApprovals > 0 &#xA;&#x9;     else true &#xA;&#x9;     endif)"/>
     </eAnnotations>
     <eOperations name="approveCustomerBooking"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumberOfApprovals" lowerBound="1"
@@ -87,8 +81,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BookingStatus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bookingBy" lowerBound="1"
         eType="#//Customer" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasReviews" upperBound="-1"
-        eType="#//Review"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BookingType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="MenuOptions" transient="true">
       <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">

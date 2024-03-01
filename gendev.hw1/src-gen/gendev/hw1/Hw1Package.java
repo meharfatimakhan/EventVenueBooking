@@ -551,22 +551,13 @@ public interface Hw1Package extends EPackage {
 	int BOOKING__BOOKING_BY = 2;
 
 	/**
-	 * The feature id for the '<em><b>Has Reviews</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__HAS_REVIEWS = 3;
-
-	/**
 	 * The feature id for the '<em><b>Booking Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__BOOKING_TYPE = 4;
+	int BOOKING__BOOKING_TYPE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Menu Options</b></em>' attribute.
@@ -575,7 +566,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__MENU_OPTIONS = 5;
+	int BOOKING__MENU_OPTIONS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Number Of Guests</b></em>' attribute.
@@ -584,7 +575,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__NUMBER_OF_GUESTS = 6;
+	int BOOKING__NUMBER_OF_GUESTS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Booking Date</b></em>' attribute.
@@ -593,7 +584,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__BOOKING_DATE = 7;
+	int BOOKING__BOOKING_DATE = 6;
 
 	/**
 	 * The number of structural features of the '<em>Booking</em>' class.
@@ -602,7 +593,7 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_FEATURE_COUNT = 8;
+	int BOOKING_FEATURE_COUNT = 7;
 
 	/**
 	 * The operation id for the '<em>View Booking Info</em>' operation.
@@ -778,15 +769,6 @@ public interface Hw1Package extends EPackage {
 	int VENUE_VISIT_BOOKING__BOOKING_BY = BOOKING__BOOKING_BY;
 
 	/**
-	 * The feature id for the '<em><b>Has Reviews</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VENUE_VISIT_BOOKING__HAS_REVIEWS = BOOKING__HAS_REVIEWS;
-
-	/**
 	 * The feature id for the '<em><b>Booking Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -914,15 +896,6 @@ public interface Hw1Package extends EPackage {
 	int EVENT_BOOKING__BOOKING_BY = BOOKING__BOOKING_BY;
 
 	/**
-	 * The feature id for the '<em><b>Has Reviews</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_BOOKING__HAS_REVIEWS = BOOKING__HAS_REVIEWS;
-
-	/**
 	 * The feature id for the '<em><b>Booking Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1048,15 +1021,6 @@ public interface Hw1Package extends EPackage {
 	 * @ordered
 	 */
 	int MENU_TASTING_BOOKING__BOOKING_BY = BOOKING__BOOKING_BY;
-
-	/**
-	 * The feature id for the '<em><b>Has Reviews</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MENU_TASTING_BOOKING__HAS_REVIEWS = BOOKING__HAS_REVIEWS;
 
 	/**
 	 * The feature id for the '<em><b>Booking Type</b></em>' attribute.
@@ -1552,17 +1516,6 @@ public interface Hw1Package extends EPackage {
 	 * @generated
 	 */
 	EReference getBooking_BookingBy();
-
-	/**
-	 * Returns the meta object for the reference list '{@link gendev.hw1.Booking#getHasReviews <em>Has Reviews</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Has Reviews</em>'.
-	 * @see gendev.hw1.Booking#getHasReviews()
-	 * @see #getBooking()
-	 * @generated
-	 */
-	EReference getBooking_HasReviews();
 
 	/**
 	 * Returns the meta object for the attribute '{@link gendev.hw1.Booking#getBookingType <em>Booking Type</em>}'.
@@ -2189,14 +2142,6 @@ public interface Hw1Package extends EPackage {
 		 * @generated
 		 */
 		EReference BOOKING__BOOKING_BY = eINSTANCE.getBooking_BookingBy();
-
-		/**
-		 * The meta object literal for the '<em><b>Has Reviews</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BOOKING__HAS_REVIEWS = eINSTANCE.getBooking_HasReviews();
 
 		/**
 		 * The meta object literal for the '<em><b>Booking Type</b></em>' attribute feature.

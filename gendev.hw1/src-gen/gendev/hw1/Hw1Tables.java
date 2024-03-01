@@ -13,7 +13,6 @@ package gendev.hw1;
 
 // import gendev.hw1.Hw1Package;
 // import gendev.hw1.Hw1Tables;
-import java.lang.String;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.ocl.pivot.TemplateParameters;
@@ -85,12 +84,9 @@ public class Hw1Tables extends AbstractTables
 	public static final /*@NonInvalid*/ IntegerValue INT_10 = ValueUtil.integerValueOf("10");
 	public static final /*@NonInvalid*/ IntegerValue INT_5 = ValueUtil.integerValueOf("5");
 	public static final /*@NonInvalid*/ CollectionTypeId SET_PRIMid_String = TypeId.SET.getSpecializedId(TypeId.STRING);
-	public static final /*@NonInvalid*/ String STR_Fully_32_Booked = "Fully Booked";
-	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_Booking = TypeId.BAG.getSpecializedId(Hw1Tables.CLSSid_Booking);
 	public static final /*@NonInvalid*/ CollectionTypeId BAG_CLSSid_Payment = TypeId.BAG.getSpecializedId(Hw1Tables.CLSSid_Payment);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Booking = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_Booking);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_EventBooking = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_EventBooking);
-	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Review = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_Review);
 	public static final /*@NonInvalid*/ CollectionTypeId ORD_CLSSid_Venue = TypeId.ORDERED_SET.getSpecializedId(Hw1Tables.CLSSid_Venue);
 	public static final /*@NonInvalid*/ CollectionTypeId SET_CLSSid_Customer = TypeId.SET.getSpecializedId(Hw1Tables.CLSSid_Customer);
 	public static final /*@NonInvalid*/ CollectionTypeId SET_CLSSid_Review = TypeId.SET.getSpecializedId(Hw1Tables.CLSSid_Review);
@@ -323,8 +319,7 @@ public class Hw1Tables extends AbstractTables
 		public static final ExecutorProperty _Booking__MenuOptions = new EcoreExecutorProperty(Hw1Package.Literals.BOOKING__MENU_OPTIONS, Types._Booking, 4);
 		public static final ExecutorProperty _Booking__NumberOfGuests = new EcoreExecutorProperty(Hw1Package.Literals.BOOKING__NUMBER_OF_GUESTS, Types._Booking, 5);
 		public static final ExecutorProperty _Booking__bookingBy = new EcoreExecutorProperty(Hw1Package.Literals.BOOKING__BOOKING_BY, Types._Booking, 6);
-		public static final ExecutorProperty _Booking__hasReviews = new EcoreExecutorProperty(Hw1Package.Literals.BOOKING__HAS_REVIEWS, Types._Booking, 7);
-		public static final ExecutorProperty _Booking__Venue__bookings = new ExecutorPropertyWithImplementation("Venue", Types._Booking, 8, new EcoreLibraryOppositeProperty(Hw1Package.Literals.VENUE__BOOKINGS));
+		public static final ExecutorProperty _Booking__Venue__bookings = new ExecutorPropertyWithImplementation("Venue", Types._Booking, 7, new EcoreLibraryOppositeProperty(Hw1Package.Literals.VENUE__BOOKINGS));
 
 		public static final ExecutorProperty _BookingAdmin__NumberOfApprovals = new EcoreExecutorProperty(Hw1Package.Literals.BOOKING_ADMIN__NUMBER_OF_APPROVALS, Types._BookingAdmin, 0);
 		public static final ExecutorProperty _BookingAdmin__approvedBookings = new EcoreExecutorProperty(Hw1Package.Literals.BOOKING_ADMIN__APPROVED_BOOKINGS, Types._BookingAdmin, 1);
@@ -355,8 +350,7 @@ public class Hw1Tables extends AbstractTables
 		public static final ExecutorProperty _Review__Rating = new EcoreExecutorProperty(Hw1Package.Literals.REVIEW__RATING, Types._Review, 1);
 		public static final ExecutorProperty _Review__ReviewBookingID = new EcoreExecutorProperty(Hw1Package.Literals.REVIEW__REVIEW_BOOKING_ID, Types._Review, 2);
 		public static final ExecutorProperty _Review__ReviewID = new EcoreExecutorProperty(Hw1Package.Literals.REVIEW__REVIEW_ID, Types._Review, 3);
-		public static final ExecutorProperty _Review__Booking__hasReviews = new ExecutorPropertyWithImplementation("Booking", Types._Review, 4, new EcoreLibraryOppositeProperty(Hw1Package.Literals.BOOKING__HAS_REVIEWS));
-		public static final ExecutorProperty _Review__Customer__submits = new ExecutorPropertyWithImplementation("Customer", Types._Review, 5, new EcoreLibraryOppositeProperty(Hw1Package.Literals.CUSTOMER__SUBMITS));
+		public static final ExecutorProperty _Review__Customer__submits = new ExecutorPropertyWithImplementation("Customer", Types._Review, 4, new EcoreLibraryOppositeProperty(Hw1Package.Literals.CUSTOMER__SUBMITS));
 
 		public static final ExecutorProperty _SystemAdmin__AdminID = new EcoreExecutorProperty(Hw1Package.Literals.SYSTEM_ADMIN__ADMIN_ID, Types._SystemAdmin, 0);
 		public static final ExecutorProperty _SystemAdmin__Email = new EcoreExecutorProperty(Hw1Package.Literals.SYSTEM_ADMIN__EMAIL, Types._SystemAdmin, 1);
@@ -892,7 +886,6 @@ public class Hw1Tables extends AbstractTables
 			Hw1Tables.Properties._Booking__MenuOptions,
 			Hw1Tables.Properties._Booking__NumberOfGuests,
 			Hw1Tables.Properties._Booking__bookingBy,
-			Hw1Tables.Properties._Booking__hasReviews,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
@@ -929,7 +922,6 @@ public class Hw1Tables extends AbstractTables
 			Hw1Tables.Properties._Booking__MenuOptions,
 			Hw1Tables.Properties._Booking__NumberOfGuests,
 			Hw1Tables.Properties._Booking__bookingBy,
-			Hw1Tables.Properties._Booking__hasReviews,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
@@ -943,7 +935,6 @@ public class Hw1Tables extends AbstractTables
 			Hw1Tables.Properties._MenuTastingBooking__MenuTastingVisitID,
 			Hw1Tables.Properties._Booking__NumberOfGuests,
 			Hw1Tables.Properties._Booking__bookingBy,
-			Hw1Tables.Properties._Booking__hasReviews,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};
@@ -998,7 +989,6 @@ public class Hw1Tables extends AbstractTables
 			Hw1Tables.Properties._VenueVisitBooking__VisitID,
 			Hw1Tables.Properties._VenueVisitBooking__VisitPurpose,
 			Hw1Tables.Properties._Booking__bookingBy,
-			Hw1Tables.Properties._Booking__hasReviews,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};

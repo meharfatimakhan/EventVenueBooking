@@ -4,9 +4,9 @@
   <hw1:Customer Name="Mehar Fatima Khan" Email="meharf@gmail.com" Phone="5725208652" CustomerBookingID="42"/>
   <hw1:Review Rating="3" Comment="Food was just okay.but venue was nice.." ReviewBookingID="35"/>
   <hw1:Review Rating="5" Comment="Absolutly amazing service! The venue was beautiful and the food tasted heavenly!" ReviewID="1"/>
-  <hw1:Venue Location="Valley Suites 105 Graham Road Leicester LE5 1HQ" Capacity="50" bookings="/6" VenueID="1"/>
-  <hw1:Venue Location="St Martins House Conference Centre Leicester, The Grand Hall, Leicester, LE1 5PZ" Capacity="100" bookings="/7" VenueID="2"/>
-  <hw1:EventBooking BookingID="3" BookingStatus="Confirmed" bookingBy="/0" BookingType="Event" hostedAt="/4" NumberOfGuests="30" BookingDate="Mon Feb 27 10:30:00 GMT 2024" EstimatedPriceQuote="1000" approvedBy="/8" EventDescription="a wedding being hosted for 100 people with white decor and white baloons all over"/>
-  <hw1:VenueVisitBooking BookingID="5" BookingStatus="Confirmed" bookingBy="/1" BookingType="Visit" hostedAt="/5" NumberOfGuests="61" BookingDate="Mon Feb 25 10:30:00 GMT 2024" VisitPurpose="FINALIZE DECOR" VisitID="3"/>
-  <hw1:BookingAdmin Phone="3124313262" Email="ada@gmail.com" Name="Ada Jade" approvedBookings="/6" NumberOfApprovals="1"/>
+  <hw1:Venue Location="Valley Suites 105 Graham Road Leicester LE5 1HQ" Capacity="50" VenueID="1"/>
+  <hw1:Venue Location="St Martins House Conference Centre Leicester, The Grand Hall, Leicester, LE1 5PZ" Capacity="100" VenueID="2"/>
+  <hw1:EventBooking BookingID="3" BookingStatus="Confirmed" BookingType="Event" NumberOfGuests="30" BookingDate="Mon Feb 27 10:30:00 GMT 2024" EstimatedPriceQuote="1000" EventDescription="a wedding being hosted for 100 people with white decor and white baloons all over"/>
+  <hw1:VenueVisitBooking BookingID="5" BookingStatus="Confirmed" BookingType="Visit" NumberOfGuests="61" BookingDate="Mon Feb 25 10:30:00 GMT 2024" VisitPurpose="FINALIZE DECOR" VisitID="3"/>
+  <hw1:BookingAdmin Phone="3124313262" Email="ada@gmail.com" Name="Ada Jade" NumberOfApprovals="1"/>
 </xmi:XMI>

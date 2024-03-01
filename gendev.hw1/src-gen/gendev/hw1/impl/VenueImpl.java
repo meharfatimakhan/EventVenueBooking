@@ -245,11 +245,7 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 			 *     else
 			 *       let
 			 *         result : Boolean[?] = self.bookings->notEmpty() and
-			 *         self.bookings->forAll(booking |
-			 *           if booking.NumberOfGuests >= self.Capacity * 0.8
-			 *           then booking.BookingStatus = 'Fully Booked'
-			 *           else booking.BookingStatus <> 'Not Fully Booked'
-			 *           endif)
+			 *         self.bookings->exists(booking | booking.NumberOfGuests <= self.Capacity)
 			 *       in
 			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 			 *     endif
@@ -275,13 +271,13 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 					if (!notEmpty) {
 						result = ValueUtil.FALSE_VALUE;
 					} else {
-						/*@Thrown*/ Object accumulator = ValueUtil.TRUE_VALUE;
+						/*@Thrown*/ Object accumulator = ValueUtil.FALSE_VALUE;
 						Iterator<Object> ITERATOR_booking = BOXED_bookings_0.iterator();
-						/*@NonInvalid*/ Boolean forAll;
+						/*@NonInvalid*/ Boolean exists;
 						while (true) {
 							if (!ITERATOR_booking.hasNext()) {
-								if (accumulator == ValueUtil.TRUE_VALUE) {
-									forAll = ValueUtil.TRUE_VALUE;
+								if (accumulator == ValueUtil.FALSE_VALUE) {
+									exists = ValueUtil.FALSE_VALUE;
 								} else {
 									throw (InvalidValueException) accumulator;
 								}
@@ -289,24 +285,29 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 							}
 							/*@NonInvalid*/ Booking booking = (Booking) ITERATOR_booking.next();
 							/**
-							 * booking.BookingStatus = 'Fully Booked'
+							 * booking.NumberOfGuests <= self.Capacity
 							 */
-							final /*@NonInvalid*/ String BookingStatus = booking.getBookingStatus();
-							final /*@NonInvalid*/ boolean eq = Hw1Tables.STR_Fully_32_Booked.equals(BookingStatus);
+							final /*@NonInvalid*/ int NumberOfGuests = booking.getNumberOfGuests();
+							final /*@NonInvalid*/ IntegerValue BOXED_NumberOfGuests = ValueUtil
+									.integerValueOf(NumberOfGuests);
+							final /*@NonInvalid*/ int Capacity = this.getCapacity();
+							final /*@NonInvalid*/ IntegerValue BOXED_Capacity = ValueUtil.integerValueOf(Capacity);
+							final /*@NonInvalid*/ boolean le_0 = OclComparableLessThanEqualOperation.INSTANCE
+									.evaluate(executor, BOXED_NumberOfGuests, BOXED_Capacity).booleanValue();
 							//
-							if (!eq) { // Normal unsuccessful body evaluation result
-								forAll = ValueUtil.FALSE_VALUE;
+							if (le_0) { // Normal successful body evaluation result
+								exists = ValueUtil.TRUE_VALUE;
 								break; // Stop immediately
-							} else if (eq) { // Normal successful body evaluation result
+							} else if (!le_0) { // Normal unsuccessful body evaluation result
 								; // Carry on
 							} else { // Impossible badly typed result
-								accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
+								accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "exists");
 							}
 						}
-						if (forAll == ValueUtil.FALSE_VALUE) {
+						if (exists == ValueUtil.FALSE_VALUE) {
 							result = ValueUtil.FALSE_VALUE;
 						} else {
-							if (forAll == null) {
+							if (exists == null) {
 								result = null;
 							} else {
 								result = ValueUtil.TRUE_VALUE;

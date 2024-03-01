@@ -61,6 +61,7 @@ public class Task4 {
         venue1.setLocation("Valley Suites 105 Graham Road Leicester LE5 1HQ");
         venue1.setCapacity(50);
         venue1.setVenueID(1);
+        
 
         // settings for object 6
         venue2.setLocation("St Martins House Conference Centre Leicester, The Grand Hall, Leicester, LE1 5PZ");
@@ -68,13 +69,6 @@ public class Task4 {
         venue2.setVenueID(2);
   
       
-        // -------------------- Creating BookingAdmin object
-        BookingAdmin bookingAdmin = Hw1Factory.eINSTANCE.createBookingAdmin();
-        bookingAdmin.setAdminID(0);
-        bookingAdmin.setEmail("ada@gmail.com");
-        bookingAdmin.setPhone("3124313262");
-        bookingAdmin.setNumberOfApprovals(1);
-        bookingAdmin.setName("Ada Jade");
         
         
         // -------------------- Creating EventBooking object
@@ -82,8 +76,6 @@ public class Task4 {
         eventBooking.setEventDescription("a wedding being hosted for 100 people with white decor and white baloons all over");
         eventBooking.setEstimatedPriceQuote(1000);
         eventBooking.setBookingBy(customer1); // link 3
-        eventBooking.setHostedAt(venue1); // link 4
-        eventBooking.setApprovedBy(bookingAdmin); // link 5
         eventBooking.setBookingDate( "Mon Feb 27 10:30:00 GMT 2024");
         eventBooking.setBookingType("Event");
         eventBooking.setBookingStatus("Confirmed");
@@ -94,7 +86,19 @@ public class Task4 {
         menuItems1.add("Burgers");
         menuItems1.add("Caviar");
         menuItems1.add("Coke");
-        eventBooking.setMenuOptions(menuItems1);	 
+        eventBooking.setMenuOptions(menuItems1); 
+        
+        venue1.getBookings().add(eventBooking); // link 4
+        
+     // -------------------- Creating BookingAdmin object
+        BookingAdmin bookingAdmin = Hw1Factory.eINSTANCE.createBookingAdmin();
+        bookingAdmin.setAdminID(0);
+        bookingAdmin.setEmail("ada@gmail.com");
+        bookingAdmin.setPhone("3124313262");
+        bookingAdmin.setNumberOfApprovals(1);
+        bookingAdmin.setName("Ada Jade");
+        bookingAdmin.getApprovedBookings().add(eventBooking); // link 5
+        
                 
         // -------------------- Creating VenueViistBooking object
         VenueVisitBooking venueVisitBooking = Hw1Factory.eINSTANCE.createVenueVisitBooking();
@@ -106,7 +110,6 @@ public class Task4 {
         venueVisitBooking.setVisitID(3);
         venueVisitBooking.setNumberOfGuests(61);
         venueVisitBooking.setBookingID(5);
-        venueVisitBooking.setHostedAt(venue2); // link 7
         EList<String> menuItems2 = new BasicEList<String>();
         menuItems2.add("Biryani");
         menuItems2.add("Chai");

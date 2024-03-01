@@ -5,10 +5,7 @@ package gendev.hw1.impl;
 import gendev.hw1.Booking;
 import gendev.hw1.Customer;
 import gendev.hw1.Hw1Package;
-
-import gendev.hw1.Review;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -18,7 +15,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +27,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingID <em>Booking ID</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingStatus <em>Booking Status</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingBy <em>Booking By</em>}</li>
- *   <li>{@link gendev.hw1.impl.BookingImpl#getHasReviews <em>Has Reviews</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getBookingType <em>Booking Type</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getMenuOptions <em>Menu Options</em>}</li>
  *   <li>{@link gendev.hw1.impl.BookingImpl#getNumberOfGuests <em>Number Of Guests</em>}</li>
@@ -90,16 +85,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected Customer bookingBy;
-
-	/**
-	 * The cached value of the '{@link #getHasReviews() <em>Has Reviews</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHasReviews()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Review> hasReviews;
 
 	/**
 	 * The default value of the '{@link #getBookingType() <em>Booking Type</em>}' attribute.
@@ -311,18 +296,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Review> getHasReviews() {
-		if (hasReviews == null) {
-			hasReviews = new EObjectResolvingEList<Review>(Review.class, this, Hw1Package.BOOKING__HAS_REVIEWS);
-		}
-		return hasReviews;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getBookingType() {
 		return bookingType;
 	}
@@ -421,8 +394,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 			return getBookingStatus();
 		case Hw1Package.BOOKING__BOOKING_BY:
 			return getBookingBy();
-		case Hw1Package.BOOKING__HAS_REVIEWS:
-			return getHasReviews();
 		case Hw1Package.BOOKING__BOOKING_TYPE:
 			return getBookingType();
 		case Hw1Package.BOOKING__MENU_OPTIONS:
@@ -452,10 +423,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 			return;
 		case Hw1Package.BOOKING__BOOKING_BY:
 			setBookingBy((Customer) newValue);
-			return;
-		case Hw1Package.BOOKING__HAS_REVIEWS:
-			getHasReviews().clear();
-			getHasReviews().addAll((Collection<? extends Review>) newValue);
 			return;
 		case Hw1Package.BOOKING__BOOKING_TYPE:
 			setBookingType((String) newValue);
@@ -490,9 +457,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 		case Hw1Package.BOOKING__BOOKING_BY:
 			setBookingBy((Customer) null);
 			return;
-		case Hw1Package.BOOKING__HAS_REVIEWS:
-			getHasReviews().clear();
-			return;
 		case Hw1Package.BOOKING__BOOKING_TYPE:
 			setBookingType(BOOKING_TYPE_EDEFAULT);
 			return;
@@ -524,8 +488,6 @@ public abstract class BookingImpl extends MinimalEObjectImpl.Container implement
 					: !BOOKING_STATUS_EDEFAULT.equals(bookingStatus);
 		case Hw1Package.BOOKING__BOOKING_BY:
 			return bookingBy != null;
-		case Hw1Package.BOOKING__HAS_REVIEWS:
-			return hasReviews != null && !hasReviews.isEmpty();
 		case Hw1Package.BOOKING__BOOKING_TYPE:
 			return BOOKING_TYPE_EDEFAULT == null ? bookingType != null : !BOOKING_TYPE_EDEFAULT.equals(bookingType);
 		case Hw1Package.BOOKING__MENU_OPTIONS:

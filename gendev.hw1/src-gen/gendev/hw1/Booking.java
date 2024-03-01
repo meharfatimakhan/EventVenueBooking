@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link gendev.hw1.Booking#getBookingID <em>Booking ID</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getBookingStatus <em>Booking Status</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getBookingBy <em>Booking By</em>}</li>
- *   <li>{@link gendev.hw1.Booking#getHasReviews <em>Has Reviews</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getBookingType <em>Booking Type</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getMenuOptions <em>Menu Options</em>}</li>
  *   <li>{@link gendev.hw1.Booking#getNumberOfGuests <em>Number Of Guests</em>}</li>
@@ -116,18 +115,6 @@ public interface Booking extends EObject {
 	 * @generated
 	 */
 	void setBookingBy(Customer value);
-
-	/**
-	 * Returns the value of the '<em><b>Has Reviews</b></em>' reference list.
-	 * The list contents are of type {@link gendev.hw1.Review}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Reviews</em>' reference list.
-	 * @see gendev.hw1.Hw1Package#getBooking_HasReviews()
-	 * @model
-	 * @generated
-	 */
-	EList<Review> getHasReviews();
 
 	/**
 	 * Returns the value of the '<em><b>Booking Type</b></em>' attribute.

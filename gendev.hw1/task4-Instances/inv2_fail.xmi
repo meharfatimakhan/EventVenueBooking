@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hw1:Venue xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:hw1="http://www.example.org/hw1"
+    Location="Lark Park, Leicester, L21D21"
+    Capacity="50"
+    VenueID="43">
+  <bookings
+      xsi:type="hw1:EventBooking"
+      BookingID="12"
+      BookingStatus="Fully Booked"
+      BookingType="Event"
+      NumberOfGuests="51"
+      BookingDate="1st March"
+      EstimatedPriceQuote="500"
+      EventDescription="A birthday party for a 10-year old. its toy story themed">
+    <bookingBy
+        Name="Mehar Fatima"
+        Email="mehar7@gmail.com"
+        Phone="1234554218"
+        CustomerBookingID="12">
+      <submits
+          Rating="4"
+          Comment="Good theme and good food"
+          ReviewBookingID="12"
+          ReviewID="43"/>
+    </bookingBy>
+  </bookings>
+  <bookings
+      xsi:type="hw1:EventBooking"
+      BookingID="21"
+      BookingStatus="Over Booked"
+      BookingType="Event"
+      NumberOfGuests="1000"
+      BookingDate="2nd June"
+      EstimatedPriceQuote="2000"
+      EventDescription="A study gala">
+    <bookingBy
+        Name="Mehar"
+        Email="mef@gmail.com"
+        Phone="0000132119"
+        CustomerBookingID="21">
+      <submits
+          Rating="5"
+          Comment="What great organization and setup!"
+          ReviewBookingID="21"
+          ReviewID="55"/>
+    </bookingBy>
+  </bookings>
+</hw1:Venue>
