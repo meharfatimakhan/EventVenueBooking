@@ -27,25 +27,4 @@
           ReviewID="43"/>
     </bookingBy>
   </bookings>
-  <bookings
-      xsi:type="hw1:EventBooking"
-      BookingID="21"
-      BookingStatus="Over Booked"
-      BookingType="Event"
-      NumberOfGuests="1000"
-      BookingDate="2nd June"
-      EstimatedPriceQuote="2000"
-      EventDescription="A study gala">
-    <bookingBy
-        Name="Mehar"
-        Email="mef@gmail.com"
-        Phone="0000132119"
-        CustomerBookingID="21">
-      <submits
-          Rating="5"
-          Comment="What great organization and setup!"
-          ReviewBookingID="21"
-          ReviewID="55"/>
-    </bookingBy>
-  </bookings>
 </hw1:Venue>
