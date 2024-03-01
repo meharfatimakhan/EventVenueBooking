@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hw1="http://www.example.org/hw1">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hw1="http://www.example.org/hw1">
   <hw1:Customer Name="Mehar" Email="mehar@gmail.com" Phone="0091665433">
+    <submits Rating="4" Comment="Great experience!" ReviewBookingID="1" ReviewID="1"/>
     <submits Rating="5" Comment="Nice decor" ReviewBookingID="4" ReviewID="2"/>
   </hw1:Customer>
-  <hw1:Review Rating="4" Comment="Great experience!" ReviewBookingID="1" ReviewID="1"/>
-  <hw1:Venue Location="Lark Venues, Leicester LE3GHK" Capacity="100" VenueID="1"/>
-  <hw1:EventBooking BookingID="2" BookingStatus="Confirmed" BookingType="Event" NumberOfGuests="50" BookingDate="Mon Feb 27 10:30:00 GMT 2024" EstimatedPriceQuote="2000" EventDescription="A birthday party of a boy 10 year old with toy story theme"/>
   <hw1:VenueVisitBooking BookingID="3" BookingStatus="Confirmed" BookingType="Visit" NumberOfGuests="20" BookingDate="Mon Feb 28 10:30:00 GMT 2024" VisitPurpose="Lark Venue Visit" VisitID="3">
-    <bookingBy Name="Nikhil" Email="nikhil@gmail.com" Phone="0091665432"/>
+    <bookingBy Name="Ava" Email="ava@gmail.com" Phone="0091665442"/>
   </hw1:VenueVisitBooking>
-  <hw1:BookingAdmin Phone="9876543210" Email="ava@gmail.com" Name="Ava John" AdminID="1" NumberOfApprovals="1">
-    <approvedBookings BookingID="3" BookingStatus="Confirmed" BookingType="Event" NumberOfGuests="80" BookingDate="Mon Feb 29 10:30:00 GMT 2024" EstimatedPriceQuote="4000" EventDescription="A wedding with white balloons"/>
+  <hw1:BookingAdmin Phone="9876543210" Email="ava@gmail.com" Name="Ava John" AdminID="1" NumberOfApprovals="2">
+    <venuesManaged Location="GRU Hall, Leicester LE4198" Capacity="500" VenueID="2">
+      <bookings xsi:type="hw1:EventBooking" BookingID="4" BookingStatus="Confirmed" BookingType="Event" NumberOfGuests="290" BookingDate="Mon Feb 26 10:30:00 GMT 2024" EstimatedPriceQuote="900" EventDescription="A sports event">
+        <bookingBy Name="Kakashi" Email="kakashi@gmail.com" Phone="0091663542"/>
+      </bookings>
+    </venuesManaged>
+    <approvedBookings BookingID="3" BookingStatus="Confirmed" BookingType="Event" NumberOfGuests="80" BookingDate="Mon Feb 29 10:30:00 GMT 2024" EstimatedPriceQuote="4000" EventDescription="A wedding with white balloons">
+      <bookingBy Name="Nikhil" Email="nikhil@gmail.com" Phone="0091665432"/>
+    </approvedBookings>
   </hw1:BookingAdmin>
 </xmi:XMI>
