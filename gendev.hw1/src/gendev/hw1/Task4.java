@@ -61,6 +61,7 @@ public class Task4 {
         eventBooking.setNumberOfGuests(50);
         eventBooking.setBookingID(2);
         
+        
         EventBooking eventBooking2 = Hw1Factory.eINSTANCE.createEventBooking();
         eventBooking2.setEventDescription("A wedding with white balloons");
         eventBooking2.setEstimatedPriceQuote(4000);
@@ -93,6 +94,8 @@ public class Task4 {
         customer1.getSubmits().add(review2);
         venue1.getBookings().add(eventBooking);
         venue1.getBookings().add(eventBooking2);
+//        bookingAdmin.getVenuesManaged().add(venue1);
+//        bookingAdmin.getVenuesManaged().add(venue2);
         bookingAdmin.getApprovedBookings().add(eventBooking);
         bookingAdmin.getApprovedBookings().add(eventBooking2);
         // Save the model to XMI file
