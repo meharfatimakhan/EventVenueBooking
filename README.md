@@ -1,4 +1,4 @@
-#System Outline
+# System Outline
 
 The Event Venue Booking System is designed to facilitate seamless interactions among key stakeholders involved in event planning and execution. The main stakeholders are Admins, Booking Agents, and Customers. The primary entities within the system include Customer, Review, Venue, SystemAdmin, BookingAdmin, Payment, and Booking. The Booking entity, serving as the parent, encompasses sub-entities: EventBooking, VenueVisitBooking, and MenuTastingVisitBooking.
 
