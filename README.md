@@ -1,7 +1,9 @@
 #System Outline
-The Event Venue Booking System is designed to facilitate seamless interactions among key stakeholders involved in event planning and execution. The main stakeholders are Admins, Booking Agents, and Customers.
-The primary entities within the system include Customer, Review, Venue, SystemAdmin, BookingAdmin, Payment, and Booking. The Booking entity, serving as the parent, encompasses sub-entities: EventBooking, VenueVisitBooking, and MenuTastingVisitBooking.
+
+The Event Venue Booking System is designed to facilitate seamless interactions among key stakeholders involved in event planning and execution. The main stakeholders are Admins, Booking Agents, and Customers. The primary entities within the system include Customer, Review, Venue, SystemAdmin, BookingAdmin, Payment, and Booking. The Booking entity, serving as the parent, encompasses sub-entities: EventBooking, VenueVisitBooking, and MenuTastingVisitBooking.
+
 Using this platform, customers can “Book an event at a particular venue by adding relevant details”, “Book visits to the venue”, and for “Book visits for tasting menus”, “Give reviews”, “Cancel event bookings”, and “Issued a refund”. System admins can “Manage venues”, and booking admins can also “Manage Venues”, with the additional ability to “approve the system-generated price quote and booking”. Customer can confirm booking and “Make a Payment” and “Payment will be processed” by the billing system. After payment is made, system will send a “Confirmation of booking email to customer”
+
 Currently, our activity diagram illustrates the process flow, depicting how a customer initiates a booking on our system by selecting a desired venue on their preferred date and pay, and how customers can basically book visits to the venue and for menu tasting after they confirm booking.
 
 
